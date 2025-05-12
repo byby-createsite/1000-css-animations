@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escadas ilusórias</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        .container{
+            background: gray;
+            width: 180px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        span:nth-child(1){
+            position: absolute;
+            top: 240px;
+            left: 0;
+            left: 700px;
+            width: 120px;
+            height: 60px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+             clip-path: polygon(50% 0, 75% 0, 25% 100%, 0 100%);
+        }
+        span:nth-child(2){
+            position: absolute;
+            top: 210px;
+            left: 710px;
+            width: 60px;
+            height: 120px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            clip-path: polygon(100% 25%, 100% 50%, 0 100%, 0 75%);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <span></span>
+        <span></span>
+            <span></span>
+                <span></span>
+                    <span></span>
+                        <span></span>
+                            <span></span>
+                                <span></span>
+    </div>
+
+    
+</body>
+</html>
