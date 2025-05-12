@@ -4,39 +4,44 @@ LINK: https://www.instagram.com/reel/DJkEsINJWB2/
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escadas ilusórias</title>
+    <title>Escadas Ilusórias</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body{
+        
+        body {
             background: #1e1e24;
             color: white;
-            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             width: 100vw;
             font-family: monospace;
-            z-index: -2;
+            position: relative;
+            overflow: hidden;
         }
-        /*
-        container para ficar atrás da escada e mostrar a parede com um formato
-        específico */
-
-        .container {
-            display: flex;
+        
+        .escada-container {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            perspective: 800px;
+        }
+        
+        /* Container para ficar atrás da escada e mostrar a parede */
+        .parede {
+            position: absolute;
             width: 210px;
             height: 300px;
-            transform: rotate(45deg);
-            position: absolute;
-            left: 828px;
-            top: 327px;
-            z-index: -1;
+            top: 44%;
+            left: 44.5%;
+            transform: translate(-50%, -50%) rotate(45deg);
             background: #e5d3b3;
+            z-index: 1;
             clip-path: polygon(
                 0% 35%,
                 50% 0%, 
@@ -45,99 +50,95 @@ LINK: https://www.instagram.com/reel/DJkEsINJWB2/
                 50% 100%, 
                 0% 64% 
             );
-
         }
-        /* estilo geral dos degraus para ficar de madeira */
-        span {
+        
+        /* Estilo geral dos degraus */
+        .degrau {
             position: absolute;
             background: linear-gradient(145deg, #4a3620 0%, #2e220f 100%);
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
             border-radius: 2px;
+            transform-origin: center;
+            z-index: 2;
         }
-       /* cada degrau possui sua posição (calculada manualmente na tela) */
-        span:nth-child(1){
-            top: 370px;
-            left: 830px;
+        
+        /* Degraus horizontais (degraus ímpares) */
+        .degrau-horizontal {
             width: 120px;
             height: 60px;
+            clip-path: polygon(50% 0, 75% 0, 25% 100%, 0 100%);
+        }
+        
+        /* Degraus verticais (degraus pares) */
+        .degrau-vertical {
+            width: 60px;
+            height: 120px;
+            clip-path: polygon(100% 25%, 100% 50%, 0 100%, 0 75%);
+        }
+        
+        /* Posicionamento específico para cada degrau */
+        #degrau1 {
+            top: 70px;
+            left: 30px;
             background: linear-gradient(145deg, #4a3620 0%, #2e220f 100%);
-            clip-path: polygon(50% 0, 75% 0, 25% 100%, 0 100%);
         }
-        /* a cada 1 degrau ele alterna o clip path(formato) para de subida e descida */
-        span:nth-child(2){
-            top: 340px;
-            left: 860px;
-            width: 60px;
-            height: 120px;
+        
+        #degrau2 {
+            top: 40px;
+            left: 60px;
             background: linear-gradient(145deg, #4a3620 0%, #2e220f 100%);
-            clip-path: polygon(100% 25%, 100% 50%, 0 100%, 0 75%);
         }
-        span:nth-child(3){
-            top: 400px;
-            left: 860px;
-            width: 120px;
-            height: 60px;
+        
+        #degrau3 {
+            top: 100px;
+            left: 60px;
             background: linear-gradient(145deg, #503d24 0%, #352713 100%);
-            clip-path: polygon(50% 0, 75% 0, 25% 100%, 0 100%);
         }
-        span:nth-child(4){
-            top: 370px;
-            left: 890px;
-            width: 60px;
-            height: 120px;
+        
+        #degrau4 {
+            top: 70px;
+            left: 90px;
             background: linear-gradient(145deg, #503d24 0%, #352713 100%);
-            clip-path: polygon(100% 25%, 100% 50%, 0 100%, 0 75%);
         }
-        span:nth-child(5){
-            top: 430px;
-            left: 890px;
-            width: 120px;
-            height: 60px;
+        
+        #degrau5 {
+            top: 130px;
+            left: 90px;
             background: linear-gradient(145deg, #574428 0%, #3a2d18 100%);
-            clip-path: polygon(50% 0, 75% 0, 25% 100%, 0 100%);
         }
-        span:nth-child(6){
-            top: 400px;
-            left: 920px;
-            width: 60px;
-            height: 120px;
+        
+        #degrau6 {
+            top: 100px;
+            left: 120px;
             background: linear-gradient(145deg, #574428 0%, #3a2d18 100%);
-            clip-path: polygon(100% 25%, 100% 50%, 0 100%, 0 75%);
         }
-        span:nth-child(7){
-            top: 460px;
-            left: 920px;
-            width: 120px;
-            height: 60px;
+        
+        #degrau7 {
+            top: 160px;
+            left: 120px;
             background: linear-gradient(145deg, #5e4b2b 0%, #40321c 100%);
-            clip-path: polygon(50% 0, 75% 0, 25% 100%, 0 100%);
         }
-        span:nth-child(8){
-            top: 430px;
-            left: 950px;
-            width: 60px;
-            height: 120px;
+        
+        #degrau8 {
+            top: 130px;
+            left: 150px;
             background: linear-gradient(145deg, #5e4b2b 0%, #40321c 100%);
-            clip-path: polygon(100% 25%, 100% 50%, 0 100%, 0 75%);
         }
-        span:nth-child(9){
-            top: 490px;
-            left: 950px;
-            width: 120px;
-            height: 60px;
+        
+        #degrau9 {
+            top: 190px;
+            left: 150px;
             background: linear-gradient(145deg, #65512f 0%, #463520 100%);
-            clip-path: polygon(50% 0, 75% 0, 25% 100%, 0 100%);
         }
-        span:nth-child(10){
-            top: 460px;
-            left: 980px;
-            width: 60px;
-            height: 120px;
+        
+        #degrau10 {
+            top: 160px;
+            left: 180px;
             background: linear-gradient(145deg, #65512f 0%, #463520 100%);
-            clip-path: polygon(100% 25%, 100% 50%, 0 100%, 0 75%);
         }
-        /* detalhe para deixar o degrau mais bonito */
-        span::after {
+        
+        /* Detalhe para deixar o degrau com textura de madeira */
+        .degrau::after {
             content: '';
             position: absolute;
             top: 0;
@@ -148,56 +149,51 @@ LINK: https://www.instagram.com/reel/DJkEsINJWB2/
             opacity: 0.5;
             pointer-events: none;
         }
-        
-        /* media query para responsividade*/
-        @media (max-width: 1200px) {
-            .container, span {
-                transform-origin: center;
-                left: 50%;
-                margin-left: -105px;
-            }
-
-        }
- 
     </style>
 </head>
 <body>
-    <!--Estrutura HTML-->
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <div class="container" onclick="piscar()"></div>
+    <!-- Estrutura HTML organizada por classes -->
+    <div class="escada-container">
+        <div class="parede" onclick="piscar()"></div>
+        
+        <!-- Degraus com IDs específicos e classes para controle -->
+        <div id="degrau1" class="degrau degrau-horizontal"></div>
+        <div id="degrau2" class="degrau degrau-vertical"></div>
+        <div id="degrau3" class="degrau degrau-horizontal"></div>
+        <div id="degrau4" class="degrau degrau-vertical"></div>
+        <div id="degrau5" class="degrau degrau-horizontal"></div>
+        <div id="degrau6" class="degrau degrau-vertical"></div>
+        <div id="degrau7" class="degrau degrau-horizontal"></div>
+        <div id="degrau8" class="degrau degrau-vertical"></div>
+        <div id="degrau9" class="degrau degrau-horizontal"></div>
+        <div id="degrau10" class="degrau degrau-vertical"></div>
+    </div>
 
-        <script>
-        //script para deixar os degraus piscando e ajudar na perspectiva 
-            function piscar(){
-                var container = document.querySelector('.container');
-                var degraus = document.querySelectorAll('span');
-                setInterval(()=>{
-                    for(let j = 0; j < degraus.length; j++){
-                        degraus[j].style.transition = 'all 0.3s ease'; 
-                        degraus[j].style.opacity = '0';
-                    }
-                    setTimeout(()=>{
-                        for(let j = 0; j < degraus.length; j++){
-                            degraus[j].style.opacity = '1';
-                        }          
-                    }, 350)
-                }, 5000)
-                
-
-            }
+    <script>
+        // Script para o efeito de piscar nos degraus
+        function piscar() {
+            var degraus = document.querySelectorAll('.degrau');
             
-            window.onload = function() {
-                piscar();
-            }
-        </script>
+            setInterval(() => {
+                // Fade out
+                for (let j = 0; j < degraus.length; j++) {
+                    degraus[j].style.transition = 'all 0.3s ease';
+                    degraus[j].style.opacity = '0';
+                }
+                
+                // Fade in após delay
+                setTimeout(() => {
+                    for (let j = 0; j < degraus.length; j++) {
+                        degraus[j].style.opacity = '1';
+                    }
+                }, 350);
+            }, 5000);
+        }
+        
+        // Iniciar o efeito de piscar ao carregar a página
+        window.onload = function() {
+            piscar();
+        }
+    </script>
 </body>
-</html>
+</html> 
