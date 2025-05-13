@@ -27,7 +27,7 @@ These animations are open-source, meaning anyone can view, use, or modify them.
 Have an idea for a new CSS animation? Send your suggestions to: byby.inc.business@gmail.com. Your contributions are greatly appreciated!
 
 
- <br>  <br>  <br>
+ <br><br><br>
 
 LICENSE.md <br>
 abrir-bau.html  <br>
