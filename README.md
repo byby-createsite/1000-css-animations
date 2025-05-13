@@ -28,7 +28,6 @@ Have an idea for a new CSS animation? Send your suggestions to: byby.inc.busines
 
 
  <br/><br/><br/>
-
 LICENSE.md <br/>
 abrir-bau.html  <br/>
 abrir-envelope.html  <br/>
@@ -51,7 +50,8 @@ metal2.jpeg  <br/>
 mola-animada.html  <br/>
 national-flag.html  <br/>
 neon-pulsante.html  <br/>
-open-link.svg
-rocket.svg
-scan-btn-1.html
-slide-btn-1.html
+open-link.svg  <br/>
+rocket.svg  <br/>
+scan-btn-1.html  <br/>
+slide-btn-1.html  <br/>
+ 
