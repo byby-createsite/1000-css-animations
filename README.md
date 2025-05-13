@@ -31,11 +31,11 @@ Have an idea for a new CSS animation? Send your suggestions to: byby.inc.busines
 
 
 
-LICENSE.md <br/> 
-abrir-bau.html  <br/>
-abrir-envelope.html  <br/>
-bola-quicando.html  <br/>
-carregamento-pulsante.html  <br/>
+./LICENSE.md <br/> 
+./abrir-bau.html  <br/>
+./abrir-envelope.html  <br/>
+./bola-quicando.html  <br/>
+./carregamento-pulsante.html  <br/>
 carrinho-passando.html  <br/>
 desbloquear-cadeado.html  <br/>
 disco-girando.html  <br/>
