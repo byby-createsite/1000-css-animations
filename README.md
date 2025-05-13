@@ -25,3 +25,35 @@ These animations are open-source, meaning anyone can view, use, or modify them.
 **Contributions and Suggestions**
 
 Have an idea for a new CSS animation? Send your suggestions to: byby.inc.business@gmail.com. Your contributions are greatly appreciated!
+
+
+
+
+LICENSE.md
+README.md
+abrir-bau.html
+abrir-envelope.html
+arrow-right-circle.svg
+bola-quicando.html
+carregamento-pulsante.html
+carrinho-passando.html
+cart.svg
+cloud-download.svg
+confetti.gif
+desbloquear-cadeado.html
+disco-girando.html
+escadas-ilusorias.html
+estrelas.svg
+feliz-dia-das-maes.html
+fita-inaugural.html
+glowing-btn-1.html
+lancar-foguete.html
+link.svg
+metal2.jpeg
+mola-animada.html
+national-flag.html
+neon-pulsante.html
+open-link.svg
+rocket.svg
+scan-btn-1.html
+slide-btn-1.html
