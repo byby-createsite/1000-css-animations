@@ -27,30 +27,30 @@ These animations are open-source, meaning anyone can view, use, or modify them.
 Have an idea for a new CSS animation? Send your suggestions to: byby.inc.business@gmail.com. Your contributions are greatly appreciated!
 
 
- <br><br><br>
+ <br/><br/><br/>
 
-LICENSE.md <br>
-abrir-bau.html  <br>
-abrir-envelope.html  <br>
-arrow-right-circle.svg  <br>
-bola-quicando.html  <br>
-carregamento-pulsante.html  <br>
-carrinho-passando.html  <br>
-cart.svg  <br>
-cloud-download.svg  <br>
-confetti.gif  <br>
-desbloquear-cadeado.html  <br>
-disco-girando.html  <br>
-escadas-ilusorias.html  <br>
-estrelas.svg  <br>
-feliz-dia-das-maes.html  <br>
-fita-inaugural.html  <br>
-glowing-btn-1.html  <br>
-lancar-foguete.html  <br>
-metal2.jpeg  <br>
-mola-animada.html  <br>
-national-flag.html  <br>
-neon-pulsante.html  <br>
+LICENSE.md <br/>
+abrir-bau.html  <br/>
+abrir-envelope.html  <br/>
+arrow-right-circle.svg  <br/>
+bola-quicando.html  <br/>
+carregamento-pulsante.html  <br/>
+carrinho-passando.html  <br/>
+cart.svg  <br/>
+cloud-download.svg  <br/>
+confetti.gif  <br/>
+desbloquear-cadeado.html  <br/>
+disco-girando.html  <br/>
+escadas-ilusorias.html  <br/>
+estrelas.svg  <br/>
+feliz-dia-das-maes.html  <br/>
+fita-inaugural.html  <br/>
+glowing-btn-1.html  <br/>
+lancar-foguete.html  <br/>
+metal2.jpeg  <br/>
+mola-animada.html  <br/>
+national-flag.html  <br/>
+neon-pulsante.html  <br/>
 open-link.svg
 rocket.svg
 scan-btn-1.html
