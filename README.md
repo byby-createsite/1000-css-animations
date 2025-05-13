@@ -50,7 +50,7 @@ metal2.jpeg  <br/>
 mola-animada.html  <br/>
 national-flag.html  <br/>
 neon-pulsante.html  <br/>
-open-link.svg  <br/>
+open-link.svg  <br/> 
 rocket.svg  <br/>
 scan-btn-1.html  <br/>
 slide-btn-1.html  <br/>
