@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho passando</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: rgb(0, 0, 0);
+            width: 100vw;
+            height: 100vh;
+            box-sizing: border-box;
+            font-family: monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+        /* base do stick animado */
+        .stickman {
+        position: absolute;
+        top: 290px;
+        scale: 0.35;
+        left: calc(50% - 180px);
+        }
+        /* cabeca do stick animado */
+        .head {
+        position: absolute;
+        z-index: 25;
+        top: 0;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        height: 50px;
+        width: 50px;
+        background: #ffffff;
+        border-radius: 50px;
+        }
+        /* coluna do stick animado */
+        .torso {
+        position: absolute;
+        z-index: 0;
+        top: 45px;
+        right: auto;
+        bottom: auto;
+        left: 20px;
+        height: 95px;
+        width: 5px;
+        background: #ffffff;
+        border-radius: 5px;
+        }
+        /* braco esquerdo do stick animado */
+        .left-arm {
+        position: absolute;
+        z-index: -10;
+        top: -10px;
+        right: -42px;
+        bottom: auto;
+        left: auto;
+        height: 90px;
+        width: 5px;
+        background: #ffffff;
+        border-radius: 5px;
+        transform: rotate(275deg);
+        }
+        /* braco direito do stick animado */
+        .right-arm {
+        position: absolute;
+        z-index: 20;
+        top: -15px;
+        right: auto;
+        bottom: auto;
+        left: 42px;
+        height: 90px;
+        width: 5px;
+        background: #ffffff;
+        border-radius: 5px;
+        transform: rotate(275deg);
+        }
+        /* pe do stick animado */
+        .foot {
+        position: absolute;
+        z-index: 0;
+        top: auto;
+        right: auto;
+        bottom: 0;
+        left: 0;
+        height: 5px;
+        width: 30px;
+        border-top-right-radius: 15px;
+        background:rgb(255, 255, 255);
+        }
+        /* perna esquerda do stick animado */
+        .left-leg {
+        position: absolute;
+        z-index: -10;
+        top: 85px;
+        right: auto;
+        bottom: auto;
+        left: 30px;
+        height: 125px;
+        width: 5px;
+        background: #ffffff;
+        border-radius: 5px;
+        transform: rotate(-30deg);
+        animation: walk-left-leg 2s infinite;
+        }
+        /* perna direita do stick animado */
+        .right-leg {
+        position: absolute;
+        z-index: 0;
+        top: 85px;
+        right: 30px;
+        bottom: auto;
+        left: auto;
+        height: 125px;
+        width: 5px;
+        background: #ffffff;
+        border-radius: 5px;
+        transform: rotate(30deg);
+        animation: walk-right-leg 2s infinite;
+        }
+        /* imagem do carrinho https://www.svgrepo.com/svg/451312/shopping-cart?edit=true  */
+        .cart{
+            position: absolute;
+            left: 620px;
+            top: 308px;
+            width: 72px;
+            height: 85px;
+            background-image: url('cart.svg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        /* produto dentro do carrinho */
+        .cart::before{
+            content: '';
+            position: absolute;
+            top: 25px;
+            rotate: 5deg;
+            border-radius: 1px;
+            left: 40px;
+            width: 20px;
+            height: 20px;
+            background: white;
+        }
+        /* produto dentro do carrinho */
+        .cart::after{
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 20px;
+            border-radius: 1px;
+            rotate: 50deg;
+            width: 20px;
+            height: 20px;
+            background: white;
+
+        }
+
+        /* base da prateleira */
+        .shelf{
+            position: absolute;
+            left: 420px;
+            width: 580px;
+            top: 0;
+            height: 100vh;
+            z-index: 2;
+
+        }
+        /*piso 1 da prateleira */
+        .floor1{
+            position: absolute;
+            left: 0;
+            width: 580px;
+            top: 240px;
+            height: 3px;
+            background: rgb(255, 255, 255);
+
+        }
+        /*piso 2 da prateleira */
+        .floor2{
+            position: absolute;
+            left: 0;
+            width: 580px;
+            top: 270px;
+            height: 3px;
+            background: rgb(255, 255, 255);
+
+        }
+        /*produto animado da prateleira  */
+        .shelf::before{
+            content: '';
+            position: absolute;
+            top: 220px;
+            border-radius: 1px;
+            left: 230px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            animation: 6s passItem linear infinite;
+        }
+        /*produto animado da prateleira (que cai sincronizado com a animação e o carrinho)  */
+        .shelf::after{
+            content: '';
+            position: absolute;
+            top: 250px;
+            border-radius: 1px;
+            left: 330px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            animation: 6s passItem linear infinite;
+        }
+       /*animação que passa o produto e cai os dois mas o video mostra so 1 */
+        @keyframes passItem{
+            0%{
+                transform: translateX(360px) translateY(0);
+            }
+            80%{
+                transform: translateY(0)translateX(0);
+            }
+            90%{
+                transform: translateY(15px) rotate(-85deg) translateX(-32px);
+                visibility: hidden;
+            }
+            100%{
+                visibility: hidden;
+
+            }
+        }
+        /*animacao da perna esquerda */
+        @keyframes walk-left-leg {
+        0% {
+            transform: rotate(-30deg);
+            left: 30px;
+        }
+        50% {
+            transform: rotate(30deg);
+            left: -30px;
+        }
+        100% {
+            transform: rotate(-30deg);
+            left: 30px;
+        }
+        }
+        /*animacao da perna direita*/
+        @keyframes walk-right-leg {
+        0% {
+            transform: rotate(30deg);
+            right: 30px;
+        }
+        50% {
+            transform: rotate(-30deg);
+            right: -30px;
+        }
+        100% {
+            transform: rotate(30deg);
+            right: 30px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!--Estrutura HTML-->
+		<div class="stickman">
+			<div class="head">
+			</div>
+			<div class="torso">	
+				<div class="left-arm">		
+				</div>
+				<div class="right-arm">
+				</div>
+				<div class="left-leg">
+					<div class="foot"></div>
+				</div>
+				<div class="right-leg">
+					<div class="foot"></div>
+				</div>
+			</div>
+		</div>
+    <div class="cart">  
+    </div>
+    <div class="shelf">
+        <div class="floor1"></div>
+        <div class="floor2"></div>
+    </div>
+    
+</body>
+</html>
