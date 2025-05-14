@@ -20,7 +20,6 @@ LINK: https://www.instagram.com/reel/DJEqYR7R12I/
             width: 100vw;
             background: #000000; 
         }
-        /* botão com uma imagem no fundo e  com o overflow hidden (para esconder o ::before)*/
         .glowing-btn-1 {
             cursor: pointer;
             font-family: monospace;
@@ -35,8 +34,8 @@ LINK: https://www.instagram.com/reel/DJEqYR7R12I/
             border-radius: 30px;
             position: relative;
             overflow: hidden;
+  
         }
-          /* no ::before um conteudo vazio com posição inicial -100% do botão e 50% da largura do botão, com um fundo gradiente para parecer um brilho*/
         .glowing-btn-1::before {
             content: '';
             position: absolute;
@@ -51,7 +50,6 @@ LINK: https://www.instagram.com/reel/DJEqYR7R12I/
                 transparent
             ); 
         }
-        /* animação para mover suavemente o ::before da esquerda para direita e voltar ao inicio*/
         @keyframes reflect {
             0% {
                 transform: translateX(0);
@@ -63,15 +61,13 @@ LINK: https://www.instagram.com/reel/DJEqYR7R12I/
                 transform: translateX(0);
             }
         }
-        
-        /* ao passar o mouse por cima do botão, ativar a animação reflect*/
         .glowing-btn-1:hover::before {
-            animation: reflect 2 ease;
+
+            animation: reflect 2s ease;
         }
     </style>
 </head>
 <body>
-    <!--Estrutura HTML-->
     <button class="glowing-btn-1">
         GLOWING BTN 1
     </button>
