@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porta mala avião</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: rgb(0, 0, 0);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: monospace;
+        }
+        /*elipse 1 da tampa e container com cor de fundo igual ao background */
+        .container::before,.tampa::before{
+            content: '';
+            background: rgb(0, 0, 0);
+            width: 250px;
+            position: absolute;
+            left: -160px;
+            top: -32px;
+            height: 130px;
+            clip-path: ellipse(25% 40% at 50% 50%);
+        }
+        /*elipse 2 da tampa e container com cor de fundo igual ao background*/
+        .container::after,.tampa::after{
+            content: '';
+            position: absolute;
+            left: 160px;
+            top: -32px;
+            background: rgb(0, 0, 0);
+            width: 250px;
+            height: 130px;
+            clip-path: ellipse(25% 40% at 50% 50%);
+        }
+
+        
+        /* container e tampa (retangulos)*/
+        .container,.tampa{
+            position: absolute;
+            background: rgba(255, 255, 255);
+            width: 250px;
+            height: 65px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+ 
+
+        }
+        /* tampa na frente com z-index */
+        .tampa{
+            z-index: 2;
+        }
+        /* animacao ao passar mouse na tampa */
+        .tampa:hover{
+            animation:  abrirTampa 1.5s linear forwards;
+            transform-origin: top;
+        }
+        /* animacao rotate para abrir */
+        @keyframes abrirTampa{
+            0%{
+                transform: rotateX(0);
+            }
+            100%{
+                   transform: rotateX(-135deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--Estrutura HTML-->
+    <div class="tampa"></div>
+    <div class="container">abrir tampa</div>
+    
+</body>
+</html>
