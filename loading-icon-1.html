@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading icon 1</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: rgb(0, 0, 0);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: monospace;
+        }
+        /* argola no centro */
+        .loading-icon-1{
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border-radius: 100%;
+            border:solid 2px white;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+        }
+        /* after com o elemento dentro e uma animação simples de rotação 360deg com origem -50% pois o justify-content está no end */
+        .loading-icon-1::after{
+            content: '⚪';
+            animation:1.5s loader linear infinite;
+            transform-origin: -50%;
+        }
+        /*animação simples */
+        @keyframes loader{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--Estrutura HTML-->
+    <div class="loading-icon-1"></div>
+    
+</body>
+</html>
