@@ -30,7 +30,6 @@ Have an idea for a new CSS animation? Send your suggestions to: byby.inc.busines
  <br/><br/><br/>
 
 
-
 LICENSE.md <br/> 
 abrir-bau.html  <br/>
 abrir-envelope.html  <br/>
@@ -50,3 +49,4 @@ neon-pulsante.html  <br/>
 scan-btn-1.html  <br/>
 slide-btn-1.html  <br/>
 porta-malas-aviao.html <br/>
+loading-icon-1.html <br/>
