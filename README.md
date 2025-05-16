@@ -50,3 +50,4 @@ scan-btn-1.html  <br/>
 slide-btn-1.html  <br/>
 porta-malas-aviao.html <br/>
 loading-icon-1.html <br/>
+glowing-btn-2.html <br/>
