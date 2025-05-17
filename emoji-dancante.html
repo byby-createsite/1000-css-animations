@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emoji Glitch Animation</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+  body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emoji {
+  font-size: 100px;
+  animation: dance 1.5s infinite ease-in-out, glitch 0.2s infinite alternate;
+}
+
+.text {
+  position: absolute;
+  bottom: -50px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  animation: blink 1.5s infinite;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+@keyframes dance {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.2) rotate(10deg); }
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 0 #ff00ff, -2px 0 #00ffcc; }
+  100% { text-shadow: -2px 0 #ff00ff, 2px 0 #00ffcc; }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Fundo com cores alternantes */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff00ff, #00ffcc);
+  opacity: 0.5;
+  animation: colorShift 3s infinite alternate;
+}
+
+@keyframes colorShift {
+  0% { background: linear-gradient(45deg, #ff00ff, #00ffcc); }
+  100% { background: linear-gradient(45deg, #00ffcc, #ff00ff); }
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="emoji">😎</div>
+    <h1 class="text">Vibe On!</h1>
+  </div>
+</body>
+</html>
