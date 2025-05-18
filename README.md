@@ -52,3 +52,4 @@ porta-malas-aviao.html <br/>
 loading-icon-1.html <br/>
 glowing-btn-2.html <br/>
 emoji-dancante.html <br/>
+digitando-na-tela <br/>

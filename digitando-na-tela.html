@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitando na tela</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            color: #00ff00;
+            overflow: hidden;
+        }
+        /*usando white-space e overflow para não pular a linha */
+        .typing {
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 4px solid #00ff00; 
+            font-size: 1.5em;
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        /* after para simular a digitação */
+        .typing::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            width: 4px; 
+            height: 1.2em;
+            background: #00ff00;
+            animation: blink 0.75s step-end infinite;
+        }
+        /* animacao simples blink para piscar */
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        /* cada linha possui sua animação e usando steps para ir passo a passo */
+        #line1 { 
+            animation: typing1 3s steps(22, end) forwards;
+        }
+        /* linha 2 com delay de 8s */
+        #line2 { 
+            opacity:0;
+            animation: typing2 3s steps(13, end) forwards 8s;
+        }
+        /* linha 3 com delay de 16s e todas linhas sincronizadas */
+        #line3 {
+            opacity:0;
+            animation: typing3 3s steps(11, end) forwards 16s; 
+        }
+        /*animacoes para chegar até a width que está sincronizada com o texto e escondendo o icone de digitar */
+        @keyframes typing1 {
+            0% { width: 0; }
+            99%{clip-path:none;}
+            100% { width: 24ch; clip-path: inset(0 8px 0 0); }
+        }
+        @keyframes typing2 {
+            0% { width: 0; opacity:1;}
+            99%{clip-path:none;}
+            100% { width: 14ch; opacity:1;clip-path: inset(0 9px 0 0); } 
+        }
+        @keyframes typing3 {
+            0% { width: 0; opacity:1;}
+            99%{clip-path:none;}
+            100% { width: 14ch; opacity:1; clip-path: inset(0 10px 0 0);}
+        }
+    </style>
+</head>
+<body>
+    <!--Estrutura HTML -->
+    <span class="typing" id="line1">$ hackeando o sistema...</span>
+    <span class="typing" id="line2">$ hello world!</span>
+    <span class="typing" id="line3">$ link na bio</span>
+</body>
+</html>
