@@ -40,7 +40,7 @@ desbloquear-cadeado.html  <br/>
 disco-girando.html  <br/>
 escadas-ilusorias.html  <br/>
 feliz-dia-das-maes.html  <br/>
-fita-inaugural.html  <br/>
+fita-inaugural.html  [CODEPEN] <br/>
 glowing-btn-1.html  <br/>
 lancar-foguete.html  <br/>
 mola-animada.html  <br/>
@@ -53,3 +53,4 @@ loading-icon-1.html <br/>
 glowing-btn-2.html <br/>
 emoji-dancante.html <br/>
 digitando-na-tela <br/>
+caminhão de lixo [CODEPEN] <br/>
