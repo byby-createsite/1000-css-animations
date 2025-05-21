@@ -51,9 +51,10 @@ LICENSE.md <br/>
 ./mola-animada.html -> https://www.instagram.com/reel/DJRnqlDRU1J/ <br/> <br/>
 ./national-flag.html -> https://www.instagram.com/reel/DJb4MA8x0vm/ <br/> <br/>
 ./neon-pulsante.html -> https://www.instagram.com/reel/DJecCliRDqx/ <br/> <br/>
-scan-btn-1.html -> https://www.instagram.com/reel/DJCFhkjxYIQ/<br/>
-slide-btn-1.html-> https://www.instagram.com/reel/ DI9eVkrJZNY/<br/> <br/>
-porta-malas-aviao.html ->  https://www.instagram.com/reel/DJowTc-ug1N/ <br/> <br/>
+./scan-btn-1.html -> https://www.instagram.com/reel/DJCFhkjxYIQ/<br/>
+./slide-btn-1.html-> https://www.instagram.com/reel/DI9eVkrJZNY/<br/> <br/>
+./porta-malas-aviao.html ->  https://www.instagram.com/reel/DJowTc-ug1N/ <br/> <br/>
+./animated-lamp.html ->  https://www.instagram.com/reel/DJ6-Sasxunt/ <br/> <br/>
 
 
 
