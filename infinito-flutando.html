@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinito flutuando</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: monospace;
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+        }
+        /*container pintado todo de branco */
+        .infinito-container {
+            width: 200px;
+            height: 100px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 1) 100%);
+            border-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            animation: flutuar 2s linear infinite, energy-flow 2s linear infinite;
+        }
+        /* animacao ao passar mouse sobre container para girar */
+        .infinito-container:hover{
+            animation:girar 2s linear forwards;
+
+        }
+        /*duas bolas em cada canto do retangulo da cor do body para dar efeito de transparencia e o que sobrar do container vira a borda */
+        .bola-transparente1, .bola-transparente2 {
+            width: 80px;
+            height: 80px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+        }
+
+        .bola-transparente1 {
+            left: 10px;
+        }
+        .bola-transparente2 {
+            right: 10px;
+        }
+        /*retangulo da cor do body no centro para cortar metade das bolas */
+        .retangulo-centro{
+            position:absolute;
+            left:calc(50% - 40px);
+            width: 80px;
+            height: 200px;
+            background: rgb(0, 0, 0);
+        }
+        /*retangulo interno 1 */
+        .retangulo1{
+            z-index:3;
+            position:absolute;
+            left:calc(50%);
+            top:-25%;
+            width: 10px;
+            height: 140px;
+            transform: rotate(42.5deg);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%,
+             rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 1) 100%);
+            animation: energy-flow 2s linear infinite;
+        }
+        /* retangulo interno 2 */
+        .retangulo2{
+            z-index:3;
+            position:absolute;
+            left:calc(50%);
+            top:-25%;
+            width: 10px;
+            height: 160px;
+            transform: rotate(-42.5deg);
+            background: rgb(255, 255, 255);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%,
+             rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 1) 100%);
+            animation: energy-flow 2s linear infinite;
+        }
+        /*animacao leve para flutuar */
+        @keyframes flutuar{
+            0%,100%{transform:translateY(-15px)}
+            50%{transform:translateY(15px)}
+
+        }
+        /*animacao girar */
+        @keyframes girar{
+            0%{transform:rotateX(0deg)}
+            100%{transform:rotateX(180deg)}
+        }
+        /* animacao para fluir energia com background personalizado para  beleza */
+        @keyframes energy-flow {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 200px; }
+        }
+        /* 4 bolas em cada canto para dar uma 'suavidade' entre metade dos circulos e o retangulo */
+        .bola1{
+            z-index:10;
+            background:rgb(0, 0, 0);
+            width:20px;
+            height:10px;
+            border-radius:50%;
+            position:absolute;
+            left:28%;
+            top:-5%;
+            transform:rotate(15deg);
+            
+        }
+        .bola2{
+            z-index:10;
+            background:rgb(0, 0, 0);
+            width:20px;
+            height:10px;
+            border-radius:50%;
+            position:absolute;
+            left:62%;
+            top:-5%;
+            transform:rotate(-15deg);
+            
+        }
+        .bola3{
+            z-index:10;
+            background:rgb(0, 0, 0);
+            width:20px;
+            height:10px;
+            border-radius:50%;
+            position:absolute;
+            left:28%;
+            top:95%;
+            transform:rotate(-15deg);
+            
+        }
+        .bola4{
+            z-index:10;
+            background:rgb(0, 0, 0);
+            width:20px;
+            height:10px;
+            border-radius:50%;
+            position:absolute;
+            left:62%;
+            top:95%;
+            transform:rotate(15deg);
+            
+        }
+    
+    </style>
+</head>
+<body>
+    <!--Estrutura HTML-->
+    <div class="infinito-container">
+        <div class="bola-transparente1"></div>
+        <div class="bola-transparente2"></div>
+        <div class="retangulo1"></div>
+        <div class="retangulo2"></div>
+        <div class="bola1"></div>
+        <div class="bola2"></div>
+        <div class="bola3"></div>
+        <div class="bola4"></div>
+        <div class="retangulo-centro"></div>
+    </div>
+</body>
+</html>
