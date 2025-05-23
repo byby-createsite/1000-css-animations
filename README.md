@@ -48,7 +48,7 @@ Tem uma ideia para uma nova animação CSS? Envie sua sugestão para o e-mail: b
 
 <a href="./lancar-foguete.html">Foguete Decolando</a> -> <a href="https://www.instagram.com/reel/DJPLXwOxO6F/">Vídeo referente</a> <br/><br/>
 
-<a href="./loading-icon-1.html">Ícone de Carregamento</a> -> <a href="https://www.instagram.com/reel/DJrSnzyxRUb/">Vídeo referente</a> <br/><br/>
+<a href="./loading-icon-1.html">Ícone de Carregamento 1</a> -> <a href="https://www.instagram.com/reel/DJrSnzyxRUb/">Vídeo referente</a> <br/><br/>
 
 <a href="./mola-animada.html">Mola Vibrante</a> -> <a href="https://www.instagram.com/reel/DJRnqlDRU1J/">Vídeo referente</a> <br/><br/>
 
@@ -65,6 +65,9 @@ Tem uma ideia para uma nova animação CSS? Envie sua sugestão para o e-mail: b
 <a href="./animated-lamp.html">Lâmpada Animada</a> -> <a href="https://www.instagram.com/reel/DJ6-Sasxunt/">Vídeo referente</a> <br/><br/>
 
 <a href="./infinito-flutuando.html">Infinito Flutuante</a> -> <a href="https://instagram.com/reel/DJ9vJhSJV5U/">Vídeo referente</a> <br/><br/>
+
+<a href="./loading-icon-2.html">Ícone de carregamento 2</a> -> <a href="https://instagram.com/reel//">Vídeo referente</a> <br/><br/>
+
 
 **Welcome to the CSS-Animations Repository**
 
@@ -116,7 +119,7 @@ Have an idea for a new CSS animation? Send your suggestions to: byby.inc.busines
 
 <a href="./lancar-foguete.html">Rocket Launch</a> -> <a href="https://www.instagram.com/reel/DJPLXwOxO6F/">Reference video</a> <br/><br/>
 
-<a href="./loading-icon-1.html">Loading Icon</a> -> <a href="https://www.instagram.com/reel/DJrSnzyxRUb/">Reference video</a> <br/><br/>
+<a href="./loading-icon-1.html">Loading Icon 1 </a> -> <a href="https://www.instagram.com/reel/DJrSnzyxRUb/">Reference video</a> <br/><br/>
 
 <a href="./mola-animada.html">Vibrant Spring</a> -> <a href="https://www.instagram.com/reel/DJRnqlDRU1J/">Reference video</a> <br/><br/>
 
@@ -133,6 +136,8 @@ Have an idea for a new CSS animation? Send your suggestions to: byby.inc.busines
 <a href="./animated-lamp.html">Animated Lamp</a> -> <a href="https://www.instagram.com/reel/DJ6-Sasxunt/">Reference video</a> <br/><br/>
 
 <a href="./infinito-flutuando.html">Floating Infinity</a> -> <a href="https://instagram.com/reel/DJ9vJhSJV5U/">Reference video</a> <br/><br/>
+
+<a href="./loading-icon-2.html">Loading Icon 2</a> -> <a href="https://instagram.com/reel/DJ_26aVxfK2/">Reference video</a> <br/><br/>
 
 
 
