@@ -68,6 +68,8 @@ Tem uma ideia para uma nova animação CSS? Envie sua sugestão para o e-mail: b
 
 <a href="./loading-icon-2.html">Ícone de carregamento 2</a> -> <a href="https://instagram.com/reel/DJ_61d2R54j/">Vídeo referente</a> <br/><br/>
 
+<a href="./loading-icon-3.html">Ícone de carregamento 3</a> -> <a href="https://instagram.com/reel/DKFOZOxxPK7/">Vídeo referente</a> <br/><br/>
+
 
 **Welcome to the CSS-Animations Repository**
 
@@ -140,7 +142,7 @@ Have an idea for a new CSS animation? Send your suggestions to: byby.inc.busines
 <a href="./loading-icon-2.html">Loading Icon 2</a> -> <a href="https://instagram.com/reel/DJ_61d2R54j/">Reference video</a> <br/><br/>
 
 
-
+<a href="./loading-icon-3.html">Loading Icon 3</a> -> <a href="https://instagram.com/reel/DKFOZOxxPK7/">Reference video</a> <br/><br/>
 
 
 
