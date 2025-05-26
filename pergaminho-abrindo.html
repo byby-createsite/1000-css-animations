@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergaminho abrindo</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        body{
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        /*papel aberto com tamanho de background inicial 0 de altura e 90% da largura por causa da perspectiva */
+        .container{
+            background-image: linear-gradient(white,gray);
+            width: 30px;
+            height: 60px;
+            transform:  perspective(150px) rotateY(-30deg);
+            transform-style: preserve-3d;
+            transform-origin: left;
+            background-size: 90% 12px;
+            background-repeat: no-repeat;
+            background-position: 100% center;
+        }
+        /*rolo superior posicionado no topo do centro */
+        .upper{
+            position: absolute;
+            top: 30%;
+            background: rgb(255, 255, 255);
+            width: 30px;
+            height: 10px;
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            border-radius: 10px;
+
+        }
+        /*esfera do rolo superior */
+        .upper::before{
+            position: absolute;
+            left: 70%;
+            content: '';
+            background: black;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border:solid 0.5px white;
+        }
+        /*rolo inferior posicionado no botão do meio */
+        .lower{
+            margin-top: 6%;
+            background: rgb(255, 255, 255);
+            width: 30px;
+            height: 10px;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+        /* esfera do rolo inferior */
+        .lower::before{
+            position: absolute;
+            left: 70%;
+            content: '';
+            background: black;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border:solid 0.5px white;
+        }
+        /* animacao do rolos superior e inferior sincronizadas manualmente com a  abertuda do background ao passar o mouse sobre o container*/
+        .container:hover .upper{
+            animation: effectupperANDsync 1s linear forwards;
+        }
+        .container:hover .lower{
+            animation: effectlowerANDsync 1s linear forwards;
+        }
+        /*texto dentro sincronizado com o final */
+        .container:hover .textInside{
+            animation: syncText 1s linear forwards;
+            
+        }
+        /*abertura do papel */
+        .container:hover{
+            animation: perspectiveANDbackground 0.75s linear forwards;
+        }
+
+        /*animacoes para sincronizar  e sumir por causa da perspectiva, bem como  diminuir a altura para fazer um efeito que está consumindo o papel(pode ser ajustada) */
+        @keyframes effectlowerANDsync{
+            0%{
+                transform: translateY(0) scaleY(1);
+                opacity: 1;
+            }
+            29%{
+                opacity: 1;
+            }
+            30%{
+                opacity: 0;
+            }
+            100%{
+                transform: translateY(27px) scaleY(0.1);
+                opacity: 0;
+            }
+        }
+        @keyframes effectupperANDsync{
+            0%{
+                transform: translateY(0) scaleY(1);
+                opacity: 1;
+            }
+            29%{
+                opacity: 1;
+            }
+            30%{
+                opacity: 0;
+            }
+            100%{
+                transform: translateY(-27px) scaleY(0.1);
+                opacity: 0;
+            }
+        }
+        /*mudando a perspectiva do papel, elevando para cim e tambem aumentando o tamanho, ao mesmo tempo  que o papel abre */
+        @keyframes perspectiveANDbackground{
+
+
+            0%{
+                transform: translateY(0) perspective(150px) rotateY(-30deg) scale(1);
+                background-size: 90% 10px;
+            }
+            100%{
+                transform: translateY(-30px) perspective(15000px) rotateY(30deg) scale(1.5);
+                background-size: 100% 100%;
+            }
+
+        }
+        /*texto dentro */
+        .textInside{
+            opacity: 0;
+            font-size: 4pt;
+            font-family: monospace;
+            text-align: center;
+            word-wrap: break-word;
+            max-width: 100%;
+        }
+        @keyframes syncText{
+            0%{
+                opacity: 0;
+            }
+
+            99%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+       
+
+    </style>
+</head>
+<body>
+    <!--Estrutura HTML-->
+    <div class="container">
+  
+        <div class="upper"></div>
+        <div class="lower"></div>
+        <div class="textInside">abrindo pegaminho</div>
+    </div>
+
+    
+</body>
+</html>
