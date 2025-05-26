@@ -22,8 +22,6 @@ Tem uma ideia para uma nova animação CSS? Envie sua sugestão para o e-mail: b
 
 <a href="./bola-quicando.html">Bola Saltitante</a> -> <a href="https://www.instagram.com/reel/DJUNrbSR6qn/">Vídeo referente</a> <br/><br/>
 
-<a href="./caminhao-de-lixo.html">Caminhão de Coleta</a> [CODEPEN] -> <a href="https://instagram.com/reel/DJ1l02QR55s/">Vídeo referente</a> <br/><br/>
-
 <a href="./carregamento-pulsante.html">Pulso de Carregamento</a> -> <a href="https://www.instagram.com/reel/DJHTH7JROaj/">Vídeo referente</a> <br/><br/>
 
 <a href="./carrinho-passando.html">Carrinho em Movimento</a> -> <a href="https://www.instagram.com/reel/DJmWQ6SR1PL/">Vídeo referente</a> <br/><br/>
@@ -37,8 +35,6 @@ Tem uma ideia para uma nova animação CSS? Envie sua sugestão para o e-mail: b
 <a href="./emoji-dancante.html">Emoji Dançante</a> -> <a href="https://www.instagram.com/reel/DJwcVCNuTvO/">Vídeo referente</a> <br/><br/>
 
 <a href="./escadas-ilusorias.html">Escadas Ilusórias</a> -> <a href="https://www.instagram.com/reel/DJkEsINJWB2/">Vídeo referente</a> <br/><br/>
-
-<a href="./feliz-dia-das-maes.html">Homenagem às Mães</a> [CODEPEN] -> <a href="https://www.instagram.com/reel/DJg_mcwREi5/">Vídeo referente</a> <br/><br/>
 
 <a href="./fita-inaugural.html">Fita de Inauguração</a> -> <a href="https://www.instagram.com/reel/DJMfe7ExhY7/">Vídeo referente</a> <br/><br/>
 
@@ -70,6 +66,7 @@ Tem uma ideia para uma nova animação CSS? Envie sua sugestão para o e-mail: b
 
 <a href="./loading-icon-3.html">Ícone de carregamento 3</a> -> <a href="https://instagram.com/reel/DKFOZOxxPK7/">Vídeo referente</a> <br/><br/>
 
+<a href="./pergaminho-abrindo.html">pergaminho abrindo</a> -> <a href="https://instagram.com/reel//">Vídeo referente</a> <br/><br/>
 
 **Welcome to the CSS-Animations Repository**
 
@@ -95,8 +92,6 @@ Have an idea for a new CSS animation? Send your suggestions to: byby.inc.busines
 
 <a href="./bola-quicando.html">Bouncing Ball</a> -> <a href="https://www.instagram.com/reel/DJUNrbSR6qn/">Reference video</a> <br/><br/>
 
-<a href="./caminhao-de-lixo.html">Garbage Truck</a> [CODEPEN] -> <a href="https://instagram.com/reel/DJ1l02QR55s/">Reference video</a> <br/><br/>
-
 <a href="./carregamento-pulsante.html">Pulsing Loader</a> -> <a href="https://www.instagram.com/reel/DJHTH7JROaj/">Reference video</a> <br/><br/>
 
 <a href="./carrinho-passando.html">Moving Cart</a> -> <a href="https://www.instagram.com/reel/DJmWQ6SR1PL/">Reference video</a> <br/><br/>
@@ -110,8 +105,6 @@ Have an idea for a new CSS animation? Send your suggestions to: byby.inc.busines
 <a href="./emoji-dancante.html">Dancing Emoji</a> -> <a href="https://www.instagram.com/reel/DJwcVCNuTvO/">Reference video</a> <br/><br/>
 
 <a href="./escadas-ilusorias.html">Illusory Stairs</a> -> <a href="https://www.instagram.com/reel/DJkEsINJWB2/">Reference video</a> <br/><br/>
-
-<a href="./feliz-dia-das-maes.html">Mother’s Day Tribute</a> [CODEPEN] -> <a href="https://www.instagram.com/reel/DJg_mcwREi5/">Reference video</a> <br/><br/>
 
 <a href="./fita-inaugural.html">Ribbon Cutting</a> -> <a href="https://www.instagram.com/reel/DJMfe7ExhY7/">Reference video</a> <br/><br/>
 
@@ -141,8 +134,9 @@ Have an idea for a new CSS animation? Send your suggestions to: byby.inc.busines
 
 <a href="./loading-icon-2.html">Loading Icon 2</a> -> <a href="https://instagram.com/reel/DJ_61d2R54j/">Reference video</a> <br/><br/>
 
-
 <a href="./loading-icon-3.html">Loading Icon 3</a> -> <a href="https://instagram.com/reel/DKFOZOxxPK7/">Reference video</a> <br/><br/>
+
+<a href="./pergaminho-abrindo.html">opening Scroll</a> -> <a href="https://instagram.com/reel//">Reference video</a> <br/><br/>
 
 
 
