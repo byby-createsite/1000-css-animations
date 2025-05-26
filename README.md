@@ -20,7 +20,7 @@ Tem uma ideia para uma nova animação CSS? Envie sua sugestão para o e-mail: b
 
 <a href="./abrir-envelope.html">Envelope Animado</a> -> <a href="https://www.instagram.com/reel/DJAPnUeJYRp/">Vídeo referente</a> <br/><br/>
 
-<a href="./bola-quicando.html">Bola Saltitante</a> -> <a href="https://www.instagram.com/reel/DJUNrbSR6qn/">Vídeo referente</a> <br/><br/>
+<a href="./bola-quicando.html">Bola Saltitante</a> -> <a href="https://www.instagram.com/reel/DJUTozzReEc/">Vídeo referente</a> <br/><br/>
 
 <a href="./carregamento-pulsante.html">Pulso de Carregamento</a> -> <a href="https://www.instagram.com/reel/DJHTH7JROaj/">Vídeo referente</a> <br/><br/>
 
@@ -66,7 +66,7 @@ Tem uma ideia para uma nova animação CSS? Envie sua sugestão para o e-mail: b
 
 <a href="./loading-icon-3.html">Ícone de carregamento 3</a> -> <a href="https://instagram.com/reel/DKFOZOxxPK7/">Vídeo referente</a> <br/><br/>
 
-<a href="./pergaminho-abrindo.html">Pergaminho abrindo</a> -> <a href="https://instagram.com/reel//">Vídeo referente</a> <br/><br/>
+<a href="./pergaminho-abrindo.html">Pergaminho abrindo</a> -> <a href="https://instagram.com/reel/DKHwktMxrwe/">Vídeo referente</a> <br/><br/>
 
 **Welcome to the CSS-Animations Repository**
 
@@ -90,7 +90,7 @@ Have an idea for a new CSS animation? Send your suggestions to: byby.inc.busines
 
 <a href="./abrir-envelope.html">Animated Envelope</a> -> <a href="https://www.instagram.com/reel/DJAPnUeJYRp/">Reference video</a> <br/><br/>
 
-<a href="./bola-quicando.html">Bouncing Ball</a> -> <a href="https://www.instagram.com/reel/DJUNrbSR6qn/">Reference video</a> <br/><br/>
+<a href="./bola-quicando.html">Bouncing Ball</a> -> <a href="https://www.instagram.com/reel/DJUTozzReEc/">Reference video</a> <br/><br/>
 
 <a href="./carregamento-pulsante.html">Pulsing Loader</a> -> <a href="https://www.instagram.com/reel/DJHTH7JROaj/">Reference video</a> <br/><br/>
 
@@ -136,7 +136,7 @@ Have an idea for a new CSS animation? Send your suggestions to: byby.inc.busines
 
 <a href="./loading-icon-3.html">Loading Icon 3</a> -> <a href="https://instagram.com/reel/DKFOZOxxPK7/">Reference video</a> <br/><br/>
 
-<a href="./pergaminho-abrindo.html">Opening Scroll</a> -> <a href="https://instagram.com/reel//">Reference video</a> <br/><br/>
+<a href="./pergaminho-abrindo.html">Opening Scroll</a> -> <a href="https://instagram.com/reel/DKHwktMxrwe/">Reference video</a> <br/><br/>
 
 
 
