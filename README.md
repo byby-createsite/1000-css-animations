@@ -68,7 +68,7 @@ Tem uma ideia para uma nova animação CSS? Envie sua sugestão para o e-mail: b
 
 <a href="./pergaminho-abrindo.html">Pergaminho abrindo</a> -> <a href="https://instagram.com/reel/DKHwktMxrwe/">Vídeo referente</a> <br/><br/>
 
-<a href="./feather-quill-pen.html"></a> -> Caneta de pena <a href="https://instagram.com/reel//">Vídeo referente</a> <br/><br/>
+<a href="./feather-quill-pen.html">Caneta de pena</a> ->  <a href="https://instagram.com/reel//">Vídeo referente</a> <br/><br/>
 
 **Welcome to the CSS-Animations Repository**
 
