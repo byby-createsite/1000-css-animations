@@ -68,6 +68,8 @@ Tem uma ideia para uma nova animação CSS? Envie sua sugestão para o e-mail: b
 
 <a href="./pergaminho-abrindo.html">Pergaminho abrindo</a> -> <a href="https://instagram.com/reel/DKHwktMxrwe/">Vídeo referente</a> <br/><br/>
 
+<a href="./feather-quill-pen.html"></a> -> Caneta de pena <a href="https://instagram.com/reel//">Vídeo referente</a> <br/><br/>
+
 **Welcome to the CSS-Animations Repository**
 
 This repository was created for ByBy, an innovative company in the educational sector, aimed at sharing knowledge and inspiration.
@@ -137,6 +139,8 @@ Have an idea for a new CSS animation? Send your suggestions to: byby.inc.busines
 <a href="./loading-icon-3.html">Loading Icon 3</a> -> <a href="https://instagram.com/reel/DKFOZOxxPK7/">Reference video</a> <br/><br/>
 
 <a href="./pergaminho-abrindo.html">Opening Scroll</a> -> <a href="https://instagram.com/reel/DKHwktMxrwe/">Reference video</a> <br/><br/>
+
+<a href="./feather-quill-pen.html"> Feather Quill Pen </a> -><a href="https://instagram.com/reel//">Reference video</a> <br/><br/>
 
 
 
