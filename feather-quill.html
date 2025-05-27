@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feather Quill</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: black;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: monospace;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .writing-scene {
+            position: relative;
+            scale: 0.5;
+            transform: translateY(-50px);
+        }
+
+        .quill {
+            width: 60px;
+            height: 100px;
+            position: relative;
+            animation: writing 3s ease-in-out infinite;
+        }
+
+        .feather-shaft {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 2px;
+            height: 100px;
+            background: #FFFFFF;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .feather-barb {
+            position: absolute;
+            background: #F5F5F5;
+            border-radius: 0 15px 15px 0;
+            opacity: 0.9;
+        }
+
+        .barb-left {
+            left: 50%;
+            transform: translateX(-100%) rotate(-45deg);
+        }
+
+        .barb-right {
+            left: 50%;
+            transform: rotate(45deg);
+        }
+
+        .barb-1 { top: 5px; width: 20px; height: 6px; }
+        .barb-2 { top: 15px; width: 25px; height: 8px; }
+        .barb-3 { top: 30px; width: 30px; height: 10px; }
+        .barb-4 { top: 50px; width: 25px; height: 8px; }
+        .barb-5 { top: 70px; width: 15px; height: 6px; }
+
+        .nib {
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 15px;
+            background: #000000;
+            z-index: 15;
+        }
+
+        .paper {
+            position: absolute;
+            bottom: -80px;
+            left: -100px;
+            width: 200px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        .text-line {
+            position: absolute;
+            height: 2px;
+            background: #FFFFFF;
+            opacity: 0;
+            animation: textAppear 3s ease-in-out infinite;
+        }
+
+        .line-1 {
+            top: 20px;
+            left: 20px;
+            width: 0;
+            animation-delay: 0.5s;
+        }
+
+        .line-2 {
+            top: 35px;
+            left: 20px;
+            width: 0;
+            animation-delay: 1.5s;
+        }
+
+        .line-3 {
+            top: 50px;
+            left: 20px;
+            width: 0;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes writing {
+            0% { 
+                transform: translateX(0) translateY(0) rotate(-25deg);
+            }
+            25% { 
+                transform: translateX(10px) translateY(5px) rotate(-20deg);
+            }
+            50% { 
+                transform: translateX(20px) translateY(8px) rotate(-25deg);
+            }
+            75% { 
+                transform: translateX(30px) translateY(5px) rotate(-20deg);
+            }
+            100% { 
+                transform: translateX(0) translateY(0) rotate(-25deg);
+            }
+        }
+
+        @keyframes textAppear {
+            0% { 
+                width: 0;
+                opacity: 0;
+            }
+            30% { 
+                opacity: 1;
+            }
+            60% { 
+                width: 80px;
+                opacity: 1;
+            }
+            100% { 
+                width: 80px;
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="writing-scene">
+        <div class="quill">
+            <div class="feather-shaft"></div>
+            
+            <!-- Barbas esquerdas -->
+            <div class="feather-barb barb-left barb-1"></div>
+            <div class="feather-barb barb-left barb-2"></div>
+            <div class="feather-barb barb-left barb-3"></div>
+            <div class="feather-barb barb-left barb-4"></div>
+            <div class="feather-barb barb-left barb-5"></div>
+            
+            <!-- Barbas direitas -->
+            <div class="feather-barb barb-right barb-1"></div>
+            <div class="feather-barb barb-right barb-2"></div>
+            <div class="feather-barb barb-right barb-3"></div>
+            <div class="feather-barb barb-right barb-4"></div>
+            <div class="feather-barb barb-right barb-5"></div>
+            
+            <div class="nib"></div>
+        </div>
+        
+        <div class="paper">
+            <div class="text-line line-1"></div>
+            <div class="text-line line-2"></div>
+            <div class="text-line line-3"></div>
+        </div>
+    </div>
+</body>
+</html>
