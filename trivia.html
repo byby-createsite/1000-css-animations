@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia</title>
+    <style>
+        *{
+          margin:0; 
+          padding:0;
+
+        }
+        /*fundo com gradiente animado*/
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-image:linear-gradient(180deg, lightblue,rgb(18, 178, 231));
+            background-size: 100% 150vh;
+            background-position: 100% -50vh;
+            background-repeat: no-repeat;
+            animation:simpleBackground  2s linear infinite;
+            width:100vw;
+            height:100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            user-select:none;
+            overflow:hidden;
+        }
+        /*classe em comum entre as perguntas */
+        .questions{
+            position:absolute;
+            background: white;
+            width:30%;
+            height:20%;
+            border-radius:10px;
+            box-shadow: 2px 2px 20px 2px black;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items:flex-end;
+            transform-origin: left center;
+            opacity:1;
+        }
+        /* classe em comum entre as respostas */
+        .questions .yes{
+            position: relative;
+            bottom: 20%;
+            background:lime;
+            padding:5px;
+            border-radius:1px;
+            width:60px;
+            text-align:center;
+            cursor: pointer;
+
+        }
+        /* classe em comum entre as respostas */
+        .questions .no{
+            position: relative;
+            bottom: 20%;
+            background:red;
+            padding:5px;
+            border-radius:1px;
+            width:60px;
+            text-align:center;
+            cursor: pointer;
+        }
+        /* cada pergunta individualmente com um z-index(profundidade diferente) e um pequeno transform entre eles */
+        .question-1{
+            z-index: 10;
+        }
+        .question-1 .q{
+            position: absolute;
+            bottom:65%;
+        }
+        .question-2{
+            z-index: 9;
+            transform: translate(1%,2%);
+        }
+        .question-2 .q{
+            position: absolute;
+            bottom: 62%;
+        }
+        .question-3{
+            z-index: 8;
+            transform: translate(2%,3%);
+        }
+        .question-3 .q{
+            position: absolute;
+            bottom: 59%;
+        }
+        .question-4{
+            z-index: 7;
+            transform: translate(3%,4%);
+        }
+        .question-4 .q{
+            position: absolute;
+            bottom: 62%;
+        }
+        .question-5{
+            z-index: 6;
+            transform: translate(4%,5%);
+        }
+        .question-5 .q{
+            position: absolute;
+            bottom: 56%;
+        }
+        .question-6{
+            z-index: 5;
+            transform: translate(5%,6%);
+        }
+        .question-6 .q{
+            position: absolute;
+            bottom: 53%;
+        }
+        .question-7{
+            z-index: 4;
+            transform: translate(6%,7%);
+        }
+        .question-7 .q{
+            position: absolute;
+            bottom: 50%;
+        }
+        .question-8{
+            z-index: 3;
+            transform: translate(7%,8%);
+        }
+        .question-8 .q{
+            position: absolute;
+            bottom: 47%;
+        }
+        .question-9{
+            z-index: 2;
+            transform: translate(8%,9%);
+        }
+        .question-9 .q{
+            position: absolute;
+            bottom: 44%;
+        }
+        .question-10{
+            z-index: 1;
+            transform: translate(9%,10%);
+        }
+        .question-10 .q{
+            position: absolute;
+            bottom: 41%;
+        }
+        /*ultima classe */
+        .last{
+            z-index:0;
+            transform: translate(10%,11%);
+        }
+        .last .score{
+           position: absolute;
+           bottom: 38%; 
+
+        }
+        .last .restart{
+            position: relative;
+            bottom: 20%;
+            background:goldenrod;
+            padding:5px;
+            border-radius:1px;
+            width:60px;
+            text-align:center;
+            cursor: pointer;
+        }
+        /*animacao do background */
+        @keyframes simpleBackground{
+            0%,100%{background-position: 100% -50vh;}
+            50%{background-position:100% 0vh}
+        }
+        /*animacao pop para usar com javascript toda vez que clicar em uma resposta */
+        @keyframes pop{
+            0%{transform:rotateZ(0);opacity:1}
+            20%{opacity:1;}
+            60%{opacity:0;}
+            100%{transform:rotateZ(-90deg); opacity:0;}
+        }
+    </style>
+</head>
+<body>
+    <!--Estrutura HTML-->
+    <div class=" questions question-1">
+        <div class="q">Question 1</div>
+        <div class="yes">Yes</div>
+        <div class="no">No</div>
+    </div>
+    <div class="questions question-2">
+        <div class="q">Question 2</div>
+        <div class="yes">Yes</div>
+        <div class="no">No</div>
+    </div>
+        <div class="questions question-3">
+        <div class="q">Question 3</div>
+        <div class="yes">Yes</div>
+        <div class="no">No</div>
+    </div>
+        <div class="questions question-4">
+        <div class="q">Question 4</div>
+        <div class="yes">Yes</div>
+        <div class="no">No</div>
+    </div>
+        <div class="questions question-5">
+        <div class="q">Question 5</div>
+        <div class="yes">Yes</div>
+        <div class="no">No</div>
+    </div>
+        <div class="questions question-6">
+        <div class="q">Question 6</div>
+        <div class="yes">Yes</div>
+        <div class="no">No</div>
+    </div>
+        <div class="questions question-7">
+        <div class="q">Question 7</div>
+        <div class="yes">Yes</div>
+        <div class="no">No</div>
+    </div>
+        <div class="questions question-8">
+        <div class="q">Question 8</div>
+        <div class="yes">Yes</div>
+        <div class="no">No</div>
+    </div>
+        <div class="questions question-9">
+        <div class="q">Question 9</div>
+        <div class="yes">Yes</div>
+        <div class="no">No</div>
+    </div>
+        <div class="questions question-10">
+        <div class="q">Question 10</div>
+        <div class="yes">Yes</div>
+        <div class="no">No</div>
+    </div>
+
+    <div class="questions last">
+        <div class="score">Score: your score</div>
+        <div class="restart">restart</div>
+    </div>
+
+    <script>
+        /*script basico */
+        document.addEventListener("click",(e)=>{
+            if(e.target.className.includes("yes") || e.target.className.includes("no")){
+                e.target.parentNode.style.animation = "pop 1s linear forwards"
+            }
+
+        })
+    </script>
+    
+</body>
+</html>

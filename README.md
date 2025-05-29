@@ -70,7 +70,9 @@ Tem uma ideia para uma nova animação CSS? Envie sua sugestão para o e-mail: b
 
 <a href="./feather-quill-pen.html">Caneta de pena</a> ->  <a href="https://instagram.com/reel/DKKowNxJ6t4/">Vídeo referente</a> <br/><br/>
 
-<a href="./futuristic-login.html"> Login futurista </a> -><a href="https://instagram.com/reel//">Vídeo referente</a> <br/><br/>
+<a href="./futuristic-login.html"> Login futurista </a> -><a href="https://instagram.com/reel/DKNS1hXJrPW/">Vídeo referente</a> <br/><br/>
+
+<a href="./trivia.html"> Trivia </a> -><a href="https://instagram.com/reel/DKP9tvkpfnj/">Vídeo referente</a> <br/><br/>
 
 
 **Welcome to the CSS-Animations Repository**
@@ -145,7 +147,9 @@ Have an idea for a new CSS animation? Send your suggestions to: byby.inc.busines
 
 <a href="./feather-quill-pen.html"> Feather Quill Pen </a> -><a href="https://instagram.com/reel/DKKowNxJ6t4/">Reference video</a> <br/><br/>
 
-<a href="./futuristic-login.html"> futuristic login </a> -><a href="https://instagram.com/reel//">Reference video</a> <br/><br/>
+<a href="./futuristic-login.html"> Futuristic login </a> -><a href="https://instagram.com/reel/DKNS1hXJrPW/">Reference video</a> <br/><br/>
+
+<a href="./trivia.html"> Trivia </a> -><a href="https://instagram.com/reel/DKP9tvkpfnj/">Reference video</a> <br/><br/>
 
 
 
