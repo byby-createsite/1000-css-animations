@@ -158,7 +158,7 @@ Have an idea for a new CSS animation? Send your suggestions to: byby.inc.busines
 
 <a href="./loading-icon-4.html">Loading Icon 4</a> -><a href="https://instagram.com/reel/DKSVaWdJbiJ/">Reference Video</a> <br/><br/>
 
-<a href="./loading-icon-4.html">Rotating headphones</a> -><a href="https://instagram.com/reel/DKYSWSkJOmr/">Reference Video</a> <br/><br/>
+<a href="./rotating-headphones.html">Rotating headphones</a> -><a href="https://instagram.com/reel/DKYSWSkJOmr/">Reference Video</a> <br/><br/>
 
 
 
