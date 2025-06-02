@@ -75,6 +75,11 @@ Tem uma ideia para uma nova animação CSS? Envie sua sugestão para o e-mail: b
 <a href="./trivia.html"> Trivia </a> -><a href="https://instagram.com/reel/DKP9tvkpfnj/">Vídeo referente</a> <br/><br/>
 
 
+<a href="./loading-icon-4.html"> Ícone de carregamento 4  </a> -><a href="https://instagram.com/reel/DKSVaWdJbiJ/">Vídeo referente</a> <br/><br/>
+
+<a href="./rotating-headphones.html"> Fones de ouvidos rodando </a> -><a href="https://instagram.com/reel/DKYSWSkJOmr/">Vídeo referente</a> <br/><br/>
+
+
 **Welcome to the CSS-Animations Repository**
 
 This repository was created for ByBy, an innovative company in the educational sector, aimed at sharing knowledge and inspiration.
@@ -151,8 +156,9 @@ Have an idea for a new CSS animation? Send your suggestions to: byby.inc.busines
 
 <a href="./trivia.html"> Trivia </a> -><a href="https://instagram.com/reel/DKP9tvkpfnj/">Reference video</a> <br/><br/>
 
+<a href="./loading-icon-4.html">Loading Icon 4</a> -><a href="https://instagram.com/reel/DKSVaWdJbiJ/">Reference Video</a> <br/><br/>
 
-
+<a href="./loading-icon-4.html">Rotating headphones</a> -><a href="https://instagram.com/reel/DKYSWSkJOmr/">Reference Video</a> <br/><br/>
 
 
 
