@@ -75,7 +75,7 @@ Tem uma ideia para uma nova animação CSS? Envie sua sugestão para o e-mail: b
 
 <a href="./loading-icon-4.html">Ícone de carregamento 4</a> <br/><br/>
 
-<a href="./rotating-headphones.html">Fones de ouvidos rodando</a> <br/><br/>
+<a href="./rotating-headphones.html">Fones de ouvidos 3d</a> <br/><br/>
 
 **Welcome to the CSS-Animations Repository**
 
@@ -154,4 +154,4 @@ Have an idea for a new CSS animation? Send your suggestions to: byby.inc.busines
 
 <a href="./loading-icon-4.html">Loading Icon 4</a> <br/><br/>
 
-<a href="./rotating-headphones.html">Rotating headphones</a> <br/><br/>
+<a href="./rotating-headphones.html">3d headphones</a> <br/><br/>
