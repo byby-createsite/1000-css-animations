@@ -82,7 +82,7 @@ Ou instagram constado neste readme
 
 <a href="./rotating-headphones.html">Fones de ouvidos 3d</a> <br/><br/>
 
-
+<a href="./oculos-de-sol.html">Óculos de sol</a> <br/><br/>
 
 **Welcome to the CSS-Animations Repository**
 
@@ -167,3 +167,5 @@ Or Instagram listed in this readme
 <a href="./loading-icon-4.html">Loading Icon 4</a> <br/><br/>
 
 <a href="./rotating-headphones.html">3d headphones</a> <br/><br/>
+
+<a href="./oculos-de-sol.html">Sunglasses</a> <br/><br/>
