@@ -4,14 +4,19 @@ Este repositório foi desenvolvido para a ByBy, uma empresa inovadora no setor e
 
 **O que você encontrará aqui**
 
-Aqui estão disponíveis todas as animações CSS compartilhadas no Instagram da ByBy: instagram.com/byby.inc.
+Aqui estão disponíveis todas as animações criadas com CSS compartilhadas no Instagram da <a href="https://instagram.com/byby.inc">ByBy</a>
 Todas as animações são open-source, permitindo que qualquer pessoa as visualize, utilize ou modifique.
 
-**Contribuições e Sugestões**
+**Contribuições**
 
-Tem uma ideia para uma nova animação CSS? Envie sua sugestão para o e-mail: byby.inc.business@gmail.com. Sua contribuição é muito bem-vinda!
+Se sinta livre para contribuir com este repositório. 
 
-<br/><br/> <br/>
+**Contato para qualquer questão**
+
+E-mail: byby.inc.business@gmail.com.
+Ou instagram constado neste readme
+
+<br/><br/><br/>
 
 <a href="./LICENSE.md">Licença</a> <br/><br/>
 
@@ -77,18 +82,25 @@ Tem uma ideia para uma nova animação CSS? Envie sua sugestão para o e-mail: b
 
 <a href="./rotating-headphones.html">Fones de ouvidos 3d</a> <br/><br/>
 
+
+
 **Welcome to the CSS-Animations Repository**
 
-This repository was created for ByBy, an innovative company in the educational sector, aimed at sharing knowledge and inspiration.
+This repository was developed for ByBy, an innovative company in the educational sector, with the goal of sharing knowledge and inspiration.
 
-**What You'll Find Here**
+**What you will find here**
 
-You'll find all the CSS animations posted on ByBy's Instagram: instagram.com/byby.inc.
-These animations are open-source, meaning anyone can view, use, or modify them.
+Here you will find all the animations created with CSS shared on Instagram by <a href="https://instagram.com/byby.inc">ByBy</a>
+All animations are open source, allowing anyone to view, use or modify them.
 
-**Contributions and Suggestions**
+**Contributions**
 
-Have an idea for a new CSS animation? Send your suggestions to: byby.inc.business@gmail.com. Your contributions are greatly appreciated!
+Feel free to contribute to this repository.
+
+**Contact for any questions**
+
+Email: byby.inc.business@gmail.com.
+Or Instagram listed in this readme
 
  <br/><br/><br/>
 
