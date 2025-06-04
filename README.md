@@ -13,7 +13,7 @@ Se sinta livre para contribuir com este repositório.
 
 **Contato para qualquer questão**
 
-E-mail: byby.inc.business@gmail.com.
+E-mail: byby.inc.business@gmail.com. <br/>
 Ou instagram constado neste readme
 
 <br/><br/><br/>
@@ -99,7 +99,7 @@ Feel free to contribute to this repository.
 
 **Contact for any questions**
 
-Email: byby.inc.business@gmail.com.
+Email: byby.inc.business@gmail.com.  <br/>
 Or Instagram listed in this readme
 
  <br/><br/><br/>
