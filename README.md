@@ -84,6 +84,8 @@ Ou instagram constado neste readme
 
 <a href="./oculos-de-sol.html">Óculos de sol</a> <br/><br/>
 
+<a href="./loading-icon-5.html">ícone de carregamento 5</a> <br/><br/>
+
 **Welcome to the CSS-Animations Repository**
 
 This repository was developed for ByBy, an innovative company in the educational sector, with the goal of sharing knowledge and inspiration.
@@ -169,3 +171,5 @@ Or Instagram listed in this readme
 <a href="./rotating-headphones.html">3d headphones</a> <br/><br/>
 
 <a href="./oculos-de-sol.html">Sunglasses</a> <br/><br/>
+
+<a href="./loading-icon-5.html">Loading icon 5</a> <br/><br/>

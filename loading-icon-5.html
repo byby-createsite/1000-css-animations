@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loading icon 5</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform-style: preserve-3d;
+            transform: rotateY(1deg);
+            animation: rotateH 5s linear forwards;
+            animation-delay: 3s;
+        }
+        @keyframes rotateH{
+            0%{transform:rotateY(1deg);}
+            100%{transform: rotateY(90deg);}
+        }
+
+        .cylinder {
+            position: relative;
+            width: 200px;
+            height: 10px;
+            transform-style: preserve-3d;
+            transform: rotateX(90deg) rotateY(-90deg);
+        }
+
+        .cylinderNano{
+           position: absolute;
+           width: 30px;
+           height: 1.5px;
+           transform-style: preserve-3d;
+           transform: rotateZ(90deg)  translateZ(45px);
+        }
+     
+        .cylinder-nano-top{
+            border: 1px solid #f8f9fa;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            top: -30px;
+            left: 0;
+            transform: rotateX(90deg);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        } 
+        .cylinder-nano-bottom{
+            border: 40px solid #f1f3f4;
+            background: rgb(0, 0, 0);
+            position: absolute;
+            width: 40px;
+            height:40px;
+            border-radius: 50%;
+            top: -30px;
+            left: 0;
+            transform: rotateX(90deg);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
+        } 
+        .other-side{
+            top:-56px;
+        }
+        .bottom-side{
+            top:-56px;
+        }
+
+        .cylinder-nano-segment{
+            position: absolute;
+            width: 2.5px;
+            height: 30px;
+            left: 55.5px;
+            top: 0;
+            transform-origin: 6px 150px;
+            background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+            border: 2px solid #f1f3f4;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .cylinder-segment {
+            position: absolute;
+            width: 12px;
+            height: 92px;
+            left: 94px;
+            top: 1px;
+            transform-origin: 6px 150px;
+            background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+            border: 3px solid #f1f3f4;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+       
+        .left-ring{
+            position: absolute;
+            left: -15px;
+            top: 0;
+            transform-style: preserve-3d;
+            transform: rotateZ(-20deg);
+        }
+        .right-ring{
+            position: absolute;
+            right: -20px;
+            top: 0;
+            transform-style: preserve-3d;
+            transform: rotateZ(20deg);
+        }
+  
+        .cylinder-segment:nth-child(1) {
+            transform: rotateY(0deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(2){
+            transform: rotateY(6deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(3){
+            transform: rotateY(12deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(4) {
+            transform: rotateY(18deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(5) {
+            transform: rotateY(24deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(6) {
+            transform: rotateY(30deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(7) {
+            transform: rotateY(36deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(8) {
+            transform: rotateY(42deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(9) {
+            transform: rotateY(48deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(10) {
+            transform: rotateY(54deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(11) {
+            transform: rotateY(60deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(12) {
+            transform: rotateY(66deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(13) {
+            transform: rotateY(72deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(14) {
+            transform: rotateY(78deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(15) {
+            transform: rotateY(84deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(16) {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(17) {
+            transform: rotateY(96deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(18) {
+            transform: rotateY(102deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(19) {
+            transform: rotateY(108deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(20) {
+            transform: rotateY(114deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(21) {
+            transform: rotateY(120deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(22) {
+            transform: rotateY(126deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(23) {
+            transform: rotateY(132deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(24) {
+            transform: rotateY(138deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(25) {
+            transform: rotateY(144deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(26) {
+            transform: rotateY(150deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(27) {
+            transform: rotateY(156deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(28) {
+            transform: rotateY(162deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(29) {
+            transform: rotateY(168deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(30) {
+            transform: rotateY(174deg) translateZ(100px);
+        }
+        .cylinder-segment:nth-child(31) {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+      
+
+        .cylinder-nano-segment:nth-child(1) {
+            transform: rotateY(0deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(2) {
+            transform: rotateY(6deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(3) {
+            transform: rotateY(12deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(4) {
+            transform: rotateY(18deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(5) {
+            transform: rotateY(24deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(6) {
+            transform: rotateY(30deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(7) {
+            transform: rotateY(36deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(8) {
+            transform: rotateY(42deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(9) {
+            transform: rotateY(48deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(10) {
+            transform: rotateY(54deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(11) {
+            transform: rotateY(60deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(12) {
+            transform: rotateY(66deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(13) {
+            transform: rotateY(72deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(14) {
+            transform: rotateY(78deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(15) {
+            transform: rotateY(84deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(16) {
+            transform: rotateY(90deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(17) {
+            transform: rotateY(96deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(18) {
+            transform: rotateY(102deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(19) {
+            transform: rotateY(108deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(20) {
+            transform: rotateY(114deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(21) {
+            transform: rotateY(120deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(22) {
+            transform: rotateY(126deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(23) {
+            transform: rotateY(132deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(24) {
+            transform: rotateY(138deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(25) {
+            transform: rotateY(144deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(26) {
+            transform: rotateY(150deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(27) {
+            transform: rotateY(156deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(28) {
+            transform: rotateY(162deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(29) {
+            transform: rotateY(168deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(30) {
+            transform: rotateY(174deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(31) {
+            transform: rotateY(180deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(32) {
+            transform: rotateY(186deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(33) {
+            transform: rotateY(192deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(34) {
+            transform: rotateY(198deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(35) {
+            transform: rotateY(204deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(36) {
+            transform: rotateY(210deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(37) {
+            transform: rotateY(216deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(38) {
+            transform: rotateY(222deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(39) {
+            transform: rotateY(228deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(40) {
+            transform: rotateY(234deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(41) {
+            transform: rotateY(240deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(42) {
+            transform: rotateY(246deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(43) {
+            transform: rotateY(252deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(44) {
+            transform: rotateY(258deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(45) {
+            transform: rotateY(264deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(46) {
+            transform: rotateY(270deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(47) {
+            transform: rotateY(276deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(48) {
+            transform: rotateY(282deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(49) {
+            transform: rotateY(288deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(50) {
+            transform: rotateY(294deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(51) {
+            transform: rotateY(300deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(52) {
+            transform: rotateY(306deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(53) {
+            transform: rotateY(312deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(54) {
+            transform: rotateY(318deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(55) {
+            transform: rotateY(324deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(56) {
+            transform: rotateY(330deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(57) {
+            transform: rotateY(336deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(58) {
+            transform: rotateY(342deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(59) {
+            transform: rotateY(348deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(60) {
+            transform: rotateY(354deg) translateZ(60px);
+        }
+
+        .loading-container {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 3px;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .loading-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0%;
+            height: 100%;
+            background: white;
+            border-radius: 3px;
+            animation: loadReverse 12s linear forwards;
+            animation-delay:3s;
+        }
+
+        @keyframes loadReverse {
+            0% {
+                width: 0%;
+
+            }
+            50% {
+                width: 100%;
+     
+            }
+            100% {
+                width: 100%;
+
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!--Estrutura HTML-->
+    <div class="container">
+
+        <div class="cylinder" id="cylinder">
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+            <div class="cylinder-segment"></div>
+           
+            
+        </div>
+
+        
+
+        <div class="left-ring">
+            <div class="cylinderNano">
+     <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+
+
+                <div class="cylinder-nano-top"></div>
+                <div class="cylinder-nano-bottom bottom-side"></div>
+ 
+            </div>
+        </div>
+
+        <div class="right-ring">
+            <div class="cylinderNano">
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+                <div class="cylinder-nano-segment"></div>
+
+                <div class="cylinder-nano-top other-side"></div>
+                <div class="cylinder-nano-bottom"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="loading-container">
+            
+    </div>
+</body>
+</html>
