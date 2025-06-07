@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>balões subindo</title>
+    <style>
+        /*céu azul */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            background: linear-gradient(to bottom, #87CEEB, #E0F6FF);
+            overflow: hidden;
+        }
+        /*container para agrupar os balões e animar */
+        .balloon-container {
+            position: relative;
+            display: flex;
+            bottom:70px;
+            animation: subirExplodir 10s linear forwards;
+        }
+        /*animação simples translateY */
+        @keyframes subirExplodir{
+            0%{
+                transform:translateY(0) scale(1);
+            }
+            94%{
+                transform:translateY(-1000%) scale(1);
+            }
+            95%{
+                transform:translateY(-1000%) scale(0.8);
+            }
+            100%{transform:translateY(-1000%) scale(0);}
+        }
+        /*border radius para parecer um balao */
+        .balloon {
+            width: 60px;
+            height: 80px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        }
+
+    
+        /*cada cor com posicionamento diferente para amarrar em um ponto */
+        .blue { background: #1E90FF;display:flex; transform:rotateZ(-25deg) translateY(20px) translateX(32px);}
+        .blue::after{
+            content:'';
+            position:absolute;
+            width:2px;
+            left:50%;
+            bottom:-80px;
+            height:80px;
+            background:black;
+        }
+        .red { background: #FF4500;display:flex; transform:rotateZ(-15deg); }
+        .red::after{
+        content:'';
+        position:absolute;
+        width:2px;
+        left:50%;
+        bottom:-80px;
+        height:80px;
+        background:black;
+        }
+        .yellow { background: #FFD700;display:flex; transform:rotateZ(15deg); }
+        .yellow::after{
+        content:'';
+        position:absolute;
+        width:2px;
+        left:50%;
+        bottom:-80px;
+        height:80px;
+        background:black;
+        }
+        .purple { background: #800080;display:flex; transform:rotateZ(25deg) translateY(20px) translateX(-32px);}
+        .purple:after{
+        content:'';
+        position:absolute;
+        width:2px;
+        left:50%;
+        bottom:-80px;
+        height:80px;
+        background:black;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!--Estrutura HTML-->
+    <div class="balloon-container">
+        <div class="balloon blue"></div>
+        <div class="balloon red"></div>
+        <div class="balloon yellow"></div>
+        <div class="balloon purple"></div>
+    </div>
+</body>
+</html>
