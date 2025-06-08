@@ -88,6 +88,8 @@ Ou instagram constado neste readme
 
 <a href="./baloes-subindo.html">Balões subindo</a> <br/><br/>
 
+<a href="./coin-flip-game.html">Cara ou Coroa</a> <br/><br/>
+
 
 **Welcome to the CSS-Animations Repository**
 
@@ -178,3 +180,6 @@ Or Instagram listed in this readme
 <a href="./loading-icon-5.html">Loading icon 5</a> <br/><br/>
 
 <a href="./baloes-subindo.html">Emerging balloons</a> <br/><br/>
+
+
+<a href="./coin-flip-game.html">Coin flip game</a> <br/><br/>

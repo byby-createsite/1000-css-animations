@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin flip game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #000000 0%, #1a1a2e 50%, #16213e 100%);
+            font-family: Arial, sans-serif;
+        }
+        /*container do jogo*/
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:center;
+            gap: 50px;
+        }
+        /*container do cilindro com scaleY para ajustar a altura sem deformar */
+        .cylinder-container {
+            transform-style: preserve-3d;
+            transform:rotateX(0) scaleY(0.35);
+        }
+        /*animacao para o cilindro agrupado */
+        .cylinder-container.flipping {
+            animation: flipflip 2s linear forwards;
+        }
+
+        @keyframes flipflip{
+            0%{
+                transform: translateY(0) rotateX(0) scaleY(0.35);
+            }
+            50%{
+                transform: translateY(-300px) rotateX(1080deg) scaleY(0.35);
+            }
+            100%{
+                transform: translateY(0) rotateX(0) scaleY(0.35);
+            }
+        }
+        /*segmentos formando 360deg para fazer um cilindro com altura reduzida (moeda)*/
+        .cylinder-nano-segment{
+            position: absolute;
+            width: 2.5px;
+            height: 30px;
+            left: 55.5px;
+            top: 0;
+            transform-origin: 6px 150px;
+            background: gold;
+            border: 2px solid goldenrod;
+        }
+        /*tudo */  
+        .cylinder-nano-segment:nth-child(1) {
+            transform: rotateY(0deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(2) {
+            transform: rotateY(6deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(3) {
+            transform: rotateY(12deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(4) {
+            transform: rotateY(18deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(5) {
+            transform: rotateY(24deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(6) {
+            transform: rotateY(30deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(7) {
+            transform: rotateY(36deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(8) {
+            transform: rotateY(42deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(9) {
+            transform: rotateY(48deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(10) {
+            transform: rotateY(54deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(11) {
+            transform: rotateY(60deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(12) {
+            transform: rotateY(66deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(13) {
+            transform: rotateY(72deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(14) {
+            transform: rotateY(78deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(15) {
+            transform: rotateY(84deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(16) {
+            transform: rotateY(90deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(17) {
+            transform: rotateY(96deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(18) {
+            transform: rotateY(102deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(19) {
+            transform: rotateY(108deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(20) {
+            transform: rotateY(114deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(21) {
+            transform: rotateY(120deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(22) {
+            transform: rotateY(126deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(23) {
+            transform: rotateY(132deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(24) {
+            transform: rotateY(138deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(25) {
+            transform: rotateY(144deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(26) {
+            transform: rotateY(150deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(27) {
+            transform: rotateY(156deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(28) {
+            transform: rotateY(162deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(29) {
+            transform: rotateY(168deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(30) {
+            transform: rotateY(174deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(31) {
+            transform: rotateY(180deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(32) {
+            transform: rotateY(186deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(33) {
+            transform: rotateY(192deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(34) {
+            transform: rotateY(198deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(35) {
+            transform: rotateY(204deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(36) {
+            transform: rotateY(210deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(37) {
+            transform: rotateY(216deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(38) {
+            transform: rotateY(222deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(39) {
+            transform: rotateY(228deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(40) {
+            transform: rotateY(234deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(41) {
+            transform: rotateY(240deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(42) {
+            transform: rotateY(246deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(43) {
+            transform: rotateY(252deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(44) {
+            transform: rotateY(258deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(45) {
+            transform: rotateY(264deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(46) {
+            transform: rotateY(270deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(47) {
+            transform: rotateY(276deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(48) {
+            transform: rotateY(282deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(49) {
+            transform: rotateY(288deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(50) {
+            transform: rotateY(294deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(51) {
+            transform: rotateY(300deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(52) {
+            transform: rotateY(306deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(53) {
+            transform: rotateY(312deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(54) {
+            transform: rotateY(318deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(55) {
+            transform: rotateY(324deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(56) {
+            transform: rotateY(330deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(57) {
+            transform: rotateY(336deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(58) {
+            transform: rotateY(342deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(59) {
+            transform: rotateY(348deg) translateZ(60px);
+        }
+        .cylinder-nano-segment:nth-child(60) {
+            transform: rotateY(354deg) translateZ(60px);
+        }
+        /*tampas da moeda e emoji de cara e coroa no before delas*/
+        .cylinder-nano-top{
+            border: 1px solid goldenrod;
+            background: gold;
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            top: -60px;
+            left: 0;
+            transform: rotateX(90deg);
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            justify-content: center;
+        } 
+
+        .cylinder-nano-bottom{
+            border: 1px solid goldenrod;
+            background: gold;
+            position: absolute;
+            width: 120px;
+            height:120px;
+            border-radius: 50%;
+            top: -30px;
+            left: 0;
+            transform: rotateX(90deg);
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            justify-content: center;
+        } 
+
+        .cylinder-nano-bottom::before {
+            content: '😊';
+            font-size: 60px;
+            opacity: 0.6;
+            filter: drop-shadow(0 0 5px #ffd700) drop-shadow(0 0 10px #ffd700) drop-shadow(0 0 20px #ffed4e) drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .cylinder-nano-top::before {
+            content: '👑';
+            font-size: 60px;
+            opacity: 0.6;
+            filter: drop-shadow(0 0 5px #ffd700) drop-shadow(0 0 10px #ffd700) drop-shadow(0 0 20px #ffed4e) drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+        /*botao play */
+        .play-button {
+            background: lime;
+            border: none;
+            color: white;
+            padding: 10px 30px;
+            left: 62px;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .play-button:active {
+            transform: translateY(0);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+
+        .play-button.disabled {
+            background: darkgreen;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        /*texto aparecendo */
+        .result {
+            position:relative;
+            left: 62px;
+            top:20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .result.show {
+            animation: fadeInResult 0.8s ease-in-out 2.2s forwards;
+        }
+        /*animacao texto aparecendo */
+        @keyframes fadeInResult {
+            from {
+                opacity: 0;
+
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--Estrutura HTML-->
+    <div class="game-container">
+        <div class="cylinder-container" id="coin">
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+            <div class="cylinder-nano-segment"></div>
+
+            <div class="cylinder-nano-top"></div>
+            <div class="cylinder-nano-bottom"></div>
+        </div>
+
+        <div class="result" id="result"></div>
+        
+        <button class="play-button" id="playButton">
+            PLAY
+        </button>
+    </div>
+
+    <script>
+        /*script basico */
+        const playButton = document.getElementById('playButton');
+        const coin = document.getElementById('coin');
+        const result = document.getElementById('result');
+
+        playButton.addEventListener('click', function() {
+
+            playButton.classList.add('disabled');
+            
+         
+            result.classList.remove('show');
+            result.textContent = '';
+            
+            coin.classList.remove('flipping');
+            coin.offsetHeight; 
+            
+
+            coin.classList.add('flipping');
+            
+            const isHeads = Math.random() < 0.5;
+            
+            
+            setTimeout(() => {
+                if (isHeads) {
+                    result.textContent = '😊 HEAD!';
+                } else {
+                    result.textContent = '👑 TAIL!';
+                }
+                result.classList.add('show');
+                
+                // Reabilita o botão após mostrar resultado
+                setTimeout(() => {
+                    playButton.classList.remove('disabled');
+                    playButton.textContent = 'PLAY';
+                }, 800);
+            }, 100);
+        });
+    </script>
+</body>
+</html>
