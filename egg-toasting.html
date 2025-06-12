@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egg Toasting</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:center;
+            height: 100vh;
+            width:100vw;
+        }
+        
+        .container-frigideira {
+            z-index:1;
+            animation: mexerPanela 2.5s ease-in-out infinite;
+
+        }
+        .ovo-container{
+            z-index:-1;
+            left:20px;
+            top:85px;
+            transform:rotateX(55deg);
+             animation: sincronizarComPanela 2.5s linear infinite;
+        }
+
+            @keyframes sincronizarComPanela {
+                0%, 50% {
+                    transform: translateX(20px) translateY(45px) rotateX(55deg);
+                }
+                75% {
+                    transform: translateX(20px) translateY(-100px) rotateX(225deg);
+                }
+                100% {
+                    transform: translateX(20px) translateY(45px) rotateX(225deg); 
+                }
+            }
+
+
+        @keyframes mexerPanela {
+        
+        0% { transform: translateX(0); }
+        10% { transform: translateX(-25px); }
+        20% { transform: translateX(25px); }  
+        30% { transform: translateX(-25px); } 
+        40% { transform: translateX(25px); } 
+        45%{
+            transform:translateX(0);
+        }
+        50% { transform: translateX(0) translateY(-10px); } 
+        60% { transform: translateX(0) translateY(0); }   
+        100% { transform: translateX(0); }
+        }
+ 
+        .frigideira {
+            width: 120px;
+            height: 35px;
+            transform:rotateZ(180deg);
+            background: linear-gradient(to bottom, #34495e, #2c3e50);
+            clip-path: polygon(8% 0%, 92% 0%, 100% 100%, 0% 100%);
+            position: absolute;
+        }
+        
+        /* Cabo da frigideira */
+        .cabo {
+            position: relative;
+            left:150%;
+            top: 50%;
+            width: 80px;
+            height: 8px;
+            background: linear-gradient(to right, #8B4513, #A0522D);
+            border-radius: 4px;
+
+        }
+        
+    </style>
+</head>
+<body>
+        <div class="ovo-container">
+                <svg width="45" height="45" viewBox="0 0 150 200" class="egg-shadow">
+                    <!-- Clara do ovo -->
+                    <ellipse cx="75" cy="120" rx="65" ry="75" 
+                             fill="url(#eggWhiteGradient)" 
+                             class="egg-white"/>
+                    
+                    <!-- Gema -->
+                    <circle cx="75" cy="110" r="28" 
+                            fill="url(#yolkGradient)" 
+                            class="egg-yolk"/>
+                    
+                    <!-- Brilho na gema -->
+                    <ellipse cx="68" cy="105" rx="8" ry="6" 
+                             fill="#fff59d" opacity="0.7"/>
+                    
+                    <!-- Brilho principal -->
+                    <ellipse cx="85" cy="90" rx="12" ry="15" 
+                             fill="white" opacity="0.3"/>
+                    
+                    <!-- Gradientes -->
+                    <defs>
+                        <radialGradient id="eggWhiteGradient" cx="0.3" cy="0.3">
+                            <stop offset="0%" stop-color="#ffffff"/>
+                            <stop offset="70%" stop-color="#f5f5f5"/>
+                            <stop offset="100%" stop-color="#e8e8e8"/>
+                        </radialGradient>
+                        
+                        <radialGradient id="yolkGradient" cx="0.3" cy="0.3">
+                            <stop offset="0%" stop-color="#ffeb3b"/>
+                            <stop offset="50%" stop-color="#ffc107"/>
+                            <stop offset="100%" stop-color="#ff8f00"/>
+                        </radialGradient>
+                    </defs>
+                </svg>
+        </div>
+        <div class="container-frigideira">
+            <div class="cabo"></div>
+            <div class="frigideira"></div>
+        </div>
+        
+ 
+</body>
+</html>
