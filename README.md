@@ -94,7 +94,7 @@ Ou instagram constado neste readme
 
 <a href="./nave-alienigina.html">Nave alienigina</a> <br/><br/>
 
-<a href="./rotating-pixel-art.html">Pixel art giratório</a> <br/><br/>
+<a href="./egg-toasting.html">Fritando ovo</a> <br/><br/>
 
 
 **Welcome to the CSS-Animations Repository**
@@ -193,4 +193,4 @@ Or Instagram listed in this readme
 
 <a href="./nave-alienigina.html">Alien ship</a> <br/><br/>
 
-<a href="./rotating-pixel-art.html">Rotating pixel art</a> <br/><br/>
+<a href="./egg-toasting.html">Egg toasting</a> <br/><br/>
