@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Depth illusion</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      overflow: hidden;
+    }
+    /*cena com perspectiva */
+    .scene {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      perspective: 1000px;
+      perspective-origin: 50% 50%;
+    }
+    /*estilo comum dos paineis com posicao inicial no eixo z */
+    .panel {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 350px;
+      height: 100px;
+      background: linear-gradient(
+        to bottom,
+        rgba(147, 112, 219, 0.6) 0%, 
+        rgba(106, 90, 205, 0.5) 50%, 
+        rgba(75, 0, 130, 0.4) 100%
+      );
+      border: 2px solid rgba(147, 112, 219, 0.8);  
+      border-radius: 20px;
+      transform: translate(-50%, -50%) translateZ(-1000px) rotateX(15deg); 
+      opacity: 0;
+      animation: approach 4s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+      animation-delay: calc(var(--delay) * 1s);
+      box-shadow: 
+        0 15px 25px rgba(147, 112, 219, 0.15);
+      background-blend-mode: overlay;
+    }
+    /*delay para cada painel */
+    .panel:nth-child(1) {
+      --delay: 1;
+      width: 350px;
+      height: 100px;
+    }
+
+    .panel:nth-child(2) {
+      --delay: 2;
+      width: 300px;
+      height: 85px;
+    }
+
+    .panel:nth-child(3) {
+      --delay: 3;
+      width: 250px;
+      height: 70px;
+    }
+
+    .panel:nth-child(4) {
+      --delay: 4;
+      width: 200px;
+      height: 55px;
+    }
+    /*animacao */
+    @keyframes approach {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) translateZ(-1000px) rotateX(15deg);
+        box-shadow: 0 15px 25px rgba(147, 112, 219, 0.15);
+      }
+      50% {
+        opacity: 0.7;
+        transform: translate(-50%, -50%) translateZ(-500px) rotateX(7deg);
+        box-shadow: 0 20px 30px rgba(147, 112, 219, 0.25);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) translateZ(calc(var(--z) * 1px)) rotateX(0deg); /* Posição final no eixo Z */
+        box-shadow: 0 25px 35px rgba(147, 112, 219, 0.3); /* Sombra final realista */
+      }
+    }
+    /*translateZ para cada 1 */
+    .panel:nth-child(1) { --z: 200; }
+    .panel:nth-child(2) { --z: 100; }
+    .panel:nth-child(3) { --z: 0; }
+    .panel:nth-child(4) { --z: -100; }
+  </style>
+</head>
+<body>
+    <!--Estrutura HTML-->
+  <div class="scene">
+    <div class="panel" style="--z: 200;"></div>
+    <div class="panel" style="--z: 100;"></div>
+    <div class="panel" style="--z: 0;"></div>
+    <div class="panel" style="--z: -100;"></div>
+  </div>
+</body>
+</html>
