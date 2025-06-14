@@ -22,10 +22,12 @@
             overflow: hidden;
           
         }
+        /*container fonte */
         .dancing-text {
             text-align: center;
             max-width: 600px;
         }
+        /*estilo para cada letra individualmente, inclui animação */
         .dancing-text span {
             display: inline-block;
             background: conic-gradient(
@@ -43,7 +45,7 @@
             animation: dance 4s ease-in-out infinite;
             text-shadow: 0 0 10px rgba(0, 128, 255, 0.8), 0 0 20px rgba(0, 128, 255, 0.6);
         }
-
+        /*delay para cada letra individualmente */
         .dancing-text span:nth-child(1) { animation-delay: 0s; }
         .dancing-text span:nth-child(2) { animation-delay: 0.1s; }
         .dancing-text span:nth-child(3) { animation-delay: 0.2s; }
@@ -56,15 +58,8 @@
         .dancing-text span:nth-child(10) { animation-delay: 0.9s; }
         .dancing-text span:nth-child(11) { animation-delay: 1s; }
         .dancing-text span:nth-child(12) { animation-delay: 1.1s; }
-        .dancing-text span:nth-child(13) { animation-delay: 1.2s; }
-        .dancing-text span:nth-child(14) { animation-delay: 1.3s; }
-        .dancing-text span:nth-child(15) { animation-delay: 1.4s; }
-        .dancing-text span:nth-child(16) { animation-delay: 1.5s; }
-        .dancing-text span:nth-child(17) { animation-delay: 1.6s; }
-        .dancing-text span:nth-child(18) { animation-delay: 1.7s; }
-        .dancing-text span:nth-child(19) { animation-delay: 1.8s; }
-        .dancing-text span:nth-child(20) { animation-delay: 1.9s; }
 
+        /*animação */
         @keyframes dance {
             0%,100% {
                 transform: rotateZ(20deg) translateY(-5px);
@@ -83,6 +78,7 @@
     </style>
 </head>
 <body>
+    <!--Estrutura HTML-->
     <div class="dancing-text">
         <span>D</span><span>a</span><span>n</span><span>c</span><span>i</span><span>n</span><span>g</span>
         <span class="space"></span>
