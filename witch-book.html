@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witch Book</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: radial-gradient(circle at center, #0a0a0a 0%, #1a0033 50%, #000000 100%);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Creepster', cursive;
+        }
+        /*container */
+        .magic-container {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            perspective: 1000px;
+        }
+        /* livro */
+        .book {
+            position: absolute;
+            width: 400px;
+            height: 300px;
+            left: 50%;
+            top: 60%;
+            transform: translateX(-50%) translateY(-50%) rotateX(15deg);
+            background: linear-gradient(45deg, #8B4513, #A0522D, #CD853F);
+            border-radius: 15px;
+            box-shadow: 
+                0 20px 40px rgba(0,0,0,0.8),
+                inset 0 5px 15px rgba(255,255,255,0.1),
+                inset 0 -5px 15px rgba(0,0,0,0.3);
+            animation: bookGlow 3s ease-in-out infinite alternate;
+        }
+        /* detalhe do livro */
+        .book::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            background: linear-gradient(45deg, #2F1B14, #4A2C17);
+            border-radius: 10px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+         /* detalhe do livro */
+        .book::after {
+            content: 'GRIMÓRIO';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Nosifer', cursive;
+            font-size: 24px;
+            color: #FFD700;
+            text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700;
+            z-index: 10;
+        }
+        /*luz do livro */
+        .book-light {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, transparent 70%);
+            border-radius: 20px;
+            animation: bookLightPulse 2s ease-in-out infinite;
+        }
+        /*container da bruxa para animar */
+        .witch-container {
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translateX(-50%) translateY(-50%);
+            opacity: 0;
+            animation: witchEmerge 4s ease-out 1s forwards;
+        }
+        /*bruxa*/
+        .witch {
+            position: relative;
+            width: 200px;
+            height: 300px;
+        }
+        /*corpo da bruxa*/
+        .witch-body {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 120px;
+            background: linear-gradient(180deg, #4A0080 0%, #6A0099 50%, #2A0040 100%);
+            border-radius: 40px 40px 0 0;
+            animation: witchFloat 3s ease-in-out infinite;
+        }
+        /*cabeca da bruxa */
+        .witch-head {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, #FDBCB4 30%, #E8AA95 70%);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(253, 188, 180, 0.5);
+        }
+        /* chapeu da bruxa */
+        .witch-hat {
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 80px solid #1a1a1a;
+            animation: hatSway 2s ease-in-out infinite alternate;
+        }
+        
+        .hat-brim {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 8px;
+            background: #1a1a1a;
+            border-radius: 50px;
+        }
+        /* cabelo da bruxa */
+        .witch-hair {
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            width: 80px;
+            height: 60px;
+            background: #2C1810;
+            border-radius: 50% 50% 60% 40%;
+            transform: rotate(-10deg);
+        }
+        /*olhos da bruxa*/
+        .witch-eyes {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 10px;
+        }
+        
+        .eye {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #00FF00;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00FF00;
+            animation: eyeGlow 1.5s ease-in-out infinite alternate;
+        }
+        
+        .eye.left { left: 8px; }
+        .eye.right { right: 8px; }
+        /*bracos da bruxa */
+        .witch-arms {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 40px;
+        }
+        
+        .arm {
+            position: absolute;
+            width: 50px;
+            height: 15px;
+            background: #FDBCB4;
+            border-radius: 20px;
+            animation: armWave 2s ease-in-out infinite;
+        }
+        
+        .arm.left {
+            left: -20px;
+            transform-origin: right center;
+            animation-delay: 0s;
+        }
+        
+        .arm.right {
+            right: -20px;
+            transform-origin: left center;
+            animation-delay: 1s;
+        }
+        /*varinha magica */
+        .magic-wand {
+            position: absolute;
+            right: -30px;
+            top: -5px;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #8B4513, #D2691E);
+            border-radius: 2px;
+            transform-origin: left center;
+            animation: wandWave 1.5s ease-in-out infinite;
+        }
+        
+        .wand-star {
+            position: absolute;
+            right: -10px;
+            top: -8px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 15px solid #FFD700;
+            animation: starTwinkle 0.8s ease-in-out infinite alternate;
+        }
+        
+        .wand-star::after {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 6px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 15px solid #FFD700;
+        }
+        /*particulas */
+        .magic-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #FFD700;
+            border-radius: 50%;
+            animation: particleFloat 3s linear infinite;
+            box-shadow: 0 0 6px #FFD700;
+        }
+        
+        .particle:nth-child(1) { left: 20%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 40%; animation-delay: 0.5s; }
+        .particle:nth-child(3) { left: 60%; animation-delay: 1s; }
+        .particle:nth-child(4) { left: 80%; animation-delay: 1.5s; }
+        .particle:nth-child(5) { left: 30%; animation-delay: 2s; }
+        .particle:nth-child(6) { left: 70%; animation-delay: 2.5s; }
+        /*aura */
+        .magic-aura {
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            right: -50px;
+            bottom: -50px;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: auraGlow 2s ease-in-out infinite alternate;
+        }
+        /* texto */
+        .spell-text {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Creepster', cursive;
+            font-size: 32px;
+            color: #FFD700;
+            text-shadow: 0 0 15px #FFD700, 0 0 30px #FFD700;
+            opacity: 0;
+            animation: spellAppear 2s ease-out 3s forwards;
+        }
+        
+        @keyframes bookGlow {
+            0% { box-shadow: 0 20px 40px rgba(0,0,0,0.8), inset 0 5px 15px rgba(255,255,255,0.1); }
+            100% { box-shadow: 0 20px 40px rgba(255,215,0,0.4), inset 0 5px 15px rgba(255,255,255,0.3); }
+        }
+        
+        @keyframes bookLightPulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        
+        @keyframes witchEmerge {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(50%) scale(0.5);
+            }
+            50% {
+                opacity: 0.7;
+                transform: translateX(-50%) translateY(-20%) scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(-50%) scale(1);
+            }
+        }
+        
+        @keyframes witchFloat {
+            0%, 100% { transform: translateX(-50%) translateY(0px); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+        
+        @keyframes hatSway {
+            0% { transform: translateX(-50%) rotate(-5deg); }
+            100% { transform: translateX(-50%) rotate(5deg); }
+        }
+        
+        @keyframes eyeGlow {
+            0% { box-shadow: 0 0 10px #00FF00; }
+            100% { box-shadow: 0 0 20px #00FF00, 0 0 30px #00FF00; }
+        }
+        
+        @keyframes armWave {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(-20deg); }
+        }
+        
+        @keyframes wandWave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            75% { transform: rotate(-15deg); }
+        }
+        
+        @keyframes starTwinkle {
+            0% { transform: scale(1) rotate(0deg); }
+            100% { transform: scale(1.3) rotate(45deg); }
+        }
+        
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes auraGlow {
+            0% { opacity: 0.3; transform: scale(1); }
+            100% { opacity: 0.8; transform: scale(1.2); }
+        }
+        
+        @keyframes spellAppear {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0px);
+            }
+        }
+        /* capa da bruxa */
+        .witch-cape {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 80px;
+            background: linear-gradient(180deg, #2A0040 0%, #4A0080 100%);
+            border-radius: 50px 50px 0 0;
+            z-index: -1;
+            animation: capeFlow 2.5s ease-in-out infinite;
+        }
+        
+        @keyframes capeFlow {
+            0%, 100% { transform: translateX(-50%) scaleX(1); }
+            50% { transform: translateX(-50%) scaleX(1.1); }
+        }
+        
+        .lightning {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 2px;
+            height: 200px;
+            background: linear-gradient(180deg, #FFD700, #FFFFFF, #FFD700);
+            opacity: 0;
+            animation: lightning 4s linear infinite;
+            box-shadow: 0 0 10px #FFD700;
+        }
+        
+        @keyframes lightning {
+            0%, 90%, 100% { opacity: 0; }
+            91%, 95% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!--Estrutura HTML-->
+    <div class="magic-container">
+        <div class="spell-text">ABRACADABRA!</div>
+        
+        <div class="book">
+            <div class="book-light"></div>
+        </div>
+        
+        <div class="witch-container">
+            <div class="magic-aura"></div>
+            <div class="witch">
+                <div class="witch-cape"></div>
+                <div class="witch-body"></div>
+                <div class="witch-head">
+                    <div class="witch-hair"></div>
+                    <div class="witch-eyes">
+                        <div class="eye left"></div>
+                        <div class="eye right"></div>
+                    </div>
+                </div>
+                <div class="witch-hat">
+                    <div class="hat-brim"></div>
+                </div>
+                <div class="witch-arms">
+                    <div class="arm left"></div>
+                    <div class="arm right">
+                        <div class="magic-wand">
+                            <div class="wand-star"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="magic-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="lightning"></div>
+    </div>
+</body>
+</html>
