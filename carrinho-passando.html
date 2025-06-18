@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho passando</title>
     <style>
-        *{
+             *{
             margin: 0;
             padding: 0;
         }
@@ -24,9 +24,9 @@
         /* base do stick animado */
         .stickman {
         position: absolute;
-        top: 490px;
+        top: 290px;
         scale: 0.35;
-        left: calc(50% - 180px);
+        left: 24%;
         }
         /* cabeca do stick animado */
         .head {
@@ -125,49 +125,85 @@
         transform: rotate(30deg);
         animation: walk-right-leg 2s infinite;
         }
-        /* imagem do carrinho https://www.svgrepo.com/svg/451312/shopping-cart?edit=true  */
-        .cart{
+        .cart {
             position: absolute;
-            left: 815px;
-            top: 507px;
-            width: 78px;
-            height: 82px;
-            background-image: url('cart.svg');
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
+            right: 70%;
+            top: 30%;
+            width: clamp(50px, 8vw, 80px);
+            height: clamp(60px, 10vw, 95px);
+            background: #666;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 15;
         }
-        /* produto dentro do carrinho */
-        .cart::before{
+
+        /* Ícone do carrinho simplificado */
+        .cart-icon {
+            width: 70%;
+            height: 70%;
+            border: 2px solid white;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .cart-icon::before {
             content: '';
             position: absolute;
-            top: 28px;
+            bottom: -8px;
+            left: 10%;
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .cart-icon::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            right: 10%;
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        /* Produto dentro do carrinho */
+        .cart::before {
+            content: '';
+            position: absolute;
+            top: 30%;
             rotate: 5deg;
             border-radius: 1px;
-            left: 40px;
-            width: 19px;
-            height: 19px;
+            right: 25%;
+            width: clamp(15px, 2.5vw, 25px);
+            height: clamp(15px, 2.5vw, 25px);
             background: white;
+            z-index: 10;
         }
-        /* produto dentro do carrinho */
-        .cart::after{
+
+        /* Produto dentro do carrinho */
+        .cart::after {
             content: '';
             position: absolute;
-            top: 27px;
-            left: 20px;
+            top: 29%;
+            left: 25%;
             border-radius: 1px;
             rotate: 50deg;
-            width: 19px;
-            height: 19px;
+            width: clamp(15px, 2.5vw, 25px);
+            height: clamp(15px, 2.5vw, 25px);
             background: white;
-
+            z-index: 10;
         }
+ 
 
         /* base da prateleira */
         .shelf{
             position: absolute;
-            left: 720px;
-            width: 580px;
+            left: 16%;
+            width: 499px;
             top: 0;
             height: 100vh;
             z-index: 2;
@@ -177,8 +213,8 @@
         .floor1{
             position: absolute;
             left: 0;
-            width: 580px;
-            top: 440px;
+            width: 499px;
+            top: 250px;
             height: 3px;
             background: rgb(255, 255, 255);
 
@@ -187,8 +223,8 @@
         .floor2{
             position: absolute;
             left: 0;
-            width: 580px;
-            top: 470px;
+            width: 499px;
+            top: 270px;
             height: 3px;
             background: rgb(255, 255, 255);
 
@@ -197,9 +233,9 @@
         .shelf::before{
             content: '';
             position: absolute;
-            top: 420px;
+            top: 230px;
             border-radius: 1px;
-            left: 200px;
+            left: -30px;
             width: 20px;
             height: 20px;
             background: white;
@@ -209,9 +245,9 @@
         .shelf::after{
             content: '';
             position: absolute;
-            top: 450px;
+            top: 250px;
             border-radius: 1px;
-            left: 330px;
+            left: 230px;
             width: 20px;
             height: 20px;
             background: white;
@@ -220,13 +256,13 @@
        /*animação que passa o produto e cai os dois mas o video mostra so 1 */
         @keyframes passItem{
             0%{
-                transform: translateX(500px) translateY(0);
+                transform: translateX(360px) translateY(0);
             }
             80%{
-                transform: translateX(-200px) translateY(0);
+                transform: translateY(0)translateX(0);
             }
             90%{
-                transform: translateY(50px) translateX(-200px) rotate(-85deg);
+                transform: translateY(15px) rotate(-85deg) translateX(-32px);
                 visibility: hidden;
             }
             100%{
@@ -264,6 +300,225 @@
             right: 30px;
         }
     }
+    /* Media Queries para Responsividade */
+
+/* Telas grandes (1441px - 1920px) */
+@media screen and (min-width: 1441px) and (max-width: 1920px) {
+    .stickman {
+        left: 27%;
+        scale: 0.38;
+    }
+    
+    .cart {
+        right: 65%;
+    }
+    
+    .shelf::after {
+        left: 250px;
+    }
+}
+
+/* Telas médias-grandes (1201px - 1440px) */
+@media screen and (min-width: 1201px) and (max-width: 1440px) {
+    .stickman {
+        left: 28%;
+        scale: 0.33;
+    }
+    
+    .cart {
+        right: 63%;
+    }
+    
+    .shelf::after {
+        left: 220px;
+    }
+}
+
+/* Telas médias (993px - 1200px) */
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    .stickman {
+        left: 28%;
+        scale: 0.3;
+    }
+    
+    .cart {
+        right: 62%;
+    }
+    
+    .shelf {
+        width: 420px;
+        left: 15%;
+    }
+    
+    .floor1, .floor2 {
+        width: 420px;
+    }
+    
+    .shelf::after {
+        left: 200px;
+    }
+}
+
+/* Tablets landscape (769px - 992px) */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    .stickman {
+        left: 26%;
+        scale: 0.27;
+        top: 310px;
+    }
+    
+    .cart {
+        right: 62%;
+        top: 31%;
+    }
+    
+    .shelf {
+        width: 350px;
+        left: 13%;
+    }
+    
+    .floor1, .floor2 {
+        width: 350px;
+    }
+    
+    .floor1 {
+        top: 270px;
+    }
+    
+    .floor2 {
+        top: 290px;
+    }
+    
+    .shelf::before {
+        top: 250px;
+    }
+    
+    .shelf::after {
+        top: 270px;
+        left: 170px;
+    }
+}
+
+/* Tablets portrait (577px - 768px) */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    .stickman {
+        left: 26%;
+        scale: 0.24;
+        top: 330px;
+    }
+    
+    .cart {
+        right: 61%;
+        top: 34%;
+    }
+    
+    .shelf {
+        width: 300px;
+        left: 11%;
+    }
+    
+    .floor1, .floor2 {
+        width: 300px;
+    }
+    
+    .floor1 {
+        top: 290px;
+    }
+    
+    .floor2 {
+        top: 310px;
+    }
+    
+    .shelf::before {
+        top: 270px;
+    }
+    
+    .shelf::after {
+        top: 290px;
+        left: 145px;
+    }
+}
+
+/* Smartphones landscape (481px - 576px) */
+@media screen and (min-width: 481px) and (max-width: 576px) {
+    .stickman {
+        left: 23%;
+        scale: 0.21;
+        top: 350px;
+    }
+    
+    .cart {
+        right: 63%;
+        top: 36%;
+    }
+    
+    .shelf {
+        width: 250px;
+        left: 9%;
+    }
+    
+    .floor1, .floor2 {
+        width: 250px;
+    }
+    
+    .floor1 {
+        top: 310px;
+    }
+    
+    .floor2 {
+        top: 330px;
+    }
+    
+    .shelf::before {
+        top: 290px;
+    }
+    
+    .shelf::after {
+        top: 310px;
+        left: 120px;
+    }
+}
+
+/* Smartphones portrait (361px - 480px) */
+@media screen and (min-width: 280px) and (max-width: 480px) {
+    .stickman {
+        left: 22%;
+        scale: 0.19;
+        top: 370px;
+    }
+    
+    .cart {
+        right: 58%;
+        top: 38%;
+    }
+    
+    .shelf {
+        width: 220px;
+        left: 7%;
+    }
+    
+    .floor1, .floor2 {
+        width: 220px;
+    }
+    
+    .floor1 {
+        top: 330px;
+    }
+    
+    .floor2 {
+        top: 350px;
+    }
+    
+    .shelf::before {
+        top: 310px;
+    }
+    
+    .shelf::after {
+        top: 330px;
+        left: 105px;
+    }
+}
+
     </style>
 </head>
 <body>
