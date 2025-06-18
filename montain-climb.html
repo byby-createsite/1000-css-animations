@@ -113,7 +113,9 @@ body,.bg{
 .right-arm-container{
     transform:translate(8px,-23px);
     transform-origin: center;
-    animation: launchHook 4s linear forwards;
+    animation: launchHook 4s linear forwards,
+    returnArm 2s linear forwards;
+    animation-delay: 0.01s, 10s;
 }
 
 /* Animação do braço direito girando */
@@ -126,6 +128,15 @@ body,.bg{
     }
     100%{
         transform: translate(8px,-33px) rotateZ(-63deg);
+    }
+}
+/* Animação do braço direito girando - retorno */
+@keyframes returnArm{
+    0%{
+        transform: translate(8px,-33px) rotateZ(-63deg);
+    }
+    100%{
+        transform: translate(8px,-23px)rotateZ(0);
     }
 }
 
@@ -146,7 +157,7 @@ body,.bg{
          transform:  translateY(600px) rotateZ(-90deg) ;
     }
     100%{
-        transform:  translateX(-56px) translateY(-56px) rotateZ(-90deg);
+        transform:  translateX(-50px) translateY(-50px) rotateZ(-90deg);
     }
 }
 
@@ -215,12 +226,13 @@ body,.bg{
     ropeWidth 2s linear forwards,
     ropeNormal 2s linear forwards;
     animation-delay: 2s, 6s;
+    z-index:-10;
 }
 
 /* Animação da corda crescendo */
 @keyframes ropeWidth{
     0%{
-        height:0;
+        height:15px;
     }
     100%{
         height:430px;
@@ -234,7 +246,7 @@ body,.bg{
         height:430px;
     }
     100%{
-        transform: translateX(9px)  rotateZ(315deg); 
+        transform: translateX(9px)  rotateZ(335deg); 
         height:0;
     }
 }
