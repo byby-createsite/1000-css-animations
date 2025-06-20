@@ -106,6 +106,10 @@ Ou instagram constado neste readme
 
 <a href="./codificando-a-realidade.html">Codificando a realidade</a> <br/><br/>
 
+<a href="./metaverso-desconstruido.html">Metaverso desconstruido</a> <br/><br/>
+
+<a href="./the-enigma-of-time.html">O enigma do tempo</a> <br/><br/>
+
 **Welcome to the CSS-Animations Repository**
 
 This repository was developed for ByBy, an innovative company in the educational sector, with the goal of sharing knowledge and inspiration.
@@ -213,3 +217,7 @@ Or Instagram listed in this readme
 <a href="./montain-climb.html">Montain Climb</a> <br/><br/>
 
 <a href="./codificando-a-realidade.html">Coding the reality</a> <br/><br/>
+
+<a href="./metaverso-desconstruido.html">Desconstructed Metaverse</a> <br/><br/>
+
+<a href="./the-enigma-of-time.html">The enigma of time</a> <br/><br/>

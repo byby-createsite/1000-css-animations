@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metaverso Desconstruído</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(180deg, #0a0a23, #1a1a4d);
+            overflow: hidden;
+        
+        }
+        /*cena */
+        .scene {
+            width: 500px;
+            height: 500px;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        /*cubos*/
+        .cube {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: float 10s infinite ease-in-out, rotate 12s infinite linear;
+        }
+
+        .cube div {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 255, 255, 0.5);
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+        }
+
+        .cube .front  { transform: translateZ(40px); }
+        .cube .back   { transform: translateZ(-40px); }
+        .cube .right  { transform: rotateY(90deg) translateZ(40px); }
+        .cube .left   { transform: rotateY(-90deg) translateZ(40px); }
+        .cube .top    { transform: rotateX(90deg) translateZ(40px); }
+        .cube .bottom { transform: rotateX(-90deg) translateZ(40px); }
+
+        /* Posicionamento inicial dos cubos */
+        .cube:nth-child(1) {
+            left: 50px;
+            top: 50px;
+            animation-delay: 0s, 0s;
+        }
+        .cube:nth-child(2) {
+            left: 250px;
+            top: 100px;
+            animation-delay: 1s, 0.5s;
+        }
+        .cube:nth-child(3) {
+            left: 150px;
+            top: 300px;
+            animation-delay: 2s, 1s;
+        }
+        .cube:nth-child(4) {
+            left: 350px;
+            top: 200px;
+            animation-delay: 3s, 1.5s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateZ(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-100px) translateZ(150px);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(0) translateZ(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+            100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+        }
+
+        .deconstruct {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ff00ff;
+            border-radius: 50%;
+            animation: scatter 6s infinite ease-out;
+        }
+
+        /* Partículas de desconstrução com trajetórias variadas */
+        .deconstruct:nth-child(5) {
+            left: 60px;
+            top: 60px;
+            animation: scatter 5s infinite ease-out 0.5s;
+        }
+        .deconstruct:nth-child(6) {
+            left: 260px;
+            top: 110px;
+            animation: scatter-x 5.5s infinite ease-out 1s;
+        }
+        .deconstruct:nth-child(7) {
+            left: 160px;
+            top: 310px;
+            animation: scatter-y 6s infinite ease-out 1.5s;
+        }
+        .deconstruct:nth-child(8) {
+            left: 360px;
+            top: 210px;
+            animation: scatter-z 5.8s infinite ease-out 2s;
+        }
+        .deconstruct:nth-child(9) {
+            left: 100px;
+            top: 250px;
+            animation: scatter 6.2s infinite ease-out 2.5s;
+        }
+        /*animações */
+        @keyframes scatter {
+            0% { transform: translate3d(0, 0, 0); opacity: 1; }
+            100% { transform: translate3d(150px, 150px, 100px); opacity: 0; }
+        }
+
+        @keyframes scatter-x {
+            0% { transform: translate3d(0, 0, 0); opacity: 1; }
+            100% { transform: translate3d(-200px, 30px, -50px); opacity: 0; }
+        }
+
+        @keyframes scatter-y {
+            0% { transform: translate3d(0, 0, 0); opacity: 1; }
+            100% { transform: translate3d(50px, -200px, 80px); opacity: 0; }
+        }
+
+        @keyframes scatter-z {
+            0% { transform: translate3d(0, 0, 0); opacity: 1; }
+            100% { transform: translate3d(-80px, 80px, -150px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!--Estrutura HTML-->
+    <div class="scene">
+        <div class="cube">
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+        <div class="cube">
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+        <div class="cube">
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+        <div class="cube">
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+        <div class="deconstruct"></div>
+        <div class="deconstruct"></div>
+        <div class="deconstruct"></div>
+        <div class="deconstruct"></div>
+        <div class="deconstruct"></div>
+    </div>
+</body>
+</html>
