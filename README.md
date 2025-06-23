@@ -110,7 +110,7 @@ Ou instagram constado neste readme
 
 <a href="./the-enigma-of-time.html">O enigma do tempo</a> <br/><br/>
 
-<a href="./push-the-language.html">Empurre a linguagem</a> <br/><br/>
+<a href="./push-the-language.html">Empurra a linguagem</a> <br/><br/>
 
 **Welcome to the CSS-Animations Repository**
 
