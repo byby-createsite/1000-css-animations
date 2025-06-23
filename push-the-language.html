@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push the language</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            user-select: none;
+
+        }
+        body{
+            background-color: black;
+            width:100vw;
+            height:100vh;
+            overflow: hidden;
+            font-family: monospace;
+            display:flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;
+
+
+        }
+        /*estilo comum osso com codigo dentro */
+        .skeleton-container *{
+            position:absolute;
+            background:rgba(255, 255, 255);
+            color:black;
+            font-size:5pt;
+            text-align: center;
+    
+        }
+        /*cranio */
+        .top{
+            border-radius:50%;
+            width:50px;
+            height:50px;
+        }
+        /*mandibula */
+        .bottom{   
+            top:30px;
+            left:12px;
+            width:28px;
+            height:32px;
+            border-radius: 40%;
+
+        }
+        /*juntando cranio com mandibula */
+        .head{
+            top:10%;
+            position:absolute;
+            animation: explode-head 1s ease-out 6s forwards;
+        }
+        /*olho esquerdo */
+        .head::before{
+            content: '';
+            z-index:1;
+            position:absolute;
+            background:rgb(0, 0, 0);
+            width:5px;
+            height:5px;
+            top:17px;
+            left:12px;
+            border-radius:50%;
+
+
+        }
+        /*olho direito */
+        .head::after{
+            content: '';
+            position:absolute;
+            background:rgb(0, 0, 0);
+            width:5px;
+            height:5px;
+            top:17px;
+            left:34px;
+            border-radius:50%;
+        }
+        /*coluna com rotateZ para ficar em pé junto com o codigo */
+        .column{
+            width:150px;
+            height:5px;
+            border-radius:45px;
+            top:24.5%;
+            left:47.5%;
+            transform: rotateZ(90deg);
+            animation: explode-column 1s ease-out 6s forwards;
+        }
+        /*braco esquerdo (usei container pois a animação anterior era para acenar)*/
+        .left-arm-container .left-shoulder{
+            width: 50px;
+            height:5px; 
+            border-radius:45px; 
+            transform:rotateZ(15deg);
+          
+        }
+        .left-arm-container .left-top{
+            width: 50px;
+            height:5px; 
+            border-radius:45px; 
+            transform:rotateZ(-60deg) translate(-30px,-26px);
+            
+        }
+        .left-arm-container .left-bottom{
+            width: 50px;
+            height:5px; 
+            border-radius:45px; 
+            transform:rotateZ(-125deg) translate(-30px,-70px);
+        
+        }
+        .left-arm-container{
+            top:18%;
+            animation:explode-left-shoulder 1s ease-out 6s forwards;
+            left:48.5%;
+        }
+        /*posicionamento dos ossos da coluna*/
+        .column-parts{
+            display:flex;
+            top:19%;
+            left:48%;
+        }
+        /*estilo comum dos ossos da coluna */
+        .column-part{
+            width:35px;
+            height:5px;
+            border-radius: 35px;
+
+        }
+        /*nth-child para movimentar cada coluna individualmente */
+        .column-part:nth-child(1){
+            transform: rotateZ(10deg) translate(30px,0px);
+            animation: explode-part1 1s ease-out 6s forwards;
+        }
+        .column-part:nth-child(2){
+            transform: rotateZ(10deg) translate(30px,15px);
+            animation: explode-part2 1s ease-out 6s forwards;
+        }
+        .column-part:nth-child(3){
+            transform: rotateZ(5deg) translate(25px,35px);
+            animation: explode-part3 1s ease-out 6s forwards;
+        }
+        .column-part:nth-child(4){
+            transform: rotateZ(-5deg) translate(15px,60px);
+            animation: explode-part4 1s ease-out 6s forwards;
+        }
+        .column-part:nth-child(5){
+            transform: rotateZ(-5deg) translate(15px,75px);
+            animation: explode-part5 1s ease-out 6s forwards;
+        }
+
+        .column-part:nth-child(6){
+            transform: rotateZ(-10deg) translate(65px,16px);
+            animation: explode-part6 1s ease-out 6s forwards;
+        }
+        .column-part:nth-child(7){
+            transform: rotateZ(-10deg) translate(65px,31px);
+            animation: explode-part7 1s ease-out 6s forwards;
+        }
+        .column-part:nth-child(8){
+            transform: rotateZ(-5deg) translate(70px,41px);
+            animation: explode-part8 1s ease-out 6s forwards;
+        }
+        .column-part:nth-child(9){
+            transform: rotateZ(5deg) translate(80px,51px);
+            animation: explode-part9 1s ease-out 6s forwards;
+        }
+        .column-part:nth-child(10){
+            transform: rotateZ(5deg) translate(80px,66px);
+            animation: explode-part10 1s ease-out 6s forwards;
+        }
+        /*perna esquerda */
+        .left-leg-container .left-top{
+            width:70px;
+            height:5px;
+            border-radius:20px;
+            transform: rotateZ(-70deg);
+            animation: explode-left-leg-top 1s ease-out 6s forwards;
+        }
+        .left-leg-container .left-bottom{
+            width:50px;
+            height:5px;
+            border-radius:20px;
+            transform: rotateZ(65deg) translate(55px,20px);
+            animation: explode-left-leg-bottom 1s ease-out 6s forwards;
+        }
+        .left-leg-container .left-foot{
+            width:20px;
+            height:5px;
+            border-radius:20px;
+            transform: rotateZ(-15deg) translate(0px,84px);
+            animation: explode-left-foot 1s ease-out 6s forwards;
+        }
+        .left-leg-container{
+            top:36%;
+            left:48%;
+            animation: thinkImWalking1 2s linear infinite;
+        }
+        /*animacoes usando scale para 'parecer' que está andando */
+        @keyframes thinkImWalking1{
+            0%,100%{scale:1;}
+            50%{scale:1.25;}
+        }
+        @keyframes thinkImWalking2{
+            0%,100%{scale:1.25;}
+            50%{scale:1;}
+        }
+        /*perna direita*/
+        .right-leg-container .right-top{
+            width:70px;
+            height:5px;
+            border-radius:20px;
+            transform: rotateZ(70deg);
+            animation: explode-right-leg-top 1s ease-out 6s forwards;
+        }
+        .right-leg-container .right-bottom{
+            width:50px;
+            height:5px;
+            border-radius:20px;
+            transform: rotateZ(-65deg) translate(-49px,30px);
+            animation: explode-right-leg-bottom 1s ease-out 6s forwards;
+        }
+        .right-leg-container .right-foot{
+            width:20px;
+            height:5px;
+            border-radius:20px;
+            transform: rotateZ(15deg) translate(39px,76px);
+            animation: explode-right-foot 1s ease-out 6s forwards;
+        }
+        .right-leg-container{
+            top:36%;
+            animation: thinkImWalking2 2s linear infinite;
+            left:50.4%;
+        }
+        /*braco esquerdo sem container (era para o esquerdo ser assim) */
+        .right-shoulder{
+            top:18%;
+            left:51.5%;
+            width: 50px;
+            height:5px; 
+            border-radius:45px; 
+            transform:rotateZ(-15deg);
+            animation: explode-right-shoulder 1s ease-out 6s forwards;
+        }
+        .right-top{
+            top:18.5%;
+            left:51.4%;
+            width: 50px;
+            height:5px; 
+            border-radius:45px; 
+            transform:rotateZ(60deg) translate(30px,-26px);
+            animation: explode-right-top 1s ease-out 6s forwards;
+        }
+        .right-bottom{
+            top:18%;
+            left:51.4%;
+            width: 50px;
+            height:5px; 
+            border-radius:45px; 
+            transform:rotateZ(125deg) translate(30px,-70px);
+            animation: explode-right-bottom 1s ease-out 6s forwards;
+        }
+
+
+        /* Animações da explosão */
+        @keyframes explode-head {
+            to { transform: translate(-150px, 800px) rotateZ(360deg); }
+        }
+
+        @keyframes explode-column {
+            to { transform: rotateZ(90deg) translate(0px, 800px) rotateZ(720deg); }
+        }
+
+        @keyframes explode-left-shoulder {
+            to { transform: rotateZ(15deg) translate(-200px, 800px) rotateZ(-360deg); }
+        }
+
+        @keyframes explode-left-top {
+            to { transform: rotateZ(-60deg) translate(-250px, 850px) rotateZ(540deg); }
+        }
+
+        @keyframes explode-left-bottom {
+            to { transform: rotateZ(-125deg) translate(-180px, 900px) rotateZ(-540deg); }
+        }
+
+        @keyframes explode-right-shoulder {
+            to { transform: rotateZ(-15deg) translate(200px, 800px) rotateZ(360deg); }
+        }
+
+        @keyframes explode-right-top {
+            to { transform: rotateZ(60deg) translate(250px, 850px) rotateZ(-540deg); }
+        }
+
+        @keyframes explode-right-bottom {
+            to { transform: rotateZ(125deg) translate(180px, 900px) rotateZ(540deg); }
+        }
+
+        @keyframes explode-part1 {
+            to { transform: rotateZ(10deg) translate(-100px, 800px) rotateZ(360deg); }
+        }
+
+        @keyframes explode-part2 {
+            to { transform: rotateZ(10deg) translate(120px, 820px) rotateZ(-360deg); }
+        }
+
+        @keyframes explode-part3 {
+            to { transform: rotateZ(5deg) translate(-80px, 850px) rotateZ(540deg); }
+        }
+
+        @keyframes explode-part4 {
+            to { transform: rotateZ(-5deg) translate(90px, 880px) rotateZ(-540deg); }
+        }
+
+        @keyframes explode-part5 {
+            to { transform: rotateZ(-5deg) translate(-60px, 900px) rotateZ(720deg); }
+        }
+
+        @keyframes explode-part6 {
+            to { transform: rotateZ(-10deg) translate(140px, 830px) rotateZ(-720deg); }
+        }
+
+        @keyframes explode-part7 {
+            to { transform: rotateZ(-10deg) translate(-110px, 870px) rotateZ(360deg); }
+        }
+
+        @keyframes explode-part8 {
+            to { transform: rotateZ(-5deg) translate(160px, 890px) rotateZ(-360deg); }
+        }
+
+        @keyframes explode-part9 {
+            to { transform: rotateZ(5deg) translate(-90px, 920px) rotateZ(540deg); }
+        }
+
+        @keyframes explode-part10 {
+            to { transform: rotateZ(5deg) translate(170px, 940px) rotateZ(-540deg); }
+        }
+
+        @keyframes explode-left-leg-top {
+            to { transform: rotateZ(-70deg) translate(-130px, 800px) rotateZ(360deg); }
+        }
+
+        @keyframes explode-left-leg-bottom {
+            to { transform: rotateZ(65deg) translate(-80px, 850px) rotateZ(-360deg); }
+        }
+
+        @keyframes explode-left-foot {
+            to { transform: rotateZ(-15deg) translate(-50px, 900px) rotateZ(540deg); }
+        }
+
+        @keyframes explode-right-leg-top {
+            to { transform: rotateZ(70deg) translate(130px, 800px) rotateZ(-360deg); }
+        }
+
+        @keyframes explode-right-leg-bottom {
+            to { transform: rotateZ(-65deg) translate(80px, 850px) rotateZ(360deg); }
+        }
+
+        @keyframes explode-right-foot {
+            to { transform: rotateZ(15deg) translate(50px, 900px) rotateZ(-540deg); }
+        }
+    </style>
+</head>
+<body>
+    <!--Estrutura HTML-->
+    <div class="skeleton-container">
+        <div class="head">
+            <div class="top">
+            <br/>
+            .top{
+            width:50px;
+            height:50px;
+            }
+            </div>
+            <div class="bottom">
+            <br/>
+            .bottom{
+            top:28px;
+            left:12px;
+            }
+            </div>
+        </div>
+        <div class="column">
+            .column{width:200px;
+            height:5px;
+            }</div>
+        <div class="left-arm-container">
+            <div class="left-shoulder">
+            .left-shoulder{ width: 50px;
+            height:5px;} </div>
+            <div class="left-top">
+                .left-top{
+                    width: 50px;
+                    height:5px;
+                }
+            </div>
+            <div class="left-bottom">
+                    .left-top{
+                    width: 50px;
+                    height:5px;
+                }
+            </div>
+        </div>
+        <div class="right-shoulder">.right-top{top:18%;}</div>
+        <div class="right-top">.right-top{top:18.5%;}</div>
+        <div class="right-bottom">.right-top{top:18%;}</div>
+
+        <div class="column-parts">
+        <div class="column-part">nth:child(1)</div>
+        <div class="column-part">nth:child(2)</div>
+        <div class="column-part">nth:child(3)</div>
+        <div class="column-part">nth:child(4)</div>
+        <div class="column-part">nth:child(5)</div>
+        <div class="column-part">nth:child(6)</div>
+        <div class="column-part">nth:child(7)</div>
+        <div class="column-part">nth:child(8)</div>
+        <div class="column-part">nth:child(9)</div>
+        <div class="column-part">nth:child(10)</div>
+        </div>
+    
+
+
+
+        <div class="left-leg-container">
+            <div class="left-top">
+                .left-top{width:50px;
+            height:5px;}
+            </div>
+            <div class="left-bottom">
+                .left-bottom{
+                         width:40px;
+            height:5px;
+                }
+            </div>
+            <div class="left-foot">
+                .left-foot{
+                         width:20px;
+            height:5px;
+                }
+            </div>
+        </div>
+        <div class="right-leg-container">
+            <div class="right-top">.right-top{width:70px;}</div>
+            <div class="right-bottom">.right-bottom{width:50px;}</div>
+            <div class="right-foot">.right-foot{width:20px;}</div>
+        </div>
+    </div>
+    
+</body>
+</html>
