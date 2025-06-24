@@ -228,4 +228,4 @@ Or Instagram listed in this readme
 
 <a href="./push-the-language.html">Push the language</a> <br/><br/>
 
-<a href="./formas-magicas.html">Magic forms</a> <br/><br/>
+<a href="./formas-magicas.html">Magic shapes</a> <br/><br/>
