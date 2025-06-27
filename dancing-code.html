@@ -1,0 +1,120 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dancing Code</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            max-height:50%;
+            height:auto;
+            transform: translateX(-50%);
+            line-height: 1.6;
+            text-align: left;
+            color: #F8F8F2; 
+            max-width: 570px;
+            min-width: 570px;
+            background: #272822; 
+            padding: 20px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            white-space: pre-line;
+            font-size: 14px;
+        }
+        .animation-container {
+            position: absolute;
+            top: 50%;
+            height:auto;
+            max-height:50%;
+            left: 50%;
+            color: white; 
+            transform: translateX(-50%);
+            min-width: 570px;
+            max-width: 570px;
+            height: 50%;
+            overflow: hidden;
+            background: #1b1b1f; 
+            height:auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .selector{ color: #F92672; } 
+        .property { color: #66D9EF; } 
+        .value-number { color: #AE81FF; }  
+        .value-string { color: #E6DB74; } 
+        .value-color { color: #A6E22E; } 
+        .brace { color: #F8F8F2; } 
+        .comment { color: #75715E; } 
+        .function { color: #A6E22E; } 
+
+       
+        @keyframes dance {
+            0% { transform: translateY(0) scale(1); }
+            15% { transform: translateY(-10px) scale(1.1); }
+            30% { transform: translateY(0) scale(0.9); }
+            45% { transform: translateY(10px) scale(1.2); }
+            60% { transform: translateY(0) scale(1); }
+            75%, 100% { transform: translateY(0) scale(1);} 
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="codigo">
+        <span class="selector">body</span> 
+        <span class="property">.animation-container</span> 
+        <span class="brace">{ </span>
+        <span class="comment">Animação CSS para blocos de código</span>
+        <span class="function">animation</span> 
+        <span class="property">: </span>
+        <span class="value-string">dance</span> 
+        <span class="property">;</span>
+        
+        <span class="brace">}</span> 
+    </div>
+    <div class="animation-container">
+        <div style="animation: dance 2s infinite alternate-reverse"> {' '}CSS {' '}</div>
+        <div style="animation: dance 1.5s infinite alternate-reverse"> {' '}HTML {' '} </div>
+        <div style="animation: dance 2.5s infinite alternate-reverse">{' '}JavaScript {' '}</div>
+        <div style="animation: dance 3s infinite alternate-reverse">{' '} <br> {' '}  </div>
+    </div>
+</body>
+</html> 
+
+```
+
+thought: I now can give a great answer
+
+
+
+
+
+
+
+
+
+
+
+
+
