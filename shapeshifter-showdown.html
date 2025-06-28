@@ -1,0 +1,110 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 29px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.animation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background-color: #111;
+}
+
+/* Animação do Shapeshift Showdown */
+.shapeshifter_container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.shape {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  animation: shapeDance 3s linear infinite;
+  background-color: #F92672;
+}
+
+.shape.shape1 {left: 50px; top: 50px; transform-origin: 50% 50%;} /* Definição da primeira forma */
+.shape.shape2 {left: 100px; top: 100px; transform-origin: 50% 100%;} /* Definição da segunda forma */
+
+
+@keyframes shapeDance {
+  0% {
+    transform: rotate(0deg) scale(1); 
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(360deg) scale(1.2); /* Rotacionar e aumentar o tamanho na metade do loop */ 
+  }
+  100% {
+    transform: rotate(720deg) scale(1); 
+    opacity: 0; /* Reduzir a opacidade no final do loop */
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="codigo">
+<span class="selector">.shape</span>
+  <span class="property"> { </span>
+    <span class="property"> animation:</span>
+    <span class="value-string"> shapeDance </span>
+  <span class="property"> 3s </span>
+  <span class="property"> linear </span>
+  <span class="property"> infinite; </span>
+  <span class="brace"> }</span>
+
+</div>
+
+<div class="animation-container">
+  <div class="shapeshifter_container">
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+  </div>
+</div>
+
+</body>
+</html>
+
+```
