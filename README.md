@@ -136,4 +136,4 @@ Or Instagram listed in this readme
 
 <a href="./formas-magicas.html">Magic shapes growing</a> <br/><br/>
 
-<a href="./dancing-code.html">Dancing code</a> <br/><br/><a href="./shapeshifter-showdown.html">Shapeshifter showdown</a> <br/><br/>
+<a href="./dancing-code.html">Dancing code</a> <br/><br/><a href="./shapeshifter-showdown.html">Shapeshifter showdown</a> <br/><br/><a href="./interactive-shape-dance.html">Interactive shape dance</a> <br/><br/>
