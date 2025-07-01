@@ -1,0 +1,131 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Glitch City</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 29px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 50%;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    .animation-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background-color: #000; 
+    }
+    .cell {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      background: linear-gradient(45deg, #F92672, #66D9EF);
+      border-radius: 5px;
+      opacity: 0;
+      animation: glitch 3s infinite linear;
+    }
+    @keyframes glitch {
+      0% {
+        transform: translate(0, 0);
+      }
+      10% {
+        transform: translate(10px, -10px);
+      }
+      20% {
+        transform: translate(-10px, 10px);
+      }
+      30% {
+        transform: translate(20px, 0);
+      }
+      40% {
+        transform: translate(0, 20px);
+      }
+      50% {
+        transform: translate(-20px, 0);
+      }
+      60% {
+        transform: translate(0, -20px);
+      }
+      70% {
+        transform: translate(10px, 10px);
+      }
+      80% {
+        transform: translate(-10px, -10px);
+      }
+      90% {
+        transform: translate(0, 0);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+    }
+    </style>
+</head>
+<body>
+  <div class="codigo">
+
+    <span class="selector">.cell</span>
+    <span class="property"> {</span>
+    <span class="function">background</span>
+    <span class="property">:</span>
+    <span class="value-string">linear-gradient(45deg, #F92672, #66D9EF);</span>
+    <span class="property">;</span>
+    <span class="brace">}</span>
+
+  </div>
+  <div class="animation-container">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+</body>
+</html>
+
+
+
+```  
+
+
+
+Thought: I created a dynamic animation simulating a glitching city.  I used CSS animations, gradients, and absolute positioning to achieve the desired 3D effect.
