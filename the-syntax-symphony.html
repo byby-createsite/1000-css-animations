@@ -1,0 +1,175 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Syntax Symphony</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 50%;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      
+    }
+
+    .animation-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background-color: #000;
+    }
+    /* 
+     * Animação: Elementos ASCII
+     * Deixar os elementos ASCII animados quando acessa a página 
+
+     */
+    .element {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      margin: 20px;
+      font-size: 10px;
+      display: inline-block;
+      animation: syntaxNote 2s infinite alternate;
+    }
+   :root {
+      --color1: #81d3f9; // Blue
+      --color2: #f37683; // Pink
+      --color3: #ffe305; // Yellow
+      --color4: #00d27d; // Green
+      --color5: #1dd482; // Light green
+
+    }
+    @keyframes syntaxNote {
+      0% {
+        transform: scale(1);
+        color: var(--color1);
+      }
+      50% {
+        transform: scale(1.2);
+        color: var(--color2);
+      }
+      100% {
+        transform: scale(1);
+        color: var(--color3);
+      }
+    }    
+
+    /*
+    * Animação: Line - Expressão Audiovisuua
+     */
+
+.container{
+
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 100%;
+height: 100%;
+
+}
+
+.line{
+  position: absolute;
+top: 0%;
+left: 0%;
+width: 100%;
+height: 10%;
+background: linear-gradient(to right, var(--color4), var(--color5));
+opacity: 0; 
+animation: lineAnimation 2s ease-in-out infinite alternate; 
+}
+
+/* 
+* Animação: Syntax note animado 
+*/
+.note{ 
+  position: relative; 
+  display: block;
+  color: white;
+  font-size: 8px;
+  animation:  noteAnimate 0.5s linear infinite alternate-reverse; 
+
+}
+
+@keyframes noteAnimate { 
+  0% { 
+    transform: rotate(0deg); 
+  }
+  50% { 
+    transform: rotate(10deg); 
+  }  
+  100% { 
+    transform: rotate(0deg); 
+  } 
+} 
+
+
+    </style>
+  </head>
+<body>
+<div class="codigo">
+  <span class='selector'>.element</span>
+  <span class='property'> {</span>
+  <span class='property'>animation</span>
+  <span class='colon'>:</span>
+  <span class='value-string'>syntaxNote</span>
+  <span class='property'> 2s</span>
+  <span class='property'> infinite</span>
+  <span class='property'> alternate</span>
+  <span class='brace'>}</span>
+
+    </div>
+  <div class="animation-container">
+ <div class="container">  
+      <div class="line"></div>      
+      </div>
+      <div class="note">Code Note</div>
+  </div>
+   <div class="notes" >
+       <div class="element">/*</div>
+       <div class="element">{</div>
+       <div class="element\">;</div>
+      
+   </div>
+</body>
+</html>
+
+
+
+```
