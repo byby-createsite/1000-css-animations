@@ -1,0 +1,127 @@
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flow State</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 8px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+} .selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+
+.animation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* Animações --------------------------------------------- */
+.snippet {
+  position: relative;
+  width: 80px;
+  height: 30px;
+  background-color: #1f2937;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  animation: flow 3s ease infinite alternate; /* Animação de base */
+}
+
+/*  @keyframes cria a animação individual */
+@keyframes flow {
+  0% {
+    transform: translateX(0) rotate(0deg); /*  Posicionamento inicial */
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(10px) rotate(180deg); /*  Posicionamento e rotação */
+    opacity: 0.5; 
+  }
+  100% {
+    transform: translateX(0) rotate(360deg); /*  Volta ao início */
+    opacity: 1;
+  } 
+}
+
+/* Visual */
+
+.snippet:nth-child(1) { animation-delay: 0s; }
+.snippet:nth-child(2) { animation-delay: 0.2s; }
+.snippet:nth-child(3) { animation-delay: 0.4s; }
+.snippet:nth-child(4) { animation-delay: 0.6s; }
+.snippet:nth-child(5) { animation-delay: 0.8s; } 
+
+
+</style>
+</head>
+<body>
+  <div class="codigo">
+  <span class="selector">.snippet</span>
+  <span class="property"> {</span>
+  <span class="value-string">position</span><span class="funtion">: relative;</span>
+  <span class="function"> </span>
+  <span class="value-number">width</span><span class="function">: 80px;</span>
+ <span class="function"> </span>
+  <span class="value-number">height</span><span class="function">: 30px;</span>
+ <span class="function"> </span>
+  <span class="value-string">background-color</span><span class="function">: #1f2937;</span>
+  <span class="function"> </span>
+  <span class="value-string">border</span><span class="function">: 2px solid rgba(255, 255, 255, 0.3);</span>
+  <span class="function"> } </span>
+  <span class="selector">.snippet </span>
+  <span class="property">{</span>
+  <span class="function">animation</span><span class="value-string">: flow 3s ease infinite alternate;</span>
+  <span class="function"> }</span>
+
+  {/* chave para o efeito */
+      animation-delay: 0s;
+  animation-delay: 0.2s;
+  animation-delay: 0.4s;
+  animation-delay: 0.6s;
+  animation-delay: 0.8s;
+  }</span>
+
+
+  </div>
+  <div class="animation-container">
+    <div class="snippet"></div>
+    <div class="snippet"></div>
+    <div class="snippet"></div>
+    <div class="snippet"></div>
+    <div class="snippet"></div>
+  </div>
+</body>
+</html>
