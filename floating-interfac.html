@@ -1,0 +1,167 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 8px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+} .selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+
+.animation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* Interface Flutuante */
+.interface {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #FFF;
+  animation: float 5s ease-in-out infinite;
+
+}
+
+.interface::after,
+.interface::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: pulsate 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate0deg;
+  }
+  50% {
+    transform: translateY(5px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.interface</span> 
+    <span class="property"> {</span>
+      <br>
+      <span class="property">  background-color:</span> <span class="value-color"> rgba(255, 255, 255, 0.3); </span>
+      <br>
+      <span class="property">  border-radius:</span> <span class="value-number"> 10px; </span>
+      <br>
+      <span class="property">  display:</span> <span class="value-string"> flex; </span>
+      <br>
+      <span class="property">  justify-content:</span> <span class="value-string"> center; </span>
+      <br>
+      <span class="property">  align-items:</span> <span class="value-string"> center; </span>
+      <br>
+      <span class="property">  font-size:</span> <span class="value-number"> 20px; </span>
+      <br>
+      <span class="property">  color:</span> <span class="value-string"> #FFF; </span>
+      <br>
+      <span class="property">  animation:</span> <span class="value-string"> float 5s ease-in-out infinite; </span> <span class="comment">// Animação flutuação </span>
+    <br>
+  <span class="brace"> } </span>
+
+  
+  <br>
+  <span class="selector">.interface::after,.interface::before</span> 
+  <span class="property"> {</span> 
+    <br>
+  <span class="property">  content:</span> <span class="value-string"> ""; </span> <span class="comment">// Conteúdo vazio </span> 
+  <br>
+  <span class="property">  position:</span> <span class="value-string"> absolute; </span>  
+  <br>
+  <span class="property">  top:</span> <span class="value-number">-20px;</span> 
+  <br>
+  <span class="property">  left:</span> <span class="value-string"> 50%; </span>  
+  <br>
+  <span class="property">  transform:</span> <span class="value-string"> translateX(-50%); </span>
+  <br>
+  <span class="property"> width:</span> <span class="value-number"> 20px; </span> 
+  <br>
+  <span class="property">  height:</span> <span class="value-number"> 20px; </span>
+  <br>
+  <span class="property">  background-color:</span> <span class="value-color"> rgba(255, 255, 255, 0.7); </span> 
+  <br>
+  <span class="property"> border-radius:</span> <span class="value-number"> 50%; </span> 
+  <br>
+  <span class="property">  animation:</span> <span class="value-string"> pulsate 2s ease-in-out infinite; </span>
+
+  <br>
+<span class="brace"> }</span>
+
+    </div>
+
+  <div class="animation-container">
+    <div class="interface">Floating Interface</div>
+  </div>
+
+
+
+
+```
