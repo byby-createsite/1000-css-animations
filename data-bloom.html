@@ -1,0 +1,123 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.selector       { color: #F92672; }
+.property       { color: #66D9EF; }
+.value-number   { color: #AE81FF; }
+.value-string   { color: #E6DB74; }
+.value-color    { color: #A6E22E; }
+.brace          { color: #F8F8F2; }
+.comment        { color: #75715E; }
+.function       { color: #A6E22E; }
+.animation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background-color: #000;
+}
+
+ /* Animação principal -  Florescer de dados */
+   @keyframes DataBloom {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+.flor {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #A6E22E, #66D9EF, #AE81FF);
+  opacity: 0; 
+  animation: DataBloom 1s ease-out infinite; 
+}
+
+.flor.flor1 { top: 20%; left: 2%; animation-delay: 0.1s; } /* Colocando as flores em posições diferentes */
+.flor.flor2 { top: 60%; left: 40%; animation-delay: 0.2s; }
+.flor.flor3 { top: 80%; left: 80%; animation-delay: 0.3s; }
+
+</style>
+</head>
+
+<body>
+<div class="codigo">
+  <span class="selector">.flor</span>
+  <span class="property"> {</span>
+    <span class="comment"> Inserindo efeitos de animação</span>
+    <br>
+    <span class="selector">.flor</span> 
+    <span class="property"> {</span>
+    <span class="property"> position:</span> <span class="value-string"> absolute; </span>  <br>
+    <span class="property"> width:</span> <span class="value-number">80px; </span> 
+    <span class="property"> height:</span> <span class="value-number">80px; </span>  
+    <span class="property"> border-radius:</span> <span class="value-number"> 50%; </span>  
+    <span class="property"> background:</span> <span class="value-string"> linear-gradient(to bottom, #A6E22E, #66D9EF, #AE81FF); </span>  <br>
+    <span class="style"> opacity:</span> <span class="value-number">0; </span> 
+    <span class="style"> animation:</span> <span class="selector">DataBloom</span> <span class="value-number">1s</span> <span class="value-string"> ease-out </span> <span class="value-string">infinite; </span> 
+    <span class="brace">}</span> <br>
+  <span class="brace">}</span>
+
+
+
+</div>
+<div class="animation-container">
+  <div class="flor flor1"></div>
+  <div class="flor flor2"></div>
+  <div class="flor flor3"></div>
+</div>
+
+
+
+</body>
+
+</html>
+```
