@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Nested Loop</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+} 
+.selector       { color: #F92672; }
+.property       { color: #66D9EF; }
+.value-number   { color: #AE81FF; }
+.value-string   { color: #E6DB74; }
+.value-color    { color: #A6E22E; }
+.brace          { color: #F8F8F2; }
+.comment        { color: #75715E; } 
+.function       { color: #A6E22E; } 
+.animation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background-color: #000;
+}
+/* Animação do Loop */
+.loop {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  border-radius: 50%;
+  background: #00FFFF; /* Cor de fundo dos loops */
+  animation: nestedLoop 2s infinite;
+}
+
+.loop::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #FF0000; /* Cor de fundo da borda externa */
+  animation: nestedLoop 2s infinite;
+}
+
+@keyframes nestedLoop {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(50px, 0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(0, 50px);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translate(-50px, 0);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(0, -50px);
+    opacity: 0.2;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="codigo">
+  <span class=".loop</span> {
+  <span class="property">width</span>: 150px;
+  <span class="value-number">150</span>px;
+  <br>
+  <span class="property">height</span>: 150px;
+  <span class="value-number">150</span>px;
+  <br>
+  <span class="property">position</span>: relative;
+  <br>
+  <span class="property">border-radius</span>: 50%;
+  <br>
+  <span class="property">background</span>: #00FFFF;
+  <br>
+  <span class="property">animation</span>: nestedLoop 2s infinite;
+  }
+
+  <span>.loop::before</span> {
+  <span class="property">content</span>: '';
+  <br>
+  <span class="property">position</span>: absolute;
+  <br>
+  <span class="property">top</span>: 0;
+  <br>
+  <span class="property">left</span>: 0;
+  <br>
+  <span class="property">width</span>: 100%;
+  <br>
+  <span class="property">height</span>: 100%;
+  <br>
+  <span class="property">border-radius</span>: 50%;
+  <br>
+  <span class="property">background</span>: #FF0000;
+  <br>
+  <span class="property">animation</span>: nestedLoop 2s infinite;
+  }
+ 
+  @keyframes nestedLoop{
+   0% { 
+    transform: translate(0, 0); 
+    opacity: 1; 
+   }  
+   25% { 
+    transform: translate(50px, 0); 
+    opacity: 0.8; 
+   }  
+   50% { 
+    transform: translate(0, 50px); 
+    opacity: 0.6; 
+   }  
+   75% { 
+    transform: translate(-50px, 0); 
+    opacity: 0.4; 
+   } 
+   100% { 
+    transform: translate(0, -50px); 
+    opacity: 0.2;  
+   }   
+} 
+</div>
+
+
+<div class="animation-container">
+  <div class="loop"></div>
+</div>
+</body>
+
+</html>
