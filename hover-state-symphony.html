@@ -1,0 +1,178 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Hover State Symphony</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .codigo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #272822;
+    color: #F8F8F2;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    max-height: 50%;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  } 
+  .selector       { color: #F92672; } 
+  .property       { color: #66D9EF; } 
+  .value-number   { color: #AE81FF; } 
+  .value-string   { color: #E6DB74; } 
+  .value-color    { color: #A6E22E; } 
+  .brace          { color: #F8F8F2; } 
+  .comment        { color: #75715E; } 
+  .function       { color: #A6E22E; }
+  .animation-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    background-color: #000;
+  }
+
+  .box {
+    width: 100px;
+    height: 100px;
+    background-color: #F06292;
+    border-radius: 10px;
+    position: relative; /* Para posicionar o pseudoelemento */
+    margin: 20px;
+    animation: hover-glow 0.5s linear infinite;
+  }
+
+  .box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transform: scale(0.9); /* Redimensiona o pseudoelemento */
+  }
+  /*  */ 
+
+  @keyframes hover-glow {
+    0% { 
+      transform: translateY(0); 
+      border-radius: 10px; 
+    }
+    100% { 
+      transform: translateY(-10px); 
+      border-radius: 0;   
+    }
+  }  
+  
+ /* Configurações de hover */ 
+  .box:hover {
+    background-color: #D81B60; /* Muda a cor no hover */ 
+    transform: translateY(-2px); /* Tranform posição*/
+    box-shadow: 0 4px 8px rgba(248, 98, 186, 0.8); /* Adiciona sombra */
+  }
+    </style>
+  </head>
+<body>
+  <div class="codigo">
+    <span class="selector">.box</span>
+    <span class="property"> {</span>
+      <span class="comment">// Configurações animação</span>
+      <br>
+      <span class="property">width: </span> 
+      <span class="value-number">100px</span>; 
+      <br>
+      <span class="property">height: </span> 
+      <span class="value-number">100px</span>; 
+      <br>
+      <span class="property">background-color: </span> 
+      <span class="value-string">#F06292</span>;
+      <br>
+      <span class="property">border-radius: </span> 
+      <span class="value-number">10px</span>;
+      <br>
+      <span class="property">position: </span> 
+      <span class="value-string">relative</span>;
+      <br>
+      <span class="property">margin: </span> 
+      <span class="value-number">20px</span>; 
+      <br>
+      
+      <!-- Animação do Hover -->
+      <span class="property">animation: </span> 
+      <span class="value-string">hover-glow</span> 
+      <span class="value-number">0.5s</span> 
+      <span class="value-string">linear</span> 
+      <span class="value-string">infinite</span>; /* Duração, tipo de animação, etc */ 
+    <span class="property">}</span> <br> 
+
+
+
+    <span class="selector">.box::before</span>
+    <span class="property"> {</span>
+      <span class="comment">// Pseudoelemento para efeito adicional </span>
+      <br>
+      <span class="property">content: '';</span>  
+      <br>
+      <span class="property">position: </span>
+      <span class="value-string">absolute</span>;
+      <br>
+      <span class="property">top: </span> 
+      <span class="value-number">0;</span>  
+      <br>
+      <span class="property">left: </span> 
+      <span class="value-number">0;</span> 
+      <br>
+      <span class="property">width: </span> 
+      <span class="value-number">100%</span>;  
+      <br>
+      <span class="property">height: </span> 
+      <span class="value-number">100%</span>;  
+      <br>
+      <span class="property">background-color: </span> 
+      <span class="value-string">rgba(255, 255, 255, 0.1)</span>;
+      <br>
+      <span class="property">border-radius: </span> 
+      <span class="value-number">10px</span>; 
+      <br>
+    <span class="property">transform: </span> 
+      <span class="value-string">scale(0.9)</span>;<br> 
+    <span class="property">}</span>
+  </div>  
+  
+  <div class="animation-container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</body>
+</html>  
+
+```
