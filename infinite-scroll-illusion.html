@@ -1,0 +1,124 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinite Scroll Illusion</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+} 
+.selector       { color: #F92672; } 
+.property       { color: #66D9EF; } 
+.value-number   { color: #AE81FF; } 
+.value-string   { color: #E6DB74; } 
+.value-color    { color: #A6E22E; } 
+.brace          { color: #F8F8F2; } 
+.comment        { color: #75715E; } 
+.function       { color: #A6E22E; }
+
+.animation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background-color: #000;
+} 
+
+/* Layout e animação */ 
+.scrollarea{ 
+  background-color: rgba(255,255,255, 0.05); /* Background pálido */
+  position: relative; 
+  width: 300px;
+  height: 200px;
+  overflow: hidden; 
+  margin: 0 auto; 
+}
+
+.container { /* Contém as imagens/elementos que se movem */
+  width: 300%; /* Largura maior que a área visível */
+  display: flex; 
+  animation: scroll 15s linear infinite; /* Animação infinita com duração de 15 segundos */
+}
+.item {
+  background: linear-gradient(to bottom, #222, #333); /* Gradiente que muda conforme a rolagem */
+  padding: 20px; 
+  transform: translateX(-50%); /* Alinha as imagens no centro */
+  width: 100px; /* Define a largura da caixa */
+  margin: 0 10px;
+}
+
+@keyframes scroll { /* Definição da animação */
+  0%   { transform: translateX(0); } /* No inicio, a imagem está na posição 0 */
+  100% { transform: translateX(-100%); } /* No final, a imagem se move para fora da área visível */
+} 
+
+
+</style>
+</head>
+<body>
+  <div class="codigo">
+    <span class=".scrollarea {</span> 
+    <span class="property">background-color:</span> <span class="value-string">rgba(255,255,255, 0.05);</span> <br>
+    <span class=".scrollarea {</span> 
+    <span class="property">position:</span> <span class="value-string">relative;</span> <br>
+    <span class=".scrollarea {</span> 
+    <span class="property">width:</span> <span class="value-number">300px</span>; <br>
+    <span class=".scrollarea {</span> 
+    <span class="property">height:</span> <span class="value-number">200px</span>; <br>
+    <span class=".scrollarea {</span> 
+    <span class="property">overflow:</span> <span class="value-string">hidden;</span> <br>
+    <span class=".scrollarea {</span> 
+    <span class="property">margin:</span> <span class="value-string">0 auto;</span> <br>
+  </div>
+
+ <div class="animation-container">
+    <div class="scrollarea">
+      <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>  
+
+```
