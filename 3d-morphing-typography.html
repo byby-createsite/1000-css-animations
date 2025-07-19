@@ -1,0 +1,107 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Morphing Typography</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 50%;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }  
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .brace          { color: #F8F8F2; }
+    .comment        { color: #75715E; }
+    .function       { color: #A6E22E; } 
+
+
+
+    .animation-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    /* Estilos para o texto */
+    .letra {
+      font-size: 4em;
+      font-weight: bold;
+      color: #0f0; /* Verde */
+      text-align: center;
+      animation: morph 5s linear infinite; /* Executa o animation 'morph' infinitamente */
+    }
+    
+    @keyframes morph { /* Animação customizada */
+      0%   { transform: rotate(0deg) scale(1); letter-spacing: 0em; }
+      25%  { transform: rotate(2deg) scale(1.1); letter-spacing: 0.2em; }
+      50%  { transform: rotate(-2deg) scale(0.9); letter-spacing: -0.2em; }
+      75%  { transform: rotate(2deg) scale(1.05); letter-spacing: 0.15em; }
+      100% { transform: rotate(0deg) scale(1); letter-spacing: 0em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class .selector>.letra</span>
+    <span class .property>{</span>
+    <span class .function>animation</span>
+    <span class .property>: </span>
+    <span class .value-string>morph</span>
+    <span class .property> </span>
+    <span class .value-number>5s</span>
+    <span class .property> </span>
+    <span class .value-string>linear</span>
+    <span class .property> </span>
+    <span class .value-string>infinite</span>
+    <span class .brace>;</span>
+  
+    <br> 
+    </div>
+  <div class="animation-container"> 
+    <span class="letra">3D</span>
+  </div>
+</body>
+</html>
+
+
+```
