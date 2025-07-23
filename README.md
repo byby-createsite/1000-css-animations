@@ -13,8 +13,8 @@ Se sinta livre para contribuir com este repositório.
 
 **Contato para qualquer questão**
 
-E-mail: byby.inc.business@gmail.com. <br/>
-Ou instagram constado neste readme
+<a href="mailto:byby.inc.business@gmail.com"> byby.inc.business@gmail.com </a> <br/>
+<a href="https://instagram.com/byby.inc">Instagram</a>
 
 <br/> <br/> <br/>
 
@@ -33,8 +33,8 @@ Feel free to contribute to this repository.
 
 **Contact for any questions**
 
-Email: byby.inc.business@gmail.com.  <br/>
-Or Instagram listed in this readme
+<a href="mailto:byby.inc.business@gmail.com"> byby.inc.business@gmail.com </a> <br/>
+<a href="https://instagram.com/byby.inc">Instagram</a>
 
  <br/><br/><br/>
 
