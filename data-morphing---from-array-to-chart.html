@@ -1,0 +1,166 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Morphing</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.selector       { color: #F92672; }  
+.property       { color: #66D9EF; } 
+.value-number   { color: #AE81FF; }  
+.value-string   { color: #E6DB74; }
+.value-color    { color: #A6E22E; }   
+.brace          { color: #F8F8F2; }   
+.comment        { color: #75715E; } 
+.function       { color: #A6E22E; } 
+
+
+.animation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background-color: #000;  
+}
+
+
+
+/* Animação dos elementos de dados */
+.data-element {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 10px;
+  transform-origin: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  animation: data-morph 1s ease infinite;
+}
+
+.data-element:nth-child(1) { animation-delay: 0s; }
+.data-element:nth-child(2) { animation-delay: 0.2s; }
+.data-element:nth-child(3) { animation-delay: 0.4s; }
+
+
+@keyframes data-morph {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.3);
+  }
+}
+
+
+ </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.data-element</span> {
+    <span class="property">width</span>: 
+      <span class="value-number">100px</span>;
+    <span class="property">height</span>: 
+      <span class="value-number">100px</span>;
+    <span class="property">background-color</span>: 
+      <span class="value-color">#fff</span>;
+    <span class="property">border-radius</span>: 
+      <span class="value-number">10px</span>;
+    <span class="property">transform-origin</span>: 
+      <span class="value-string">center center</span>;
+    }
+    <br>
+    <span class="selector">.data-element</span> {
+      <span class="property">display</span>: 
+        <span class="value-string">flex</span>;
+      <span class="property">flex-direction</span>: 
+        <span class="value-string">column</span>;
+      <span class="property">justify-content</span>: 
+        <span class="value-string">center</span>;
+      <span class="property">align-items</span>: 
+        <span class="value-string">center</span>;
+    }
+
+    <span class="selector">.data-element:nth-child(1)</span> {
+      <span class="property">animation-delay</span>:
+        <span class="value-number">0s</span>;
+    }
+    <span class="selector">.data-element:nth-child(2)</span> {
+      <span class="property">animation-delay</span>:
+        <span class="value-number">0.2s</span>;
+    }
+    <span class="selector">.data-element:nth-child(3)</span> {
+      <span class="property">animation-delay</span>:
+        <span class="value-number">0.4s</span>;
+    }
+
+    <br>
+    <span class="selector">.data-element</span> {
+      <span class="property">animation</span>:
+      <span class="function">data-morph</span> <span class="value-number">1s</span>
+      <span class="value-string">ease</span>
+      <span class="value-string">infinite</span>;
+    }
+
+    <br>
+    @keyframes data-morph {
+      0% {
+        <span class="property">transform</span>: 
+          <span class="value-string">scale(1)</span>; 
+      }
+      100% {
+        <span class="property">transform</span>: 
+          <span class="value-string">scale(1.3)</span>;
+      }
+    }
+
+  </div>
+  <div class="animation-container">
+    <div class="data-element">1</div>
+    <div class="data-element">2</div>
+    <div class="data-element">3</div>
+  </div>
+</body>
+</html>
+
+```
