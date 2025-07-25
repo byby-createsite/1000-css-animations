@@ -1,0 +1,139 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Micro-Interaction Safari</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+} .selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+
+.animation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background-color: #000;
+}
+.button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  width: 200px;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 50px;
+  background-color: #F8F8F2;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.form-input {
+  background: transparent;
+  border: none;
+  color: #F8F8F2;
+  width: 200px;
+  padding: 10px;
+  border-radius: 8px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.form-input:focus {
+  opacity: 1;
+}
+
+.spinner {
+  border: 4px solid #F8F8F2;
+  border-top: 4px solid #AE81FF;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-right: 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="codigo">
+  <span class="selector">.button</span> <span class="property">::before</span> <span class="value-color"> {background-color: </span> <span class="value-string">#F8F8F2</span> <span class="property">;}</span> 
+  <br>
+  <span class="selector">.button:hover </span> <span class="property">::before</span> <span class="function"> { </span> <span class="property">transform:</span> <span class="value-string">scaleX(1); </span> <span class="brace">}</span>
+  <br>
+
+  <span class="selector">.spinner</span> <span class="property"> </span> <span class="function"> { </span>
+  <br>
+  <span class="property">animation:</span> <span class="value-string">spin 1s linear infinite; </span> <span class="brace">}</span>
+
+</div>
+<div class="animation-container">
+  <button class="button">
+    Botão com Hover
+  </button>
+  <input type="text" class="form-input" placeholder="Digite aqui...">
+  <div class="spinner"></div> 
+</div>   
+</body>
+</html>
+
+```
