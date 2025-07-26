@@ -176,4 +176,4 @@ Feel free to contribute to this repository.
 
 <a href="./the-microinteraction-safari.html">The microinteraction safari (Instagram)</a> <br/><br/>
 
-<a href="./hover-memory--recursive-colors.html">Hover memory recursive colors </a> <br/><br/>
+<a href="./hover-memory---recursive-colors.html">Hover memory recursive colors </a> <br/><br/>
