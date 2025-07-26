@@ -4,7 +4,7 @@ Este repositório foi desenvolvido para a ByBy, uma empresa inovadora no setor e
 
 **O que você encontrará aqui**
 
-Aqui estão disponíveis todas as animações criadas com CSS compartilhadas no Instagram da <a href="https://instagram.com/byby.inc">ByBy</a>
+Aqui estão disponíveis todas as animações criadas com CSS compartilhadas no TikTok (Instagram descontinuado) da <a href="https://tiktok.com/@byby.inc">ByBy</a>
 Todas as animações são open-source, permitindo que qualquer pessoa as visualize, utilize ou modifique.
 
 **Contribuições**
@@ -14,7 +14,6 @@ Se sinta livre para contribuir com este repositório.
 **Contato para qualquer questão**
 
 <a href="mailto:byby.inc.business@gmail.com"> byby.inc.business@gmail.com </a> <br/>
-<a href="https://instagram.com/byby.inc">Instagram</a>
 
 <br/> <br/> <br/>
 
@@ -24,7 +23,7 @@ This repository was developed for ByBy, an innovative company in the educational
 
 **What you will find here**
 
-Here you will find all the animations created with CSS shared on Instagram by <a href="https://instagram.com/byby.inc">ByBy</a>
+Here you will find all the animations created with CSS shared on TikTok (Instagram discontinued) by <a href="https://tiktok.com/@byby.inc">ByBy</a>
 All animations are open source, allowing anyone to view, use or modify them.
 
 **Contributions**
@@ -34,107 +33,145 @@ Feel free to contribute to this repository.
 **Contact for any questions**
 
 <a href="mailto:byby.inc.business@gmail.com"> byby.inc.business@gmail.com </a> <br/>
-<a href="https://instagram.com/byby.inc">Instagram</a>
 
  <br/><br/><br/>
 
 <a href="./LICENSE.md">License</a> <br/><br/>
 
-<a href="./abrir-bau.html">Magic Chest</a> <br/><br/>
+<a href="./abrir-bau.html">Magic Chest (Instagram)</a> <br/><br/>
 
-<a href="./abrir-envelope.html">Animated Envelope</a> <br/><br/>
+<a href="./abrir-envelope.html">Animated Envelope (Instagram)</a> <br/><br/>
 
-<a href="./bola-quicando.html">Bouncing Ball</a> <br/><br/>
+<a href="./bola-quicando.html">Bouncing Ball (Instagram)</a> <br/><br/>
 
-<a href="./carregamento-pulsante.html">Pulsing Loader</a> <br/><br/>
+<a href="./carregamento-pulsante.html">Pulsing Loader (Instagram)</a> <br/><br/>
 
-<a href="./carrinho-passando.html">Moving Cart</a> <br/><br/>
+<a href="./carrinho-passando.html">Moving Cart (Instagram)</a> <br/><br/>
 
-<a href="./desbloquear-cadeado.html">Unlocked Padlock</a> <br/><br/>
+<a href="./desbloquear-cadeado.html">Unlocked Padlock (Instagram)</a> <br/><br/>
 
-<a href="./digitando-na-tela.html">Typing Text</a> <br/><br/>
+<a href="./digitando-na-tela.html">Typing Text (Instagram)</a> <br/><br/>
 
-<a href="./disco-girando.html">Spinning Disc</a> <br/><br/>
+<a href="./disco-girando.html">Spinning Disc (Instagram)</a> <br/><br/>
 
-<a href="./emoji-dancante.html">Dancing Emoji</a> <br/><br/>
+<a href="./emoji-dancante.html">Dancing Emoji (Instagram)</a> <br/><br/>
 
-<a href="./escadas-ilusorias.html">Illusory Stairs</a> <br/><br/>
+<a href="./escadas-ilusorias.html">Illusory Stairs (Instagram)</a> <br/><br/>
 
-<a href="./fita-inaugural.html">Ribbon Cutting</a> <br/><br/>
+<a href="./fita-inaugural.html">Ribbon Cutting (Instagram)</a> <br/><br/>
 
-<a href="./glowing-btn-1.html">Glowing Button 1</a> <br/><br/>
+<a href="./glowing-btn-1.html">Glowing Button 1 (Instagram)</a> <br/><br/>
 
-<a href="./glowing-btn-2.html">Glowing Button 2</a> <br/><br/>
+<a href="./glowing-btn-2.html">Glowing Button 2 (Instagram)</a> <br/><br/>
 
-<a href="./lancar-foguete.html">Rocket Launch</a> <br/><br/>
+<a href="./lancar-foguete.html">Rocket Launch (Instagram)</a> <br/><br/>
 
-<a href="./loading-icon-1.html">Loading Icon 1</a> <br/><br/>
+<a href="./loading-icon-1.html">Loading Icon 1 (Instagram)</a> <br/><br/>
 
-<a href="./mola-animada.html">Vibrant Spring</a> <br/><br/>
+<a href="./mola-animada.html">Vibrant Spring (Instagram)</a> <br/><br/>
 
-<a href="./national-flag.html">National Flag</a> <br/><br/>
+<a href="./national-flag.html">National Flag (Instagram)</a> <br/><br/>
 
-<a href="./neon-pulsante.html">Pulsing Neon</a> <br/><br/>
+<a href="./neon-pulsante.html">Pulsing Neon (Instagram)</a> <br/><br/>
 
-<a href="./scan-btn-1.html">Scanning Button</a> <br/><br/>
+<a href="./scan-btn-1.html">Scanning Button (Instagram)</a> <br/><br/>
 
-<a href="./slide-btn-1.html">Sliding Button</a> <br/><br/>
+<a href="./slide-btn-1.html">Sliding Button (Instagram)</a> <br/><br/>
 
-<a href="./porta-malas-aviao.html">Airplane Cargo Door</a> <br/><br/>
+<a href="./porta-malas-aviao.html">Airplane Cargo Door (Instagram)</a> <br/><br/>
 
-<a href="./animated-lamp.html">Animated Lamp</a> <br/><br/>
+<a href="./animated-lamp.html">Animated Lamp (Instagram)</a> <br/><br/>
 
-<a href="./infinito-flutuando.html">Floating Infinity</a> <br/><br/>
+<a href="./infinito-flutuando.html">Floating Infinity (Instagram)</a> <br/><br/>
 
-<a href="./loading-icon-2.html">Loading Icon 2</a> <br/><br/>
+<a href="./loading-icon-2.html">Loading Icon 2 (Instagram)</a> <br/><br/>
 
-<a href="./loading-icon-3.html">Loading Icon 3</a> <br/><br/>
+<a href="./loading-icon-3.html">Loading Icon 3 (Instagram)</a> <br/><br/>
 
-<a href="./pergaminho-abrindo.html">Opening Scroll</a> <br/><br/>
+<a href="./pergaminho-abrindo.html">Opening Scroll (Instagram)</a> <br/><br/>
 
-<a href="./feather-quill-pen.html">Feather Quill Pen</a> <br/><br/>
+<a href="./feather-quill-pen.html">Feather Quill Pen (Instagram)</a> <br/><br/>
 
-<a href="./futuristic-login.html">Futuristic login</a> <br/><br/>
+<a href="./futuristic-login.html">Futuristic login (Instagram)</a> <br/><br/>
 
-<a href="./trivia.html">Trivia</a> <br/><br/>
+<a href="./trivia.html">Trivia (Instagram)</a> <br/><br/>
 
-<a href="./loading-icon-4.html">Loading Icon 4</a> <br/><br/>
+<a href="./loading-icon-4.html">Loading Icon 4 (Instagram)</a> <br/><br/>
 
-<a href="./rotating-headphones.html">3d headphones</a> <br/><br/>
+<a href="./rotating-headphones.html">3d headphones (Instagram)</a> <br/><br/>
 
-<a href="./oculos-de-sol.html">Sunglasses</a> <br/><br/>
+<a href="./oculos-de-sol.html">Sunglasses (Instagram)</a> <br/><br/>
 
-<a href="./loading-icon-5.html">Loading icon 5</a> <br/><br/>
+<a href="./loading-icon-5.html">Loading icon 5 (Instagram)</a> <br/><br/>
 
-<a href="./baloes-subindo.html">Emerging balloons</a> <br/><br/>
+<a href="./baloes-subindo.html">Emerging balloons (Instagram)</a> <br/><br/>
 
-<a href="./coin-flip-game.html">Coin flip game</a> <br/><br/>
+<a href="./coin-flip-game.html">Coin flip game (Instagram)</a> <br/><br/>
 
-<a href="./pena-caindo.html">Feather falling</a> <br/><br/>
+<a href="./pena-caindo.html">Feather falling (Instagram)</a> <br/><br/>
 
-<a href="./nave-alienigina.html">Alien ship</a> <br/><br/>
+<a href="./nave-alienigina.html">Alien ship (Instagram)</a> <br/><br/>
 
-<a href="./egg-toasting.html">Egg toasting</a> <br/><br/>
+<a href="./egg-toasting.html">Egg toasting (Instagram)</a> <br/><br/>
 
-<a href="./depth-illusion.html">Depth Illusion</a> <br/><br/>
+<a href="./depth-illusion.html">Depth Illusion (Instagram)</a> <br/><br/>
 
-<a href="./dancing-font.html">Dancing font</a> <br/><br/>
+<a href="./dancing-font.html">Dancing font (Instagram)</a> <br/><br/>
 
-<a href="./witch-book.html">Witch Book</a> <br/><br/>
+<a href="./witch-book.html">Witch Book (Instagram)</a> <br/><br/>
 
-<a href="./montain-climb.html">Montain Climb</a> <br/><br/>
+<a href="./montain-climb.html">Montain Climb (Instagram)</a> <br/><br/>
 
-<a href="./codificando-a-realidade.html">Coding the reality</a> <br/><br/>
+<a href="./codificando-a-realidade.html">Coding the reality (Instagram)</a> <br/><br/>
 
-<a href="./metaverso-desconstruido.html">Desconstructed Metaverse</a> <br/><br/>
+<a href="./metaverso-desconstruido.html">Desconstructed Metaverse (Instagram)</a> <br/><br/>
 
-<a href="./the-enigma-of-time.html">The enigma of time</a> <br/><br/>
+<a href="./the-enigma-of-time.html">The enigma of time (Instagram)</a> <br/><br/>
 
-<a href="./push-the-language.html">Push the language</a> <br/><br/>
+<a href="./push-the-language.html">Push the language (Instagram)</a> <br/><br/>
 
-<a href="./formas-magicas.html">Magic shapes</a> <br/><br/>
+<a href="./formas-magicas.html">Magic shapes (Instagram)</a> <br/><br/>
 
-<a href="./formas-magicas.html">Magic shapes growing</a> <br/><br/>
+<a href="./formas-magicas.html">Magic shapes growing (Instagram)</a> <br/><br/>
 
-<a href="./dancing-code.html">Dancing code</a> <br/><br/><a href="./shapeshifter-showdown.html">Shapeshifter showdown</a> <br/><br/><a href="./interactive-shape-dance.html">Interactive shape dance</a> <br/><br/><a href="./3d-glitch-city.html">3d glitch city</a> <br/><br/><a href="./the-syntax-symphony.html">The syntax symphony</a> <br/><br/><a href="./hover-memory.html">Hover memory</a> <br/><br/><a href="./glitch-cube.html">Glitch cube</a> <br/><br/><a href="./flow-stat.html">Flow stat</a> <br/><br/><a href="./floating-interfac.html">Floating interfac</a> <br/><br/><a href="./nested-loop.html">Nested loop</a> <br/><br/><a href="./nested-loop.html">Nested loop</a> <br/><br/><a href="./data-bloom.html">Data bloom</a> <br/><br/><a href="./pathfinding-proximity.html">Pathfinding proximity</a> <br/><br/><a href="./the-dom-dance.html">The dom dance</a> <br/><br/><a href="./hover-state-symphony.html">Hover state symphony</a> <br/><br/><a href="./infinite-scroll-illusion.html">Infinite scroll illusion</a> <br/><br/><a href="./3d-morphing-typography.html">3d morphing typography</a> <br/><br/><a href="./the-animated-growth-variable.html">The animated growth variable</a> <br/><br/><a href="./peek-into-the-function.html">Peek into the function</a> <br/><br/>
-<a href="./data-morphing---from-array-to-chart.html">Data morphing   from array to chart</a> <br/><br/><a href="./the-microinteraction-safari.html">The microinteraction safari</a> <br/><br/>
+<a href="./dancing-code.html">Dancing code (Instagram)</a> <br/><br/>
+
+<a href="./shapeshifter-showdown.html">Shapeshifter showdown (Instagram)</a> <br/><br/>
+
+<a href="./interactive-shape-dance.html">Interactive shape dance (Instagram)</a> <br/><br/>
+
+<a href="./3d-glitch-city.html">3d glitch city (Instagram)</a> <br/><br/>
+
+<a href="./the-syntax-symphony.html">The syntax symphony (Instagram)</a> <br/><br/>
+
+<a href="./hover-memory.html">Hover memory (Instagram)</a> <br/><br/>
+
+<a href="./glitch-cube.html">Glitch cube (Instagram)</a> <br/><br/>
+
+<a href="./flow-stat.html">Flow stat (Instagram)</a> <br/><br/>
+
+<a href="./floating-interfac.html">Floating interfac (Instagram)</a> <br/><br/>
+
+<a href="./nested-loop.html">Nested loop (Instagram)</a> <br/><br/>
+
+<a href="./nested-loop.html">Nested loop (Instagram)</a> <br/><br/>
+
+<a href="./data-bloom.html">Data bloom (Instagram)</a> <br/><br/>
+
+<a href="./pathfinding-proximity.html">Pathfinding proximity (Instagram)</a> <br/><br/>
+
+<a href="./the-dom-dance.html">The dom dance (Instagram)</a> <br/><br/>
+
+<a href="./hover-state-symphony.html">Hover state symphony (Instagram)</a> <br/><br/>
+
+<a href="./infinite-scroll-illusion.html">Infinite scroll illusion (Instagram)</a> <br/><br/>
+
+<a href="./3d-morphing-typography.html">3d morphing typography (Instagram)</a> <br/><br/>
+
+<a href="./the-animated-growth-variable.html">The animated growth variable (Instagram)</a> <br/><br/>
+
+<a href="./peek-into-the-function.html">Peek into the function (Instagram)</a> <br/><br/>
+
+<a href="./data-morphing---from-array-to-chart.html">Data morphing   from array to chart (Instagram)</a> <br/><br/>
+
+<a href="./the-microinteraction-safari.html">The microinteraction safari (Instagram)</a> <br/><br/>
