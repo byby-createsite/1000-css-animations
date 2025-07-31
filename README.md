@@ -178,4 +178,4 @@ Feel free to contribute to this repository.
 
 <a href="./hover-memory---recursive-colors.html">Hover memory recursive colors </a> <br/><br/>
 
-<a href="./code-bloom.html">Code bloom</a> <br/><br/><a href="./glitch-garden.html">Glitch garden</a> <br/><br/>
+<a href="./code-bloom.html">Code bloom</a> <br/><br/><a href="./glitch-garden.html">Glitch garden</a> <br/><br/><a href="./glitch-in-the-reality-machine.html">Glitch in the reality machine</a> <br/><br/><a href="./the-code-whisperer.html">The code whisperer</a> <br/><br/>
