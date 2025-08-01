@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tab Overload</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+} 
+.selector       { color: #F92672; } 
+.property       { color: #66D9EF; } 
+.value-number   { color: #AE81FF; } 
+.value-string   { color: #E6DB74; } 
+.value-color    { color: #A6E22E; } 
+.brace          { color: #F8F8F2; } 
+.comment        { color: #75715E; }
+.function       { color: #A6E22E; }
+.animation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.tab {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 8px;
+  transform-origin: center;
+  animation: tabPulse 1s infinite alternate;
+  
+}
+@keyframes tabPulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.tab:nth-child(1) {
+  left: 10%;
+  top: 10%;
+  animation-delay: 0s;
+}
+.tab:nth-child(2) {
+  left: 30%;
+  top: 10%;
+  animation-delay: 0.2s;
+}
+.tab:nth-child(3) {
+  left: 50%;
+  top: 10%;
+  animation-delay: 0.4s;
+}
+.tab:nth-child(4) {
+  left: 70%;
+  top: 10%;
+  animation-delay: 0.6s;
+}
+
+
+
+</style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.tab</span><span class="property"> {</span>
+    <span class="property">position</span><span class="value-string">:absolute;</span>
+    <span class="property">width</span><span class="value-number">:80px;</span>
+    <span class="property">height</span><span class="value-number">:40px;</span>
+    <span class="property">background-color</span>
+    <span class="value-string">:#333;</span>
+    <span class="property">border-radius</span>
+    <span class="value-number">:8px;</span>
+    <span class="property">  transform-origin</span>
+    <span class="value-string"> : center;</span>
+    <br>
+    <span class="property">  animation</span>
+    <span class="function"> : tabPulse 1s infinite alternate;</span>
+    <br>
+  </div>
+  <div class="animation-container">
+  <div class="tab"></div>
+  <div class="tab"></div>
+  <div class="tab"></div>
+  <div class="tab"></div>
+</div> </body>
+</html>
+
+
+
+
