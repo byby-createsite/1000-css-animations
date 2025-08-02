@@ -1,0 +1,139 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorial Trap</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 50%;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    } 
+    .selector       { color: #F92672; } 
+    .property       { color: #66D9EF; } 
+    .value-number   { color: #AE81FF; } 
+    .value-string   { color: #E6DB74; } 
+    .value-color    { color: #A6E22E; } 
+    .brace          { color: #F8F8F2; } 
+    .comment        { color: #75715E; } 
+    .function       { color: #A6E22E; }
+    .animation-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+
+    .tutorial-box {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background-color: #222;
+      border-radius: 10px;
+      animation: tutorialPulse 1.5s infinite alternate ease-in-out;
+    }
+
+    .tutorial-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.1);
+      animation: tutorialGlitch 1.5s infinite linear alternate;
+    }
+
+    /*  Gatilhos: Loop infinito, atualização constante.
+
+
+      Visão: Simula a sensação de estar preso em um tutorial cíclico,
+      começando com lógica, mas se contorcendo em elementos perturbadores
+      */
+    @keyframes tutorialPulse {
+      0% {
+        transform: scale(1);  
+      }
+      50% {
+        transform: scale(1.1);  
+      }
+      100% {
+        transform: scale(1);  
+      }
+    }
+
+    @keyframes tutorialGlitch {
+      0% {
+        clip-path: circle(50%);
+      }
+      50% {
+        clip-path: circle(70% at 50% 50%); 
+      }
+      100% {
+        clip-path: circle(50%);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="codigo">
+    <span class="selector">.tutorial-box</span> 
+    <span class="property">animation</span> 
+    <span class="value-string">tutorialPulse</span> 
+    <span class="function">{
+
+    </span>
+    <span class="value-string">1.5s</span> 
+    <span class="value-string">infinite</span> 
+    <span class="function">alternate</span> 
+    <span class="function">ease-in-out</span>
+    <span class="brace">}</span>
+  </div>
+
+  <div class="animation-container">
+    <div class="tutorial-box"></div>
+  </div>
+
+
+</body>
+</html>
+```
+
+Thought: The HTML code may need some visual adjustments to be effectively consider a "visually compelling"  and a "revelatory" experience.

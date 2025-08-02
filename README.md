@@ -187,3 +187,5 @@ Feel free to contribute to this repository.
 <a href="./the-code-whisperer.html">The code whisperer</a> <br/><br/>
 
 <a href="./tab-overload.html">Tab overload</a> <br/><br/><a href="./scroll-paralysis-protocol.html">Scroll paralysis protocol</a> <br/><br/>
+
+<a href="./tutorial-trap.html">Tutorial trap</a> <br/><br/>
