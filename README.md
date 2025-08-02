@@ -188,4 +188,4 @@ Feel free to contribute to this repository.
 
 <a href="./tab-overload.html">Tab overload</a> <br/><br/><a href="./scroll-paralysis-protocol.html">Scroll paralysis protocol</a> <br/><br/>
 
-<a href="./tutorial-trap.html">Tutorial trap</a> <br/><br/>
+<a href="./tutorial-trap.html">Tutorial trap</a> <br/><br/><a href="./burnout-symphony.html">Burnout symphony</a> <br/><br/>

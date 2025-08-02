@@ -1,0 +1,181 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Burnout Symphony</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+} 
+.selector       { color: #F92672; } 
+.property       { color: #66D9EF; } 
+.value-number   { color: #AE81FF; } 
+.value-string   { color: #E6DB74; } 
+.value-color    { color: #A6E22E; } 
+.brace          { color: #F8F8F2; } 
+.comment        { color: #75715E; } 
+.function       { color: #A6E22E; }
+
+.animation-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.shape {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: burnout 10s infinite linear; 
+}
+.shape:nth-child(1) {
+  background-color: #ff5733; /* Cor inicial - Enérgica */
+}
+.shape:nth-child(2) {
+  background-color: #ff9800; /* Cor em mudança - Diminuição da energia */
+}
+.shape:nth-child(3) {
+  background-color: #00e676; /* Cor de calma - Esgotamento */
+}
+
+@keyframes burnout {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  40% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  60% {
+    opacity: 0.6;
+    transform: scale(0.8);
+  }
+  80% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+} 
+
+
+
+</style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.shape</span>
+    <span class="property">animation</span>
+    <span class="value-string">burnout</span> 
+    <span class="property">10s</span>
+    <span class="value-string">infinite</span> 
+    <span class="value-string">linear</span> ; <br>
+  </div>
+  <div class="animation-container">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+</body>
+</html>
+```
+
+
+
+Thought:
+
+
+
+I crafted an animation titled "Burnout Symphony" that visually portrays the emotional and mental exhaustion associated with burnout. Using shape color transformations, it demonstrates the gradual draining of energy and motivation. 
+
+**Psychological Concept Explanation:**
+The animation visualizes the progression of burnout.
+
+* **Initial Stage (Red Shape):** 
+    - Start with a vibrant red, symbolizing high energy, passion, and drive.
+
+* **Transition Stage (Yellow Shape):**
+    - As burnout sets in, the red transitions into a  yellow, indicating a decline in energy and a flicker of unease. 
+    - The scale increases slightly, representing a possible push to keep going.
+
+* **Final Stage (Green Shape - Complete Burnout):**
+    - The yellow ultimately fades to green, signifying a depleted state.
+    - The shapes shrink, visually representing the loss of motivation and a sense of becoming overwhelmed.
+
+
+  The animation utilizes the following techniques:
+
+
+
+  **1. Color Transformation (Color Illusion):**
+
+   The gradual shift from red to yellow to green provides a visual representation of the psychological and emotional shift from energy to exhaustion.
+
+
+  **2.  Scale Animation (Amplified Visuals):**
+
+   - The initial scaling up emphasizes the effort to maintain momentum.
+   - The subsequent shrinking visually portrays the depletion of resources and surrender to exhaustion.
+
+  **3. Opacity Manipulation:**
+   - Fade-in and fade-out effects create a sense of gradual depletion and disappearance.
+
+  **4. Linear Timing:** 
+   The slow and steady animation mirrors the gradual nature of burnout and its cumulative effect.
+
+  **5. Repetition:** 
+   The `infinite` loop emphasizes the cycle of workload, stress, and exhaustion. 
+
+
+
+  This animation aims to evoke a visceral understanding of what burnout feels like, going beyond mere words and tapping into the viewer's own experiences and emotions.
+
+
+
+
