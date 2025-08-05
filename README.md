@@ -190,4 +190,4 @@ Feel free to contribute to this repository.
 
 <a href="./tutorial-trap.html">Tutorial trap</a> <br/><br/><a href="./burnout-symphony.html">Burnout symphony</a> <br/><br/>
 
-<a href="./digital-deja-vu.html">Digital deja vu</a> <br/><br/><a href="./simulated-reality-shift.html">Simulated reality shift</a> <br/><br/><a href="./fear-of-missing-output.html">Fear of missing output</a> <br/><br/>
+<a href="./digital-deja-vu.html">Digital deja vu</a> <br/><br/><a href="./simulated-reality-shift.html">Simulated reality shift</a> <br/><br/><a href="./fear-of-missing-output.html">Fear of missing output</a> <br/><br/><a href="./the-overwhelm-algorithm.html">The overwhelm algorithm</a> <br/><br/>
