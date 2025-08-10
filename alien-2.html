@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nave Alienígena - Pure CSS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(ellipse at center, #0a0a2e 0%, #000 70%);
+        }
+
+        /* Animações base */
+        @keyframes floatBase {
+            0% { transform: translateY(0px) scale(2); }
+            50% { transform: translateY(-20px) scale(2); }
+            100% { transform: translateY(0px) scale(2); }
+        }
+
+        @keyframes alienAnimation {
+            0% {
+                transform: scale(0.02) translate3d(0, 0, 0) rotateY(0deg) rotateX(0deg);
+                opacity: 0.3;
+                filter: blur(5px);
+            }
+            15% {
+                transform: scale(0.1) translate3d(-200px, 150px, -100px) rotateY(45deg) rotateX(-15deg);
+                opacity: 0.6;
+                filter: blur(3px);
+            }
+            30% {
+                transform: scale(0.3) translate3d(100px, -80px, -50px) rotateY(-30deg) rotateX(10deg);
+                opacity: 0.8;
+                filter: blur(2px);
+            }
+            45% {
+                transform: scale(0.6) translate3d(-50px, 40px, 20px) rotateY(15deg) rotateX(-5deg);
+                opacity: 0.9;
+                filter: blur(1px);
+            }
+            60% {
+                transform: scale(1) translate3d(30px, -20px, 50px) rotateY(-10deg) rotateX(3deg);
+                opacity: 1;
+                filter: blur(0.5px);
+            }
+            75% {
+                transform: scale(1.4) translate3d(-15px, 10px, 30px) rotateY(5deg) rotateX(-2deg);
+                opacity: 1;
+                filter: blur(0px);
+            }
+            100% {
+                transform: scale(2) translate3d(0, 0, 0) rotateY(0deg) rotateX(0deg);
+                opacity: 1;
+                filter: blur(0px);
+            }
+        }
+
+        /* Container principal */
+        .container {
+            animation: alienAnimation 5s linear forwards, floatBase 2s linear infinite;
+            animation-delay: 0s, 5s;
+            position: relative;
+        }
+
+        /* Rastro da nave */
+        .trail {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .trail::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(74, 144, 226, 0.4) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: trailPulse 3s infinite ease-out;
+        }
+
+        .trail::after {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: radial-gradient(circle, rgba(255, 165, 0, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: trailPulse 4s infinite ease-out;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes trailPulse {
+            0% { transform: scale(0.8); opacity: 0.8; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        /* Partículas orbitando */
+        .particles {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+        }
+
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            filter: blur(1px);
+            animation: orbit 8s linear infinite;
+            box-shadow: 0 0 10px 2px rgba(74, 144, 226, 0.7);
+        }
+
+        .particle:nth-child(1) {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: 0s;
+            background: rgba(74, 144, 226, 0.9);
+        }
+
+        .particle:nth-child(2) {
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            animation-delay: -2s;
+            background: rgba(255, 165, 0, 0.9);
+        }
+
+        .particle:nth-child(3) {
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: -4s;
+            background: rgba(220, 20, 60, 0.9);
+        }
+
+        .particle:nth-child(4) {
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            animation-delay: -6s;
+            background: rgba(138, 43, 226, 0.9);
+        }
+
+        @keyframes orbit {
+            0% {
+                transform: rotate(0deg) translateX(150px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(150px) rotate(-360deg);
+            }
+        }
+
+        /* Luzes e brilhos */
+        .glow {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(74, 144, 226, 0.3) 0%, transparent 60%);
+            filter: blur(10px);
+            z-index: -1;
+            animation: glowPulse 3s infinite alternate;
+        }
+
+        .glow:nth-child(2) {
+            background: radial-gradient(circle, rgba(255, 165, 0, 0.2) 0%, transparent 70%);
+            filter: blur(15px);
+            animation-delay: 0.5s;
+        }
+
+        @keyframes glowPulse {
+            0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+            100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+        }
+
+        /* Estrelas */
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite alternate;
+        }
+        .star.small {
+            width: 1px;
+            height: 1px;
+        }
+        .star.medium {
+            width: 2px;
+            height: 2px;
+        }
+        .star.large {
+            width: 3px;
+            height: 3px;
+            box-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        /* Posições das estrelas */
+        .star:nth-child(1) { top: 15%; left: 10%; animation-delay: 0.2s; animation-duration: 2.5s; }
+        .star:nth-child(2) { top: 25%; left: 25%; animation-delay: 1.1s; animation-duration: 1.8s; }
+        .star:nth-child(3) { top: 8%; left: 40%; animation-delay: 0.7s; animation-duration: 3.2s; }
+        .star:nth-child(4) { top: 35%; left: 60%; animation-delay: 1.8s; animation-duration: 2.1s; }
+        .star:nth-child(5) { top: 55%; left: 15%; animation-delay: 0.4s; animation-duration: 2.8s; }
+        .star:nth-child(6) { top: 70%; left: 35%; animation-delay: 1.5s; animation-duration: 1.6s; }
+        .star:nth-child(7) { top: 45%; left: 80%; animation-delay: 0.9s; animation-duration: 2.4s; }
+        .star:nth-child(8) { top: 80%; left: 70%; animation-delay: 1.2s; animation-duration: 3.1s; }
+        .star:nth-child(9) { top: 20%; left: 85%; animation-delay: 0.6s; animation-duration: 1.9s; }
+        .star:nth-child(10) { top: 90%; left: 20%; animation-delay: 1.7s; animation-duration: 2.6s; }
+
+        /* Base da nave */
+        .base .baseSegments {
+            position: absolute;
+            width: 25px;
+            height: 92px;
+            left: 94px;
+            top: 54px;
+            transform-origin: 6px 100px;
+            background: linear-gradient(135deg, 
+                #ff4500 0%, 
+                #ff6b35 15%, 
+                #ffa500 30%, 
+                #ffcc00 50%, 
+                #ff8c00 70%, 
+                #ff6347 85%, 
+                #dc143c 100%);
+            border-radius: 2px;
+            box-shadow: inset 0 0 15px rgba(255, 165, 0, 0.6),
+                        0 0 25px rgba(255, 140, 0, 0.4),
+                        0 0 50px rgba(255, 69, 0, 0.3);
+        }
+
+        /* Esfera principal */
+        .sphere {
+            width: 80px;
+            height: 80px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-top: -40px;
+            margin-left: -40px;
+            opacity: 1;
+            transform-style: preserve-3d;
+            animation: rotateSegmentsReverse 4s linear infinite;
+            z-index: 10;
+            filter: drop-shadow(0 0 15px rgba(74, 144, 226, 0.7));
+        }
+
+        .segment {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: none;
+            backface-visibility: visible;
+            opacity: 1;
+        }
+
+        /* Classes de rotação longitude */
+        .longitude-0 { transform: rotateY(0deg); }
+        .longitude-15 { transform: rotateY(15deg); }
+        .longitude-30 { transform: rotateY(30deg); }
+        .longitude-45 { transform: rotateY(45deg); }
+        .longitude-60 { transform: rotateY(60deg); }
+        .longitude-75 { transform: rotateY(75deg); }
+        .longitude-90 { transform: rotateY(90deg); }
+        .longitude-105 { transform: rotateY(105deg); }
+        .longitude-120 { transform: rotateY(120deg); }
+        .longitude-135 { transform: rotateY(135deg); }
+        .longitude-150 { transform: rotateY(150deg); }
+        .longitude-165 { transform: rotateY(165deg); }
+        .longitude-180 { transform: rotateY(180deg); }
+
+        /* Classes de rotação latitude */
+        .latitude-0 { transform: rotateX(0deg); }
+        .latitude-15 { transform: rotateX(15deg); }
+        .latitude-30 { transform: rotateX(30deg); }
+        .latitude-45 { transform: rotateX(45deg); }
+        .latitude-60 { transform: rotateX(60deg); }
+        .latitude-75 { transform: rotateX(75deg); }
+        .latitude-90 { transform: rotateX(90deg); }
+        .latitude-105 { transform: rotateX(105deg); }
+        .latitude-120 { transform: rotateX(120deg); }
+        .latitude-135 { transform: rotateX(135deg); }
+        .latitude-150 { transform: rotateX(150deg); }
+        .latitude-165 { transform: rotateX(165deg); }
+
+        /* Classes diagonais */
+        .diagonal-1 { transform: rotateX(30deg) rotateY(30deg); }
+        .diagonal-2 { transform: rotateX(30deg) rotateY(60deg); }
+        .diagonal-3 { transform: rotateX(30deg) rotateY(90deg); }
+        .diagonal-4 { transform: rotateX(30deg) rotateY(120deg); }
+        .diagonal-5 { transform: rotateX(30deg) rotateY(150deg); }
+        .diagonal-6 { transform: rotateX(30deg) rotateY(180deg); }
+        .diagonal-7 { transform: rotateX(60deg) rotateY(30deg); }
+        .diagonal-8 { transform: rotateX(60deg) rotateY(60deg); }
+        .diagonal-9 { transform: rotateX(60deg) rotateY(90deg); }
+        .diagonal-10 { transform: rotateX(60deg) rotateY(120deg); }
+        .diagonal-11 { transform: rotateX(60deg) rotateY(150deg); }
+        .diagonal-12 { transform: rotateX(60deg) rotateY(180deg); }
+        .diagonal-13 { transform: rotateX(-30deg) rotateY(30deg); }
+        .diagonal-14 { transform: rotateX(-30deg) rotateY(60deg); }
+        .diagonal-15 { transform: rotateX(-30deg) rotateY(90deg); }
+        .diagonal-16 { transform: rotateX(-30deg) rotateY(120deg); }
+        .diagonal-17 { transform: rotateX(-30deg) rotateY(150deg); }
+        .diagonal-18 { transform: rotateX(-30deg) rotateY(180deg); }
+        .diagonal-19 { transform: rotateX(-60deg) rotateY(30deg); }
+        .diagonal-20 { transform: rotateX(-60deg) rotateY(60deg); }
+        .diagonal-21 { transform: rotateX(-60deg) rotateY(90deg); }
+        .diagonal-22 { transform: rotateX(-60deg) rotateY(120deg); }
+        .diagonal-23 { transform: rotateX(-60deg) rotateY(150deg); }
+        .diagonal-24 { transform: rotateX(-60deg) rotateY(180deg); }
+
+        /* Cores dos segmentos */
+        .segment {
+            background: radial-gradient(circle at 30% 30%, 
+                #4a90e2,
+                #357abd,
+                #2c5aa0);
+            border: none;
+        }
+
+        /* Base da nave */
+        .base {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            z-index: 1;
+            transform: rotateX(0deg) rotateY(0deg);
+            margin: 50px auto;
+            animation: rotateSegments 4s linear infinite;
+        }
+
+        @keyframes rotateSegmentsReverse {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(-360deg); }
+        }
+
+        @keyframes rotateSegments {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+
+        @keyframes sphereGlow {
+            0% {
+                box-shadow: 
+                    inset -10px -10px 20px rgba(0, 0, 139, 0.5),
+                    inset 10px 10px 20px rgba(135, 206, 250, 0.3),
+                    0 0 30px rgba(30, 144, 255, 0.6),
+                    0 0 60px rgba(0, 191, 255, 0.4),
+                    0 0 100px rgba(0, 255, 255, 0.2);
+            }
+            100% {
+                box-shadow: 
+                    inset -15px -15px 30px rgba(0, 0, 139, 0.7),
+                    inset 15px 15px 30px rgba(135, 206, 250, 0.5),
+                    0 0 50px rgba(30, 144, 255, 0.8),
+                    0 0 100px rgba(0, 191, 255, 0.6),
+                    0 0 150px rgba(0, 255, 255, 0.4);
+            }
+        }
+
+        /* Posicionamento dos segmentos da base */
+        .base .baseSegments:nth-child(1) { transform: rotateY(0deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(2) { transform: rotateY(12deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(3) { transform: rotateY(24deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(4) { transform: rotateY(36deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(5) { transform: rotateY(48deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(6) { transform: rotateY(60deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(7) { transform: rotateY(72deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(8) { transform: rotateY(84deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(9) { transform: rotateY(96deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(10) { transform: rotateY(108deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(11) { transform: rotateY(120deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(12) { transform: rotateY(132deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(13) { transform: rotateY(144deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(14) { transform: rotateY(156deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(15) { transform: rotateY(168deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(16) { transform: rotateY(180deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(17) { transform: rotateY(192deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(18) { transform: rotateY(204deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(19) { transform: rotateY(216deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(20) { transform: rotateY(228deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(21) { transform: rotateY(240deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(22) { transform: rotateY(252deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(23) { transform: rotateY(264deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(24) { transform: rotateY(276deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(25) { transform: rotateY(288deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(26) { transform: rotateY(300deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(27) { transform: rotateY(312deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(28) { transform: rotateY(324deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(29) { transform: rotateY(336deg) translateZ(120px) rotateX(60deg); }
+        .base .baseSegments:nth-child(30) { transform: rotateY(348deg) translateZ(120px) rotateX(60deg); }
+         .base .baseSegments:nth-child(31) { transform: rotateY(360deg) translateZ(120px) rotateX(60deg); }
+
+    </style>
+</head>
+<body>
+    <!-- Estrelas -->
+    <div class="star small"></div>
+    <div class="star small"></div>
+    <div class="star small"></div>
+    <div class="star small"></div>
+    <div class="star small"></div>
+    <div class="star medium"></div>
+    <div class="star medium"></div>
+    <div class="star large"></div>
+    <div class="star large"></div>
+    <div class="star large"></div>
+
+    <!-- Nave alienígena -->
+    <div class="container">
+        <!-- Rastro da nave -->
+        <div class="trail"></div>
+        
+        <!-- Partículas orbitando -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <!-- Luzes e brilhos -->
+        <div class="glow"></div>
+        <div class="glow"></div>
+        
+        <div class="base">
+            <div class="sphere">
+                <div class="segment longitude-0"></div>
+                <div class="segment longitude-15"></div>
+                <div class="segment longitude-30"></div>
+                <div class="segment longitude-45"></div>
+                <div class="segment longitude-60"></div>
+                <div class="segment longitude-75"></div>
+                <div class="segment longitude-90"></div>
+                <div class="segment longitude-105"></div>
+                <div class="segment longitude-120"></div>
+                <div class="segment longitude-135"></div>
+                <div class="segment longitude-150"></div>
+                <div class="segment longitude-165"></div>
+                <div class="segment longitude-180"></div>
+                <div class="segment latitude-0"></div>
+                <div class="segment latitude-15"></div>
+                <div class="segment latitude-30"></div>
+                <div class="segment latitude-45"></div>
+                <div class="segment latitude-60"></div>
+                <div class="segment latitude-75"></div>
+                <div class="segment latitude-90"></div>
+                <div class="segment latitude-105"></div>
+                <div class="segment latitude-120"></div>
+                <div class="segment latitude-135"></div>
+                <div class="segment latitude-150"></div>
+                <div class="segment latitude-165"></div>
+                <div class="segment diagonal-1"></div>
+                <div class="segment diagonal-2"></div>
+                <div class="segment diagonal-3"></div>
+                <div class="segment diagonal-4"></div>
+                <div class="segment diagonal-5"></div>
+                <div class="segment diagonal-6"></div>
+                <div class="segment diagonal-7"></div>
+                <div class="segment diagonal-8"></div>
+                <div class="segment diagonal-9"></div>
+                <div class="segment diagonal-10"></div>
+                <div class="segment diagonal-11"></div>
+                <div class="segment diagonal-12"></div>
+                <div class="segment diagonal-13"></div>
+                <div class="segment diagonal-14"></div>
+                <div class="segment diagonal-15"></div>
+                <div class="segment diagonal-16"></div>
+                <div class="segment diagonal-17"></div>
+                <div class="segment diagonal-18"></div>
+                <div class="segment diagonal-19"></div>
+                <div class="segment diagonal-20"></div>
+                <div class="segment diagonal-21"></div>
+                <div class="segment diagonal-22"></div>
+                <div class="segment diagonal-23"></div>
+                <div class="segment diagonal-24"></div>
+            </div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+            <div class="baseSegments"></div>
+        </div>
+    </div>
+</body>
+</html>
