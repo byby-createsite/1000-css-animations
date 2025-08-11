@@ -1,0 +1,124 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Monday: Echoes of Attention Span</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #181818;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+.animation-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background:transparent;
+}
+
+.elemento1 {
+  width: 100px;
+  height: 100px;
+  background-color: #FF5733;
+  position: relative;
+  animation: flickering 1s infinite alternate;
+}
+.elemento2 {
+  width: 80px;
+  height: 80px;
+  background-color: #3498DB;
+  position: absolute;
+  animation: opacity 1.5s infinite;
+  left: 100px;
+  top: 10px;
+}
+.elemento3 {
+  width: 120px;
+  height: 120px;
+  background-color: #2ECC71;
+  position: absolute;
+  animation: scale 2s infinite;
+  left: 10px;
+  top: 50px;
+}
+
+@keyframes flickering {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+@keyframes opacity {
+  0% { opacity: 0.8; }
+  50% { opacity: 0.2; }
+  100% { opacity: 0.8; }
+}
+
+@keyframes scale {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+
+</style>
+</head>
+<body>
+  <div class="codigo">
+<span class="selector">body</span> 
+  <span class="brace">{</span>
+  <br>
+   
+  <span class="selector">.codigo</span> 
+  <span class="property">background-color:</span> 
+    <span class="value-color">#272822;</span>
+    <br>
+    <span class="selector">.animation-container</span> 
+  <span class="property">background-color:</span> 
+    <span class="value-color">#181818;</span>
+</div>
+
+
+  <div class="animation-container">
+    <div class="elemento1"></div>
+    <div class="elemento2"></div>
+    <div class="elemento3"></div>
+  </div>
+</body>
+</html>
+
+```
