@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #16191f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.selector       
+{ color: #F92672; } 
+.property       
+{ color: #66D9EF; } 
+.value-number   
+{ color: #AE81FF; } 
+.value-string   
+{ color: #E6DB74; } 
+.value-color    
+{ color: #A6E22E; }
+.brace          
+{ color: #F8F8F2; } 
+.comment        
+{ color: #75715E; } 
+.function       
+{ color: #A6E22E; }
+.animation-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background:transparent;
+}
+
+.memory_glow  {
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  position: absolute;
+  top: 0;
+  transform-origin: bottom;
+  animation: memory_fade 12s linear infinite; }
+@keyframes memory_fade {
+  0% { transform: scale(0.8) translate(0, -10px); }
+  50% { transform: scale(1.1) translate(0, 0);}
+  100% { transform: scale(0.8) translate(0, -10px); }
+}
+
+.data{
+   width: 8px;
+   height: 8px;
+   background-color: #F8F8F2;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: data_drip 4s linear infinite;
+}  
+
+@keyframes data_drip {
+    0% { left: 50%; transform: scale(1);opacity:1;}
+    25% { left: 30%; transform: scale(1.2); opacity: 0.8;}
+    50% { left: 20%; transform: scale(0.8); opacity: 0.5;}
+    75% { left: 10%; transform: scale(1); opacity: 0.1;}
+    100% { left: 50%; transform: scale(1); opacity: 0.1;}
+}
+
+
+</style>
+</head>
+<body>
+<div class="codigo">
+  <span class="selector">.memory_glow</span> 
+  <span class="property">animation</span>
+  <span class="brace">{</span>
+  <span class="comment">Animação que simula a nostalgia de memórias distantes, nunca totalmente presentes.</span> <br>
+  <span class="property">  </span>
+  <span class="value-string">memory_fade</span> 
+  <span class="property"> </span>
+  <span class="value-number">12s</span>
+  <span class="property"> linear</span>
+  <span class="property"> infinite</span> <span class="brace">}</span> <br>
+
+
+  
+  <span class="selector">.data</span> 
+  <span class="property">animation</span>
+  <span class="brace">{</span>  
+  <span class="comment">Cada ponto de dados se move e desaparece, representando a sobrecarga da informação em uma cidade digital.</span><br>     
+  <span class="property">  </span>
+  <span class="value-string">data_drip </span>
+  <span class="property"> </span>
+  <span class="value-number">4s</span>
+  <span class="property"> linear</span>
+  <span class="property"> infinite</span> 
+  <span class="brace">}</span> <br>
+</div>
+<div class="animation-container">
+<div class="memory_glow"></div>
+<div class="data"></div>
+<div class="data"></div>
+<div class="data"></div>
+
+</div>
+
+
+
+</body>
+</html>
