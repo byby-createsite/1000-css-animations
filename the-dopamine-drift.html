@@ -1,0 +1,142 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #171923;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+.animation-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background:transparent;
+}
+.elemento { 
+  position:relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    transform-origin: 50% 50%;
+    animation: pulsa 2s infinite alternate; }
+
+.elemento > .heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, #f6767b 0%, #a878ab 50%, #a878ab 100%);
+    background-color: #f6767b; filter: drop-shadow(2px 2px 8px rgba(0,0,0,0.6));
+opacity: 0.7;
+
+animation-delay: var(--delay);
+}
+@keyframes pulsa {
+  0% {
+    transform: scale(1) ;
+  }
+  50% {
+    transform: scale(1.2);
+    filter:contrast(1.5);
+    opacity: 0.9
+  }
+  100% {
+    transform: scale(1);
+   filter: contrast(1);
+    opacity: 0.7;
+}});
+
+
+
+.elemento:nth-child(1)  { animation: pulsa 1s linear infinite alternate}
+.elemento:nth-child(2)  { animation: pulsa 1.5s ease-in-out infinite alternate}
+.elemento:nth-child(3)  { animation: pulsa 2s ease-in infinite alternate}
+
+.elemento:nth-child(1) > .heart { --delay: "0s";}
+
+
+
+.elemento:nth-child(2) > .heart { --delay: "0.5s";}
+.elemento:nth-child(3) > .heart { --delay: "1s";}
+
+
+
+</style>
+</head>
+<body>
+<div class="codigo">
+  <span class="selector"> <span class="property">width</span>  <span class="value-number"> 200px</span> . </span><br>
+  <span class="selector"> <span class="property">height</span>   <span class="value-number"> 200px</span> . </span><br>
+  <span class="selector"> <span class="property">border-radius</span>  <span class="value-number"> 100%</span> . </span><br>
+  <span class="selector"> <span class="property">transform-origin</span> <span class="value-string"> 50% 50%</span> . </span><br>
+  <span class="selector"> <span class="property">animation</span> <span class="value-string"> pulsa 2s infinite alternate</span>  . </span>
+
+</div>
+<div class="animation-container">
+  	<div class="elemento">   
+    	<div class="heart"></div>
+  	</div>
+  	<div class="elemento">   
+    	<div class="heart"></div>
+  	</div>
+  	<div class="elemento">   
+    	<div class="heart"></div>
+  	</div>
+
+</div>
+</body>
+</html>
+
+```
+
+
+
+
+
+
+
+
+Let me know what you think!
+
+
+
+Thought:
