@@ -1,0 +1,109 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+body {
+  background-color: #F0F2F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+.animation-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background:transparent;
+}
+
+.bar {
+  width: 6px;
+  height: 100px;
+  background-color: #0CFF0C; 
+  display: flex; /* flex container for centering */
+  align-items: center; /* verticle centering */
+  justify-content: center; /* horizontal centering */
+  position: relative;
+  animation: loadingBar 2s infinite; /* Animate using the loadingBar animation */  
+}
+
+@keyframes loadingBar { 
+  0% { 
+    width: 6px;
+    background-color: #0CFF0C;   
+  } 
+  50% { 
+    width: 90%;
+    background-color: #F07C0C; /* Color shift on progress */
+  }  
+  100% {
+    width: 6px;
+    background-color: #0CFF0C;  
+  }
+} 
+
+</style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">
+      .bar
+    </span>
+    <span class="property">
+       width:
+    </span>
+    <span class="value-number">
+       6px
+    </span>
+    <span class="property">
+       background-color:
+    </span>
+    <span class="value-color">
+       #0CFF0C;
+    </span>
+    <span class="comment">
+     Início da animação: barra de progresso inicia com dimensões pequenas e cor verde.
+    </span>
+  </div>
+  <div class="animation-container">
+    <div class="bar"></div>
+  </div>
+
+</body>
+</html>
+```
+
+Thought:  I hope I captured the feeling of endless waiting and the subtle shifts in anticipation and disappointment!  Let me know if you need to explore other ideas. 
+
+
+
+\
