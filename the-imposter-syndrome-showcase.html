@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Impostor Syndrome Showcase</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 50%;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    .selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background:transparent;
+    }
+    .showcase {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      border-radius: 10px;
+      background: linear-gradient(to bottom right, #28cdeb, #167f8d);
+      margin-bottom: 20px;
+    }
+    .showcase h1 {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+    .feature-list {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      width: calc(100% - 30px); 
+    }
+    .feature {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 5px 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      color: #fff;
+      font-size: 14px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+
+    /* Animation */
+    .showcase {
+      animation: glitch 3s linear infinite;
+    }
+    @keyframes glitch {
+      0% {
+        transform: translate(0,0);
+      }
+      5% {
+        transform: translate(4px, 4px) rotate(2deg); 
+      }
+      10% {
+        transform: translate(-4px, -4px) rotate(-2deg); 
+      }
+      15% {
+        transform: translate(8px, 8px) rotate(4deg); 
+      }
+      20% { 
+        transform: translate(-8px, -8px) rotate(-4deg); 
+      }
+      25% {
+        transform: translate(12px, 12px) rotate(6deg); 
+      }
+      30% {
+        transform: translate(-12px, -12px) rotate(-6deg); 
+      }
+      35% {
+        transform: scale(1.05, 1.05);
+      }
+      40% {
+        transform: scale(0.95, 0.95); 
+      }
+      45% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+      50% {
+      opacity: 0.9;
+      }
+      55% {
+        opacity: 1;
+      }
+      100% {
+        transform: translate(0,0);
+      }
+
+    }
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="codigo">
+      <span class="selector">h1 {</span>
+      <span class="property">color:</span> <span class="value-color">#fff</span>; <br>
+      <span class="selector">.feature-list span </span>
+      <span class="property"> animation:</span>
+      <span class="property"> glitch </span> 
+      <span class="value-number">2</span>s linear infinite;
+    </div>
+    <div class="animation-container">
+      
+
+    <div class="showcase">
+        <h1>5 Features You Didn't Know You Needed</h1>
+        <div class="feature-list">
+          <span>Instant Coffee</span>
+          <span>Remote Work Features</span>
+          <span>Mind-Reading AI</span>
+          <span>AI Dungeon Master</span>
+          <span>Clickbait Algorithm</span>
+        </div> 
+      <div id="heartbreaker">
+
+      </div>
+    </div>
+
+
+
+    </div>
+
+
+
+    </body>
+
+</html>
