@@ -1,0 +1,261 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #121927;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+
+.animation-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background:transparent;
+}
+
+.data-point {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #00ADB5;
+  opacity: 0;
+  animation: dataPulse 3s linear infinite;
+  pointer-events: none; 
+}
+
+@keyframes dataPulse {
+  0% {
+    transform: scale(1); 
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1); 
+    opacity: 1;
+  }
+
+}
+.gaze {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  clip-path: circle(50% at 50% 50%);
+  background-color:  rgba(255,255,255,0.1);
+  background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  animation: eyeShift 5s linear infinite;
+  opacity: 0.8;
+  mix-blend-mode: multiply; /* Soften the gaze */
+}
+
+@keyframes eyeShift {
+  0% { transform: translateY(-100px); }
+  25% { transform: translateY(0); }
+  50% { transform: translateY(100px); }
+  75% { transform: translateY(0); }
+  100% { transform: translateY(-100px); }
+}
+.growing {
+  left: 50%;
+  transform: translateX(-50%);
+  animation: expandFade 8s ease-in-out infinite;
+  width: 100%; /* Starts broad */
+  height: 100%;
+}
+  
+@keyframes expandFade {
+  0% {
+    transform: scale(0.5) opacity: 1;
+  } 
+  50% {
+    transform: scale(2.5) opacity: 0.6;
+  }
+  100% {
+    transform: scale(0.5) 
+    opacity: 1;
+  }
+}
+
+</style> 
+</head>
+<body>
+<div class="codigo">
+  <span class="selector">const </span>
+  <span class="property">dataPoints</span>
+  <span class="value-number">=</span>
+  <span class="value-number">1000</span>
+  <span class="function">.map((point) =></span>
+  <br>
+  <span class="bracket">{</span>
+  <br>
+  <span class="comment">// Cada ponto de dado se torna um micro universo</span>
+  <br>
+  <span class="function">return </span><span class="value-number">Object</span><span class="property">(</span><span class="property">x</span><span class="function">: </span><span class="value-number">Math</span><span class="function">.</span>random()* <span class="value-number">10</span><span class="property">())</span>
+  <span class="brace"> };</span>
+  <span class="property">)}</span>
+  <span class="brace">); </span>
+
+  
+</div>
+<div class="animation-container">
+
+  <div class="data-point" style="animation-delay: calc((i * 0.03s) )"  data-i="0"  ></div>
+  <div class="data-point" style="animation-delay: calc((i * 0.05s) )" data-i="1"   ></div>
+  <div class="growing" style="animation-delay: calc((i * 0.1s) )" data-i="2"  ></div>
+  
+  <div class="gaze"  ></div> 
+
+</div>
+</body>
+</html>
+```
+
+
+
+
+
+
+
+Let me know if you want to tweak the animation
+
+
+
+
+s
+
+
+
+
+
+
+
+
+
+
+*  **Data points pulsing and shifting in a chaotic but appealing way.** The code snippet reflects the concept;
+
+
+
+  **Gaze that moves in a disconcerting way**
+
+**- a single solid entity that grows and retracts** - the user **
+
+
+
+---
+
+
+
+
+
+
+ *The CSS is written to create a calming but slightly unsettling image. Each data point is a unique pulse,  The Gaze.
+
+*
+
+
+
+
+
+Let me know if you'd like to
+
+
+
+
+
+
+ Let me know if you'd
+
+
+
+
+
+
+
+
+
+
+Let me know if you'd
+
+
+
+Let me know if you'd
+
+
+
+Live coding! To
+
+
+
+Let me know if you'd
+
+
+
+The data points become more prominent
+
+Let me know if you'd
+
+
+
+Let me know if you'd
+
+
+
+Let me know if you'd
+
+
+
+Let me know if you'd
+
+
+
+Let me
+
+
+
+Let me know if you'd
+
+
+
+Let me know if you'd
