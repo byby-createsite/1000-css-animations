@@ -1,0 +1,142 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #1C2737;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+.animation-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background:transparent;
+}
+
+.container__1 {
+
+  position: relative;
+  width: 200px;
+  height: 200px;
+  animation: dopamine__decay 8s linear infinite;
+}
+
+@keyframes dopamine__decay {
+  0% { 
+    filter: blur(0px); /* Começando nítido, como um pico de prazer */
+  }
+  25% { 
+    filter: blur(10px); /* Aumenta a névoa, simbolizando o começo da decadência */
+  }  
+  50% {
+    filter: blur(15px); /* Intensifica o efeito de desfoque */
+  }
+
+  75% {
+    filter: blur(20px); /*  A distorção se torna mais visível */
+  }
+  100% {
+    filter: blur(30px); /* Perda completa da nitidez, representando o vazio */
+  }
+}
+
+
+
+.gradient { 
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom,  #C72C41 0%, #FDB61C 50%, #00D9C4 100%); /* Gradiente simulado de emoção */ 
+  position: absolute;
+  left: 0; 
+  top: 0; 
+  pointer-events: none; /* Permitir interação com elementos por trás */
+}
+
+.element__1 { 
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: #BF0000;
+  border: 4px solid transparent; 
+  border-radius: 50%; 
+  animation: pulse 2.5s cubic-bezier(0.8, 0.4, 0.2, 1) infinite;
+}
+
+
+@keyframes pulse { 
+0% { 
+  transform: scale(1);
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.4); 
+} 
+50% {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.8); 
+} 
+100% { 
+  transform: scale(1);
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.4); 
+}
+}
+</style>
+ </head>
+<body>
+<div class="codigo"> 
+  <span class="selector">/* Gradiente de emissão de dopamina, */</span>
+  <span class="property">background </span>
+  <span class="value-string">linear-gradient(to bottom,</span> <span class="value-string">#C72C41</span> <span class="value-number">0%</span><span class="value-number">,</span> <span class="value-string">#FDB61C</span> <span class="value-number">50%</span><span class="value-number">,</span> <span class="value-string">#00D9C4</span> <span class="value-number">100%</span><span class="value-string">)</span>; 
+  
+  /* */
+</div> 
+
+<div class="animation-container">
+  <div class="container__1">
+    <div class="gradient"></div> 
+    <div class="element__1"></div> 
+  </div>
+
+</div>
+
+
+</body>
+</html>
+
+```
