@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #181C22;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+.animation-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background:transparent;
+}
+.element {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  /* Animação inicial */
+  opacity: 0;
+  transform: translateY(150px);
+  animation: fadeIn 1s ease-in-out forwards;
+
+}
+.element:nth-child(1) {
+background-image: radial-gradient(circle at 50% 0%, #FF8266 0%, #E66465 100%); /*  Cores que evocam ansiedade - contraste e movimento */
+  animation-delay: 0s;
+}
+.element:nth-child(2) {
+background-image: radial-gradient(circle at 50% 100%, #5FC9FF 0%, #1D82AE 100%); /* Cores que evocam um estado mental nebuloso, como a falta de foco */
+  animation-delay: 0.2s;
+}
+.element:nth-child(3) {
+background-image: radial-gradient(circle at 50% 50%, #62FF62 0%, #2A992B 100%);  /* Cores que evocam uma sensação de estagnação, sensação de reptar */
+  animation-delay: 0.4s;
+}
+
+.element:nth-child(4) {
+background-image: radial-gradient(circle at 50% 25%, #FF6692 0%, #D92948 100%); /* Cores vibrantes, como as que prejudicam o sono */
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+</style>
+</head>
+<body>
+  <div class="codigo">
+    .element {
+      /* Animação inicial */
+      opacity: 0;
+      transform: translateY(150px);
+      animation: fadeInOut 1s ease-in-out infinite alternate;
+    }
+    .element:nth-child(1) {
+    background-image: radial-gradient(circle at 50% 0%, #FF8266 0%, #E66465 100%); //Cores que evocam ansiedade 
+    }
+    .element:nth-child(2) {
+      background-image: radial-gradient(circle at 50% 100%, #5FC9FF 0%, #1D82AE 100%); //Cores que evocam um estado mental nebuloso
+    }
+    .element:nth-child(3) {
+      background-image: radial-gradient(circle at 50% 50%, #62FF62 0%, #2A992B 100%); //Cores que evocam uma sensação de estagnação 
+   }
+
+
+    .element:nth-child(4) {
+      background-image: radial-gradient(circle at 50% 25%, #FF6692 0%, #D92948 100%); //Cores vibrantes, como as que prejudicam o sono 
+    }
+    .element:nth-child(5:6) { background-image: radial-gradient(circle at 50% 50%, #B32727 0%, #A61D1D 100%);}
+    @keyframes fadeInOut {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      } 
+    }
+  </div>
+  <div class="animation-container">
+
+
+  <div class="element"></div>
+  <div class="element"></div>
+  <div class="element"></div>
+  <div class="element"></div>
+  <div class="element"></div>
+  <div class="element"></div>
+
+
+
+  </div>   </body>
+</html>
+
+
+
+Let the coding begin!
