@@ -3,9 +3,15 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<title>The Waiting Room</title>
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  background-color: #F0F2F5;
+  background-color: #253446;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,74 +42,55 @@ body {
   top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
-  background:transparent;
 }
-
-.bar {
-  width: 6px;
+.ghost {
+  position: absolute;
+  width: 100px;
   height: 100px;
-  background-color: #0CFF0C; 
-  display: flex; /* flex container for centering */
-  align-items: center; /* verticle centering */
-  justify-content: center; /* horizontal centering */
-  position: relative;
-  animation: loadingBar 2s infinite; /* Animate using the loadingBar animation */  
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: fade-in-out 5s linear infinite;
+}
+@keyframes fade-in-out {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes loadingBar { 
-  0% { 
-    width: 6px;
-    background-color: #0CFF0C;   
-  } 
-  50% { 
-    width: 90%;
-    background-color: #F07C0C; /* Color shift on progress */
-  }  
-  100% {
-    width: 6px;
-    background-color: #0CFF0C;  
-  }
-} 
+
+
 
 </style>
 </head>
 <body>
-  <div class="codigo">
-    <span class="selector">
-      .bar
-    </span>
-    <span class="property">
-       width:
-    </span>
-    <span class="value-number">
-       6px
-    </span>
-    <span class="property">
-       background-color:
-    </span>
-    <span class="value-color">
-       #0CFF0C;
-    </span>
-    <span class="comment">
-     Início da animação: barra de progresso inicia com dimensões pequenas e cor verde.
-    </span>
-  </div>
-  <div class="animation-container">
-    <div class="bar"></div>
-  </div>
+
+<div class="codigo">
+  <span class="selector">.ghost</span>
+  <span class="property">animation</span>
+  <span class="value-string">fade-in-out</span> 
+  <span class="value-number">5s</span> 
+  <span class="property">linear</span> 
+  <span class="property">infinite</span>
+</div>
+
+<div class="animation-container">
+  <!-- Simulando fantasmas evanescentes -->
+  <!-- Representam oportunidades perdidas -->
+
+  <!-- O ritmo lento e a transparência trazem um senso de melancolia -->
+  <div class="ghost" style="left: 20px; top: 20px;"></div>
+  <div class="ghost" style="left: 60px; top: 100px;"></div>
+  <div class="ghost" style="left: 120px; top: 50px;"></div>
+  <div class="ghost" style="left: 200px; top: 180px;"></div>
+  <div class="ghost" style="left: 280px; top: 100px;"></div>
+
+</div>
 
 </body>
 </html>
 ```
-
-Thought:  I hope I captured the feeling of endless waiting and the subtle shifts in anticipation and disappointment!  Let me know if you need to explore other ideas. 
-
-
-
-\
