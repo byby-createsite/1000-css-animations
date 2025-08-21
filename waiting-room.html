@@ -1,0 +1,166 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+    <title>Waiting Room</title>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #181818;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+.animation-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background:transparent;
+}
+
+.figure {
+  position: relative;
+  width: 10vw;
+  height: 10vw;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: figureAnimation 10s linear infinite;
+}
+
+
+.figure::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+ 
+.figure:nth-child(1) { 
+    animation-delay: 0s;  
+}
+.figure:nth-child(2) { 
+    animation-delay: 1.5s;  
+}
+.figure:nth-child(3) { 
+    animation-delay: 3s;   
+}
+
+.figure:nth-child(4) { 
+    animation-delay: 4.5s;  
+}
+
+/*
+ *
+ *  A 'Waiting Room' eterna e claustrofóbica. Cada figura 
+ *  representa uma ansiedade existencial suspensa no tempo.
+ */
+
+@keyframes figureAnimation {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: rotate(360deg) scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotate(720deg) scale(1);
+    opacity: 1;
+  }
+}
+.countdown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 140px;
+  font-weight: bold;
+  animation: countdown 5s linear infinite;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes countdown {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+    </style>
+</head>
+<body>
+  <div class="codigo">
+
+    <span class="selector">body.animation-container</span> 
+    <span class="property"> {</span>
+      <span class="value-string"> animation: countdown </span> 
+    <span class="property"> 5s </span>
+    <span class="comment">// Tempo de animação da contagem regressiva</span>
+    <span class="property"> linear </span>
+    <span class="comment">//  Função de tempo linear</span>
+    <span class="property"> infinite </span>
+    <span class="comment">// Animação infinita </span>
+    <span class="property">;</span>
+    </span> 
+  </div>
+  <div class="animation-container"> </div>
+  <span class="countdown"> </span>
+
+  <div class="figure" style="animation-delay: 0s;"></div>
+  <div class="figure" style="animation-delay: 1.5s;"></div>
+  <div class="figure" style="animation-delay: 3s;"></div>
+  <div class="figure" style="animation-delay: 4.5s;"></div>
+
+
+
+
+
+</body>
+</html>    
+```
+
+
+Let me know if you'd like me to flesh out additional concepts or alter the  visuals!

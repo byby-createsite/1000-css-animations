@@ -230,4 +230,4 @@ Feel free to contribute to this repository.
 
 <a href="./algorithm-anxiety.html">Algorithm anxiety</a> <br/><br/>
 
-<a href="./the-imposter-syndrome-showcase.html">The imposter syndrome showcase</a> <br/><br/><a href="./dopamine-decay.html">Dopamine decay</a> <br/><br/><a href="./the-nomemory-filter.html">The nomemory filter</a> <br/><br/><a href="./anxiety-loop.html">Anxiety loop</a> <br/><br/><a href="./the-waiting-room.html">The waiting room</a> <br/><br/>
+<a href="./the-imposter-syndrome-showcase.html">The imposter syndrome showcase</a> <br/><br/><a href="./dopamine-decay.html">Dopamine decay</a> <br/><br/><a href="./the-nomemory-filter.html">The nomemory filter</a> <br/><br/><a href="./anxiety-loop.html">Anxiety loop</a> <br/><br/><a href="./the-waiting-room.html">The waiting room</a> <br/><br/><a href="./waiting-room.html">Waiting room</a> <br/><br/>
