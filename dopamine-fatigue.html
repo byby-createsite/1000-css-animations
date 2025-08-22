@@ -1,0 +1,143 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+.animation-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background:transparent;
+}
+
+.blob {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(to bottom, #12FF00, #FFD700);
+  border-radius: 50%;
+  opacity: 0;
+  animation: pulse 3s linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9); /* Diminui ligeiramente no início */
+    opacity: 0; /* Inicia transparente */
+  }
+  50% {
+    transform: scale(1.1);  /* Aumenta para o pico maior */
+    opacity: 1; /* Torna-se completamente opaca no pico */
+  }
+  100% {
+    transform: scale(0.9); /* Diminui ligeiramente para o fim */
+    opacity: 0; /* Volta a ficar transparente */
+  }
+}
+
+.notification {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(120, 179, 255, 0.8); /*  Blur dá sensação de overlay */
+  backdrop-filter: blur(10px); /* Blur sobre a notificação */
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  animation: fadeOut 2s forwards; /* Animação de desaparecimento */
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+</style>
+</head>
+<body>
+  <div class="codigo">
+    
+    
+
+.blob {
+.value-string{ color: #E6DB74; }
+  animation: pulse 3s linear infinite; 
+}
+
+  @keyframes pulse { 
+  
+    0% { transform: scale(0.9); /* Diminui ligeiramente no início */
+    opacity: 0; /* Inicia transparente */
+   
+  }
+
+  50% { transform: scale(1.1);  /* Aumenta para o pico maior */
+  opacity: 1; /* Torna-se completamente opaca no pico */
+  }
+
+  100% { transform: scale(0.9); /* Diminui ligeiramente para o fim */
+  opacity: 0; /* Volta a ficar transparente */
+  }
+}
+
+</div>
+ <div class="animation-container">
+
+   <div class="blob"></div>
+   <div class="notification">
+    <h1>Nova notificação!</h1>
+
+  </div>
+
+
+ </div>
+</body>
+</html>
+
+```
+
+```
+
+Let me know if I can help you with more code!
