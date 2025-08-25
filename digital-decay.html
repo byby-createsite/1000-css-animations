@@ -1,0 +1,175 @@
+Thought: I now can give a great answer
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #111; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+.animation-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background:transparent;
+}
+
+.codigo > span { 
+  display: inline-block; 
+  margin-right: 5px;
+}
+
+.element1 {
+  /*  Componente humano */
+  animation: decay 10s infinite linear;
+  width: 100px;
+  height: 100px;
+  background: #df437c;
+  border-radius: 50%;
+  position: absolute;  /* Permite posicionar a forma no espaço */
+}
+
+.element2 {
+  /* Fragmentos de memória */
+  animation: memoryFragments 5s infinite alternate;
+  animation-delay: 1s; /* Deslocamento de tempo */
+  width: 60px;
+  height: 60px;/* Largura e altura dos fragmentos */
+  background: #e9c46a; /* Cor diferente para contrastar */
+  border-radius: 50%; 
+  /* Pode ser ajustado para diferentes formas, como triangles */
+  position: absolute;
+
+}
+.fragment { /* Classe aplicada a cada fragmento de memória individual */
+  width: 30px;
+  height: 30px; /* Ajustar o tamanho dos fragmentos */
+  background-color: rgba(255, 255, 255, 0.4);  /* Transparente */
+  clip-path: circle(50% at 50% 50%); /* Fornece a forma circular */
+  transform: translateX(50px) translateY(50px); /* Posiciona os fragmentos */
+}
+
+/*  Keyframes para a animação do coração */
+@keyframes decay {
+  0% {
+    transform: scale(1); 
+    filter: blur(0px); 
+    opacity: 1; /* Começa clara */
+
+  }
+  50% {
+    transform: scale(0.8); 
+    filter: blur(10px); 
+    opacity: 0.8; /* Diminui tamanho e opacidade */
+  }
+  100% {
+    transform: scale(0.6);
+    filter: blur(20px); 
+    opacity: 0.5; /* Reduz ainda mais */
+  }
+}
+
+/* Keyframes para a animação de fragmentos de memória */
+@keyframes memoryFragments {
+  0% {
+    opacity: 0;
+    transform: scale(1); 
+  }
+  50% {
+    opacity: 1; /* Aparece */
+    transform: scale(1.2); /* Expansão */
+  }
+  100% { 
+    opacity: 0.5;
+    transform: scale(0.8); /* Diminui de tamanho */
+    
+  }
+}
+
+
+</style>
+</head>
+<body>
+ 
+  <div class="codigo">
+    <span class="selector">.element1</span>
+    <span class="property">animation:</span>
+    <span class="value-string">decay</span>
+    <span class="property"> 10s</span>
+    <span class="property"> infinite</span> 
+    <span class="property"> linear;</span><br>
+    
+    <span class="selector">.element2</span>
+    <span class="property">animation:</span>
+    <span class="value-string">memoryFragments </span>
+    <span class="property">5s</span>
+    <span class="property">infinite</span>
+    <span class="property"> alternate;</span>
+    <span class="property">animation-delay:</span>
+    <span class="value-number">1s</span><br> 
+
+
+  </div> 
+  <div class="animation-container">
+  <div class="element1"></div> 
+    <div class="element2">
+      <div class="fragment"></div>
+      <div class="fragment"></div>
+      <div class="fragment"></div>
+      <div class="fragment"></div>
+      <div class="fragment"></div>
+      
+    </div>
+ </div> 
+</body>
+</html>
+
+```
+
+ 
+
+Let me know if you were looking for something else.
+
+
+
+
+
+
+
