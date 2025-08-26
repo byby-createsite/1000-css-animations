@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,7 +9,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #181C22;
+  background-color: #141921; /*  Fundo escuro para realçar a intensidade */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,97 +48,67 @@ body {
   overflow: hidden;
   background:transparent;
 }
-.element {
+
+.anxiety-element {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  /* Animação inicial */
-  opacity: 0;
-  transform: translateY(150px);
-  animation: fadeIn 1s ease-in-out forwards;
-
-}
-.element:nth-child(1) {
-background-image: radial-gradient(circle at 50% 0%, #FF8266 0%, #E66465 100%); /*  Cores que evocam ansiedade - contraste e movimento */
-  animation-delay: 0s;
-}
-.element:nth-child(2) {
-background-image: radial-gradient(circle at 50% 100%, #5FC9FF 0%, #1D82AE 100%); /* Cores que evocam um estado mental nebuloso, como a falta de foco */
-  animation-delay: 0.2s;
-}
-.element:nth-child(3) {
-background-image: radial-gradient(circle at 50% 50%, #62FF62 0%, #2A992B 100%);  /* Cores que evocam uma sensação de estagnação, sensação de reptar */
-  animation-delay: 0.4s;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  animation: pulse 2s infinite linear;
+  background: linear-gradient(to bottom, #9cebff, #48adff);
 }
 
-.element:nth-child(4) {
-background-image: radial-gradient(circle at 50% 25%, #FF6692 0%, #D92948 100%); /* Cores vibrantes, como as que prejudicam o sono */
-  animation-delay: 0.6s;
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(150px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.text-flash {
+  position: absolute;
+  white-space: nowrap;
+  font-size: 16px;
+  animation: fade 1s infinite alternate;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-
+@keyframes fade {
+  0% { opacity: 1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
 </style>
 </head>
 <body>
+  
   <div class="codigo">
-    .element {
-      /* Animação inicial */
-      opacity: 0;
-      transform: translateY(150px);
-      animation: fadeInOut 1s ease-in-out infinite alternate;
+    <span class="selector">.anxiety-element</span> {
+      <span class="property"> animation</span>: <span class="value-string">pulse</span> <span class="value-number">2s</span> <span class="value-string">infinite linear</span>;
+      <span class="property">background</span>: <span class="value-string">linear-gradient(#9cebff, #48adff);</span>
     }
-    .element:nth-child(1) {
-    background-image: radial-gradient(circle at 50% 0%, #FF8266 0%, #E66465 100%); //Cores que evocam ansiedade 
-    }
-    .element:nth-child(2) {
-      background-image: radial-gradient(circle at 50% 100%, #5FC9FF 0%, #1D82AE 100%); //Cores que evocam um estado mental nebuloso
-    }
-    .element:nth-child(3) {
-      background-image: radial-gradient(circle at 50% 50%, #62FF62 0%, #2A992B 100%); //Cores que evocam uma sensação de estagnação 
-   }
 
 
-    .element:nth-child(4) {
-      background-image: radial-gradient(circle at 50% 25%, #FF6692 0%, #D92948 100%); //Cores vibrantes, como as que prejudicam o sono 
-    }
-    .element:nth-child(5:6) { background-image: radial-gradient(circle at 50% 50%, #B32727 0%, #A61D1D 100%);}
-    @keyframes fadeInOut {
-      0% {
-        opacity: 0;
-        transform: translateY(-50px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      } 
-    }
-  </div>
+    <span class="selector">.text-flash</span> {
+      <span class="property"> animation</span>: <span class="value-string">fade</span> <span class="value-number">1s</span> <span class="value-string">infinite alternate</span>;
+      <span class="property"> opacity</span>: <span class="value-number">1</span>;
+    }  
+    </div>
+  
   <div class="animation-container">
+    <div class="anxiety-element"></div>
+    <div class="text-flash">Anxiety</div>
+    <div class="text-flash">Overload</div> 
+    <div class="text-flash">Thoughts</div>  
 
-
-  <div class="element"></div>
-  <div class="element"></div>
-  <div class="element"></div>
-  <div class="element"></div>
-  <div class="element"></div>
-  <div class="element"></div>
-
-
-
-  </div>   </body>
+  </div>
+</body>
 </html>
 
 
 
-Let the coding begin!
+
+
+```
