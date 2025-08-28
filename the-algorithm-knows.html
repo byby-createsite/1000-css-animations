@@ -1,0 +1,187 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #222;
+      color: #eee;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 50%;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    .selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+    .el1 {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: #F8F8F2;
+      border-radius: 50%;
+      transform-origin: center;
+      animation: pulse 2s infinite alternate;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    .el2 {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: #272822;
+      clip-path: polygon(50% 0%, 100% 100%, 0% 100%, 50% 50%);
+      transform-origin: center;
+      animation: rotate-and-expand 4s infinite;
+      animation-delay: 1s;
+    }
+    @keyframes rotate-and-expand {
+      0% { transform: rotate(0deg) scale(1); }
+      25% { transform: rotate(45deg) scale(1.2); }
+      50% { transform: rotate(90deg) scale(0.9); }
+      75% { transform: rotate(135deg) scale(1.1); }
+      100% { transform: rotate(180deg) scale(1); }
+    }
+    .el3 {
+      position: absolute;
+      width: 320px;
+      height: 100px;
+      background: linear-gradient(to right, #66D9EF, #16BDF8);
+      border-radius: 10px;
+      opacity: 0;
+      animation: fade-in-out 3s infinite;
+      animation-delay: 2s;
+    }
+    @keyframes fade-in-out {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="comment">// A dança frenética das cores representa a omnipresença</span><br>
+    <span class="comment">// dos dados que nos bombardeiam constantemente.</span><br>
+    <span class="selector">.el1</span><br>
+    <span class="property">animation</span><br>
+    <span class="value-string">"pulse"</span><br>
+    <span class="property">duration</span><br>
+    <span class="value-number">2s</span><br>
+    <span class="property">infinite</span><br>
+    <span class="value-string">alternate</span><br>  <span class="comment">// A imagem que se esconde e se revela...</span><br>
+    <span class="selector">.el3</span><br>
+    <span class="property">opacity</span><br>
+    <span class="value-number">0</span><br>
+
+
+    <span class="comment">// criando a sensação de um loop de inabilidade em alcançar o</span><br>
+    <span class="comment">//  conhecimento profundo.</span><br>
+    <span class="selector">.el2</span><br>
+    <span class="property">animation</span><br>
+    <span class="value-string">"rotate-and-expand"</span><br>
+    <span class="property">duration</span><br>
+    <span class="value-number">4s</span><br>
+    <span class="property">infinite</span><br>
+
+
+
+    <span class="value-string">alternate</span>
+
+
+
+
+  </div>
+  <div class="animation-container">
+    <div class="el1"></div>
+    <div class="el2"></div>
+    <div class="el3"></div>
+  </div>
+
+</body>
+</html>
+```
+
+
+
+Explanation:
+
+This HTML code creates an animation that visually illustrates the feeling of being overwhelmed by data.
+
+Here's a breakdown:
+
+**HTML:**
+
+* Sets up a simple structure with  `div` elements for the CSS and the animation.
+* Uses semantic HTML5 elements appropriately.
+
+**CSS:**
+
+* **`.el1` (pulsating circle):**
+    * The pulsating circle represents the constant stream of information bombarding us, constantly reminding us of the ever-present nature of 'The Algorithm'.
+    * Its continuous, hypnotic pulse induces a sense of unease and a feeling of being watched. 
+* **`.el2` (rotating, expanding polygon):**
+    * This element symbolizes the frantic search for answers and meaning within this data deluge.
+    * Its continually shifting, elusive movement reflects the difficulty in finding real understanding in the face of endless data.
+* **`.el3** **(fading rectangle)**
+    * This element represents the fleeting nature of actual knowledge and understanding. 
+
+* **Styling:**
+    * Dark, minimalist color palette reflecting the digital space.
+
+**Technical aspects:**
+
+* **Pure CSS, no JavaScript:**  underscores the core concepts without distractions.
+* **Portuguese comments:** Adds an artistic layer, making it more than just code, but a creative expression.
+* **Complex animations:**  Use of `animation` properties, `keyframes`, and clever CSS tricks like `clip-path` for abstract visuals
+
+
+
+**Meaning:**
+
+The animation explores the idea of feeling lost and overwhelmed by technology and information overload, highlighting the paradox of endless data but limited understanding.
+
+
+
+
+Please let me know if you have any more requests.
