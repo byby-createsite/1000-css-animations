@@ -1,0 +1,131 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tab Chaos</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #181818;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+.animation-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.tab {
+  position: absolute;
+  width: 200px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transform-origin: top right; /* Define ponto de rotação para transformações */
+  /* Transformação de escala e rotação para criar um efeito de zoom e  "overflow" */
+  animation: tabChaos 10s linear infinite; /* Chamando a animação "tabChaos" com duração de 10 segundos, de acordo com a duração da própria animação e duração infinita */
+}
+/* Animação "tabChaos", aplicando variação de escala, rotação e translção para cada tab */
+@keyframes tabChaos {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(0.8) rotate(15deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2) rotate(-20deg);
+    opacity: 0.5;
+    top: 20px; /* Movimento vertical */ 
+  }
+  75% {
+    transform: scale(0.9) rotate(10deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+
+/* A seguir os elementos HTML e CSS para simular os tabs, cada um com suas próprias variações na animação */
+/* 
+
+
+
+</style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.tab</span>
+    <span class="property"> {</span>
+      <span class="comment">// Criando a animação para cada tab.</span>
+      <span class="function">animation</span>: 
+      <span class="value-string">'tabChaos'</span> 
+      <span class="value-number">10s</span>
+      <span class="value-string">'linear'</span>
+      <span class="value-string">'infinite'</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="tab" style="left: 10%; top: 50%;">
+      <div style="width: 100%; height: 100%; background-color: #2196f3; position: absolute; top: 0; left: 0;"></div>
+    </div>
+    <div class="tab" style="left: 30%; top: 20%;">
+      <div style="width: 100%; height: 100%; background-color: #ff9800; position: absolute; top: 0; left: 0;"></div>
+    </div>
+    <div class="tab" style="left: 50%; top: 80%">
+      <div style="width: 100%; height: 100%; background-color: #795548; position: absolute; top: 0; left: 0;"></div>
+    </div>
+    <div class="tab" style="left: 70%; top: 40%">
+      <div style="width: 100%; height: 100%; background-color: #673ab7; position: absolute; top: 0; left: 0;"></div>
+    </div>
+    <div class="tab" style="left: 90%; top: 60%">
+      <div style="width: 100%; height: 100%; background-color: #3f51b5; position: absolute; top: 0; left: 0;"></div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+
+
+
+```
