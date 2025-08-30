@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delayed Gratification</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #1c1a1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0e0c10;
+  color: #ddffcc;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.selector       { color: #bf8b79; } .property       { color: #dd5955; } .value-number   { color: #99a2a8; } .value-string   { color: #89b2ad; } .value-color    { color: #b9947f; } .brace          { color: #2683e7; } .comment        { color: #b08f8a; } .function       { color: #cc7788; }
+.animation-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background: transparent;
+}
+
+.progress {
+  position: relative;
+  width: 300px; /* Define a tamanho da barra */
+  height: 10px; 
+  background: #f8f8f2;
+  border-radius: 10px;
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(to right, #c9b99a, #d26f1e); /* Define a cor da barra */
+  width: 0%; /* Define o tamanho inicial da barra */
+  height: 10px; /* Altura fixa da barra */
+  border-radius: 10px; /* Define o efeito arredondado da barra */
+  transition: width 5s ease-in-out; /* Define a duração e a animação */
+}
+
+/* Efeitos visuais */
+.drop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: #ff6600; /* Cor da bolinha */
+  border-radius: 50%; /* Forma redonda da bolinha */
+  animation: drop 0.7s infinite ease-in-out;
+  
+}
+
+@keyframes drop {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); } 
+}
+
+
+
+
+.beeps {
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1;
+  height: 1;
+  animation: beeps 4s infinite;
+}
+
+@keyframes beeps {
+  0% {
+    background: transparent; 
+  }
+
+  50% {
+    background: #ff6600; 
+  }
+  100% {
+    background: transparent; 
+  } 
+}
+   </style>
+
+<body>
+
+
+<div class="codigo">  
+    <span class="selector">  
+      .progress  
+    </span><span class="property">{</span>  
+    <span class="property">width: </span>
+    <span class="value-number">100</span>
+    <span class="value-number">%;</span> 
+    <span class="function">transition</span>
+    <span class="value-number">:</span>
+    <span class="value-number">5s</span>
+    <span class="value-number">ease-in-out;</span>   } 
+</div> 
+
+<div class="animation-container">
+
+
+<div class="progress">
+  <div class="bar"></div>
+
+</div>
+
+
+<div class="drop"></div>
+<div class="beeps"></div>
+
+</div>
+
+</body>
+</html>
