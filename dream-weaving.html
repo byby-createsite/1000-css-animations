@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #12141A;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+.animation-container{
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+
+}
+
+.eye {
+  width: 100px; 
+  height: 100px;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwcHgiIGhlaWdodD0iMTAwcHgiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSIjMDAwMDAwIiBkPSJNMCAwVjEwMCBWMCAgICAgLTMzIDI1aDE2bDI3IDMxYzAgMTMuMS02LjctMjAuNy0yMS43LTIxLjdsLTIxLjctMzIgLTIxLjcsMzJ6Ii8+PC9zdmc+');
+  background-size: contain;
+  transform-origin: center bottom;
+}
+.code-lines {
+  display: inline-block;
+  position: absolute;
+  color: #F8F8F2;
+  animation: code-flow 4s linear infinite;
+}
+.code-line {
+  background-color: rgba(255, 255, 255, 0.1); 
+  transform-origin: top;
+  padding: 5px 10px; 
+  margin: 2px 0;
+  border-radius: 5px;
+}
+
+@keyframes code-flow {
+  0% {
+    transform: translateY(-20px) scale(1, 0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(0) scale(1, 1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20px) scale(1, 0.8);
+    opacity: 0.8;
+  }
+}
+
+</style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">body {</span> 
+    <span class="property">background-color:</span> 
+    <span class="value-color"> #12141A </span> 
+    <br> 
+    <span class="selector">.codigo {</span> 
+    <span class="property">background-color:</span> 
+    <span class="value-color">#272822;</span>
+    <br>
+   
+       <span class="semantic">visibility: hidden;</span><br>
+
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="eye"></div>
+    <div class="code-lines">
+      <div class="code-line">var dream = {};</div>
+      <div class="code-line">dream.code =  " /* ... */ ";</div>
+      <div class="code-line">dream.awareness = 0.8;</div> 
+      <div class="code-line">awake();</div>
+    </div>
+
+  </div>  
+
+</body>
+</html>
+
+
+
+
+\
