@@ -1,0 +1,119 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Tuesday: Dopamine Descent</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #141414; /* Preta escura para simular a noite */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;  
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 50%;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+.animation-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background:transparent;
+}
+.you {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #F8F8F2;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.reward {
+  position: absolute;
+  width: 100px;
+  height: 40px;
+  background-color: #66D9EF;
+  color: #FFFFFF;
+  backdrop-filter: blur(4px);
+  border-radius: 5px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  transform: translateX(-50%);
+  animation: slideIn 3s ease-in-out infinite;
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+</style>
+</head>
+<body>
+  
+<div class="codigo">  
+ <span class="selector"> .you </span>     
+ <span class="property"> { </span> 
+  <span class="value-color"> background-color:</span> 
+  <span class="value-string"> #F8F8F2 </span>   
+  <span class="brace"> }</span>  
+
+ <span class="comment"> /* Um avatar minimalista, representando o usuário */ </span> 
+</div>  
+ 
+<div class="animation-container">
+  <div class="you"></div>
+
+  <div class="reward">
+    <span>Upvote!</span>
+  </div> 
+  
+  <div class="reward">
+    <span>Nova Notação!</span>
+  </div> 
+
+  <div class="reward">
+    <span>Compartilhar!</span>
+  </div>
+
+</div>
+
+</body>
+</html>
+```
