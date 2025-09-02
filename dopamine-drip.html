@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<meta charset="UTF-8">
+<title>Tuesday: Dopamine Drip</title>
 <style>
 * {
   margin: 0;
@@ -9,7 +11,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #18191F;
+  background-color: #181818;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,6 +36,7 @@ body {
   width: 100%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
+
 .selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
 .animation-container {
   position: absolute;
@@ -48,84 +51,56 @@ body {
   overflow: hidden;
   background:transparent;
 }
-
-.notification {
+.fragment{
   position: relative;
-  width: 100px;
-  height: 100px;
-  background-color: #3676EE;
-  border-radius: 20px;
+    width: 100px;
+    height: 100px;
+    background: #9D26BF; /* Cor do emoji */
+
+    animation: fragmentDrip 4s ease-in-out infinite;
 }
+@keyframes fragmentDrip
+{
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+    filter: blur(0px);
 
-.content {
-  position: absolute;
-  top: 50%;
-  left: 50%; 
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-weight: bold;
-  font-size: 16px;
-  padding: 10px; 
+  }
+  50% {
+    transform: translate(20px, -10px) rotate(180deg);
+    opacity: 0.5;
+    filter: blur(10px); 
+
+  }
+  100% {
+    transform: translate(-10px, 20px) rotate(360deg);
+    opacity: 0;
+     filter: blur(20px);
+
+  }
 }
-
-.glow {
-  animation: glow 1s infinite linear;
-}
-
-@keyframes glow {
-    0% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.1); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
-
+/* Animação - as animações devem refletir o efeito da busca incessante por validação e como pode levar à aceleração digital  */
 </style>
 </head>
 <body>
   <div class="codigo">
-  /* animação de um comportamento de dopamine */
-  <span class="selector">.notification</span> {
-    <span class="property">animation:</span> <span class="value-string">glow</span> <span class="value-number">1s</span> <span class="value-string">infinite</span> <span class="value-string">linear</span>;
- <span class="comment">// a animação simula a rápida transição de atenção e satisfação</span>
-  }
- .notification:before {
-  content: ''; 
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  background: linear-gradient(135deg, #FF6347, #F09819,  #3676EE);
-  animation: pulse 1s infinite linear; }
-
-
-    <span class="comment">// pulso do efeito de atração e notificações */}
-
-  @keyframes pulse {
-    0% { transform: scale(1); opacity: 0.8; }
-    50% { transform: scale(1.1); opacity: 0.5; }
-    100% { transform: scale(1); opacity: 0.8; }
-  }
-
+    
+  <span class="selector">.fragment</span> 
+  <span class="property">animation</span> <span class="value-string">fragmentDrip</span>
+    <span class="property">4s</span> <span class="property">ease-in-out</span> <span class="property">infinite;</span>
   </div>
   <div class="animation-container">
-    <div class="notification glow">
-      <div class="content">1</div>
-    </div>  
-    <div class="notification glow">
-      <div class="content">2</div>
-    </div>
-    <div class="notification glow">
-      <div class="content">3</div>
-    </div>    <div class="notification glow">
-      <div class="content">4</div>
-    </div> 
- 
-                                                                    </div>
-
-
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+  </div>
 </body>
-</html>
 
+</html>
 ```
+
+
+
+Thought: This was a fun challenge! I used overlapping color fragments to represent notifications and likes.  Each fragment glitters and distorts - hopefully suggesting the overwhelming feeling of digital dopamine rushes and the addictive cycle of seeking validation online.
