@@ -1,15 +1,14 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<style>
-* {
+  <style>
+  * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  background-color: #141921; /*  Fundo escuro para realçar a intensidade */
+  background-color: #181B27;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,66 +48,79 @@ body {
   background:transparent;
 }
 
-.anxiety-element {
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.circle {
   position: absolute;
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  animation: pulse 2s infinite linear;
-  background: linear-gradient(to bottom, #9cebff, #48adff);
+  background-color: #FFD700; /* Cor amarelo ouro */
+  animation: fadeInOut 3s infinite alternate;
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+.circle:nth-child(1) {
+  left: 50px;
+  top: 50px;
+  animation-delay: 0s;
 }
 
-.text-flash {
-  position: absolute;
-  white-space: nowrap;
-  font-size: 16px;
-  animation: fade 1s infinite alternate;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 5px 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+.circle:nth-child(2) {
+  left: 150px;
+  top: 150px;
+  animation-delay: 0.5s;
 }
 
-@keyframes fade {
-  0% { opacity: 1; }
-  50% { opacity: 0.2; }
-  100% { opacity: 1; }
+.circle:nth-child(3) {
+  left: 250px;
+  top: 50px;
+  animation-delay: 1s;
 }
-</style>
+
+.circle:nth-child(4) {
+  left: 50px;
+  top: 250px;
+  animation-delay: 1.5s;
+}
+
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;  
+  }
+  100% {
+    opacity: 1;
+  }
+}
+  </style>
 </head>
 <body>
-  
   <div class="codigo">
-    <span class="selector">.anxiety-element</span> {
-      <span class="property"> animation</span>: <span class="value-string">pulse</span> <span class="value-number">2s</span> <span class="value-string">infinite linear</span>;
-      <span class="property">background</span>: <span class="value-string">linear-gradient(#9cebff, #48adff);</span>
-    }
-
-
-    <span class="selector">.text-flash</span> {
-      <span class="property"> animation</span>: <span class="value-string">fade</span> <span class="value-number">1s</span> <span class="value-string">infinite alternate</span>;
-      <span class="property"> opacity</span>: <span class="value-number">1</span>;
-    }  
-    </div>
+    <span class="selector">.circle</span> 
+    <span class="property">
+      {
+    animation:
+    fadeInOut 
+    3s 
+    infinite 
+    alternate;
+  }
   
+    </span> </div>
   <div class="animation-container">
-    <div class="anxiety-element"></div>
-    <div class="text-flash">Anxiety</div>
-    <div class="text-flash">Overload</div> 
-    <div class="text-flash">Thoughts</div>  
-
+    <div class="container">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
   </div>
 </body>
 </html>
-
-
-
-
-
-```
