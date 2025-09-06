@@ -3,94 +3,151 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>The Waiting Room</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saturday: The Waiting Room</title>
 <style>
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 body {
-  background-color: #253446;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
+    background-color: #242734;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
 }
+
 .codigo {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #272822;
-  color: #F8F8F2;
-  font-family: 'Consolas', 'Monaco', monospace;
-  font-size: 18px;
-  padding: 20px;
-  border-radius: 8px;
-  white-space: pre-line;
-  text-align: left;
-  line-height: 1.6;
-  max-height: 50%;
-  width: 100%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #272822;
+    color: #F8F8F2;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    max-height: 50%;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+.selector       { color: #F92672; }
+.property       { color: #66D9EF; }
+.value-number   { color: #AE81FF; }
+.value-string   { color: #E6DB74; }
+.value-color    { color: #A6E22E; }
+.brace          { color: #F8F8F2; }
+.comment        { color: #75715E; }
+.function       { color: #A6E22E; }
+
+
 .animation-container {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.bar {
+    width: 100%;
+    background-color: #546E7A;
+    height: 3px;
+    border-radius: 5px;
+    position: relative;
+}
+
+
+ .progress {
+    height: 4px;
+    background-color: #F8F8F2;
+    width: 99%;
+    left: 1px;
+    position: absolute;
+    top: 100%;
+    border-radius: 5px;
+    animation: sat_loading 1.2s linear infinite;
+
+ }
+
+
+
+@keyframes sat_loading {
+    0% {
+       
+        width: 0%; 
+    }
+    99% {
+        width: 99%;
+    }
+    100% {
+       width: 0%; 
+    }
+}
+
+.figure {
   position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-.ghost {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  animation: fade-in-out 5s linear infinite;
-}
-@keyframes fade-in-out {
-  from { opacity: 0; transform: scale(0.5); }
-  to { opacity: 1; transform: scale(1); }
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: sat_hop 2s infinite alternate;
+
 }
 
 
 
 
-</style>
+
+
+
+
+
+
+
+
+  </style>
 </head>
 <body>
 
 <div class="codigo">
-  <span class="selector">.ghost</span>
-  <span class="property">animation</span>
-  <span class="value-string">fade-in-out</span> 
-  <span class="value-number">5s</span> 
-  <span class="property">linear</span> 
-  <span class="property">infinite</span>
+  <span class="selector">.progress</span> 
+  <span class="property">animation</span> 
+  <span class="property">:</span> 
+  <span class="value-string">sat_loading</span>
+  <span class="property"> </span>
+  <span class="value-number">1.2s</span> 
+  <span class="value-number">linear</span> <span class="function"> infinite</span>
 </div>
+
 
 <div class="animation-container">
-  <!-- Simulando fantasmas evanescentes -->
-  <!-- Representam oportunidades perdidas -->
+  <div class="bar">
+    <div class="progress">
+    </div> 
+  </div>
+  <div class="figure">
+  
+  </div>
+</div> 
 
-  <!-- O ritmo lento e a transparência trazem um senso de melancolia -->
-  <div class="ghost" style="left: 20px; top: 20px;"></div>
-  <div class="ghost" style="left: 60px; top: 100px;"></div>
-  <div class="ghost" style="left: 120px; top: 50px;"></div>
-  <div class="ghost" style="left: 200px; top: 180px;"></div>
-  <div class="ghost" style="left: 280px; top: 100px;"></div>
-
-</div>
-
-</body>
-</html>
 ```
