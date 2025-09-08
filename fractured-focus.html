@@ -1,0 +1,134 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monday: Fractured Focus</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #1f2937;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 50%;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .brace          { color: #F8F8F2; }
+    .comment        { color: #75715E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .focuspoint {position: absolute;
+      width: 50px; height: 50px; border-radius: 50%; background: #88D8FF; animation: mon_focus_shift 1s infinite alternate; }
+    
+    /* Simula a sensação de "pular" entre elementos e pensamentos */
+  @keyframes mon_focus_shift {
+    0% { 
+      transform: translate(0, 0) ;
+      opacity: 1; /* Começa transparente */
+    }
+    50% { 
+      transform: translate(-5px, 10px); 
+      opacity: 0.5; /* Transitions para mais transparente */
+    }
+    100% { 
+      transform: translate(0, 0);
+      opacity: 1; /* Volta ao normal */
+    }
+
+  }
+
+    .snippet {position: absolute;
+      width: 100%; height: 10%; left: 0; top: 50%; transform: translateY(-50%); animation: mon_fragment_scan 
+      2s infinite linear; background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGNpcmNsZSBjeD0iMTAiIGN5PSIwIiByPSIyMCIgc3Ryb2tlPSIjYmQwNDQ5IiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJyb21hciIvPgo8L3N2Zz4="); /* Um gráfico aleatório, como fundo mental */
+    
+}
+
+
+    @keyframes mon_fragment_scan {
+      
+      0% {transform: translatex(-100%); opacity: 0.1;} /* Entra à partir da esquerda, quase invisível */
+      50% {transform: translatex(0); opacity: 1; } /*Chega e fica transparente */
+      100% {transform: translatex(100%); opacity: 0.1; } /* Sai por  a direita, quase invisível */
+
+    }
+
+
+      </style>
+  }
+
+
+
+<body>
+  <div class="codigo">
+    .focuspoint {
+      animation-name: mon_focus_shift;
+    }
+  </div>
+
+  <div class="animation-container">
+    <div class="focuspoint"  ></div>
+    <div class="snippet"></div>
+
+   
+  </div>
+</body>
+</html>
+```
+
+
+
+Thought:
+
+
+
+
+I am happy with the result.
+
+
+
