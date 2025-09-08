@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transient Echoes - CSS</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #212F45;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 50%;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .brace          { color: #F8F8F2; }
+    .comment        { color: #75715E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .memory-fragment {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      clip-path: circle(50% at 50% 50%);
+      animation: mon_memory_drift 5s linear infinite;
+    }
+    
+    .fragment-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 14px;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      color: #F8F8F2;
+      animation: mon_text_fade 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes mon_memory_drift {
+      0% {
+        transform: translate(0, 0); 
+        opacity: 1; 
+      }
+      50% {
+        transform: translate(10px, -10px);
+        opacity: 0.8; /* Cria uma sensação de impermanência */
+      }
+      100% {
+        transform: translate(0, 0); 
+        opacity: 1; 
+      }
+    }
+
+    @keyframes mon_text_fade {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    .memory-fragment {
+      <span class="property">width:</span> 200px;
+      <span class="property">height:</span> 200px;
+      <span class="property">background-color:</span> <span class="value-color">rgba(255, 255, 255, 0.1)</span>;
+      <span class="property">border-radius:</span> 50%;
+      <span class="property">clip-path:</span> <span class="value-string">circle(50% at 50% 50%)</span>;
+      <span class="property">animation:</span> <span class="value-string">mon_memory_drift</span> 5s <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    } </div> 
+  
+  <div class="animation-container">
+    <div class="memory-fragment">
+      <div class="fragment-text">ECHOES</div>
+    </div>
+    </div> 
+</body>
+</html>
