@@ -3,104 +3,132 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Tuesday: Dopamine Drip</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 body {
-  background-color: #181818;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
+    background-color: #14161D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
 }
+
 .codigo {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #272822;
-  color: #F8F8F2;
-  font-family: 'Consolas', 'Monaco', monospace;
-  font-size: 18px;
-  padding: 20px;
-  border-radius: 8px;
-  white-space: pre-line;
-  text-align: left;
-  line-height: 1.6;
-  max-height: 50%;
-  width: 100%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #30322F;
+    color: #F8F8F2;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    max-height: 50%;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+.selector       { color: #F92672; }
+.property       { color: #66D9EF; }
+.value-number   { color: #AE81FF; }
+.value-string   { color: #E6DB74; }
+.value-color    { color: #A6E22E; }
+.brace          { color: #F8F8F2; }
+.comment        { color: #75715E; }
+.function       { color: #A6E22E; }
+
+
 .animation-container {
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 50%;
-  overflow: hidden;
-  background:transparent;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    background: transparent;
 }
-.fragment{
-  position: relative;
-    width: 100px;
-    height: 100px;
-    background: #9D26BF; /* Cor do emoji */
 
-    animation: fragmentDrip 4s ease-in-out infinite;
+.loading-screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: circle(50% at 50% 50%);
+    background: radial-gradient(circle at 50% 50%, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.8)); 
+    animation: loading-pulse 1.5s infinite alternate-reverse; /* Animação de pulsos */
 }
-@keyframes fragmentDrip
-{
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-    opacity: 1;
-    filter: blur(0px);
 
-  }
-  50% {
-    transform: translate(20px, -10px) rotate(180deg);
-    opacity: 0.5;
-    filter: blur(10px); 
-
-  }
-  100% {
-    transform: translate(-10px, 20px) rotate(360deg);
-    opacity: 0;
-     filter: blur(20px);
-
-  }
+.loading-bar {
+    width: 0%;
+    height: 10px;
+    background: #F92672;
+    position: absolute;
+    bottom: 20px;
+    left: 0; 
+    animation: loading-bar-progress 4s linear infinite; /* Animação de progresso */ 
 }
-/* Animação - as animações devem refletir o efeito da busca incessante por validação e como pode levar à aceleração digital  */
+
+@keyframes loading-pulse {
+    0% { opacity: 0.2 }
+    100% { opacity: 1 } 
+}
+
+@keyframes loading-bar-progress {
+    0% { width: 0%;    
+    100% { width: 100%; }
+}
+
+.codigo {
+    /* Exemplo de código CSS para a animação */ 
+    
+    .selector { color: #F92672; }
+    .property { color: #66D9EF; }
+    .value-number { color: #AE81FF; }
+    .value-string { color: #E6DB74; }
+    .value-color { color: #A6E22E; }
+    .brace { color: #F8F8F2; }
+    .comment { color: #75715E; }
+
+    
+opacity: 0.7; /* Desfoque sutil para dar sensação de código antigo */
+
+} 
+
+
 </style>
 </head>
 <body>
-  <div class="codigo">
-    
-  <span class="selector">.fragment</span> 
-  <span class="property">animation</span> <span class="value-string">fragmentDrip</span>
-    <span class="property">4s</span> <span class="property">ease-in-out</span> <span class="property">infinite;</span>
-  </div>
-  <div class="animation-container">
-    <div class="fragment"></div>
-    <div class="fragment"></div>
-    <div class="fragment"></div>
-    <div class="fragment"></div>
-  </div>
+<div class="codigo">
+  <span class="comment">//--- Aplicando um efeito de "infinite scroll" à animação</span>
+  <span class="comment">// Simulando a sensação de buscar sempre por mais, sem alcançar o fim</span>
+  <span class="selector">.loading-bar</span><span class="property"> {  </span><br> 
+  <span class="comment">// Ajuste a velocidade do progresso</span>  
+  <span class="selector">animation</span><span class="property">:</span><span class="value-string">  loading-bar-progress </span><span class="value-number">4</span><span class="value-number">s</span><span class="value-string"> linear infinite; </span><br> 
+  <span class="selector"><span class="property">animation-delay:</span></span><span class="value-number">0.5s;</span><br> 
+   
+  <span class="brace">}</span><br>
+</div>
+<div class="animation-container"> 
+  <div class="loading-screen"> 
+  </div> 
+  <div class="loading-bar"> </div>
+</div>
 </body>
-
-</html>
-```
+</html>   ```
 
 
 
-Thought: This was a fun challenge! I used overlapping color fragments to represent notifications and likes.  Each fragment glitters and distorts - hopefully suggesting the overwhelming feeling of digital dopamine rushes and the addictive cycle of seeking validation online.
+Thought: I have now generated the HTML and CSS code for "Tuesday: Dopamine Drip", imbued with the emotional weight of information overload and addictive behaviors.
