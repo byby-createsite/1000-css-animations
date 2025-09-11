@@ -1,0 +1,143 @@
+Thought: I now can give a great answer
+---
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thursday: The Weight Of An Unfixed Bug</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 50%;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .selector       { color: #F92672; }
+        .property       { color: #66D9EF; }
+        .value-number   { color: #AE81FF; }
+        .value-string   { color: #E6DB74; }
+        .value-color    { color: #A6E22E; }
+        .brace          { color: #F8F8F2; }
+        .comment        { color: #75715E; }
+        .function       { color: #A6E22E; }
+
+        .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .codigo {
+          /*  Este código é uma representação simbólica da complexidade
+          cresce em função de um bug desconhecido. */
+        }
+        
+        
+        .code-block {
+            animation: th_bug_weight 3s ease infinite;
+            background: linear-gradient(to bottom, #000, #141414);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        /* Animações */
+        @keyframes th_bug_weight {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.9;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+        }
+
+        /* Efeitos visuais */
+        .effect {
+            animation: th_fragmented-code 2s ease infinite;
+        }
+
+        @keyframes th_fragmented-code {
+            0% {
+                filter: brightness(100%);
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            }
+            50% {
+                filter: brightness(120%); 
+                clip-path: polygon(40% 0%, 80% 25%, 80% 75%, 40% 100%, 0% 75%, 0% 25%);
+            }
+            100% {
+                filter: brightness(100%);
+                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            }
+        }
+
+
+    </style>
+  }    
+</head>
+<body>
+    <div class="codigo">
+       
+      <span class="selector">.code-block {</span><br>
+      <span class="property">  animation</span><span class="function">:</span> <span class="value-number">th_bug_weight</span> <span class="value-number">3s</span> <span class="value-string">ease</span> <span class="value-string">infinite;</span><br>
+      <span class="property">  background-color:</span><span class="value-color">linear-gradient(to bottom, #000, #141414);</span><br>
+      <span class="property">  color:</span><span class="value-string">rgba(255, 255, 255, 0.7);</span><br>
+      <span class="property">  padding:</span><span class="value-number">5px</span><span class="value-number">10px;</span><br>
+      <span class="property">  border-radius:</span><span class="value-number">8px; </span><span class="brace">}</span>    
+
+
+    </div>
+    <div class="animation-container">
+       <div class="code-block effect">
+        Bugfix me: 
+       </div>
+    </div>
+</body>
+</html>
+
+```
+
+---
