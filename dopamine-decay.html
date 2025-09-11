@@ -1,153 +1,143 @@
-Thought: I've interpreted the concept of "Dopamine Decay" and crafted a visual metaphor for the fleeting nature of euphoria and its eventual disillusionment.
-
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <style>
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 body {
-  background-color: #141C26; /* Tons de preto para combinar com a estética digital */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
+background-color: #181D31;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+overflow: hidden;
 }
 .codigo {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #272822;
-  color: #F8F8F2;
-  font-family: 'Consolas', 'Monaco', monospace;
-  font-size: 18px;
-  padding: 20px;
-  border-radius: 8px;
-  white-space: pre-line;
-  text-align: left;
-  line-height: 1.6;
-  max-height: 50%;
-  width: 100%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+position: absolute;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+background: #272822;
+color: #F8F8F2;
+font-family: 'Consolas', 'Monaco', monospace;
+font-size: 18px;
+padding: 20px;
+border-radius: 8px;
+white-space: pre-line;
+text-align: left;
+line-height: 1.6;
+max-height: 50%;
+width: 100%;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .brace          { color: #F8F8F2; } .comment        { color: #75715E; } .function       { color: #A6E22E; }
+
+.selector       { color: #F92672; }
+.property       { color: #66D9EF; }
+.value-number   { color: #AE81FF; }
+.value-string   { color: #E6DB74; }
+.value-color    { color: #A6E22E; }
+.brace          { color: #F8F8F2; }
+.comment        { color: #75715E; }
+.function       { color: #A6E22E; }
+
 .animation-container {
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+position: absolute;
+top: 75%;
+left: 50%;
+transform: translate(-50%, -50%);
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+height: 50%;
+overflow: hidden;
+background: transparent;
+}
+.layer_alert { /* Uma camada representando o esgotamento mental: desfoque gradual, cores flutuantes */
   width: 100%;
-  height: 50%;
-  overflow: hidden;
-  background:transparent;
-}
-
-.heart {
+  height: 100%;
   position: absolute;
-  width: 0;
-  height: 0;
-  border-top: 40px solid transparent;
-  border-bottom: 40px solid transparent;
-  border-left: 80px solid #F82672; /* Cor vermelha vibrante */
-  animation: heartbeat 2s linear infinite; 
+  animation: thurs_decay 5s linear infinite; /* animação de decay */
 }
-@keyframes heartbeat {
-  0% {
-    transform: scale(1); opacity: 1;
-  }
-  50% {
-    transform: scale(1.2) rotate(10deg); opacity: 0.3; 
-  }
-  100% {
-    transform: scale(1); opacity: 1;
-  }
-}
-
-.error-message {
-  font-family: 'Arial', sans-serif;
-  font-size: 32px;
-  color: #F92672;
-  position: absolute; 
-  transform: rotate(-15deg);
-  opacity: 0;
-  animation: fade-in 0.5s ease-in-out forwards;
-}
-
-.particle {
+.layer_joy { /* Uma camada representando o alívio e a esperança: flashes de cores vibrantes e efeito de blur */
   position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: #F8F8F2; 
+  width: 80%;
+  height: 80%;
   border-radius: 50%;
-  animation: pulsate 1.5s ease-in-out infinite; 
+  left: 10%;
+  top: 10%;
+  background: radial-gradient(circle, #ff2d55, #ffc000, #00b3ff, #00b3ff);
+  animation: thurs_flash 2.5s ease-in-out infinite; /* animação de flash de cores */
+  animation-delay: 1s; /* delay para criar a sensação de esperança */
 }
-@keyframes pulsate {
-  0%, 100% {
-    transform: scale(1);
+
+@keyframes thurs_decay { /* Decay: cores se afogando em luz suave */
+  0% {
+    /* Cores vibrantes */
+    background-color: radial-gradient(ellipse at 50% 50%, rgba(255, 0, 0, 0.8), rgba(255, 192, 0, 0.8), rgba(0, 179, 255, 0.8), rgba(0, 179, 255, 0.8));
+    filter: blur(0px);
+  }
+
+   50% {
+    /* Cores se perdem */
+    background-color: radial-gradient(ellipse at 50% 50%, rgba(255, 0, 0, 0.2), rgba(255, 192, 0, 0.2), rgba(0, 179, 255, 0.2), rgba(0, 179, 255, 0.2));
+    filter: blur(20px);
+  }
+
+  100% { /* retorno à cor original */
+    background-color: radial-gradient(ellipse at 50% 50%, rgba(255, 0, 0, 0.8), rgba(255, 192, 0, 0.8), rgba(0, 179, 255, 0.8), rgba(0, 179, 255, 0.8));
+    filter: blur(0px);
+  }
+
+}
+
+
+@keyframes thurs_flash { /* Flash: o alívio da esperança  */
+  0% { 
+    opacity: 0;
+    transform: scale(0.5);
   }
   50% {
-    transform: scale(1.1); 
+    opacity: 1;
+    transform: scale(1.1);
+  }  
+  100% { 
+    opacity: 0;
+    transform: scale(0.5);
   }
-}
+}  
+
 
 </style>
 </head>
 <body>
-<div class="codigo">
-  <span class="selector">body {</span>
-    <span class="property">background-color:</span> 
-    <span class="value-string">#141C26;</span> 
-    <span class="brace">}</span>  
- 
-  
-  <span class="selector">.heart { </span>
-    <span class="property">animation:</span> 
-    <span class="value-string">heartbeat 2s linear infinite; </span> 
-    <span class="brace">}</span>
- 
-  <span class="selector">.particle { </span>
-    <span class="property">animation:</span> 
-    <span class="value-string">pulsate 1.5s ease-in-out infinite; </span> 
-    <span class="brace">}</span>
 
-  <!-- Adicione mais propriedades CSS para simular o decay -->
+<div class="codigo">
+  .transition-blur {
+    <!-- O efeito de desfoque gradual  --> /* ,
+    animation: thurs_decay 5s linear infinite;
+  } -->  
+    animation: none 
+
+
 
 </div>
-<div class="animation-container">
-  <div class="heart"></div> 
-  <span class="error-message">ERRO 404: Felicidade Não Encontrada</span> 
-  <div class="particle"></div> 
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div> 
 
 
-<!-- Adicione mais elementos animados -->
+ <div class="animation-container">
+  <div class="layer_alert"></div>  
+  <div class="layer_joy"></div>
+
 
 </div>
 </body>
 </html>
 
+
+
+
 ```
-
- 
-**Psychological Interpretation:**
-
-* **Red Heart:** Represents the initial rush of dopamine, visually intense and fading rapidly.  The color *fades in and out* as if simulating the joy's quick descent.
-
-* **Error Message:**  Appears as the heart decays, symbolizing the realization that joy is fleeting. The text adding a layer of digital dehumanization to the feeling of loss.
-* **Particles:** Simulate the brain's attempt to cope with the fading happiness, creating random, fleeting sparks of distraction as temporary substitutes for genuine joy.
-
-* **Animation Timing:**  The fast heartbeat, coupled with the pulse of the particles, suggests a scattered, anxious mind trying to cling onto something that's slipping away. 
-
-
-
