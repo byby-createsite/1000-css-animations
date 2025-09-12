@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friday: The Real Final Project</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #2f3640; /* Darker background to intensify the glow effect */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .codigo {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #272822;
+        color: #F8F8F2;
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 18px;
+        padding: 20px;
+        border-radius: 8px;
+        white-space: pre-line;
+        text-align: left;
+        line-height: 1.6;
+        max-height: 50%;
+        max-width: 90%;
+        width: 100%;
+        overflow-y: auto;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .brace          { color: #F8F8F2; }
+    .comment        { color: #75715E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
+        background: transparent;
+    }
+
+    /* Animation Styles */ 
+    .animation-container:before { /* Glitch effect on empty space */
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#0003, #000a); /* subtle gradient */
+        filter: blur(30px); /* Blur to soften the effect */
+        mix-blend-mode: overlay; /* Overlay effect with animation container */
+    }
+    .code-snippet {
+        width: 30%; 
+        height: 300px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1); /* Semi-transparent light background */
+        clip-path: circle(30% at 50% 50%); /* Creates a circular cutout effect */
+        transform: rotate(-20deg); /* Tilts the code snippet */
+        animation:  translate-and-glow 5s infinite linear; /* Animate the glow and repositioning */
+    }
+    .code-snippet::before {
+        content: "/* // Imposter Syndrome Lurking...";
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: #b2bdc1; /* very light gray comment color */
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 12px;
+        mix-blend-mode: additive;
+    }
+
+
+    @keyframes  translate-and-glow {
+        0% {
+            transform: translate(-10vw, -10vh) rotate(-20deg); /* Position and rotate initial values */
+            filter: blur(5px); /* Start with a less pronounced blur  */
+        } 
+        50% { 
+            transform: translate(10vw, 10vh) rotate(0deg); 
+            filter: blur(25px); /*  Maximize blur at the midpoint  */
+        }
+
+        100% {
+            transform: translate(-10vw, -10vh) rotate(-20deg); 
+            filter: blur(5px); /* Back to the initial animation state */
+        }
+    }
+  </style>
+</head>
+<body>
+    <div class="codigo">
+        
+        .anxiety-block {
+            
+            animation: flicker-and-shake 2s infinite alternate; 
+        }
+        .reveal-text {
+            animation: fade-in 1s ease-out; 
+            opacity: 0;
+        }
+    </div>
+
+    <div class="animation-container">
+        <div class="code-snippet">
+
+.circle-glow {
+    width: 100px;
+    height: 100px;
+    background: #000; 
+    border-radius: 50%; /* Makes it circular */
+    position: absolute; /* To position freely within the container */
+    animation: pulse 1.5s infinite ease-in-out; /* Rhythmic pulsing  */
+}
+
+        </div>
+    </div>
+</body>
+</html>
