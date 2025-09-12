@@ -1,0 +1,136 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imposter Syndrome Kernel</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #16181A; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 50%;
+      max-width: 90%;
+      width: 100%;
+      overflow-y: auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .brace          { color: #F8F8F2; }
+    .comment        { color: #75715E; }
+    .function       { color: #A6E22E; }
+
+ 
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .codeblock {
+      animation-name: fri_kernel_codePulse;
+      animation-duration: 4s;
+      animation-delay: 0.5s;
+      animation-timing-function: cubic-bezier(.19, 1, 1, .56);
+      animation-iteration-count: infinite;
+      mix-blend-mode: difference; /*  
+   --> Cria um efeito de distorção e desfoca o código, como se fosse uma ilusão */
+    }
+
+    .opacity-layer {
+     opacity: 0; animation-timing-function: ease-out; 
+     animation-duration: 1s;
+     animation-fill-mode: forwards;
+     animation-delay: 1s;
+    }
+
+    @keyframes fri_kernel_codePulse {
+      0% { transform: rotate(0deg); }
+      10% { transform: rotate(2deg); opacity: 0.9; }
+      20% { transform: rotate(-2deg); opacity: 0.8; }
+      30% { transform: rotate(0deg); opacity: 0.7; }
+
+      100% {
+        transform: rotate(0deg); 
+        opacity: 0.9;
+      }
+    }
+
+        @keyframes fri_kernel_promptSlide {
+          0% { transform: translateX(-100%); opacity: 0; } 
+          50% { transform: translateX(0); opacity: 1;  } 
+          100% { transform: translateX(0);  opacity: 0; animation-delay: 4s;
+  }   
+    }
+
+   
+  </style>
+</head>
+<body>
+    
+<div class="codigo">
+  <span class="selector">h1.text</span> {
+    <span class="property">color</span>: <span class="value-color">#66D9EF;</span>
+    <br>
+    <span class="property">font-size</span>: <span class="value-number">2.5rem</span>;
+    <br>
+    <span class="property">opacity</span>: <span class="value-number">0.8</span>;
+    <br>
+    <span class="comment"> Cor e tamanho do texto, um pouco transparente para mostrar a fragilidade.</span>
+  }
+  
+  <span class="selector">span.prompt</span> { <span class="property">animation</span>: <span class="function">fri_kernel_promptSlide</span> <span class="value-number">1</span>s linear infinite; <span class="comment"> Ajuste para o efeito de entrada e saída da mensagem</span>}
+</div>
+
+<div class="animation-container"> 
+  <div class="codeblock">
+    <h1>FAKE IT TILL YOU MAKE IT</h1>
+  </div>  
+</div>  
+
+
+
+</body>
+</html>
+
+```
