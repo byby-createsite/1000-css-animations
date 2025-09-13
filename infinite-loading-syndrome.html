@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saturday: Infinite Loading Syndrome</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #111E36;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 50%;
+      max-width: 90%;
+      width: 100%;
+      overflow-y: auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .brace          { color: #F8F8F2; }
+    .comment        { color: #75715E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .loading-bar-container {
+      width: 80%;
+      height: 5px;
+      background: linear-gradient(to right, #00bcd4 0%, #00bcd4 100%);
+      border-radius: 10px;
+    }
+
+    .loading-bar {
+      height: 100%;
+      background: #FFC107;
+      width: 0%;
+      animation: loadingBarSaturate 2s linear infinite;
+    }
+
+
+    @keyframes loadingBarSaturate {
+      0% {
+        width: 0%;
+      }
+      50% {
+        width: 100%;
+      }
+      100% {
+        width: 0%;
+      }
+    }
+
+
+
+  </style>
+</head>
+<body>
+  
+  <div class="codigo">
+    
+<span class="selector">body</span> 
+<span class="property">background-color:</span> <span class="value-string">#111E36</span>; <br>
+
+<span class="selector">.loading-bar-container</span>
+<span class="property">width:</span> <span class="value-number">80%</span>; <br>
+<span class="selector">.loading-bar-container</span>
+<span class="property">height:</span> <span class="value-number">5</span> <span class="unit">px</span>; <br>
+<span class="selector">.loading-bar-container</span>
+<span class="property">background:</span> <span class="value-string">linear-gradient(to right, #00bcd4 0%, #00bcd4 100%);</span><br>
+<span class="selector">.loading-bar-container</span>
+<span class="property">border-radius:</span> <span class="value-number">10</span> <span class="unit">px</span>; <br>
+<span class="selector">.loading-bar</span>
+<span class="property">height:</span> <span class="value-number">100%</span>; <br>
+<span class="selector">.loading-bar</span>
+<span class="property">background:</span> <span class="value-string">#FFC107</span>; <br>
+<span class="selector">.loading-bar</span>
+<span class="property">width:</span> <span class="value-number">0%</span>; <br>
+
+
+    
+  </div>
+  
+  <div class="animation-container">
+    <div class="loading-bar-container">
+      
+      <div class="loading-bar"></div>
+    
+    </div>
+  </div>
+
+
+
+</body>
+</html>
+
+
+
