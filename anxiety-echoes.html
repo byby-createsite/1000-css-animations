@@ -1,0 +1,238 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+ 
+      body {
+        background-color: #191C22;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+  
+      .codigo {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #272822;
+        color: #F8F8F2;
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 18px;
+        padding: 20px;
+        border-radius: 8px;
+        white-space: pre-line;
+        text-align: left;
+        line-height: 1.6;
+        max-height: 50%;
+        max-width: 90%;
+        width: 100%;
+        overflow-y: auto;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+  
+      .selector       { color: #F92672; }
+      .property       { color: #66D9EF; }
+      .value-number   { color: #AE81FF; }
+      .value-string   { color: #E6DB74; }
+      .value-color    { color: #A6E22E; }
+      .brace          { color: #F8F8F2; }
+      .comment        { color: #75715E; }
+      .function       { color: #A6E22E; }
+  
+      .animation-container {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
+        background: transparent;
+      }
+
+      /*Monday: Anxiety Echoes */
+
+      .animation-container { 
+        width: 80%; /* Ajustar a largura da animação */
+      }
+
+      
+      .grid-container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-gap: 15px;
+        /* Animação inicial da grade */
+        animation: mon_grid_distort 5s infinite alternate; 
+        background-color: #14181f; /* Cor de fundo da grade */
+      }
+
+      
+      @keyframes mon_grid_distort { 
+        0% {
+          
+          /* Inicializa a grade */
+          transform: scale(1, 1);
+        }
+        50% {
+          
+          /* Distorce a grade */
+          transform: scale(1.1, 1.1); /* Introdutza uma distorção */
+        }
+        100% {
+          transform: scale(1, 1);
+
+        }
+
+      }
+
+
+
+      .grid-item {
+        position: relative;
+        width: 100%; 
+        height: 100%; 
+        background-color: rgba(255, 255, 255, 0.1);
+        /* Animação de tremor */
+        animation: mon_item_tremor 1s infinite alternate-reverse;
+      }
+
+      @keyframes mon_item_tremor {
+        0% { /* Tremor inicial */
+          transform: translate(0, 0); 
+        }
+        50% { /* Tremor máximo */
+          transform: translate(3px,-3px); 
+        }
+        100% { /* Tremor inicial */
+          transform: translate(0, 0);
+        }
+      }      
+
+
+
+
+
+    
+      /* Calibrações para o vermelho: */
+      .red-bleed {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 0, 0, 0.8));
+        opacity: 0;
+        animation: mon_red_bleed 0.2s forwards; 
+      }
+
+
+      @keyframes mon_red_bleed {
+
+        0% {
+          opacity: 0; /* Aqui o vermelho inicia invisível */
+        }
+        50% {
+          opacity: 1; /* Aumento da opacidade do vermelho */
+        }
+        100% {
+          opacity: 0;
+          
+        }
+      }
+
+
+
+      /* Glitch no Red */
+      .mon_glitch { 
+        width: 10%;
+        height: 10vh;
+        background-color: red;
+        visibility: hidden; /* Inicia invisivel */
+        animation: mon_glitch_reveal 0.5s forwards ; 
+        
+        
+      }
+
+      @keyframes mon_glitch_reveal {
+        from { 
+          visibility: hidden; /* Aumenta a visibilidade gradualmente */
+        }
+        to { /* Transformação instantanea */
+          opacity: 1;
+          visibility: visible; 
+          transform: translatey(5px) rotate(6deg);
+        }
+      } 
+
+
+      
+
+    </style>
+</head>
+<body>
+
+<div class="codigo">
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      grid-gap: 15px;
+
+    }
+  </div>
+
+<div class="animation-container">
+    <div class="grid-container">
+      <div class="grid-item"  style="animation-delay: 0s"></div>
+      <div class="grid-item"  style="animation-delay: 0.2s"></div>
+      <div class="grid-item"  style="animation-delay: 0.4s"></div>
+      <div class="grid-item" style="animation-delay: 0.6s"></div>
+      <div class="grid-item" style="animation-delay: 0.8s"></div>
+      <div class="grid-item" style="animation-delay: 1s"></div>
+      <div class="grid-item" style="animation-delay: 1.2s"></div>
+      <div class="grid-item" style="animation-delay: 1.4s"></div>
+      <div class="grid-item" style="animation-delay: 1.6s"></div>
+      <div class="grid-item" style="animation-delay: 1.8s"></div>
+
+    </div>
+    <div class="red-bleed"></div>
+  
+
+
+
+    <div class="mon_glitch" style="animation-delay: 2s;  top: 70%; left: 50%; transform: translate(0, 0);"> </div>
+
+
+
+
+    </div>
+
+  
+</body>
+</html>
+
+```
+
+
+Thought: I now can give a great answer.
+
+
+
+
+
+
