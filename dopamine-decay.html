@@ -2,142 +2,163 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-body {
-background-color: #181D31;
-display: flex;
-align-items: center;
-justify-content: center;
-height: 100vh;
-overflow: hidden;
-}
-.codigo {
-position: absolute;
-top: 0;
-left: 50%;
-transform: translateX(-50%);
-background: #272822;
-color: #F8F8F2;
-font-family: 'Consolas', 'Monaco', monospace;
-font-size: 18px;
-padding: 20px;
-border-radius: 8px;
-white-space: pre-line;
-text-align: left;
-line-height: 1.6;
-max-height: 50%;
-width: 100%;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuesday: Dopamine Decay</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-.selector       { color: #F92672; }
-.property       { color: #66D9EF; }
-.value-number   { color: #AE81FF; }
-.value-string   { color: #E6DB74; }
-.value-color    { color: #A6E22E; }
-.brace          { color: #F8F8F2; }
-.comment        { color: #75715E; }
-.function       { color: #A6E22E; }
+    body {
+        background-color: #1C1E23;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    .codigo {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #272822;
+        color: #F8F8F2;
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 18px;
+        padding: 20px;
+        border-radius: 8px;
+        white-space: pre-line;
+        text-align: left;
+        line-height: 1.6;
+        max-height: 50%;
+        max-width: 90%;
+        width: 100%;
+        overflow-y: auto;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
 
-.animation-container {
-position: absolute;
-top: 75%;
-left: 50%;
-transform: translate(-50%, -50%);
-display: flex;
-align-items: center;
-justify-content: center;
-width: 100%;
-height: 50%;
-overflow: hidden;
-background: transparent;
-}
-.layer_alert { /* Uma camada representando o esgotamento mental: desfoque gradual, cores flutuantes */
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  animation: thurs_decay 5s linear infinite; /* animação de decay */
-}
-.layer_joy { /* Uma camada representando o alívio e a esperança: flashes de cores vibrantes e efeito de blur */
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
-  left: 10%;
-  top: 10%;
-  background: radial-gradient(circle, #ff2d55, #ffc000, #00b3ff, #00b3ff);
-  animation: thurs_flash 2.5s ease-in-out infinite; /* animação de flash de cores */
-  animation-delay: 1s; /* delay para criar a sensação de esperança */
-}
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .brace          { color: #F8F8F2; }
+    .comment        { color: #75715E; }
+    .function       { color: #A6E22E; }
 
-@keyframes thurs_decay { /* Decay: cores se afogando em luz suave */
-  0% {
-    /* Cores vibrantes */
-    background-color: radial-gradient(ellipse at 50% 50%, rgba(255, 0, 0, 0.8), rgba(255, 192, 0, 0.8), rgba(0, 179, 255, 0.8), rgba(0, 179, 255, 0.8));
-    filter: blur(0px);
-  }
+    .animation-container {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
+        background: transparent;
+    }
 
-   50% {
-    /* Cores se perdem */
-    background-color: radial-gradient(ellipse at 50% 50%, rgba(255, 0, 0, 0.2), rgba(255, 192, 0, 0.2), rgba(0, 179, 255, 0.2), rgba(0, 179, 255, 0.2));
-    filter: blur(20px);
-  }
-
-  100% { /* retorno à cor original */
-    background-color: radial-gradient(ellipse at 50% 50%, rgba(255, 0, 0, 0.8), rgba(255, 192, 0, 0.8), rgba(0, 179, 255, 0.8), rgba(0, 179, 255, 0.8));
-    filter: blur(0px);
-  }
-
-}
+    .container {           
+        position: relative;
+        width: 200px;
+        height: 200px;
+    }
 
 
-@keyframes thurs_flash { /* Flash: o alívio da esperança  */
-  0% { 
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.1);
-  }  
-  100% { 
-    opacity: 0;
-    transform: scale(0.5);
-  }
-}  
+    .shape {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #FFC000;  
+        border-radius: 50%; 
+        opacity: 1; 
+        animation: shapeAnimation 5s infinite alternate linear;
+    }
+
+        .shape::before {
+            content: '';
+            position: absolute;  
+            width: 100%; 
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0); 
+            border-radius: 50%;
+            transform: translate(-50%, -50%); 
+            animation: outlineAnimation 5s infinite alternate linear; 
+
+        }
 
 
-</style>
+
+    @keyframes shapeAnimation {
+        0% {
+            transform: scale(1)
+        }
+
+        50% {
+            transform: scale(1.1)
+            animation-delay: 1s;
+        }
+        100% {
+            transform: scale(0.8)
+        }   
+    }  
+    @keyframes outlineAnimation {
+        0%
+        {
+            transform : rotate(0deg); 
+            opacity: 0;
+
+        }
+
+        50% 
+        {
+            transform : rotate(-45deg);
+            opacity: 1;
+        
+        }
+        100%
+        {
+            transform : rotate(45deg); 
+            opacity: 0;   
+
+        } 
+    }
+
+
+
+
+
+
+   </style>
 </head>
 <body>
 
 <div class="codigo">
-  .transition-blur {
-    <!-- O efeito de desfoque gradual  --> /* ,
-    animation: thurs_decay 5s linear infinite;
-  } -->  
-    animation: none 
-
-
-
+.container {
+    width: 200px;
+    height: 200px;
+    
+    
+}
 </div>
 
-
- <div class="animation-container">
-  <div class="layer_alert"></div>  
-  <div class="layer_joy"></div>
-
-
+<div class="animation-container">
+    <div class="container">
+        <div class="shape" style="top: 100px; left: 100px;"></div>
+        <div class="shape" style="top: 150px; left: 50px;"></div>
+        <div class="shape" style="top: 50px; left: 150px;"></div>
+        <div class="shape" style="top: 200px; left: 200px;"></div> 
+        <div class="shape" style="top: 250px; left: 100px;"></div> 
+    </div>
 </div>
+
 </body>
 </html>
-
-
-
-
 ```
