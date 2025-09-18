@@ -1,0 +1,210 @@
+`<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thursday: The Uncanny Valley of Nostalgia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1a1d2d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 50%;
+            max-width: 90%;
+            width: 100%;
+            overflow-y: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .selector       { color: #F92672; }
+        .property       { color: #66D9EF; }
+        .value-number   { color: #AE81FF; }
+        .value-string   { color: #E6DB74; }
+        .value-color    { color: #A6E22E; }
+        .brace          { color: #F8F8F2; }
+        .comment        { color: #75715E; }
+        .function       { color: #A6E22E; }
+
+        .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+        }
+
+         /*
+          *{
+             background: linear-gradient(to bottom, #2b204b, #1a1d2d);
+          }
+
+          .codigo {
+             background: #1a1d2d;
+          } 
+    */
+
+
+        .pixelated-memory {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3e%3crect x='0' y='0' width='100' height='100' fill='%23A6E22E'/%3e%3c/svg%3e");
+            /* background-position: center center; */
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: pixelate 3s infinite linear alternate;
+            filter: blur(10px);
+            opacity: 0.8;
+            transform: translateX(80px) translateY(10px) scale(0.7) rotate(10deg);
+            z-index: 1;
+        }
+
+        @keyframes pixelate {
+            0% {
+                filter: blur(10px);
+            }
+            50% {
+                filter: blur(20px);
+            }
+            100% {
+                filter: blur(10px);
+            }
+        }
+
+
+        .memory-fragment {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background-color: #252a3f;
+            border-radius: 15px;
+            padding: 20px;
+            mix-blend-mode: luminosity; 
+            animation: ripple 3s infinite alternate; 
+            overflow: hidden;
+            z-index: 0; /* Ensure the memories are behind the pixels */
+        }
+
+        /* This creates a ripple effect on the memories */
+        @keyframes ripple {
+            0% {
+                transform: scale(1);  
+            }
+            25% {
+                transform: scale(1.1); 
+            }
+            50% {
+                transform: scale(1.15); 
+            }
+            75% {
+                transform: scale(1.1); 
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .ghost {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(180deg);
+            width: 100%;
+            height: 100%;
+            mix-blend-mode: screen; 
+            opacity: 0.8; 
+        }
+    </style>
+</head>
+<body>
+ 
+    <div class="codigo">
+        .memory-fragment {
+                animation: ripple 3s infinite alternate; 
+        }
+        
+        .ripple {
+            
+            animation: ripple 3s infinite alternate; 
+        }
+       
+        img {
+            animation: fade_out 10s linear infinite;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(1);
+            }
+            25% {
+               transform: scale(1.1); 
+            }
+            50% {
+                transform: scale(1.15); 
+            }
+            75% {
+                transform: scale(1.1); 
+            }
+
+            100% {
+                transform: scale(1);
+            }   
+        } /* Crie o efeito de onda */ 
+    </div>
+
+    <div class="animation-container">
+        
+        <div class="memory-fragment">
+           <div class="ghost"> 
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAABCAQAAAC1HAwCAAAAC0lEQVR42mBgYAAAAAYAAWJ+Y/9M/4z/58gzXRV+vY/+wO/9+z/6+9v8/9/4xv/7X//4z/8x/6+9v/4x/2z/5Z2/5N9+x/9P//82//4x/6+9v/7X/+wO/9+z/58gzXRV+vY/+wO/9+z/6+9v8/9/4 xv//8z/6+9v/4x/2z/5Z2/5N9+x/9P//" alt="" style="max-width: 100%;">
+            </div>
+        </div>   
+        <div class="pixelated-memory"></div>
+    </div>
+
+</body>
+
+
+</html>
+
+
+
+    
+`
+
+
+
+
+
+
