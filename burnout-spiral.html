@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saturday: Burnout Spiral</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #282A34;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            min-width: 100%;
+            width: 100%;
+            overflow-y: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .selector       { color: #F92672; }
+        .property       { color: #66D9EF; }
+        .value-number   { color: #AE81FF; }
+        .value-string   { color: #E6DB74; }
+        .value-color    { color: #A6E22E; }
+        .brace          { color: #F8F8F2; }
+        .comment        { color: #75715E; }
+        .function       { color: #A6E22E; }
+
+        .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .spinner {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, #F2932D, #DA2E29);
+            animation: burnout 10s linear infinite;
+        }
+
+        @keyframes burnout {
+            0% {
+                transform: scale(1);         /* Initial State */
+            }
+
+            50% {        
+                transform: scale(1.1);        
+            }
+
+            100% {
+                opacity: 0;                 /* Fade out completely */
+                transform: scale(0.4);          
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="codigo">
+        <span class="selector">.</spinner </span>
+        <span class="property">animation</span>
+        <span class="value-string">burnout</span>
+        <span class="value-number">10s</span>
+        <span class="property">linear</span>
+        <span class="value-string">infinite</span>;
+    </div>
+    <div class="animation-container">
+    <div class="spinner"></div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
