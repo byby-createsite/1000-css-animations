@@ -1,0 +1,184 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* fundação da estrutura CSS básica */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #1c1e2f; /* escolha uma cor que combina com a paleta de cores */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      min-width: 100%;
+      width: 100%;
+      overflow-y: auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .brace          { color: #F8F8F2; }
+    .comment        { color: #75715E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* Bloco de animação: Chromatic Regret (Lamento cromático)
+    Agradecer aos sentimentos de saudade e a capacidade ilimitada da memória para criar a sensação de que o passado é impenetrável.
+    A transição de cores é a manifestação visível dessa impenetrabilidade, e a velocidade da animação reflete o fluxo de lembranças que inundam a mente. */
+    @keyframes mon_ticket_regret {
+      0% {
+        clip-path: polygon(50% 0, 0 100%, 100% 100%);
+        transform: translateX(0);
+      }
+      50% {
+        clip-path: polygon(75% 0, 25% 100%, 100% 0);
+        transform: translateX(-10%);
+      }
+      100% {
+        clip-path: polygon(50% 0, 0 100%, 100% 100%);
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes mon_ticket_mist {
+      0% {
+        clip-path: polygon(50% 0, 0 100%, 100% 100%);
+        mask-image: url('https://via.placeholder.com/100x100?text=M');
+        filter: grayscale(100%) blur(0);
+      }
+      50% {
+        clip-path: polygon(75% 0, 25% 100%, 100% 0);
+        mask-image: url('https://via.placeholder.com/100x100?text=M');
+        filter: grayscale(100%) blur(10);
+      }
+      100% {
+        clip-path: polygon(50% 0, 0 100%, 100% 100%);
+        mask-image: url('https://via.placeholder.com/100x100?text=M');
+        filter: grayscale(100%);
+      }
+    }
+
+    .chromaticRegret {
+      animation: 
+        mon_ticket_regret 8s ease-in-out infinite,
+        mon_ticket_mist 4s step-end 4s infinite;
+      animation-delay: 2s;
+      animation-iteration-count: 2;
+      clip-path: circle(50% at 50% 50%);
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(to right, hsl(0, 100%, 50%), hsl(120, 100%, 50%), hsl(240, 100%, 50%), hsl(0, 100%, 50%));
+      mix-blend-mode: soft-light;
+    }
+
+    .codigo {
+      font-family: 'Consolas', 'Monaco', monospace;
+      line-height: 1.6;
+      max-height: 25%;
+      min-width: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-y: auto;
+      text-align: justify;
+      font-size: 18px;
+    }
+    .codigo::-webkit-scrollbar {
+      width: 10px;
+    }
+    .codigo::-webkit-scrollbar-track {
+      background: #272822;
+      border-radius: 10px;
+    }
+    .codigo::-webkit-scrollbar-thumb {
+      background-color: #F8F8F2;
+      border-radius: 10px;
+    }
+    .codigo span.selector {
+      color: #F92672;
+    }
+    .codigo span.property {
+      color: #66D9EF;
+    }
+    .codigo span.value-number {
+      color: #AE81FF;
+    }
+    .codigo span.value-string {
+      color: #E6DB74;
+    }
+    .codigo span.value-color {
+      color: #A6E22E;
+    }
+    .codigo span.brace {
+      color: #F8F8F2;
+    }
+    .codigo span.comment {
+      color: #75715E;
+    }
+    .codigo span.function {
+      color: #A6E22E;
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.ciclo</span><br>
+    <span class="property">transition:</span><br>
+    <span class="value-number">300ms</span><br>
+    <span class="property;">animation:</span><br>
+    <span class="value-string">chroaticRegret</span><br>
+  </div>
+  <div class="animation-container">
+    <div class="chromaticRegret"></div>
+  </div>
+</body>
+</html>
+```
