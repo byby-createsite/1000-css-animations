@@ -2,18 +2,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phantom Loading</title>
   <style>
-    /*
-    * CSS base
-    */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    /* CSS Foundation */
     body {
-      background-color: #2C343F; /* escuridão e um toque de azul escuro */
+      background-color: #272822;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -38,7 +33,7 @@
       max-height: 25%;
       min-width: 100%;
       width: 100%;
-      overflow-y: auto;
+      overflow-y: hidden;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
@@ -65,85 +60,142 @@
       background: transparent;
     }
 
-    /*
-    * Desenho principal
-    */
-    .tue_falling_loading::before,
-    .tue_falling_loading::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    /* Animação: Phantom Loading */
+    .animation-container {
+      animation: spin 2s linear infinite;
     }
-
-    .tue_falling_loading {
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(to right, #ff99cc, #ccff99);
-      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-      animation: tue_falling_loading 2s infinite;
-      perspective: 200px;
-    }
-
-    .tue_falling_loading::before {
-      background: conic-gradient(rgba(255, 153, 204, 0.5), rgba(204, 255, 153, 0.5));
-    }
-
-    .tue_falling_loading::after {
-      background: linear-gradient(to bottom, #33ccff, #ccff33);
-      mask-image: radial-gradient(#fff, #000);
-      clip-path: inset(100% 0px 0px -50px);
-    }
-
-    @keyframes tue_falling_loading {
+    @keyframes spin {
       0% {
-        transform: translate3d(100px, 0px, 0px);
-      }
-      30% {
-        transform: scale(1, 2);
-      }
-      70% {
-        transform: scale(2, 0.5);
-      }
-      100% {
-        transform: translate3d(-50px, 50px, 0px);
-      }
-    }
-
-    @keyframes tue_expanding_circle {
-      0% {
-        transform: scale(10%);
-        mix-blend-mode: screen;
+        /* Comentário: A primeira iteração é uma representação da ansiedade, com elementos dispersos e sem sentido. */
+        transform: translate(-50%, -50%) scale(1);
       }
       50% {
-        transform: scale(150%);
-        opacity: 0.5;
+        /* Comentário: No meio da animação, os elementos começam a se organizar e formar uma falsa sensação de ordem. */
+        transform: translate(-50%, -50%) scale(1.1);
       }
       100% {
-        transform: scale(50%);
+        /* Comentário: Na última iteração, a ansiedade retorna e os elementos se dispersam novamente. */
+        transform: translate(-50%, -50%) scale(0.9);
       }
     }
 
-    .tue_falling_loading::after {
-      animation: tue_expanding_circle 4s infinite, tue_falling_loading 2s infinite;
+    /* Elementos de Loading animados */
+    .animation-container::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid #F8F8F2;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      animation: loading 2s ease-in-out infinite;
     }
+    @keyframes loading {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        border-width: 2px;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        border-width: 1px;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        border-width: 2px;
+      }
+    }
+    .animation-container::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #A6E22E;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        transform-origin: center;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        transform-origin: center;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        transform-origin: center;
+      }
+    }
+
+    /* CSS para a barra de código */
+    .codigo::before {
+      content: '// Código que irá renderizar a animação';
+      font-size: 14px;
+      color: #75715E;
+    }
+
+    /* CSS para a barra de código que irá renderizar a animação */
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      min-width: 100%;
+      width: 100%;
+      overflow-y: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .brace          { color: #F8F8F2; }
+    .comment        { color: #75715E; }
+    .function       { color: #A6E22E; }
+
+    /* Código que irá renderizar a animação */
+    .codigo {
+      color: #F8F8F2;
+    }
+    .codigo .selector       { color: #F92672; }
+    .codigo .property       { color: #66D9EF; }
+    .codigo .value-number   { color: #AE81FF; }
+    .codigo .value-string   { color: #E6DB74; }
+    .codigo .value-color    { color: #A6E22E; }
+    .codigo .brace          { color: #F8F8F2; }
+    .codigo .comment        { color: #75715E; }
+    .codigo .function       { color: #A6E22E; }
   </style>
 </head>
 <body>
   <div class="codigo">
-    <span class="selector">.tue_falling_loading</span>
-    <span class="property">background</span>
-    <span class="value-string">linear-gradient(to right, #ff99cc, #ccff99)</span>
+    <span class="selector">.animation-container</span>
     <br>
-    <span class="property">clip-path</span>
-    <span class="value-string">polygon(50% 0%, 100% 100%, 0% 100%)</span>
+    <span class="property">animation:</span>
+    <span class="value-string">spin 2s linear infinite</span>
   </div>
   <div class="animation-container">
-    <div class="tue_falling_loading">
-      <!-- loading animation content -->
-    </div>
+    <div class="loading-element"></div>
   </div>
 </body>
 </html>
