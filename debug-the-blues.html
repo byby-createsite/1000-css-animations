@@ -1,0 +1,275 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <style>
+        /* Crie uma atmosfera sombria para expressar a ansiedade e a dúvida. */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            min-width: 100%;
+            width: 100%;
+            overflow-y: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .selector       { color: #F92672; }
+        .property       { color: #66D9EF; }
+        .value-number   { color: #AE81FF; }
+        .value-string   { color: #E6DB74; }
+        .value-color    { color: #A6E22E; }
+        .brace          { color: #F8F8F2; }
+        .comment        { color: #75715E; }
+        .function       { color: #A6E22E; }
+
+        .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        /* A cena é composta por uma série de discos, representando a dúvida e a incerteza. */
+        .animation-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(to bottom, #ff69b4, #ffff00);
+            animation: rotate 2s linear infinite;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* Os discos se movem em círculos, representando a dúvida em espiral. */
+        .animation-container::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(to bottom, #00ff00, #ff0000);
+            animation: rotate2 2s linear infinite;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes rotate2 {
+            100% {
+                transform: translate(-50%, -50%) rotate(720deg);
+            }
+        }
+
+        /* A última adição à cena é a textura, que representa a ansiedade em forma de riscos visíveis. */
+        .animation-container::before {
+            background-image: linear-gradient(45deg, #ffff00, #ff0000, #00ff00, #ff0000);
+        }
+
+        /* Mostra um snippet de código para ressaltar a ideia de que a dúvida é um processo contínuo. */
+        .codigo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            min-width: 100%;
+            width: 100%;
+            overflow-y: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .selector       { color: #F92672; }
+        .property       { color: #66D9EF; }
+        .value-number   { color: #AE81FF; }
+        .value-string   { color: #E6DB74; }
+        .value-color    { color: #A6E22E; }
+        .brace          { color: #F8F8F2; }
+        .comment        { color: #75715E; }
+        .function       { color: #A6E22E; }
+
+        .codigo::-webkit-scrollbar {
+            width: 0;
+        }
+
+        .codigo > span {
+            margin: 0;
+            padding: 0;
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 20px;
+            white-space: pre-line;
+            width: 100%;
+            text-align: left;
+            line-height: 1.6;
+            background: #272822;
+            max-height: 25%;
+            overflow-y: hidden;
+        }
+
+        .codigo > .selector {
+            color: #F92672;
+            padding: 0 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .codigo > .selector::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #333;
+            margin-right: 10px;
+        }
+
+        .codigo > .property {
+            color: #66D9EF;
+            padding: 0 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .codigo > .property::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #66D9EF;
+            margin-right: 10px;
+        }
+
+        .codigo > :last-child {
+            color: #66D9EF;
+            padding: 0 10px;
+            border-bottom: none;
+        }
+
+        .codigo > :last-child::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #66D9EF;
+            margin-right: 10px;
+        }
+
+        .codigo > span.value-number {
+            color: #AE81FF;
+            font-weight: bold;
+        }
+
+        .codigo > span.value-string {
+            color: #E6DB74;
+        }
+
+        .codigo > span.value-color {
+            color: #A6E22E;
+        }
+
+        .codigo > span.value-color::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #A6E22E;
+            margin-right: 10px;
+        }
+
+        .codigo > span.brace {
+            color: #F8F8F2;
+            font-size: 16px;
+        }
+
+        .codigo > span.comment {
+            color: #75715E;
+            font-style: italic;
+        }
+
+        .codigo > span.function {
+            color: #A6E22E;
+        }
+    </style>
+</head>
+<body>
+    <div class="codigo">
+        <span class="selector">.cerebro </span>
+        <span class="property">::after </span>
+        <span class="property">{ </span>
+        <span class="brace"> }</span>
+        <span class="property">content: ''</span>
+        <span class="property">position: absolute;</span>
+        <span class="property">width: 100px;</span>
+        <span class="property">height: 100px;</span>
+        <span class="property">background: #ff69b4</span>
+        <span class="property">animation: rotate 2s linear infinite;</span>
+        <span class="function">@keyframes rotate {</span>
+        <span class="brace">}</span>
+        <span class="brace">}</span>
+    </div>
+    <div class="animation-container">
+        <div class="cerebro"></div>
+        <div class="riscos"></div>
+    </div>
+</body>
+</html>
+```
