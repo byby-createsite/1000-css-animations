@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+  /* 
+    CSS foundation: Global Styles
+  */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .codigo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #272822;
+    color: #F8F8F2;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    max-height: 25%;
+    min-width: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .selector       { color: #F92672; }
+  .property       { color: #66D9EF; }
+  .value-number   { color: #AE81FF; }
+  .value-string   { color: #E6DB74; }
+  .value-color    { color: #A6E22E; }
+  .brace          { color: #F8F8F2; }
+  .comment        { color: #75715E; }
+  .function       { color: #A6E22E; }
+
+  .animation-container {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    background: transparent;
+  }
+
+  /* 
+    A "forbidden branch" aparece num reexame de código falso, destacando o medo de escrever código que não funciona, reimplementado como uma entidade de código monstruosa.
+    Para simbolizar a sensação de um código desejado porém inatingível, usamos uma composição de 4 elementos, cada um com seu próprio eixo de rotação.
+  */
+  .animation-container::before, .animation-container::after {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: #ff69b4;
+  }
+
+  /* Eixo X */
+  .animation-container::before {
+    transform: rotate(-20deg) translateX(-100px);
+    animation: spin-x 2s linear infinite;
+  }
+
+  @keyframes spin-x {
+    0% {
+      transform: rotate(-20deg) translateX(-100px);
+    }
+    100% {
+      transform: rotate(20deg) translateX(-100px);
+    }
+  }
+
+  /* Eixo Y */
+  .animation-container::after {
+    transform: rotate(50deg) translateY(-50px);
+    animation: spin-y 2s linear infinite;
+  }
+
+  @keyframes spin-y {
+    0% {
+      transform: rotate(50deg) translateY(-50px);
+    }
+    100% {
+      transform: rotate(-50deg) translateY(-50px);
+    }
+  }
+
+  /* 
+    Os dois "filhos" da entidade de código monstruosa começam a tomar forma, girando em torno do centro com suas próprias velocidades e direções.
+  */
+  .animation-container>div:first-child {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #6495ed;
+    animation: spin-center-x 2s linear infinite;
+  }
+
+  @keyframes spin-center-x {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
+  .animation-container>div:last-child {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #4b0082;
+    animation: spin-center-y 2s linear infinite;
+  }
+
+  @keyframes spin-center-y {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* 
+    Em seguida, as duas seções laterais da entidade de código monstruosa começam a se conectar umas às outras de maneira aleatória, formando uma estrutura mais complexa.
+  */
+  .animation-container>div:first-child::before, .animation-container>div:last-child::before {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: #33cc33;
+    animation: connect 2s ease-out;
+  }
+
+  @keyframes connect {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .codigo {
+    padding: 20px;
+    font-size: 18px;
+  }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">div </span>
+    <span class="property"></span>
+    <span class="value-string">animation: spin-center-x 2s linear infinite;
+    @keyframes spin-center-x {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(-360deg); }
+    }</span>
+  </div>
+  <div class="animation-container">
+    <div></div>
+    <div></div>
+  </div>
+</body>
+</html>
