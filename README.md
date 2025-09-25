@@ -16,7 +16,7 @@ Se sinta livre para contribuir com este repositório.
 
 
 <a href="mailto:byby.inc.business@gmail.com"> byby.inc.business@gmail.com (app)</a> <br/>
-<a href="https://mail.google.com/mail/u/0/?to=byby.inc.business@gmail.com&su&body&tf=cm"> byby.inc.business@gmail.com (navigator)</a> <br/>
+<a href="mail.google.com/mail/u/0/?to=byby.inc.business@gmail.com&su&body&tf=cm"> byby.inc.business@gmail.com (navigator)</a> <br/>
 
 
 <br/> <br/> <br/>
@@ -37,7 +37,7 @@ Feel free to contribute to this repository.
 **Contact for any questions**
 
 <a href="mailto:byby.inc.business@gmail.com"> byby.inc.business@gmail.com (app)</a> <br/>
-<a href="https://mail.google.com/mail/u/0/?to=byby.inc.business@gmail.com&su&body&tf=cm"> byby.inc.business@gmail.com (navigator)</a> <br/>
+<a href="mail.google.com/mail/u/0/?to=byby.inc.business@gmail.com&su&body&tf=cm"> byby.inc.business@gmail.com (navigator)</a> <br/>
 
 
 
