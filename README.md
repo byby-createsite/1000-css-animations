@@ -90,7 +90,6 @@ Feel free to contribute to this repository.
 <a href="./the-enigma-of-time.html">The enigma of time (Instagram)</a> <br/><br/>
 <a href="./push-the-language.html">Push the language (Instagram)</a> <br/><br/>
 <a href="./formas-magicas.html">Magic shapes (Instagram)</a> <br/><br/>
-<a href="./formas-magicas.html">Magic shapes growing (Instagram)</a> <br/><br/>
 <a href="./dancing-code.html">Dancing code (Instagram)</a> <br/><br/>
 <a href="./shapeshifter-showdown.html">Shapeshifter showdown (Instagram)</a> <br/><br/>
 <a href="./interactive-shape-dance.html">Interactive shape dance (Instagram)</a> <br/><br/>
@@ -100,7 +99,6 @@ Feel free to contribute to this repository.
 <a href="./glitch-cube.html">Glitch cube (Instagram)</a> <br/><br/>
 <a href="./flow-stat.html">Flow stat (Instagram)</a> <br/><br/>
 <a href="./floating-interfac.html">Floating interfac (Instagram)</a> <br/><br/>
-<a href="./nested-loop.html">Nested loop (Instagram)</a> <br/><br/>
 <a href="./nested-loop.html">Nested loop (Instagram)</a> <br/><br/>
 <a href="./data-bloom.html">Data bloom (Instagram)</a> <br/><br/>
 <a href="./pathfinding-proximity.html">Pathfinding proximity (Instagram)</a> <br/><br/>
