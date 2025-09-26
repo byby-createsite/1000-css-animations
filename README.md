@@ -183,4 +183,4 @@ Feel free to contribute to this repository.
 <a href="./simulated-sentience.html">Simulated sentience </a> <br/><br/>
 <a href="./phantom-loading.html">Phantom loading </a> <br/><br/>
 <a href="./dev-memes.html">Dev memes </a> <br/><br/>
-<a href="./debug-the-blues.html">Debug the blues </a> <br/><br/><a href="./the-algorithm-asks-why.html">The algorithm asks why</a> <br/><br/><a href="./fractured-focus.html">Fractured focus</a> <br/><br/>
+<a href="./debug-the-blues.html">Debug the blues </a> <br/><br/><a href="./the-algorithm-asks-why.html">The algorithm asks why</a> <br/><br/><a href="./fractured-focus.html">Fractured focus</a> <br/><br/><a href="./dopamine-drip.html">Dopamine drip</a> <br/><br/>

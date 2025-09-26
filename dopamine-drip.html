@@ -2,133 +2,184 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  <style>
+    /* css_foundation */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-    background-color: #14161D;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-}
+    body {
+      background: url("./thumb.jpg") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-.codigo {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #30322F;
-    color: #F8F8F2;
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 18px;
-    padding: 20px;
-    border-radius: 8px;
-    white-space: pre-line;
-    text-align: left;
-    line-height: 1.6;
-    max-height: 50%;
-    width: 100%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
 
-.selector       { color: #F92672; }
-.property       { color: #66D9EF; }
-.value-number   { color: #AE81FF; }
-.value-string   { color: #E6DB74; }
-.value-color    { color: #A6E22E; }
-.brace          { color: #F8F8F2; }
-.comment        { color: #75715E; }
-.function       { color: #A6E22E; }
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
 
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
 
-.animation-container {
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 50%;
-    overflow: hidden;
-    background: transparent;
-}
+    /* Dopamine Drip - key CSS snippet */
+    .color-palette {
+      animation: dripping-animation 1s linear infinite;
+    }
 
-.loading-screen {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    clip-path: circle(50% at 50% 50%);
-    background: radial-gradient(circle at 50% 50%, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.8)); 
-    animation: loading-pulse 1.5s infinite alternate-reverse; /* Animação de pulsos */
-}
+    @keyframes dripping-animation {
+      0% {
+        /* Cor inicial do Dopamine Drip */
+        background-color: #ff69b4;
+      }
+      50% {
+        /* Cor inicial do Dopamine Drip - transição */
+        background-color: #ff99cc;
+      }
+      100% {
+        /* Cor final do Dopamine Drip */
+        background-color: #ff0033;
+      }
+    }
 
-.loading-bar {
-    width: 0%;
-    height: 10px;
-    background: #F92672;
-    position: absolute;
-    bottom: 20px;
-    left: 0; 
-    animation: loading-bar-progress 4s linear infinite; /* Animação de progresso */ 
-}
+    .color-palette::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #ff69b4;
+      animation: growing-pause 1s linear infinite;
+    }
 
-@keyframes loading-pulse {
-    0% { opacity: 0.2 }
-    100% { opacity: 1 } 
-}
+    @keyframes growing-pause {
+      0% {
+        top: 100%;
+      }
+      100% {
+        top: calc(100% + 50px);
+      }
+    }
 
-@keyframes loading-bar-progress {
-    0% { width: 0%;    
-    100% { width: 100%; }
-}
+    .color-palette::after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #ff99cc;
+      animation: shrinking-grow 1s linear infinite;
+    }
 
-.codigo {
-    /* Exemplo de código CSS para a animação */ 
-    
-    .selector { color: #F92672; }
-    .property { color: #66D9EF; }
-    .value-number { color: #AE81FF; }
-    .value-string { color: #E6DB74; }
-    .value-color { color: #A6E22E; }
-    .brace { color: #F8F8F2; }
-    .comment { color: #75715E; }
+    @keyframes shrinking-grow {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(0.8);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
 
-    
-opacity: 0.7; /* Desfoque sutil para dar sensação de código antigo */
+    .color-palette span {
+      font-size: 30px;
+      position: relative;
+      z-index: 3;
+      color: #fff;
+    }
 
-} 
+    .codigo {
+      margin-bottom: 50px;
+    }
 
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
 
-</style>
+    /* Dopamine Drip - detalhes micro */
+    @media (replay) {
+      .color-palette::after {
+        /* Há 10s, a paleta colorida inicia a transição de cor */
+        animation-delay: 5s;
+      }
+    }
+
+    @media (replay) {
+      .color-palette::before {
+        /* A cada 5s, a paleta colorida inicia a transição de escala */
+        animation-delay: 2s;
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="codigo">
-  <span class="comment">//--- Aplicando um efeito de "infinite scroll" à animação</span>
-  <span class="comment">// Simulando a sensação de buscar sempre por mais, sem alcançar o fim</span>
-  <span class="selector">.loading-bar</span><span class="property"> {  </span><br> 
-  <span class="comment">// Ajuste a velocidade do progresso</span>  
-  <span class="selector">animation</span><span class="property">:</span><span class="value-string">  loading-bar-progress </span><span class="value-number">4</span><span class="value-number">s</span><span class="value-string"> linear infinite; </span><br> 
-  <span class="selector"><span class="property">animation-delay:</span></span><span class="value-number">0.5s;</span><br> 
-   
-  <span class="brace">}</span><br>
-</div>
-<div class="animation-container"> 
-  <div class="loading-screen"> 
-  </div> 
-  <div class="loading-bar"> </div>
-</div>
+  <div class="codigo">
+    <span class="selector">.color-palette</span>
+    <span class="brace">{</span>
+      <span class="property">animation</span>: <span class="function">dripping-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="color-palette">
+      <span>DDD</span>
+    </div>
+  </div>
 </body>
-</html>   ```
-
-
-
-Thought: I have now generated the HTML and CSS code for "Tuesday: Dopamine Drip", imbued with the emotional weight of information overload and addictive behaviors.
+</html>
+```
