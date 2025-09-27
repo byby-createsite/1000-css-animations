@@ -1,0 +1,301 @@
+```
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background:url("./thumb.jpg") no-repeat center center;
+        background-color: black;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .codigo {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #272822;
+        color: #F8F8F2;
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 18px;
+        padding: 20px;
+        border-radius: 8px;
+        white-space: pre-line;
+        text-align: left;
+        line-height: 1.6;
+        max-height: 25%;
+        max-width: 75%;
+        width: 75%;
+        height: 25%;
+        top:15%;
+        overflow-y: hidden;
+        box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .codigo > * {
+        color: #F8F8F2 !important;
+    }
+
+    .annotation-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 16px;
+        font-style: italic;
+        color: #E6DB74;
+        padding: 10px;
+        background-color: rgba(0,0,0,0.8);
+        border-radius: 20px;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Criação de memória distorcida */
+    .loading-element {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: 50px;
+        background-color: rgba(255,255,255,0.2);
+        border-radius: 50%;
+    }
+
+    /* Deslocamento horizontal gradual */
+    .loading-element::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: 50px;
+        background-color: rgba(255,255,255,0.7);
+        border-radius: 50%;
+        animation: loading-animation 1s linear infinite;
+    }
+
+    .loading-element::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -100%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        height: 50px;
+        background-color: rgba(255,255,255,0.3);
+        border-radius: 50%;
+        animation: loading-animation 1s linear infinite;
+    }
+
+    @keyframes loading-animation {
+        0% {
+            transform: translate(-50%, -50%) scale(0);
+        }
+        25% {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+            transform: translate(-50%, -50%) scale(0);
+        }
+        100% {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+
+    /* Animação de fluxo de memória */
+    .memory-flow {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 20%;
+        height: 50%;
+        background-color: rgba(255,255,255,0.5);
+        border-radius: 20px;
+    }
+
+    .memory-flow::before {
+        content: "";
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        transform: translate(0, 0);
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,255,255,0.6);
+        border-radius: 20px;
+        animation: memory-flow 2s linear infinite;
+    }
+
+    .memory-flow::after {
+        content: "";
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        transform: translate(0, 0);
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,255,255,0.4);
+        border-radius: 20px;
+        animation: memory-flow 2s linear infinite;
+    }
+
+    @keyframes memory-flow {
+        0% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(0, 50%);
+        }
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    /* Animação de reflexão*/
+    .reflection {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 50%;
+        background-color: rgba(255,255,255,0.3);
+        border-radius: 20px;
+        z-index: 2;
+    }
+
+    .reflection::before {
+        content: "";
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        transform: translate(0, 0);
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,255,255,0.6);
+        border-radius: 20px;
+        animation: reflection 1s linear infinite;
+    }
+
+    .reflection::after {
+        content: "";
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        transform: translate(0, 0);
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255,255,255,0.4);
+        border-radius: 20px;
+        animation: reflection 1s linear infinite;
+    }
+
+    @keyframes reflection {
+        0% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(0, 50%);
+        }
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    .annotation-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 16px;
+        font-style: italic;
+        color: #E6DB74;
+        padding: 10px;
+        background-color: rgba(0,0,0,0.8);
+        border-radius: 20px;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .annotation-container::before {
+        content: "Memória distorcida e inacessível. Tentativa fallida de recordar";
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #F8F8F2;
+        font-size: 14px;
+        font-style: italic;
+        text-align: center;
+        width: 200px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="codigo">
+        <span class="selector">.loading-element</span>
+        <span class="brace">{</span>
+            <span class="property">background-color</span>
+            <span class="value-color">: rgba(255, 255, 255, 0.2);</span>
+            <span class="property">border-radius</span>
+            <span class="value-number">: 50%;</span>
+
+            <span class="property">animation</span>
+            <span class="function">loading-animation</span>
+            <span class="value-number">1s</span>
+            <span class="value-string">linear</span>
+            <span class="value-string">infinite;</span>
+
+        <span class="brace">}</span>
+    </div>
+
+    <div class="animation-container">
+        <div class="loading-element" style="transform: translate(-50%, -50%);"></div>
+        <div class="memory-flow" style="transform: translate(-50%, -50%);">
+            <div class="reflection" style="transform: translate(-50%, -50%)">
+                <div class="reflection::before" style="transform: translate(0, 0); opacity: 0;"></div>
+                <div class="reflection::after" style="transform: translate(-50%, -50%) scale(0);">
+                    <div class="memory-flow::before" style="opacity: 1;">
+                        <div class="memory-flow::after" style="transform: translate(0, 0);">
+                            <div class="annotation-container" style="transform: translateX(-50%);">
+                                <div class="animation-container" style="transform: translate(-50%, -50%);">
+                                    Tudo o que sabemos é apenas uma recordação.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
