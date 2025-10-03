@@ -2,276 +2,259 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <style>
+  /* Defina a base do CSS */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-        body {
-            background-color: #2F4F91;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            overflow: hidden;
-        }
+  body {
+    background: url("./thumb.jpg") no-repeat center center;
+    background-color: black;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
 
-        .codigo {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #272822;
-            color: #F8F8F2;
-            font-family: 'Consolas', 'Monaco', monospace;
-            font-size: 18px;
-            padding: 20px;
-            border-radius: 8px;
-            white-space: pre-line;
-            text-align: left;
-            line-height: 1.6;
-            max-height: 25%;
-            min-width: 100%;
-            width: 100%;
-            overflow-y: auto;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
+  .codigo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #272822;
+    color: #F8F8F2;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    max-height: 25%;
+    max-width: 75%;
+    width: 75%;
+    height: 25%;
+    top:15%;
+    overflow-y: hidden;
+     box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+  }
 
-        .selector       { color: #F92672; }
-        .property       { color: #66D9EF; }
-        .value-number   { color: #AE81FF; }
-        .value-string   { color: #E6DB74; }
-        .value-color    { color: #A6E22E; }
-        .brace          { color: #F8F8F2; }
-        .comment        { color: #75715E; }
-        .function       { color: #A6E22E; }
+  .selector       { color: #F92672; }
+  .property       { color: #66D9EF; }
+  .value-number   { color: #AE81FF; }
+  .value-string   { color: #E6DB74; }
+  .value-color    { color: #A6E22E; }
+  .function       { color: #A6E22E; }
 
-        .animation-container {
-            position: absolute;
-            top: 75%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 50%;
-            overflow: hidden;
-            background: transparent;
-        }
+  .animation-container {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    background: transparent;
+  }
 
-        .codigo::-webkit-scrollbar { /* adiciona scrollbar */ }
-        .codigo::-webkit-scrollbar-thumb { -webkit-border-radius: 7px; -webkit-box-shadow: inset 0 0 6px hsla(0, 0%, 0%, 0.2); background-color: #6c6c6c; }
-        .codigo::-webkit-scrollbar-thumb:hover { background-color: #333; }
+  /* Animação de refletos quebrados */
+  .refletos {
+    position: relative;
+    width: 20%;
+    height: 20%;
+  }
 
-        /* segunda-feira: 
-            "Ticket glitch" - um glitch de bilhete que desvia para a esquerda e destrói a forma do bilhete.
-        */
-        .segunda-ticket-glitch {
-            width: 200px;
-            height: 200px;
-            background-color: hsla(0, 0%, 0%, 0.5);
-            position: relative;
-            clip-path: polygon(50% 0, 75% 25%, 100% 50%, 75% 75%, 50% 100%, 25% 75%, 0 50%);
-            animation: segunda-ticket-glitch 2s infinite;
-        }
-        @keyframes segunda-ticket-glitch {
-            0% { clip-path: polygon(50% 0, 75% 25%, 100% 50%, 75% 75%, 50% 100%, 25% 75%, 0 50%); }
-            20% { clip-path: polygon(20% 0, 45% 15%, 80% 40%, 40% 60%, 20% 90%); transform: translate(-100px, -50px); }
-            40% { clip-path: inherit; transform: translate(0px, 0px); }
-            55% { clip-path: polygon(50% 0, 75% 25%, 100% 50%, 75% 75%, 50% 100%, 25% 75%, 0 50%); transform: translate(50px, 50px); }
-            100% { clip-path: inherit; transform: translate(-100px, -100px); }
-        }
+  .refleto1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50% 0 0 50%;
+  }
 
-        /* quarta-feira: 
-            "Quartilha do isolamento" - uma composição de formas que se afastam entre si e formam um quadrado.
-        */
-        .quarta-quartilha-do-isolamento {
-            width: 400px;
-            height: 400px;
-            background-color: hsla(0, 0%, 0%, 0.5);
-            position: relative;
-            animation: quarta-quartilha-do-isolamento 2.5s infinite;
-        }
-        .quarta-quartilha-do-isolamento::before,
-        .quarta-quartilha-do-isolamento::after { content: ''; position: absolute; background-color: hsla(0, 0%, 0%, 0.1); }
-        .quarta-quartilha-do-isolamento::before {
-            top: 25%;
-            left: 25%;
-            width: 150px;
-            height: 150px;
-            transform: rotate(45deg) skew(0deg, -45deg);
-        }
-        .quarta-quartilha-do-isolamento::after {
-            top: 75%;
-            left: 75%;
-            width: 150px;
-            height: 150px;
-            transform: rotate(-45deg) skew(-45deg, 0deg);
-        }
-        @keyframes quarta-quartilha-do-isolamento {
-            0% {
-                transform: translate(0, 0);
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            }
-            50% {
-                transform: translate(150px, 50px);
-                clip-path: polygon(25% 25%, 100% 0, 75% 75%, 0 100%);
-                transition: transform 1.25s;
-            }
-            100% {
-                transform: translate(0, 0);
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            }
-        }
+  .refleto2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0 50% 50% 0;
+  }
 
-        /* quinta-feira: "Loneliness do quantum"
-            Um objeto que brilha com uma cor que muda a cada segundo, e que se move em um eixo x, e que afasta cada vez mais do centro.
-        */
-        .quinta-loneliness-do-quantum {
-            width: 200px;
-            height: 200px;
-            background-color: transparent;
-            position: relative;
-        }
-        .quinta-loneliness-do-quantum::before,
-        .quinta-loneliness-do-quantum::after { content: ''; position: absolute; background-color: #E6DB74; }
-        .quinta-loneliness-do-quantum::before {
-            top: 50%;
-            left: 50%;
-            width: 2px;
-            height: 50px;
-            background-color: hsla(0, 0%, 0%, 0);
-            transition: width 1s;
-        }
-        .quinta-loneliness-do-quantum::after {
-            top: 50%;
-            left: 25%;
-            width: 200px;
-            height: 2px;
-            background-color: hsla(0, 0%, 0%, 0);
-            transition: width 1s;
-        }
-        animation: quinta-loneliness-do-quantum 4s infinite;
-        mask-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 1) 50%, #E6DB74 50%);
-        @keyframes quinta-loneliness-do-quantum {
-            0% {
-                transform: translate(0, 0);
-                filter: hue-rotate(0deg) saturate(1);
-            }
-            100% {
-                transform: translate(100px, 0);
-                filter: hue-rotate(360deg) saturate(1);
-            }
-        }
+  .refleto3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50% 50% 0 0;
+  }
 
-        /* sábado: 
-            "O mundo dentro do código"
-            Uma composição de formas geométricas que se aproximam e afastam em um movimento de dança.
-        */
-        .sabado-o-mundo-dentro-do-codigo {
-            width: 400px;
-            height: 400px;
-            background-color: hsla(0, 0%, 0%, 0.5);
-            position: relative;
-            animation: sabado-o-mundo-dentro-do-codigo 5s infinite;
-        }
-        .sabado-o-mundo-dentro-do-codigo::before,
-        .sabado-o-mundo-dentro-do-codigo::after { content: ''; position: absolute; background-color: #66D9EF; }
-        .sabado-o-mundo-dentro-do-codigo::before {
-            top: 25%;
-            left: 25%;
-            width: 150px;
-            height: 150px;
-            transform: rotate(45deg) skew(0deg, -45deg);
-        }
-        .sabado-o-mundo-dentro-do-codigo::after {
-            top: 75%;
-            left: 75%;
-            width: 150px;
-            height: 150px;
-            transform: rotate(-45deg) skew(-45deg, 0deg);
-        }
-        @keyframes sabado-o-mundo-dentro-do-codigo {
-            0% {
-                transform: translate(0, 0);
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-                opacity: 0;
-            }
-            25% {
-                transform: translate(50px, -75px);
-                clip-path: inherit;
-                opacity: 0.25;
-            }
-            50% {
-                transform: translate(100px, 0);
-                clip-path: inherit;
-                opacity: 0.5;
-            }
-            75% {
-                transform: translate(50px, 75px);
-                clip-path: inherit;
-                opacity: 0.25;
-            }
-            100% {
-                transform: translate(0, 0);
-                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-                opacity: 0;
-            }
-        }
+  .refleto4 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 200%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0 0 0 50%;
+  }
 
-        /* segundo código CSS para a página */
-        html { -webkit-tap-highlight-color: transparent; }
-        body { font-family: 'Lato', 'Arial', sans-serif; }
-        .codigo-container {
-            position: fixed;
-            top: 100px;
-            left: 100px;
-            padding: 20px;
-            background-color: #272822;
-            width: 80%;
-            max-height: calc(100vh - 200px);
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-        .codigo {
-            max-height: calc(100% - 40px);
-            padding: 10px;
-        }
-        .codigo::-webkit-scrollbar { width: 5px; }
-        .codigo::-webkit-scrollbar-thumb { background-color: #6c6c6c; border-radius: 7px; }
-        .codigo::-webkit-scrollbar-thumb:hover { background-color: #333; }
-    </style>
+  .refleto1, .refleto2, .refleto3, .refleto4 {
+    animation: break-reflect 2s infinite;
+  }
+
+  @keyframes break-reflect {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Animação de código */
+  .codigo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #282828;
+    color: #F8F8F2;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    max-height: 50%;
+    max-width: 50%;
+    width: 50%;
+    height: 50%;
+    top: 25%;
+    overflow-y: hidden;
+  }
+
+  .codigo-container .codigo {
+    font-size: 12px;
+  }
+
+  .codigo-container .selector {
+    color: #F92672;  
+  }
+
+  .codigo-container .property {  
+    color: #66D9EF;
+  }
+
+  .codigo-container .value-number {  
+    color: #AE81FF;
+  }
+
+  .codigo-container .value-string {  
+    color: #E6DB74;
+  }
+
+  /* Animação de código quebrado */
+  .codigo-fragment {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+  }
+
+  .fragment1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50% 0 0 50%;
+  }
+
+  .fragment2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0 50% 50% 0;
+  }
+
+  @keyframes break-fragment {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .fragment1, .fragment2 {
+    animation: break-fragment 2s infinite;
+  }
+
+  .fragment1, .fragment2{
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  }
+
+  </style>
 </head>
 <body>
-    <!-- código CSS -->
+  <div class="codigo">
+    <span class="selector">.codigo-fragment</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">break-fragment</span> <span class="value-number">2s</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="refletos">
+      <div class="refleto1"></div>
+      <div class="refleto2"></div>
+      <div class="refleto3"></div>
+      <div class="refleto4"></div>
+    </div>
     <div class="codigo-container">
-        <div class="codigo">
-            <span class="selector">.elemento</span>
-            <span class="property">transform</span>
-            <span class="value-number">matrix(1, 1, -0.5, 1, 15, -10)</span>
-            <span class="value-string"> translate(10px, 20px)</span>
-            <span class="brace"> {</span>
-            <span class="function">function()</span>
-            <span class="comment"> // função de cálculo da rotação</span>
-            <span class="function">rotate(45deg)</span>
-            <span class="brace"> }</span>
-        </div>
+      <div class="codigo">
+        <span class="selector">.codigo-container</span><span class="brace">{</span>
+        <span class="property">position</span>: <span class="value-string">absolute</span>;
+        <span class="property">top</span>: <span class="value-number">25%</span>;
+        <span class="property">left</span>: <span class="value-number">0</span>;
+        <span class="property">background-color</span>: <span class="value-string">#282828</span>;
+        <span class="property">color</span>: <span class="value-string">#F8F8F2</span>;
+        <span class="property">padding</span>: <span class="value-number">20px</span>;
+        <span class="property">border-radius</span>: <span class="value-number">8px</span>;
+        <span class="property">white-space</span>: <span class="value-string">pre-line</span>;
+        <span class="property">text-align</span>: <span class="value-string">left</span>;
+        <span class="property">line-height</span>: <span class="value-number">1.6</span>;
+        <span class="property">max-height</span>: <span class="value-number">50%</span>;
+        <span class="property">max-width</span>: <span class="value-number">50%</span>;
+        <span class="property">width</span>: <span class="value-number">50%</span>;
+        <span class="property">height</span>: <span class="value-number">50%</span>;
+        <span class="property">overflow-y</span>: <span class="value-string">hidden</span>;
+        <span class="brace">}</span>
+      </div>
     </div>
-
-    <!-- container de animação -->
-    <div class="animation-container">
-        <!-- objeto que brilha com uma cor que muda a cada segundo, e que se move em um eixo x e afasta cada vez mais do centro -->
-        <div class="quinta-loneliness-do-quantum"> <p>&#9786;</p> </div>
-        <!-- composição de formas geométricas que se aproximam e afastam em um movimento de dança -->
-        <div class="sabado-o-mundo-dentro-do-codigo"></div>
-        <!-- formas que se afastam entre si e formam um quadrado -->
-        <div class="quarta-quartilha-do-isolamento"></div>
-        <!-- objeto que desvia para a esquerda e destrói a forma do bilhete -->
-        <div class="segunda-ticket-glitch"></div>
-    </div>
+  </div>
 </body>
 </html>
 ```
