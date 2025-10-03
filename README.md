@@ -128,7 +128,6 @@ Feel free to contribute to this repository.
 <a href="./the-blink-rate-dilemma.html">The blink rate dilemma </a> <br/><br/>
 <a href="./flow-state-glitch.html">Flow state glitch </a> <br/><br/>
 <a href="./the-tab-vortex.html">The tab vortex </a> <br/><br/>
-
 <a href="./flow-state-failure.html">Flow state failure </a> <br/><br/>
 <a href="./alien-2.html">Alien 2 </a> <br/><br/>
 <a href="./glitch-core-nostalgia.html">Glitch core nostalgia </a> <br/><br/>
@@ -162,7 +161,6 @@ Feel free to contribute to this repository.
 <a href="./nostalgia-algorithm.html">Nostalgia algorithm </a> <br/><br/>
 <a href="./the-imposter-scroll.html">The imposter scroll </a> <br/><br/>
 <a href="./transient-echoes--css.html">Transient echoes </a> <br/><br/>
-
 <a href="./the-antinostalgia-algorithm.html">The antinostalgia algorithm </a> <br/><br/>
 <a href="./the-weight-of-an-unfixed-bug.html">The weight of an unfixed bug </a> <br/><br/>
 <a href="./this-is-my-real-final-project.html">This is my real final project </a> <br/><br/>
