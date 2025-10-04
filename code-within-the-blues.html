@@ -1,0 +1,306 @@
+Thought: I now can give a great answer
+
+**HTML**
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url("./thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .loading-element {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #33CC33;
+      animation: loading-animation 1s linear infinite;
+    }
+
+    @keyframes loading-animation {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        border-radius: 50%;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        border-radius: 25%;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        border-radius: 50%;
+      }
+    }
+
+    .circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #66D9EF;
+      animation: circle-animation 2s linear infinite;
+    }
+
+    @keyframes circle-animation {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        border-radius: 50%;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        border-radius: 25%;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        border-radius: 50%;
+      }
+    }
+
+    .line {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 100px;
+      height: 2px;
+      background-color: #66D9EF;
+      animation: line-animation 2s linear infinite;
+    }
+
+    @keyframes line-animation {
+      0% {
+        transform: translate(-50%, -50%) rotate(45deg);
+        height: 2px;
+      }
+      50% {
+        transform: translate(-50%, -50%) rotate(45deg);
+        height: 4px;
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(45deg);
+        height: 2px;
+      }
+    }
+
+    .dot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #66D9EF;
+      animation: dot-animation 3s linear infinite;
+    }
+
+    @keyframes dot-animation {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        background-color: #66D9EF;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        background-color: #33CC33;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        background-color: #66D9EF;
+      }
+    }
+
+    .reflection {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #66D9EF;
+      animation: reflection-animation 2s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes reflection-animation {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        border-radius: 50%;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        border-radius: 25%;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        border-radius: 50%;
+      }
+    }
+
+    /* Animacão da sensação de reflexão */
+    /* O "reflexo" é uma cópia do circulo de cima */
+    /* Quando o circulo está se expandindo o reflexo se contrai e vice-versa */
+    .reflexo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #66D9EF;
+      pointer-events: none;
+      /* Comportamento que é a mesma do circulo de cima */
+      animation: reflexo-animation 2s linear infinite;
+    }
+
+    @keyframes reflexo-animation {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        border-radius: 50%;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        border-radius: 25%;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        border-radius: 50%;
+      }
+    }
+
+    /* Animacão que dá a sensação de sensibilidade ao toque */
+    /* A animação faz com que o circulo de cima se move em direções opostas no inicio e meio da animacao */
+    /* O circulo se expande e se contrai no inicio e meio da animação */
+    .circulo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #66D9EF;
+      pointer-events: none;
+      animation: animacao-circulo 2s linear infinite;
+    }
+
+    @keyframes animacao-circulo {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        transform: translate(0, -10px);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(0.5);
+        transform: translate(10px, 0);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        transform: translate(0, -10px);
+      }
+    }
+
+    /* Texto de apresentação */
+    .presentacao {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%);
+      width: 100%;
+      height: 20%;
+      display: flex;
+      justify-content: center;
+      font-size: 24px;
+      color: #66D9EF;
+    }
+  </style>
+  <title>Sábado: Fragmentos de Código</title>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="loading-element" style="animation-delay: 0s;"></div>
+    <div class="circle" style="animation-delay: 0.5s;"></div>
+    <div class="line" style="animation-delay: 0.7s;"></div>
+    <div class="dot" style="animation-delay: 0.9s;"></div>
+    <div class="reflection" style="animation-delay: 0.5s;"></div>
+    <div class="reflexo" style="animation-delay: 0.5s;"></div>
+    <div class="circulo" style="animation-delay: 0.9s;"></div>
+    <div class="presentacao">Sabe que, às vezes, sentimos que não estamos completamente aqui.</div>
+  </div>
+</body>
+</html>
+```
