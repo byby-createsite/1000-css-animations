@@ -1,0 +1,335 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("./thumb.jpg") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .loading-element {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #00ff00;
+      animation: loading-animation 1s linear infinite;
+    }
+
+    @keyframes loading-animation {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.5);
+        background-color: #0000ff;
+      }
+      100% {
+        transform: scale(1);
+        background-color: #00ff00;
+      }
+    }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+      aspect-ratio: 9/16;
+    }
+
+    .animation-container > .layer {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #ff0000;
+      transform: rotate(45deg);
+      animation: layer-animation 2s linear infinite;
+    }
+
+    @keyframes layer-animation {
+      0% {
+        transform: rotate(45deg);
+        opacity: 1;
+      }
+      10% {
+        transform: rotate(45deg) translateX(50px);
+        opacity: .5;
+      }
+      50% {
+        transform: rotate(45deg);
+        opacity: 0;
+      }
+      70% {
+        transform: rotate(45deg);
+        opacity: .5;
+      }
+      100% {
+        transform: rotate(45deg) translateX(50px);
+        opacity: 0;
+      }
+    }
+
+    .animation-container > .layer:nth-child(1) {
+      top: 0;
+      left: 0;
+    }
+
+    .animation-container > .layer:nth-child(2) {
+      top: 25%;
+      left: 50%;
+      transform: rotate(-45deg);
+    }
+
+    .animation-container > .layer:nth-child(3) {
+      top: 50%;
+      left: 0;
+      transform: rotate(-90deg);
+    }
+
+    .animation-container > .layer:nth-child(4) {
+      top: 75%;
+      left: 50%;
+      transform: rotate(0deg);
+    }
+
+    .animation-container > .layer:nth-child(5) {
+      top: 0;
+      left: 75%;
+      transform: rotate(90deg);
+    }
+
+    .coding-echo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 36px;
+      color: #999999;
+      animation: coding-echo-animation 5s linear infinite;
+    }
+
+    @keyframes coding-echo-animation {
+      0% {
+        transform: scale(1) translateX(0);
+      }
+      50% {
+        transform: scale(1.5);
+        filter: hue-rotate(360deg);
+      }
+      100% {
+        transform: scale(1);
+        filter: hue-rotate(0deg);
+      }
+    }
+
+    .animation-container > .coding-echo {
+      opacity: .5;
+    }
+
+    .fractal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border: 1px solid #ffffff;
+      background-color: #000000;
+      filter: blur(5px);
+      animation: fractal-animation 2s linear infinite;
+    }
+
+    @keyframes fractal-animation {
+      0% {
+        transform: scale(1) rotate(0deg);
+      }
+      50% {
+        transform: scale(1.5) rotate(45deg);
+      }
+      100% {
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+    .animation-container > .fractal {
+      opacity: .2;
+    }
+
+    .animation-container > .layer:nth-child(6) {
+      top: 25%;
+      left: 75%;
+      transform: rotate(-45deg);
+    }
+
+    .animation-container > .layer:nth-child(7) {
+      top: 50%;
+      left: 50%;
+      transform: rotate(-90deg);
+    }
+
+    .loading-element {
+      /* A cada frame, muda a escala da figura, 
+         simulando uma sensação de vida */
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+    }
+
+    @keyframes loading-animation {
+      0% {
+        background-color: #00ff00;
+      }
+      50% {
+        background-color: #0000ff;
+      }
+      100% {
+        background-color: #00ff00;
+      }
+    }
+
+    .layer {
+      /* Uma camada em cada quarto da tela, cada uma a 45 graus, 
+         para criar um efeito de movimento de partículas */
+      transform: rotate(45deg);
+      /* A aparência do efeito de movimento é influenciada pelo estilo 
+         de animação aplicado a cada camada */
+      animation: layer-animation;
+    }
+
+    .layer:nth-child(1) {
+      /* Mova a primeira camada para o canto superior esquerdo para criar 
+         um efeito de deslocamento na animação */
+      top: 0;
+      left: 0;
+    }
+
+    .layer:nth-child(2) {
+      /* A próxima camada para o canto superior direito */
+      top: 25%;
+      left: 50%;
+    }
+
+    .layer:nth-child(3) {
+      /* E assim por diante para cada camada */
+      top: 50%;
+      left: 0;
+    }
+
+    .layer:nth-child(4) {
+      top: 75%;
+      left: 50%;
+    }
+
+    .layer:nth-child(5) {
+      top: 0;
+      left: 75%;
+    }
+
+    .layer:nth-child(6) {
+      /* Mova a próxima camada para o canto inferior esquerdo */
+      top: 25%;
+      left: 75%;
+    }
+
+    .layer:nth-child(7) {
+      top: 50%;
+      left: 50%;
+    }
+
+    .coding-echo {
+      /* Para criar um efeito de eco, mude a cor da palavra "CODING" 
+         em alguns frames */
+      animation: coding-echo-animation;
+    }
+
+    .fractal {
+      /* O efeito de zoom ajuda a criar a sensação de movimento de partículas */
+      filter: blur(5px);
+    }
+
+    .animation-container {
+      height: 80vh;
+    }
+
+    .codigo > .loading-element > .selector {
+      /* A aparência da figura também é influenciada pelo tamanho e cor */
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="property">width</span>: <span class="value-number">50px</span>;
+    <span class="property">height</span>: <span class="value-number">50px</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="layer" style="top: 0px; left: 0px;"></div>
+    <div class="layer" style="top: 25px; left: 50px;"></div>
+    <div class="layer" style="top: 50px; left: 0px;"></div>
+    <div class="layer" style="top: 75px; left: 50px;"></div>
+    <div class="layer" style="top: 0px; left: 75px;"></div>
+    <div class="layer" style="top: 25px; left: 75px;"></div>
+    <div class="layer" style="top: 50px; left: 50px;"></div>
+    <div class="coding-echo" style="opacity: 0.5;">CODING</div>
+    <div class="fractal"></div>
+  </div>
+</body>
+</html>
+```
