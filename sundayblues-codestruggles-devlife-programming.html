@@ -1,0 +1,237 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("./thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector      { color: #F92672; }
+    .property      { color: #66D9EF; }
+    .value-number  { color: #AE81FF; }
+    .value-string  { color: #E6DB74; }
+    .value-color   { color: #A6E22E; }
+    .function      { color: #A6E22E; }
+
+    .loading-element {
+      position: relative;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto;
+      animation: loading-animation 1s linear infinite;
+    }
+
+    @keyframes loading-animation {
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+      20% {
+        transform: scale(1);
+        opacity: 1;
+        background-color: #F92672;
+      }
+      40% {
+        transform: scale(1.2);
+        opacity: 0.7;
+        background-color: #66D9EF;
+      }
+      60% {
+        transform: scale(1);
+        opacity: 1;
+        background-color: #AE81FF;
+      }
+      80% {
+        transform: scale(0.8);
+        opacity: 0.5;
+        background-color: #E6DB74;
+      }
+      100% {
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
+
+    .animation-container {
+      /* Um labirinto de blocos azuis que se desvanecem em direção à direita */
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      /* 
+        O bloco central, representando a fonte de inspiração para o desenvolvedor
+        que se afasta gradualmente do eixo central, simbolizando a confusão e a 
+        perda de foco.
+      */
+      .bloco-central {
+        position: relative;
+        background-color: #66D9EF;
+        width: 120px;
+        height: 60px;
+        margin-left: 20%;
+        animation: bloco-central-animacao 2s linear infinite;
+      }
+      /* 
+        Blocos periféricos que flutuam em direção à saída do labirinto, 
+        representando a tentativa de encontrar um caminho.
+      */
+      .bloco-periferico {
+        position: relative;
+        background-color: #AE81FF;
+        width: 40px;
+        height: 20px;
+        margin-left: 80%;
+        animation: bloco-periferico-animacao 1.5s linear infinite;
+      }
+      /* 
+        Elementos de fundo que se destacam para representar a sensação de confusão.
+      */
+      .elemento-fundo {
+        position: absolute;
+        background-color: #F92672;
+        width: 20px;
+        height: 20px;
+        animation: elemento-fundo-animacao 2.5s linear infinite;
+      }
+    }
+
+    @keyframes bloco-central-animacao {
+      0% {
+        transform: translateX(-20%);
+        opacity: 1;
+      }
+      20% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      40% {
+        transform: translateX(20%);
+        opacity: 0.5;
+      }
+      60% {
+        transform: translateX(0);
+        opacity: 0.5;
+      }
+      80% {
+        transform: translateX(10%);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes bloco-periferico-animacao {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      20% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      40% {
+        transform: translateX(-50%);
+        opacity: 0.8;
+      }
+      60% {
+        transform: translateX(-10%);
+        opacity: 0.5;
+      }
+      80% {
+        transform: translateX(0);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+    }
+
+    @keyframes elemento-fundo-animacao {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      30% {
+        transform: scale(1.2);
+        opacity: 0.7;
+      }
+      60% {
+        transform: scale(1.5);
+        opacity: 0.5;
+      }
+      80% {
+        transform: scale(0.8);
+        opacity: 0.3;
+      }
+      100% {
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span>
+    <span class="brace">{</span>
+      <span class="property">border-radius</span>
+      <span class="value-number">50%</span>;
+      <span class="property">animation</span>
+      <span class="function">loading-animation</span>
+      <span class="value-string">1s</span>
+      <span class="value-string">linear</span>
+      <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="bloco-central"></div>
+    <div class="bloco-periferico"></div>
+    <div class="elemento-fundo"></div>
+    <div class="elemento-fundo" style="top: 10px;"></div>
+    <div class="elemento-fundo" style="left: 10px;"></div>
+  </div>
+</body>
+</html>
+```
