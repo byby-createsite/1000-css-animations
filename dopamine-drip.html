@@ -1,46 +1,45 @@
-```
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <style>
+  <style>
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-        background:url("./thumb.jpg") no-repeat center center;
-        background-color: black;
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        overflow: hidden;
+      background:url("./thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
     }
 
     .codigo {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #272822;
-        color: #F8F8F2;
-        font-family: 'Consolas', 'Monaco', monospace;
-        font-size: 18px;
-        padding: 20px;
-        border-radius: 8px;
-        white-space: pre-line;
-        text-align: left;
-        line-height: 1.6;
-        max-height: 25%;
-        max-width: 75%;
-        width: 75%;
-        height: 25%;
-        top:15%;
-        overflow-y: hidden;
-        box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
     }
 
     .selector       { color: #F92672; }
@@ -51,173 +50,151 @@
     .function       { color: #A6E22E; }
 
     .animation-container {
-        position: absolute;
-        top: 75%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 50%;
-        overflow: hidden;
-        background: transparent;
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
     }
 
     .loading-element {
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        animation: loading-animation 1s linear infinite;
-    }
+		width: 80px;
+		height: 80px;
+		background-color: #fff;
+		border-radius: 50%;
+		animation: loading-animation 2s linear infinite;
+	}
+	
+	@keyframes loading-animation {
+		0% {
+			transform: scale(1);
+			opacity: 1;
+		}
+		25% {
+			transform: scale(1.1);
+			opacity: 0.5;
+		}
+		50% {
+			transform: scale(1.2);
+			opacity: 0.25;
+		}
+		75% {
+			transform: scale(1.1);
+			opacity: 0.5;
+		}
+		100% {
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
 
-    @keyframes loading-animation {
-        0% { transform: scale(1); }
-        25% { transform: scale(1.1); }
-        50% { transform: scale(0.9); }
-        75% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
+	div.animation-container::before {
+	  width: 100%;
+	  height: 100%;
+	  background: radial-gradient(hotpink, #f6f6f6);
+	  transform: scale(0);
+	  animation: expand 2s linear infinite;
+	}
+	
+	@keyframes expand {
+	  0% {
+	    transform: scale(0);
+	    opacity: 0;
+	  }
+	  25% {
+	    transform: scale(0.5);
+	    opacity: 0.5;
+	  }
+	  50% {
+	    transform: scale(1);
+	    opacity: 1;
+	  }
+	  75% {
+	    transform: scale(1.1);
+	    opacity: 0.5;
+	  }
+	  100% {
+	    transform: scale(1);
+	    opacity: 0;
+	  }
+	}
 
-    .elemento1 {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        background-color: #fff;
-        animation: elemento1-animate 2s ease-in-out;
-    }
+	div.animation-container::after {
+	  width: 100%;
+	  height: 100%;
+	  background: radial-gradient(hotpink, #f6f6f6);
+	  transform: scale(0);
+	  animation: pulsate 2s ease-in-out infinite;
+	  z-index: 2;
+	}
+	
+	@keyframes pulsate {
+	  0% {
+	    transform: scale(0);
+	  }
+	  50% {
+	    transform: scale(1);
+	  }
+	  100% {
+	    transform: scale(0);
+	  }
+	}
 
-    @keyframes elemento1-animate {
-        0% { transform: translate(0, 0); }
-        25% { transform: translate(100px, 0); }
-        50% { transform: translate(-50px, 100px); }
-        75% { transform: translate(100px, -50px); }
-        100% { transform: translate(0, 0); }
-    }
-
-    .elemento2 {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        background-color: #eee;
-        animation: elemento2-animate 3s ease-in-out;
-    }
-
-    @keyframes elemento2-animate {
-        0% { transform: translate(0, 0); }
-        25% { transform: translate(150px, 0); }
-        50% { transform: translate(-75px, 150px); }
-        75% { transform: translate(150px, -75px); }
-        100% { transform: translate(0, 0); }
-    }
-
-    /* A sensação de espera, como se o tempo tivesse parado. */
-    .loading-element:after {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        animation: loading-animation-infinite 1s linear infinite;
-        background-color: #333;
-        opacity: 0.5;
-    }
-
-    @keyframes loading-animation-infinite {
-        0% { transform: scale(1); }
-        25% { transform: scale(1.1); }
-        50% { transform: scale(0.9); }
-        75% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
-
-    /* Os elementos se deslocam e se reorganizam, como se estivessem sendo influenciados por alguma força externa. */
-    .elemento1::after {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        background-color: #fff;
-        animation: elemento1-animate-infinite 2s ease-in-out;
-    }
-
-    @keyframes elemento1-animate-infinite {
-        0% { transform: translate(0, 0); }
-        25% { transform: translate(100px, 0); }
-        50% { transform: translate(-50px, 100px); }
-        75% { transform: translate(100px, -50px); }
-        100% { transform: translate(0, 0); }
-    }
-
-    .elemento2::before {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        background-color: #eee;
-        animation: elemento2-animate-infinite 3s ease-in-out;
-    }
-
-    @keyframes elemento2-animate-infinite {
-        0% { transform: translate(0, 0); }
-        25% { transform: translate(150px, 0); }
-        50% { transform: translate(-75px, 150px); }
-        75% { transform: translate(150px, -75px); }
-        100% { transform: translate(0, 0); }
-    }
-
-    /* A sensação de espera se mistura com a incerteza, como se alguma coisa estivesse prestes a acontecer. */
-    .elemento1::before {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        background-color: #ccc;
-        animation: elemento1-animate-infinite-2 2s ease-in-out;
-    }
-
-    @keyframes elemento1-animate-infinite-2 {
-        0% { transform: translate(0, 0); }
-        25% { transform: translate(100px, 0); }
-        50% { transform: translate(-50px, 100px); }
-        75% { transform: translate(100px, -50px); }
-        100% { transform: translate(0, 0); }
-    }
-
-    .elemento2::after {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        background-color: #fff;
-        animation: elemento2-animate-infinite-2 3s ease-in-out;
-    }
-
-    @keyframes elemento2-animate-infinite-2 {
-        0% { transform: translate(0, 0); }
-        25% { transform: translate(150px, 0); }
-        50% { transform: translate(-75px, 150px); }
-        75% { transform: translate(150px, -75px); }
-        100% { transform: translate(0, 0); }
-    }
-    </style>
+	.codigo {
+	  <span class="selector">.loading-element</span><span class="brace">{</span>
+	  <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+	  <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+	  <span class="brace">}</span>
+	  <span class="property">width</span>: <span class="value-number">80px</span>;
+	  <span class="property">height</span>: <span class="value-number">80px</span>;
+	  <span class="property">background-color</span>: <span class="value-string">#fff</span>;
+	}
+	
+	@keyframes loading-animation {
+	  0% {
+	    transform: scale(1);
+	    opacity: 1;
+	  }
+	  25% {
+	    transform: scale(1.1);
+	    opacity: 0.5;
+	  }
+	  50% {
+	    transform: scale(1.2);
+	    opacity: 0.25;
+	  }
+	  75% {
+	    transform: scale(1.1);
+	    opacity: 0.5;
+	  }
+	  100% {
+	    transform: scale(1);
+	    opacity: 1;
+	  }
+	}
+  </style>
 </head>
 <body>
-    <div class="codigo">
-        <span class="selector">.loading-element</span><span class="brace">{</span>
-        <span class="property">border-radius</span>: <span class="value-number">50%</span>;
-        <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
-        <span class="brace">}</span>
-    </div>
-    <div class="animation-container">
-        <div class="loading-element"></div>
-        <div class="elemento1"></div>
-        <div class="elemento2"></div>
-        <div class="loading-element"></div>
-        <div class="elemento1"></div>
-        <div class="elemento2"></div>
-    </div>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="property">width</span>: <span class="value-number">80px</span>;
+    <span class="property">height</span>: <span class="value-number">80px</span>;
+    <span class="property">background-color</span>: <span class="value-string">#fff</span>;
+    <span class="brace">}</span>
+  </div>
+    
+  <div class="animation-container">
+    <div class="loading-element"></div>
+	<div class="animation-container::before"></div>
+	<div class="animation-container::after"></div>
+  </div>
 </body>
 </html>
-```
