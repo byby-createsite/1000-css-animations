@@ -1,0 +1,203 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("./thumb.jpg") no-repeat center center;
+      background-color: #2a2b3b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* Criar um senso de perda e confusão com movimentos irregulares */
+    .fragmento-1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #4CAF50, #8BC34A);
+      transform: scale(1);
+      animation: fragmento1 2s linear infinite;
+    }
+    @keyframes fragmento1 {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    /* Criar um efeito de fragmentação com movimentos rápidos e repetitivos */
+    .fragmento-2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #2196F3, #03A9F4);
+      transform: scale(0.5);
+      animation: fragmento2 1s step-end infinite;
+    }
+    @keyframes fragmento2 {
+      0% {
+        transform: scale(0.5);
+      }
+      100% {
+        transform: scale(0.5);
+      }
+    }
+    /* Criar um efeito de distorção com movimentos lentos e irregulares */
+    .fragmento-3 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #FF9800, #FFA57D);
+      transform: scale(0.3);
+      animation: fragmento3 4s linear infinite;
+    }
+    @keyframes fragmento3 {
+      0% {
+        transform: scale(0.3);
+      }
+      100% {
+        transform: scale(0.3);
+      }
+    }
+    /* Criar um efeito de reflexão com movimentos rápidos e repetitivos */
+    .reflexo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20%;
+      height: 20%;
+      background: linear-gradient(to bottom, #4CAF50, #8BC34A);
+      transform: rotate(0deg);
+      animation: reflexo 1s linear infinite;
+    }
+    @keyframes reflexo {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    /* Criar um efeito de luz com movimentos lentos e irregulares */
+    .luz {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #2196F3, #03A9F4);
+      transform: scale(0.5);
+      animation: luz 4s linear infinite;
+    }
+    @keyframes luz {
+      0% {
+        transform: scale(0.5);
+      }
+      100% {
+        transform: scale(0.5);
+      }
+    }
+    /* Adicionar um efeito de brilho com movimentos rápidos e repetitivos */
+    .brilho {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #FF9800, #FFA57D);
+      transform: scale(0.3);
+      animation: brilho 1s step-end infinite;
+    }
+    @keyframes brilho {
+      0% {
+        transform: scale(0.3);
+      }
+      100% {
+        transform: scale(0.3);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.fragmento-1</span><span class="brace">{</span>
+      <span class="property">background</span>: <span class="value-string">linear-gradient(to bottom, #4CAF50, #8BC34A)</span>;
+      <span class="property">animation</span>: <span class="function">fragmento1</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="fragmento-1"></div>
+    <div class="fragmento-2"></div>
+    <div class="fragmento-3"></div>
+    <div class="reflexo"></div>
+    <div class="luz"></div>
+    <div class="brilho"></div>
+  </div>
+</body>
+</html>
+```
