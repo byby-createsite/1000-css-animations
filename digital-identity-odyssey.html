@@ -1,0 +1,164 @@
+```
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* css_foundation block */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: no-repeat fixed center center url("./thumb.jpg");
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animacao {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .camada {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #fff;
+      position: absolute;
+      animation: animar-circulos 4s ease-out;
+      animation-fill-mode: forwards;
+    }
+
+    .camada-1 {
+      top: 20%;
+      left: 60%;
+      animation-delay: .5s;
+    }
+
+    .camada-2 {
+      top: 60%;
+      left: 10%;
+      transform: scale(0.5);
+      animation-delay: 1s;
+    }
+
+    .camada-3 {
+      top: 20%;
+      left: 20%;
+      transform: rotate(45deg);
+      animation-delay: .5s;
+    }
+
+    /* Camada com animação de transição */
+    .transicao {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: red;
+      position: absolute;
+      animation: animar-transicao 4s ease-out;
+      animation-fill-mode: forwards;
+    }
+
+    .transicao-1 {
+      top: 40%;
+      left: 5%;
+      animation-delay: 1s;
+    }
+
+    .transicao-2 {
+      top: 60%;
+      left: 50%;
+      transform: scale(0.5);
+      animation-delay: 1.5s;
+    }
+
+    .camada:hover { cursor: pointer }
+
+    /* CSS da animação */
+    @keyframes animar-circulos {
+      100% {
+        transform: translateX(300%) rotate(180deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes animar-transicao {
+      0% {
+        transform: translateX(-200%) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(200%) scale(4);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.camada</span><span class="brace">{</span>
+    <span class="property">width</span><span class="colon">:</span><span class="value-number">100px</span><span class="semi">;</span>
+    <span class="property">height</span><span class="colon">:</span><span class="value-number">100px</span><span class="semi">;</span>
+    <span class="property">border-radius</span><span class="colon">:</span><span class="value-number">50%</span><span class="semi">;</span>
+    <span class="property">background-color</span><span class="colon">:</span><span class="value-string">#fff</span><span class="semi">;</span>
+    <span class="property">position</span><span class="colon">:</span><span class="value-string">absolute</span><span class="semi">;</span>
+    <span class="property">animation</span><span class="colon">:</span><span class="function">animar-circulos</span><span class="value-number">4s</span><span class="value-string">ease-out</span><span class="semi">;</span>
+    <span class="property">animation-fill-mode</span><span class="colon">:</span><span class="value-string">forwards</span><span class="semi">;</span>
+    <span class="brace">}</span>
+  </div>
+  <div class="animacao">
+    <div class="camada camada-1" style="top: 20%; left: 60%;"></div>
+    <div class="camada camada-2" style="top: 60%; left: 10%; transform: scale(0.5);"></div>
+    <div class="camada camada-3" style="top: 20%; left: 20%; transform: rotate(45deg);"></div>
+    <div class="transicao transicao-1" style="top: 40%; left: 5%; animation-delay: 1s;"></div>
+    <div class="transicao transicao-2" style="top: 60%; left: 50%; transform: scale(0.5); animation-delay: 1.5s;"></div>
+  </div>
+</body>
+</html>
+```
+Anotações: As camadas que surgem durante a animação representam diferentes etapas da existência humana, desde o nascimento até a velhice. A transição das camadas representa a passagem do tempo e a transformação das coisas. A animação é uma metáfora da vida em si, com todos os seus altos e baixos.
