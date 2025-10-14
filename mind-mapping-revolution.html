@@ -1,0 +1,316 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* css_foundation */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("./thumb.jpg") no-repeat center center;
+      background-color: #0b0b0b;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+       box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .loading-element {
+      width: 20%;
+      height: 80%;
+      background-color: #333;
+      border-radius: 50%;
+      animation: loading-animation 1s linear infinite;
+      position: relative;
+    }
+
+    .layer-1 {
+      width: 100%;
+      height: 0;
+      background-color: #555;
+      position: absolute;
+      bottom: 0;
+      animation: pulse 2s ease-out;
+      transform-origin: center bottom;
+    }
+
+    .layer-2 {
+      width: 90%;
+      height: 70%;
+      background-color: #777;
+      position: absolute;
+      bottom: 20%;
+      left: 5%;
+      animation: wave 4s ease-in-out;
+      transform-origin: center bottom;
+    }
+
+    .layer-3 {
+      width: 80%;
+      height: 60%;
+      background-color: #999;
+      position: absolute;
+      bottom: 40%;
+      left: 10%;
+      animation: ripple 3s ease-out;
+      transform-origin: center bottom;
+    }
+
+    .loading-element::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10%;
+      height: 20%;
+      background-color: #000;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #000;
+      animation: zoom 2s ease-out;
+    }
+
+    .loading-element::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 5%;
+      height: 10%;
+      background-color: #000;
+      border-radius: 50%;
+      box-shadow: 0 0 5px #000;
+      animation: pulse-out 2s ease-out;
+      animation-delay: 1s;
+    }
+
+    @keyframes loading-animation {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(2);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        height: 0;
+      }
+      20% {
+        height: 10%;
+      }
+      40% {
+        height: 20%;
+      }
+      60% {
+        height: 15%;
+      }
+      80% {
+        height: 10%;
+      }
+      100% {
+        height: 0;
+      }
+    }
+
+    @keyframes wave {
+      0% {
+        transform: scaleY(0);
+      }
+      20% {
+        transform: scaleY(1.2);
+      }
+      40% {
+        transform: scaleY(0.9);
+      }
+      60% {
+        transform: scaleY(1.1);
+      }
+      80% {
+        transform: scaleY(0.8);
+      }
+      100% {
+        transform: scaleY(0);
+      }
+    }
+
+    @keyframes ripple {
+      0% {
+        transform: scale(0);
+      }
+      20% {
+        transform: scale(1.2);
+      }
+      40% {
+        transform: scale(0.9);
+      }
+      60% {
+        transform: scale(1.1);
+      }
+      80% {
+        transform: scale(0.8);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
+
+    @keyframes zoom {
+      0% {
+        width: 5%;
+        height: 10%;
+        box-shadow: 0 0 5px #000;
+      }
+      100% {
+        width: 10%;
+        height: 20%;
+        box-shadow: 0 0 10px #000;
+      }
+    }
+
+    @keyframes pulse-out {
+      0% {
+        height: 5%;
+        width: 5%;
+      }
+      100% {
+        height: 0%;
+        width: 0%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">width</span>: <span class="value-number">20%</span>;
+    <span class="property">height</span>: <span class="value-number">80%</span>;
+    <span class="property">background-color</span>: <span class="value-string">#333</span>;
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="property">position</span>: <span class="value-string">relative</span>;
+    <span class="brace">}</span>
+    <span class="property"></span><span class="selector">.layer-1</span><span class="brace">{</span>
+    <span class="property"></span><span class="property">width</span>: <span class="value-number">100%</span>;
+    <span class="property"></span><span class="property">height</span>: <span class="value-number">0</span>;
+    <span class="property"></span><span class="property">background-color</span>: <span class="value-string">#555</span>;
+    <span class="property"></span><span class="property">position</span>: <span class="value-string">absolute</span>;
+    <span class="property"></span><span class="property">bottom</span>: <span class="value-string">0</span>;
+    <span class="property"></span><span class="property">animation</span>: <span class="function">pulse</span> <span class="value-number">2s</span> <span class="value-string">ease-out</span>;
+    <span class="property"></span><span class="property">transform-origin</span>: <span class="value-string">center bottom</span>;
+    <span class="property"></span><span class="brace">}</span>
+    <span class="property"></span><span class="selector">.layer-2</span><span class="brace">{</span>
+    <span class="property"></span><span class="property">width</span>: <span class="value-number">90%</span>;
+    <span class="property"></span><span class="property">height</span>: <span class="value-number">70%</span>;
+    <span class="property"></span><span class="property">background-color</span>: <span class="value-string">#777</span>;
+    <span class="property"></span><span class="property">position</span>: <span class="value-string">absolute</span>;
+    <span class="property"></span><span class="property">bottom</span>: <span class="value-number">20%</span>;
+    <span class="property"></span><span class="property">left</span>: <span class="value-string">5%</span>;
+    <span class="property"></span><span class="property">animation</span>: <span class="function">wave</span> <span class="value-number">4s</span> <span class="value-string">ease-in-out</span>;
+    <span class="property"></span><span class="property">transform-origin</span>: <span class="value-string">center bottom</span>;
+    <span class="property"></span><span class="brace">}</span>
+    <span class="property"></span><span class="selector">.layer-3</span><span class="brace">{</span>
+    <span class="property"></span><span class="property">width</span>: <span class="value-number">80%</span>;
+    <span class="property"></span><span class="property">height</span>: <span class="value-number">60%</span>;
+    <span class="property"></span><span class="property">background-color</span>: <span class="value-string">#999</span>;
+    <span class="property"></span><span class="property">position</span>: <span class="value-string">absolute</span>;
+    <span class="property"></span><span class="property">bottom</span>: <span class="value-string">40%</span>;
+    <span class="property"></span><span class="property">left</span>: <span class="value-string">10%</span>;
+    <span class="property"></span><span class="property">animation</span>: <span class="function">ripple</span> <span class="value-number">3s</span> <span class="value-string">ease-out</span>;
+    <span class="property"></span><span class="property">transform-origin</span>: <span class="value-string">center bottom</span>;
+    <span class="property"></span><span class="brace">}</span>
+    <span class="property"></span><span class="selector">.loading-element::before</span><span class="brace">{</span>
+    <span class="property"></span><span class="property">content</span>: <span class="value-string"></span>;
+    <span class="property"></span><span class="property">display</span>: <span class="value-string">block</span>;
+    <span class="property"></span><span class="property">position</span>: <span class="value-string">absolute</span>;
+    <span class="property"></span><span class="property">top</span>: <span class="value-string">50%</span>;
+    <span class="property"></span><span class="property">left</span>: <span class="value-string">50%</span>;
+    <span class="property"></span><span class="property">transform</span>: <span class="value-string">translate(-50%, -50%)</span>;
+    <span class="property"></span><span class="property">width</span>: <span class="value-number">10%</span>;
+    <span class="property"></span><span class="property">height</span>: <span class="value-number">20%</span>;
+    <span class="property"></span><span class="property">background-color</span>: <span class="value-string">#000</span>;
+    <span class="property"></span><span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property"></span><span class="property">box-shadow</span>: <span class="value-string">0 0 10px #000</span>;
+    <span class="property"></span><span class="property">animation</span>: <span class="function">zoom</span> <span class="value-number">2s</span> <span class="value-string">ease-out</span>;
+    <span class="property"></span><span class="brace">}</span>
+    <span class="property"></span><span class="selector">.loading-element::after</span><span class="brace">{</span>
+    <span class="property"></span><span class="property">content</span>: <span class="value-string"></span>;
+    <span class="property"></span><span class="property">display</span>: <span class="value-string">block</span>;
+    <span class="property"></span><span class="property">position</span>: <span class="value-string">absolute</span>;
+    <span class="property"></span><span class="property">top</span>: <span class="value-string">50%</span>;
+    <span class="property"></span><span class="property">left</span>: <span class="value-string">50%</span>;
+    <span class="property"></span><span class="property">transform</span>: <span class="value-string">translate(-50%, -50%)</span>;
+    <span class="property"></span><span class="property">width</span>: <span class="value-number">5%</span>;
+    <span class="property"></span><span class="property">height</span>: <span class="value-number">10%</span>;
+    <span class="property"></span><span class="property">background-color</span>: <span class="value-string">#000</span>;
+    <span class="property"></span><span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property"></span><span class="property">box-shadow</span>: <span class="value-string">0 0 5px #000</span>;
+    <span class="property"></span><span class="property">animation</span>: <span class="function">pulse-out</span> <span class="value-number">2s</span> <span class="value-string">ease-out</span>;
+    <span class="property"></span><span class="property">animation-delay</span>: <span class="value-number">1s</span>;
+    <span class="property"></span><span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="loading-element"></div>
+    <div class="layer-1"></div>
+    <div class="layer-2"></div>
+    <div class="layer-3"></div>
+    <div class="loading-element::before"></div>
+    <div class="loading-element::after"></div>
+  </div>
+</body>
+</html>
+```
