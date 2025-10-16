@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<style>
+  /* css_foundation */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+    background-color: black;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .codigo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #272822;
+    color: #F8F8F2;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    max-height: 25%;
+    max-width: 75%;
+    width: 75%;
+    height: 25%;
+    top:15%;
+    overflow-y: hidden;
+    box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+  }
+
+  .selector       { color: #F92672; }
+  .property       { color: #66D9EF; }
+  .value-number   { color: #AE81FF; }
+  .value-string   { color: #E6DB74; }
+  .value-color    { color: #A6E22E; }
+  .function       { color: #A6E22E; }
+
+  .animation-container {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    background: transparent;
+  }
+
+  /* Animations */
+  @keyframes loading-animation {
+    0% {
+      transform: scale(0.5) rotate(0deg) translateX(0) translateY(0) skewX(0) skewY(0);
+    }
+    20% {
+      transform: scale(1.2) rotate(10deg) translateX(-10%) translateY(-15%) skewX(5deg) skewY(0deg);
+    }
+    50% {
+      transform: scale(0.8) rotate(-5deg) translateX(10%) translateY(15%) skewX(-2deg) skewY(0deg);
+    }
+    80% {
+      transform: scale(1.1) rotate(-10deg) translateX(5%) translateY(-10%) skewX(3deg) skewY(0deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg) translateX(0) translateY(0) skewX(0) skewY(0);
+    }
+  }
+
+  @keyframes echo-animation {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Fractured Code */
+  .loading-element {
+    border-radius: 50%;
+    animation: loading-animation 1s linear infinite;
+  }
+
+  .loading-element::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #66D9EF;
+    border-radius: 50%;
+    animation: loading-animation 0.5s linear infinite;
+  }
+
+  .loading-element::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #66D9EF;
+    border-radius: 50%;
+    animation: loading-animation 2s linear infinite;
+  }
+
+  /* Algorithmic Labyrinth */
+  .labyrinth {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+  }
+
+  .labyrinth::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #66D9EF;
+    animation: echo-animation 2s linear infinite;
+  }
+
+  .labyrinth::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 100% solid #66D9EF;
+    border-top: 100% solid #66D9EF;
+    animation: echo-animation 2s linear infinite;
+  }
+
+  /* Digital Soul Searching */
+  .soul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background-color: #F92672;
+    border-radius: 50%;
+    animation: loading-animation 1s linear infinite;
+  }
+
+  .soul::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #F92672;
+    border-radius: 50%;
+    animation: loading-animation 0.5s linear infinite;
+  }
+
+  .soul::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: #F92672;
+    border-radius: 50%;
+    animation: loading-animation 2s linear infinite;
+  }
+
+  /* Reflections */
+  .reflection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+  }
+
+  .reflection .soul {
+    transform: scale(1.5) rotate(30deg) translateX(-20%) translateY(10%);
+  }
+</style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+    <span class="selector">.labyrinth</span><span class="brace">{</span>
+    <span class="property">animation</span>: <span class="function">echo-animation</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="property">opacity</span>: <span class="value-number">0.5</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="loading-element"></div>
+    <div class="labyrinth"></div>
+    <div class="soul"></div>
+    <div class="reflection"></div>
+  </div>
+</body>
+</html>
