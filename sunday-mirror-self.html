@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background:url("./thumb.jpg") no-repeat center center;
+    background-color: #1B1B1B;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.codigo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #272822;
+    color: #F8F8F2;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    max-height: 25%;
+    max-width: 75%;
+    width: 75%;
+    height: 25%;
+    top:15%;
+    overflow-y: hidden;
+    box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+}
+
+ selector       { color: #F92672; }
+ property       { color: #66D9EF; }
+ value-number   { color: #AE81FF; }
+ value-string   { color: #E6DB74; }
+ value-color    { color: #A6E22E; }
+ function       { color: #A6E22E; }
+
+.codigo::before {
+    content: "Aqui está a animação";
+    color: #66D9EF;
+}
+
+.animation-container {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Camada de refração que representa a fissura no espelho */
+.refraction {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to right, #1B1B1B, #1B1B1B);
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Camada da imagem quebrada que representa a identidade digital */
+.breakage {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(to top, #E6DB74, #E6DB74);
+    border-radius: 50%;
+    animation: break 2s linear infinite;
+    transform: translate(-10px, -10px);
+}
+
+@keyframes break {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.5); }
+}
+
+/* Camada da luz que representa a compreensão */
+.illuminating {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    background: linear-gradient(to right, #66D9EF, #66D9EF);
+    border-radius: 50%;
+    animation: pulsar 2s linear infinite;
+    transform: translateX(10px);
+}
+
+@keyframes pulsar {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.8); }
+}
+
+.codigo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #272822;
+    color: #F8F8F2;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    max-height: 25%;
+    max-width: 75%;
+    width: 75%;
+    height: 25%;
+    top:15%;
+    overflow-y: hidden;
+    box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+}
+
+.selector       { color: #F92672; }
+.property       { color: #66D9EF; }
+.value-number   { color: #AE81FF; }
+.value-string   { color: #E6DB74; }
+.value-color    { color: #A6E22E; }
+.function       { color: #A6E22E; }
+
+.codigo::before {
+    content: "Aqui está a chave da animação";
+    color: #66D9EF;
+}
+
+.animation-container::before {
+    content: "Código da Camada de Refração";
+    color: #E6DB74;
+}
+
+.animation-container::after {
+    content: "Código da Camada da Imagem Quebrada";
+    color: #66D9EF;
+}
+
+.animation-container .refraction::before {
+    content: "";
+}
+
+.animation-container .refraction::after {
+    content: "representa a fissura que revela a identidade";
+    color: #F92672;
+}
+
+.animation-container .breakage::before {
+    content: "";
+}
+
+.animation-container .breakage::after {
+    content: "representa a quebra da imagem digital";
+    color: #F92672;
+}
+
+.animation-container .illuminating::before {
+    content: "";
+}
+
+.animation-container .illuminating::after {
+    content: "representa a luz que ilumina a compreensão";
+    color: #F92672;
+}
+
+.codigo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #272822;
+    color: #F8F8F2;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    max-height: 25%;
+    max-width: 75%;
+    width: 75%;
+    height: 25%;
+    top:15%;
+    overflow-y: hidden;
+    box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+}
+
+.selector       { color: #F92672; }
+.property       { color: #66D9EF; }
+.value-number   { color: #AE81FF; }
+.value-string   { color: #E6DB74; }
+.value-color    { color: #A6E22E; }
+.function       { color: #A6E22E; }
+
+.codigo::before {
+    content: "Sintaxe da Camada de Refração";
+    color: #F92672;
+}
+.animation-container {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    background: transparent;
+}
+
+.codigo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #272822;
+    color: #F8F8F2;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    max-height: 25%;
+    max-width: 75%;
+    width: 75%;
+    height: 25%;
+    top:15%;
+    overflow-y: hidden;
+     box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+}
+
+.animation-container::before {
+    content: "Código da Camada de Luz";
+    color: #66D9EF;
+}
+</style>
+<body>
+    <div class="animation-container">
+        <div class="refraction"></div>
+        <div class="breakage"></div>
+        <div class="illuminating"></div>
+    </div>
+    <div class="codigo">
+        <span class="selector">.refraction</span><span class="brace">{</span>
+        <span class="property">position</span>: <span class="value-string">relative</span>;
+        <span class="property">width</span>: <span class="value-number">30px</span>;
+        <span class="property">height</span>: <span class="value-number">30px</span>;
+        <span class="property">background</span>: <span class="value-string">linear-gradient(to right, #1B1B1B, #1B1B1B)</span>;
+        <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+        <span class="property">animation</span>: <span class="function">spin</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+        <span class="brace">}</span>
+        <span class="selector">.breakage</span><span class="brace">{</span>
+        <span class="property">position</span>: <span class="value-string">relative</span>;
+        <span class="property">width</span>: <span class="value-number">20px</span>;
+        <span class="property">height</span>: <span class="value-number">20px</span>;
+        <span class="property">background</span>: <span class="value-string">linear-gradient(to top, #E6DB74, #E6DB74)</span>;
+        <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+        <span class="property">animation</span>: <span class="function">break</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+        <span class="property">transform</span>: <span class="value-string">translate(-10px, -10px)</span>;
+        <span class="brace">}</span>
+        <span class="selector">.illuminating</span><span class="brace">{</span>
+        <span class="property">position</span>: <span class="value-string">relative</span>;
+        <span class="property">width</span>: <span class="value-number">15px</span>;
+        <span class="property">height</span>: <span class="value-number">15px</span>;
+        <span class="property">background</span>: <span class="value-string">linear-gradient(to right, #66D9EF, #66D9EF)</span>;
+        <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+        <span class="property">animation</span>: <span class="function">pulsar</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+        <span class="property">transform</span>: <span class="value-string">translateX(10px)</span>;
+        <span class="brace">}</span>
+    </div>
+</body>
+</html>
