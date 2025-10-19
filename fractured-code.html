@@ -1,0 +1,199 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        /* 
+        O fundo escuro representa a atmosfera de frustração que cercam os programadores ao enfrentarem erros.
+        A iluminação sutil representa a esperança de encontrar a solução.
+        */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background:url("./thumb.jpg") no-repeat center center;
+            background-color: #272822;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top:15%;
+            overflow-y: hidden;
+             box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+
+        .selector       { color: #F92672; }
+        .property       { color: #66D9EF; }
+        .value-number   { color: #AE81FF; }
+        .value-string   { color: #E6DB74; }
+        .value-color    { color: #A6E22E; }
+        .function       { color: #A6E22E; }
+
+        .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .loading-element {
+            border-radius: 50%;
+            background: #F8F8F2;
+            position: absolute;
+            animation: loading-animation 1s linear infinite;
+            width: 100px;
+            height: 100px;
+            border: 5px solid #272822;
+        }
+
+        @keyframes loading-animation {
+            0% {
+                transform: translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            25% {
+                transform: translateX(-25%) rotate(45deg);
+                opacity: 0.9;
+            }
+            50% {
+                transform: translateX(25%) rotate(90deg);
+                opacity: 0.8;
+            }
+            75% {
+                transform: translateX(-100%) rotate(135deg);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateX(100%) rotate(180deg);
+                opacity: 0.6;
+            }
+        }
+
+        /* 
+        Os círculos pretos representam as ideias que nos vêm durante a programação.
+        Eles começam fechados, significando a incerteza do seu significado.
+        À medida que avançamos, eles se abrem, representando a descoberta gradual do seu potencial.
+        A luz azul que os envolve simboliza a criatividade e o processo de solução de problemas.
+        */
+        .loading-element::before {
+            content: '';
+            position: absolute;
+            background: #272822;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            top: 45%;
+            left: 45%;
+            animation: loading-idea 1s linear infinite;
+        }
+
+        @keyframes loading-idea {
+            0% {
+                transform: translate(0, 0) scale(0.1);
+            }
+            25% {
+                transform: translate(-5%, 5%) scale(1.1);
+            }
+            50% {
+                transform: translate(5%, -5%) scale(1.2);
+            }
+            75% {
+                transform: translate(5%, 5%) scale(1.3);
+            }
+            100% {
+                transform: translate(-5%, -5%) scale(1.4);
+            }
+        }
+
+        /* 
+        A linha azul representa a conexão entre as ideias.
+        Ela se estende e se curva, representando a complexidade e a interconexão entre as partes.
+        */
+        .loading-element::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background: #A6E22E;
+            bottom: 50%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            animation: loading-connection 1s linear infinite;
+        }
+
+        @keyframes loading-connection {
+            0% {
+                transform: translate(-50%, 50%) scale(1);
+                opacity: 1;
+            }
+            25% {
+                transform: translate(-55%, 40%) scale(1.1);
+                opacity: 0.9;
+            }
+            50% {
+                transform: translate(-50%, 50%) scale(1.2);
+                opacity: 0.8;
+            }
+            75% {
+                transform: translate(-45%, 60%) scale(1.1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: translate(-50%, 50%) scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="codigo">
+        <span class="selector">.loading-element</span><span class="brace">{</span>
+        <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+        <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+        <span class="property">background</span>: <span class="value-color">#F8F8F2</span>;
+        <span class="property">position</span>: <span class="value-string">absolute</span>;
+        <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite;</span>
+        <span class="brace">}</span>
+    </div>
+    <div class="animation-container">
+        <div class="loading-element"></div>
+    </div>
+</body>
+</html>
+```
