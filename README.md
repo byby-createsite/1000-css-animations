@@ -176,4 +176,4 @@ Feel free to contribute to this repository.
 <a href="./phantom-loading.html">Phantom loading </a> <br/><br/>
 <a href="./dev-memes.html">Dev memes </a> <br/><br/>
 <a href="./emotions.html">emotions</a> <br/><br/>
-<a href="./fractured-code.html">Fractured code</a> <br/><br/><a href="./sundayblues-mazedigger-devlife-codestruggles-cssanimation.html">Sundayblues mazedigger devlife codestruggles cssanimation</a> <br/><br/><a href="./map-your-emotions-with-css.html">Map your emotions with css</a> <br/><br/><a href="./code-reveal.html">Code reveal</a> <br/><br/>
+<a href="./fractured-code.html">Fractured code</a> <br/><br/><a href="./sundayblues-mazedigger-devlife-codestruggles-cssanimation.html">Sundayblues mazedigger devlife codestruggles cssanimation</a> <br/><br/><a href="./map-your-emotions-with-css.html">Map your emotions with css</a> <br/><br/><a href="./code-reveal.html">Code reveal</a> <br/><br/><a href="./reflections-of-self-a-cracked-mirror-of-digital-identity.html">Reflections of Self: A Cracked Mirror of Digital Identity</a> <br/><br/>
