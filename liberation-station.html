@@ -1,0 +1,308 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunday: Shattered Mirrors</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("./thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+       box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      aspect-ratio: 9/16;
+      background: transparent;
+    }
+
+    .loading-element {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      animation: loading-animation 1s linear infinite;
+    }
+
+    /* Morfing em fragmento do espelho */
+    .shattered-mirror {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(45deg, #4CAF50, #FF9800);
+      transform: rotate(45deg);
+      animation: fragmento-anima 2s ease-out;
+    }
+
+    /* Ruptura do ecosistema virtual */
+    .echo-chamber {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #2196F3, #2196F3);
+      animation: ecosistema-anima 5s ease-in-out;
+    }
+
+    /* Fluxo de informação */
+    .data-flow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(45deg, #2196F3, #4CAF50);
+    }
+
+    /* Árvores do conhecimento */
+    .knowledge-tree {
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -25%);
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(45deg, #4CAF50, #2196F3);
+    }
+
+    .code-snippet{
+      background: linear-gradient(45deg, #4CAF50, #2196F3);
+    }
+
+    @keyframes loading-animation {
+      0% {
+        opacity: 0;
+        transform: scale(1);
+      }
+      25% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+      50% {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fragmento-anima {
+      0% {
+        transform: rotate(45deg);
+        opacity: 0;
+      }
+      25% {
+        transform: rotate(135deg);
+        opacity: 1;
+      }
+      50% {
+        transform: rotate(225deg);
+        opacity: 0;
+      }
+      100% {
+        transform: rotate(315deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes ecosistema-anima {
+      0% {
+        opacity: 0;
+      }
+      25% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+      75% {
+        opacity: 1;
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1);
+      }
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+       box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .shattered-mirror {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(45deg, #4CAF50, #FF9800);
+      transform: rotate(45deg);
+    }
+
+    .shattered-mirror::before, .shattered-mirror::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(45deg, #4CAF50, #FF9800);
+      border-radius: 50%;
+      animation: fragmento-anima 2s ease-out;
+    }
+
+    .shattered-mirror::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+      animation: fragmento-anima 2s ease-out 1s;
+    }
+
+    <div class="codigo">
+      <span class="selector">.loading-element</span>
+      <span class="brace">{</span>
+      <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+      <span class="brace">}</span>
+    </div>
+
+    <div class="animation-container">
+      <div class="shattered-mirror"></div>
+      <div class="echo-chamber"></div>
+      <div class="data-flow"></div>
+      <div class="knowledge-tree"></div>
+    </div>
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <div class="shattered-mirror"></div>
+    <div class="echo-chamber"></div>
+    <div class="data-flow"></div>
+    <div class="knowledge-tree"></div>
+  </div>
+  <div class="codigo">
+    <span class="selector">.shattered-mirror</span>
+    <span class="brace">{</span>
+    <span class="property">width</span>: <span class="value-number">100px</span>;
+    <span class="property">height</span>: <span class="value-number">100px</span>;
+    <span class="property">background</span>: <span class="value-string">linear-gradient(45deg, #4CAF50, #FF9800)</span>;
+    <span class="property">transform</span>: <span class="value-string">rotate(45deg)</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="codigo">
+    <span class="selector">.echo-chamber</span>
+    <span class="brace">{</span>
+    <span class="property">width</span>: <span class="value-number">100%</span>;
+    <span class="property">height</span>: <span class="value-number">100%</span>;
+    <span class="property">background</span>: <span class="value-string">linear-gradient(90deg, #2196F3, #2196F3)</span>;
+    <span class="property">animation</span>: <span class="function">ecosistema-anima</span> <span class="value-number">5s</span> <span class="value-string">ease-in-out</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="codigo">
+    <span class="selector">.data-flow</span>
+    <span class="brace">{</span>
+    <span class="property">width</span>: <span class="value-number">100%</span>;
+    <span class="property">height</span>: <span class="value-number">50%</span>;
+    <span class="property">background</span>: <span class="value-string">linear-gradient(45deg, #2196F3, #4CAF50)</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="codigo">
+    <span class="selector">.knowledge-tree</span>
+    <span class="brace">{</span>
+    <span class="property">width</span>: <span class="value-number">100%</span>;
+    <span class="property">height</span>: <span class="value-number">50%</span>;
+    <span class="property">background</span>: <span class="value-string">linear-gradient(45deg, #4CAF50, #2196F3)</span>;
+    <span class="brace">}</span>
+  </div>
+</body>
+</html>
+```
