@@ -1,0 +1,330 @@
+```
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* css_foundation */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("./thumb.jpg") no-repeat center center;
+      background-color: #282828;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+      aspect-ratio: 9/16;
+    }
+
+    .loading-element {
+      width: 100px;
+      height: 100px;
+      border-radius: 0;
+      background-color: #3c4e54;
+      animation: loading-animation 1s linear infinite;
+    }
+
+    @keyframes loading-animation {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+        border-radius: 50px;
+        box-shadow: 0 0 10px #3c4e54;
+      }
+      25% {
+        transform: scale(0.5);
+        opacity: 0.5;
+        border-radius: 0;
+        box-shadow: 0 0 10px #3c4e54;
+      }
+      50% {
+        transform: scale(1);
+        opacity: 1;
+        border-radius: 50px;
+        box-shadow: 0 0 10px #3c4e54;
+      }
+      75% {
+        transform: scale(1.2);
+        opacity: 1;
+        border-radius: 0;
+        box-shadow: 0 0 10px #3c4e54;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+        border-radius: 50px;
+        box-shadow: 0 0 10px #3c4e54;
+      }
+    }
+
+    .loading-element::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      border-radius: 50px;
+      border-style: solid;
+      border-width: 5px 5px 0 0;
+      border-color: #3c4e54 transparent transparent transparent;
+      animation: loading-before 1s linear infinite;
+    }
+
+    @keyframes loading-before {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .loading-element::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      border-radius: 50px;
+      border-style: solid;
+      border-width: 0 5px 5px 0;
+      border-color: transparent #3c4e54 transparent transparent;
+      animation: loading-after 1s linear infinite;
+    }
+
+    @keyframes loading-after {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .codigo {
+      /* ... */
+      /* O código aqui é a clave para a animação. Cada linha desvende uma camada da espiral */
+      .loading-element {
+        /* O círculo inicial da espiral */
+        border-radius: 0;
+        background-color: #f7d2c4;
+        animation: loading-animation-2s 2s linear infinite;
+      }
+
+      @keyframes loading-animation-2s {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+          border-radius: 50px;
+          box-shadow: 0 0 10px #f7d2c4;
+        }
+        25% {
+          transform: scale(1.2);
+          opacity: 0.5;
+          border-radius: 50px;
+          box-shadow: 0 0 10px #f7d2c4;
+        }
+        50% {
+          transform: scale(1.4);
+          opacity: 1;
+          border-radius: 0;
+          box-shadow: 0 0 10px #f7d2c4;
+        }
+        75% {
+          transform: scale(0.8);
+          opacity: 0.5;
+          border-radius: 0;
+          box-shadow: 0 0 10px #f7d2c4;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+          border-radius: 50px;
+          box-shadow: 0 0 10px #f7d2c4;
+        }
+    }
+
+    .codigo {
+      /* ... */
+      /* A segunda camada da espiral */
+      .loading-element::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+        border-style: solid;
+        border-width: 10px 10px 0 0;
+        border-color: #f7d2c4;
+        animation: loading-before 1s linear infinite;
+      }
+
+      @keyframes loading-before {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+
+    .codigo {
+      /* ... */
+      /* A terceira camada da espiral */
+      .loading-element::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+        border-style: solid;
+        border-width: 0 10px 10px 0;
+        border-color: transparent #f7d2c4 transparent transparent;
+        animation: loading-after 1s linear infinite;
+      }
+
+      @keyframes loading-after {
+        0% {
+          transform: rotate(0deg);
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+
+    .codigo {
+      /* ... */
+      /* A quarta camada da espiral */
+      .loading-element {
+        /* O círculo interior */
+        width: 50px;
+        height: 50px;
+        background-color: #9e7ac3;
+        animation: loading-animation-3s 3s linear infinite;
+      }
+
+      @keyframes loading-animation-3s {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+          border-radius: 50px;
+          box-shadow: 0 0 10px #9e7ac3;
+        }
+        25% {
+          transform: scale(1.2);
+          opacity: 0.5;
+          border-radius: 50px;
+          box-shadow: 0 0 10px #9e7ac3;
+        }
+        50% {
+          transform: scale(1.4);
+          opacity: 1;
+          border-radius: 0;
+          box-shadow: 0 0 10px #9e7ac3;
+        }
+        75% {
+          transform: scale(0.8);
+          opacity: 0.5;
+          border-radius: 0;
+          box-shadow: 0 0 10px #9e7ac3;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+          border-radius: 50px;
+          box-shadow: 0 0 10px #9e7ac3;
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <div class="loading-element"></div>
+  </div>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span><br>
+    <span class="property">width</span><span class="value-number">100px</span><br>
+    <span class="property">height</span><span class="value-number">100px</span><br>
+    <span class="property">border-radius</span><span class="value-number">50%</span><br>
+    <span class="property">background-color</span><span class="value-string">#3c4e54</span><br>
+    <span class="property">animation</span><span class="function">loading-animation</span><span class="value-string">1s</span><span class="value-string">linear</span><span class="value-string">infinite</span><br>
+    <span class="brace">}</span>
+  </div>
+</body>
+</html>
+```
