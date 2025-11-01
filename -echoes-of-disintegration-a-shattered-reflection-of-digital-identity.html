@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>** "Echoes of Disintegration: A Shattered Reflection of Digital Identity"
+**</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top:15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+
+        .selector       { color: #F92672; }
+        .property       { color: #66D9EF; }
+        .value-number   { color: #AE81FF; }
+        .value-string   { color: #E6DB74; }
+        .value-color    { color: #A6E22E; }
+        .function       { color: #A6E22E; }
+
+        .animation-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .fractura {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 50%);
+            background: radial-gradient(#f7d2c4, #ff9d4d);
+            animation: quebra 10s linear infinite;
+        }
+
+        .fractura::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 100% 100%, 100% 0%, 50% 0%, 0% 0%);
+            background: radial-gradient(#f7d2c4, #ff9d4d);
+            animation: quebra 10s linear infinite;
+            animation-delay: 5s;
+            transform: rotate(0deg);
+        }
+
+        .fractura::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(0% 100%, 100% 100%, 100% 50%, 0 50%, 0% 100%, 50% 100%, 100% 0%, 0% 0%);
+            background: radial-gradient(#f7d2c4, #ff9d4d);
+            animation: quebra 10s linear infinite;
+            animation-delay: 8s;
+            transform: rotate(90deg);
+        }
+
+        @keyframes quebra {
+            50%{
+                clip-path: polygon(0% 25%, 100% 0%, 100% 50%, 0% 50%, 0% 75%, 50% 100%, 0% 0%);
+                transform: rotate(25deg);
+            }
+
+            100%{
+                clip-path: polygon(0% 25%, 100% 0%, 100% 50%, 0% 50%, 0% 75%, 50% 100%, 0% 0%);
+                transform: rotate(-10deg);
+            }
+        }
+
+        .echo {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(to right, red, yellow);
+            animation: echo-1 2s linear infinite;
+            transform-origin: center;
+        }
+
+        .echo::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(to right, blue, green);
+            animation: echo-2 1.5s linear infinite;
+            transform-origin: center;
+            animation-delay: -0.5s;
+        }
+
+        @keyframes echo-1 {
+            50%{
+                transform: scale(1.2);
+            }
+
+            100%{
+                transform: scale(1);
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes echo-2 {
+            50%{
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100%{
+                transform: scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        <div class="codigo">
+            <span class="selector">.loading-element</span><span class="brace">{</span>
+            <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+            <span class="property">animation</span>: <span class="function">load-anim</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+            <span class="property">background</span>: <span class="value-color">#FF69B4</span>;
+            <span class="brace">}</span>
+        </div>
+
+        <div class="animation-container">
+            <div class="fractura"></div>
+            <div class="echo"></div>
+            <div class="echo"></div>
+        </div>
+    </style>
+</head>
+<body>
+    <div class="codigo">
+        <span class="selector">.loading-element</span><span class="brace">{</span>
+        <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+        <span class="property">animation</span>: <span class="function">load-anim</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+        <span class="property">background</span>: <span class="value-color">#FF69B4</span>;
+        <span class="brace">}</span>
+    </div>
+
+    <div class="animation-container">
+        <div class="fractura"></div>
+        <div class="echo"></div>
+        <div class="echo"></div>
+    </div>
+</body>
+</html>
