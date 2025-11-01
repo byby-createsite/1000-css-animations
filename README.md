@@ -182,3 +182,4 @@ Feel free to contribute to this repository.
 <a href="./fractured-mirrors-of-the-soul-in-eternity.html">Fractured Mirrors of the Soul in Eternity"</a> <br/><br/>
 <a href="./-echoes-of-disintegration-a-shattered-reflection-of-digital-identity.html">** "Echoes of Disintegration: A Shattered Reflection of Digital Identity"
 **</a> <br/><br/>
+<a href="./fractured-realities-shattered-echoes-of-self.html">Fractured Realities: Shattered Echoes of Self</a> <br/><br/>
