@@ -183,3 +183,4 @@ Feel free to contribute to this repository.
 <a href="./-echoes-of-disintegration-a-shattered-reflection-of-digital-identity.html">** "Echoes of Disintegration: A Shattered Reflection of Digital Identity"
 **</a> <br/><br/>
 <a href="./fractured-realities-shattered-echoes-of-self.html">Fractured Realities: Shattered Echoes of Self</a> <br/><br/>
+<a href="./fractured-echoes-of-the-self.html">Fractured Echoes of the Self</a> <br/><br/>
