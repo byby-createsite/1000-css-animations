@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Shattering the Facade to Reveal the Selves</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .fracture-container {
+      position: relative;
+      width: 70%;
+      height: 70%;
+      background: transparent;
+      border-radius: 50%;
+      animation: shatter 2s forwards;
+    }
+
+    @keyframes shatter {
+      0% {
+        transform: scale(1, 1) rotate(0deg);
+      }
+      100% {
+        transform: scale(5, 5) rotate(360deg);
+      }
+    }
+
+    .shard {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 50%;
+      animation: ripple 2s forwards;
+      transform-origin: center;
+    }
+
+    .shard::before {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: #fff;
+      border-radius: 50%;
+      animation: fade-out 2s forwards;
+    }
+
+    @keyframes ripple {
+      0% {
+        transform: scale(1, 1) translate(-50%, -50%);
+      }
+      100% {
+        transform: scale(5, 5) translate(-50%, -50%);
+      }
+    }
+
+    @keyframes fade-out {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+  <div class="codigo">
+    <span class="selector">.fracture-container</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">background</span>: <span class="value-string">transparent</span>;
+    <span class="property">animation</span>: <span class="function">shatter</span> <span class="value-number">2s</span>;
+    <span class="brace">}</span>
+    <br><br>
+    <span class="selector">.shard</span><span class="brace">{</span>
+    <span class="property">position</span>: <span class="value-string">absolute</span>;
+    <span class="property">width</span>: <span class="value-number">20px</span>;
+    <span class="property">height</span>: <span class="value-number">20px</span>;
+    <span class="property">animation</span>: <span class="function">ripple</span> <span class="value-number">2s forwards</span>;
+    <span class="property">transform-origin</span>: <span class="value-string">center</span>;
+    <span class="brace">}</span>
+    <br><br>
+    <span class="selector">.shard::before</span><span class="brace">{</span>
+    <span class="property">content</span>: <span class="value-string">""</span>;
+    <span class="property">position</span>: <span class="value-string">absolute</span>;
+    <span class="property">width</span>: <span class="value-number">50px</span>;
+    <span class="property">height</span>: <span class="value-number">50px</span>;
+    <span class="property">background</span>: <span class="value-string">#fff</span>;
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">fade-out</span> <span class="value-number">2s forwards</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="fracture-container">
+      <div class="shard" style="left: 20%; top: 10%;"></div>
+      <div class="shard" style="left: 40%; top: 20%;"></div>
+      <div class="shard" style="left: 60%; top: 30%;"></div>
+      <div class="shard" style="left: 20%; top: 50%;"></div>
+      <div class="shard" style="left: 40%; top: 60%;"></div>
+      <div class="shard" style="left: 60%; top: 70%;"></div>
+      <div class="shard" style="left: 10%; top: 20%;"></div>
+      <div class="shard" style="left: 50%; top: 40%;"></div>
+    </div>
+  </div>
+</head>
+<body>
+</body>
+</html>

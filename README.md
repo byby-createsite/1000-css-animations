@@ -194,3 +194,7 @@ Feel free to contribute to this repository.
 <a href="./ephemeral-echoes-of-identity.html">**Ephemeral Echoes of Identity**</a> <br/><br/>
 <a href="./beyond-the-shattered-facade.html">Beyond the Shattered Facade</a> <br/><br/>
 <a href="./fractured-mirrors-of-the-soul.html">"Fractured Mirrors of the Soul"</a> <br/><br/>
+<a href="./beneath-the-shattered-facade.html">"Beneath the Shattered Facade"</a> <br/><br/>
+<a href="./shattering-the-facade-to-reveal-the-selves.html">Shattering the Facade to Reveal the Selves</a> <br/><br/>
+<a href="./beyond-the-fractured-mirror.html">**Beyond the Fractured Mirror**</a> <br/><br/>
+<a href="./fractured-mirrors-of-the-soul-echoes-of-disintegration.html">"Fractured Mirrors of the Soul: Echoes of Disintegration"</a> <br/><br/>

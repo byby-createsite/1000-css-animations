@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>"Beneath the Shattered Facade"</title>
+  <style>
+    /* css_foundation */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* animation rules */
+    .fractured-reflection {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    }
+
+    .reflection-layer-1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to bottom, #333 0, #555 50%, #333 100%);
+      animation: ripple-1 5s linear infinite;
+      clip-path: inherit;
+    }
+
+    .reflection-layer-2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to bottom, #777 0, #888 50%, #777 100%);
+      animation: ripple-2 5s linear infinite;
+      clip-path: inherit;
+      transform: translate(0, 10px);
+    }
+
+    .reflection-layer-3 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to bottom, #999 0, #AAA 50%, #999 100%);
+      animation: ripple-3 5s linear infinite;
+      clip-path: inherit;
+      transform: translate(0, 20px);
+    }
+
+    @keyframes ripple-1 {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(10px, -10px);
+      }
+    }
+
+    @keyframes ripple-2 {
+      0% {
+        transform: translate(0, 10px);
+      }
+      100% {
+        transform: translate(20px, -20px);
+      }
+    }
+
+    @keyframes ripple-3 {
+      0% {
+        transform: translate(0, 20px);
+      }
+      100% {
+        transform: translate(30px, -30px);
+      }
+    }
+
+    /* snippet */
+    .loading-element {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #444;
+      animation: loading-animation 1s linear infinite;
+    }
+
+    @keyframes loading-animation {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* reveal detail on replay */
+    &:hover {
+      .reflection-layer-1 {
+        animation: ripple-1 2s linear infinite;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="fractured-reflection">
+      <div class="reflection-layer-1"></div>
+      <div class="reflection-layer-2"></div>
+      <div class="reflection-layer-3"></div>
+      <div class="reflection-layer-4"></div>
+      <div class="reflection-layer-5"></div>
+    </div>
+  </div>
+</body>
+</html>
