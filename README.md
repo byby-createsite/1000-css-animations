@@ -193,3 +193,4 @@ Feel free to contribute to this repository.
 <a href="./shattering-silhouettes-of-identity.html">Shattering Silhouettes of Identity</a> <br/><br/>
 <a href="./ephemeral-echoes-of-identity.html">**Ephemeral Echoes of Identity**</a> <br/><br/>
 <a href="./beyond-the-shattered-facade.html">Beyond the Shattered Facade</a> <br/><br/>
+<a href="./fractured-mirrors-of-the-soul.html">"Fractured Mirrors of the Soul"</a> <br/><br/>

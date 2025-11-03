@@ -1,260 +1,235 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <title>**Fractured Mirrors of the Soul**</title>
-<style>
- * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <title>"Fractured Mirrors of the Soul"</title>
+  <style>
+    /* CSS Foundation */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-    background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
-    background-color: black;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
-}
+    body {
+      background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: #1b1a19;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Consolas', 'Monaco', monospace;
+    }
 
-.codigo {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #272822;
-    color: #F8F8F2;
-    font-family: 'Consolas', 'Monaco', monospace;
-    font-size: 18px;
-    padding: 20px;
-    border-radius: 8px;
-    white-space: pre-line;
-    text-align: left;
-    line-height: 1.6;
-    max-height: 25%;
-    max-width: 75%;
-    width: 75%;
-    height: 25%;
-    top:15%;
-    overflow-y: hidden;
-    box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
-}
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
 
-.selector       { color: #F92672; }
-.property       { color: #66D9EF; }
-.value-number   { color: #AE81FF; }
-.value-string   { color: #E6DB74; }
-.value-color    { color: #A6E22E; }
-.function       { color: #A6E22E; }
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
 
-.animation-container {
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 50%;
-    overflow: hidden;
-    background: transparent;
-}
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+      aspect-ratio: 9/16;
+    }
 
-/* Refletindo os fragmentos de identidade digital. */
-.load-element {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background-color: #66D9EF;
-  animation: pulse-continual 1.2s infinite;
-  animation-timing-function: ease-in-out;
-}
+    .loading-element {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #ff9900, #ff6633);
+      border-radius: 50%;
+      animation: loading-animation 1s linear infinite;
+    }
 
-/* Os fragmentos se juntam para formar reflexos parciais. */
-.refletion-partial {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  background-color: #66D9EF;
-  border-radius: 50%;
-  transform: rotate(20deg);
-  animation: ripple-continual 2.5s infinite;
-  animation-timing-function: linear;
-  opacity: 0.7;
-}
+    /* Fractured Mirrors */
+    .fragmentos {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.2);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 50% 100%, 0% 50%);
+      animation: reflect-fragment 2s linear;
+    }
 
-/* Um refletir que se destaca, como uma sombra profunda. */
-.refletion-highlights {
-  content: "";
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background-color: #66D9EF;
-  border-radius: 50%;
-  transform: rotate(-50deg);
-  animation: flash 1.6s infinite;
-  animation-timing-function: ease-in;
-  opacity: 0.35;
-}
+    @keyframes reflect-fragment {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
 
-/* O refletir que se move em torno dos outros. */
-.refletion-outer {
-  content: "";
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  background-color: #66D9EF;
-  border-radius: 50%;
-  animation: spin 2.8s infinite;
-  animation-timing-function: linear;
-  opacity: 0.45;
-}
+    /* Broken Identity */
+    .bico {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, #ff9900, #ff6633);
+      border-radius: 50%;
+      animation: bico-animation 2s linear;
+    }
 
- /* Animando cada um dos refletores. */
+    @keyframes bico-animation {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.5);
+        transform: rotate(15deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
 
-@keyframes pulse-continual {
-  0% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.2); opacity:1; }
-  100% { transform: scale(1); opacity: 0.8; }
-}
+    /* Mirrors of the Soul */
+    .espelhos {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #ff9900, #ff6633);
+      animation: espelhos-1 2s linear forwards;
+    }
 
-@keyframes ripple-continual {
-  0% { transform: rotate(20deg); opacity: 0.7; }
-  20% { transform: rotate(-10deg); opacity: 1; }
-  50% { transform: rotate(0deg); opacity: 0.7; }
-  80% { transform: rotate(10deg); opacity: 1; }
-  100% { transform: rotate(20deg); opacity: 0.7; }
-}
+    @keyframes espelhos-1 {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(3);
+      }
+    }
 
-@keyframes flash {
-  0% { transform: rotate(-50deg); opacity: 0.45; }
-  20% { transform: rotate(50deg); opacity: 0.7; }
-  50% { transform: rotate(-50deg); opacity: 1; }
-  80% { transform: rotate(50deg); opacity: 0.7; }
-  100% { transform: rotate(-50deg); opacity: 0.45; }
-}
+    .espelhos-2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #ff9900, #ff6633);
+      animation: espelhos-2 2s ease-in-out forward;
+    }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); opacity: 0.8; }
-  50% { transform: rotate(180deg); opacity: 0.5; }
-  100% { transform: rotate(360deg); opacity: 0.8; }
-}
+    @keyframes espelhos-2 {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        transform: scale(2);
+        opacity: 1;
+      }
+    }
 
-.codigo {
-  <span class="selector">.load-element</span><span class="brace">{</span>
-  <span class="property">position</span>: <span class="value-string">absolute</span>;
-  <span class="property">width</span>: <span class="value-number">80px</span>;
-  <span class="property">height</span>: <span class="value-number">80px</span>;
-  <span class="property">border-radius</span>: <span class="value-number">50%</span>;
-  <span class="property">background-color</span>: <span class="value-string">#66D9EF</span>;
-  <span class="property">animation</span>: <span class="function">pulse-continual</span> <span class="value-number">1.2s</span> <span class="value-string">infinite</span>;
-  <span class="property">animation-timing-function</span>: <span class="value-string">ease-in-out</span>;
-  <span class="brace">}</span>
-}
+    .espelhos-3 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #ff9900, #ff6633);
+      animation: espelhos-3 1s linear forwards;
+    }
 
-.codigo {
-  <span class="selector">.refletion-partial</span><span class="brace">{</span>
-  <span class="property">content</span>: <span class="value-string">""</span>;
-  <span class="property">position</span>: <span class="value-string">absolute</span>;
-  <span class="property">width</span>: <span class="value-number">120px</span>;
-  <span class="property">height</span>: <span class="value-number">120px</span>;
-  <span class="property">background-color</span>: <span class="value-string">#66D9EF</span>;
-  <span class="property">border-radius</span>: <span class="value-number">50%</span>;
-  <span class="property">transform</span>: <span class="value-string">rotate(20deg)</span>;
-  <span class="property">animation</span>: <span class="function">ripple-continual</span> <span class="value-number">2.5s</span> <span class="value-string">infinite</span>;
-  <span class="property">animation-timing-function</span>: <span class="value-string">linear</span>;
-  <span class="property">opacity</span>: <span class="value-number">0.7</span>;
-  <span class="brace">}</span>
-}
+    @keyframes espelhos-3 {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
 
-.codigo {
-  <span class="selector">.refletion-highlights</span><span class="brace">{</span>
-  <span class="property">content</span>: <span class="value-string">""</span>;
-  <span class="property">position</span>: <span class="value-string">absolute</span>;
-  <span class="property">width</span>: <span class="value-number">200px</span>;
-  <span class="property">height</span>: <span class="value-number">200px</span>;
-  <span class="property">background-color</span>: <span class="value-string">#66D9EF</span>;
-  <span class="property">border-radius</span>: <span class="value-number">50%</span>;
-  <span class="property">transform</span>: <span class="value-string">rotate(-50deg)</span>;
-  <span class="property">animation</span>: <span class="function">flash</span> <span class="value-number">1.6s</span> <span class="value-string">infinite</span>;
-  <span class="property">animation-timing-function</span>: <span class="value-string">ease-in</span>;
-  <span class="property">opacity</span>: <span class="value-number">0.35</span>;
-  <span class="brace">}</span>
-}
-
-.codigo {
-  <span class="selector">.refletion-outer</span><span class="brace">{</span>
-  <span class="property">content</span>: <span class="value-string">""</span>;
-  <span class="property">position</span>: <span class="value-string">absolute</span>;
-  <span class="property">width</span>: <span class="value-number">150px</span>;
-  <span class="property">height</span>: <span class="value-number">150px</span>;
-  <span class="property">background-color</span>: <span class="value-string">#66D9EF</span>;
-  <span class="property">border-radius</span>: <span class="value-number">50%</span>;
-  <span class="property">animation</span>: <span class="function">spin</span> <span class="value-number">2.8s</span> <span class="value-string">infinite</span>;
-  <span class="property">animation-timing-function</span>: <span class="value-string">linear</span>;
-  <span class="property">opacity</span>: <span class="value-number">0.45</span>;
-  <span class="brace">}</span>
-}
-
-</style>
+  </style>
 </head>
 <body>
-<div class="animation-container">
-  <div class="load-element"></div>
-  <div class="refletion-partial"></div>
-  <div class="refletion-highlights"></div>
-  <div class="refletion-outer"></div>
-</div>
-<div class="codigo">
-   <span class="selector">.load-element</span><span class="brace">{</span>
-   <span class="property">border-radius</span>: <span class="value-number">50%</span>;
-   <span class="property">animation</span>: <span class="function">pulse-continual</span> <span class="value-number">1.2s</span> <span class="value-string">infinite</span> <span class="value-string">ease-in-out</span>;
-   <span class="brace">}</span>
-
-  <span class="selector">.refletion-partial</span><span class="brace">{</span>
-  <span class="property">content</span>: <span class="value-string">""</span>;
-  <span class="property">position</span>: <span class="value-string">absolute</span>;
-  <span class="property">width</span>: <span class="value-number">120px</span>;
-  <span class="property">height</span>: <span class="value-number">120px</span>;
-  <span class="property">background-color</span>: <span class="value-string">#66D9EF</span>;
-  <span class="property">border-radius</span>: <span class="value-number">50%</span>;
-  <span class="property">transform</span>: <span class="value-string">rotate(20deg)</span>;
-  <span class="property">animation</span>: <span class="function">ripple-continual</span> <span class="value-number">2.5s</span> <span class="value-string">infinite</span>;
-  <span class="property">animation-timing-function</span>: <span class="value-string">linear</span>;
-  <span class="property">opacity</span>: <span class="value-number">0.7</span>;
-  <span class="brace">}</span>
-
-  <span class="selector">.refletion-highlights</span><span class="brace">{</span>
-  <span class="property">content</span>: <span class="value-string">""</span>;
-  <span class="property">position</span>: <span class="value-string">absolute</span>;
-  <span class="property">width</span>: <span class="value-number">200px</span>;
-  <span class="property">height</span>: <span class="value-number">200px</span>;
-  <span class="property">background-color</span>: <span class="value-string">#66D9EF</span>;
-  <span class="property">border-radius</span>: <span class="value-number">50%</span>;
-  <span class="property">transform</span>: <span class="value-string">rotate(-50deg)</span>;
-  <span class="property">animation</span>: <span class="function">flash</span> <span class="value-number">1.6s</span> <span class="value-string">infinite</span>;
-  <span class="property">animation-timing-function</span>: <span class="value-string">ease-in</span>;
-  <span class="property">opacity</span>: <span class="value-number">0.35</span>;
-  <span class="brace">}</span>
-
-  <span class="selector">.refletion-outer</span><span class="brace">{</span>
-  <span class="property">content</span>: <span class="value-string">""</span>;
-  <span class="property">position</span>: <span class="value-string">absolute</span>;
-  <span class="property">width</span>: <span class="value-number">150px</span>;
-  <span class="property">height</span>: <span class="value-number">150px</span>;
-  <span class="property">background-color</span>: <span class="value-string">#66D9EF</span>;
-  <span class="property">border-radius</span>: <span class="value-number">50%</span>;
-  <span class="property">animation</span>: <span class="function">spin</span> <span class="value-number">2.8s</span> <span class="value-string">infinite</span>;
-  <span class="property">animation-timing-function</span>: <span class="value-string">linear</span>;
-  <span class="property">opacity</span>: <span class="value-number">0.45</span>;
-  <span class="brace">}</span>
-</div>
-
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">background</span>: <span class="value-string">linear-gradient(to bottom, #ff9900, #ff6633)</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="loading-element"></div>
+    <div class="fragmentos"></div>
+    <div class="bico"></div>
+    <div class="espelhos"></div>
+    <div class="espelhos-2"></div>
+    <div class="espelhos-3"></div>
+    <div class="reflexo-1">
+      <div class="espelhos-reflexo top-left">
+        <div class="fragmentos-1 top-left"></div>
+        <div class="espelhos-1-reflexo top-left"></div>
+      </div>
+      <div class="espelhos-reflexo top-center">
+        <div class="fragmentos-1 top-center"></div>
+        <div class="espelhos-1-reflexo top-center"></div>
+      </div>
+      <div class="espelhos-reflexo top-right">
+        <div class="fragmentos-1 top-right"></div>
+        <div class="espelhos-1-reflexo top-right"></div>
+      </div>
+    </div>
+    <div class="reflexo-2">
+      <div class="espelhos-reflexo bottom-left">
+        <div class="fragmentos-2 bottom-left"></div>
+        <div class="espelhos-2-reflexo bottom-left"></div>
+      </div>
+      <div class="espelhos-reflexo bottom-center">
+        <div class="fragmentos-2 bottom-center"></div>
+        <div class="espelhos-2-reflexo bottom-center"></div>
+      </div>
+      <div class="espelhos-reflexo bottom-right">
+        <div class="fragmentos-2 bottom-right"></div>
+        <div class="espelhos-2-reflexo bottom-right"></div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
