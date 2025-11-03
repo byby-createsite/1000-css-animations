@@ -2,187 +2,342 @@
 <html lang="pt-BR">
 <head>
     <title>"Beneath the Shattered Facade"</title>
-  <style>
-    /* css_foundation */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
-      background-color: black;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      overflow: hidden;
-    }
+        body {
+            background: url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top:15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
 
-    .codigo {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #272822;
-      color: #F8F8F2;
-      font-family: 'Consolas', 'Monaco', monospace;
-      font-size: 18px;
-      padding: 20px;
-      border-radius: 8px;
-      white-space: pre-line;
-      text-align: left;
-      line-height: 1.6;
-      max-height: 25%;
-      max-width: 75%;
-      width: 75%;
-      height: 25%;
-      top:15%;
-      overflow-y: hidden;
-      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
-    }
+        .selector       { color: #F92672; }
+        .property       { color: #66D9EF; }
+        .value-number   { color: #AE81FF; }
+        .value-string   { color: #E6DB74; }
+        .value-color    { color: #A6E22E; }
+        .function       { color: #A6E22E; }
 
-    .selector       { color: #F92672; }
-    .property       { color: #66D9EF; }
-    .value-number   { color: #AE81FF; }
-    .value-string   { color: #E6DB74; }
-    .value-color    { color: #A6E22E; }
-    .function       { color: #A6E22E; }
+        .codigo > .selector {
+            color: white;
+        }
+        
+        .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: transparent;
+            aspect-ratio: 9/16;
+        }
 
-    .animation-container {
-      position: absolute;
-      top: 75%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 50%;
-      overflow: hidden;
-      background: transparent;
-    }
+        /* Camada da tela quebrada */
+        .tela_quebrada {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #2D2D2D;
+            clip-path: polygon(100% 25%, 100% 75%, calc(50% + 50px) 50%);
+            transform: rotate(30deg);
+            animation: abrir 2s linear infinite;
+        }
 
-    /* animation rules */
-    .fractured-reflection {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      clip-path: polygon(50% 0, 100% 100%, 0 100%);
-    }
+        /* Camada da tela quebrada */
+        .tela_quebrada::before {
+            content: "";
+            position: absolute;
+            top: calc(50% - 2px);
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(-30deg, white 50%, #2D2D2D 0);
+            transform: rotate(-30deg);
+        }
 
-    .reflection-layer-1 {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(to bottom, #333 0, #555 50%, #333 100%);
-      animation: ripple-1 5s linear infinite;
-      clip-path: inherit;
-    }
+        /* Fragmentos da tela quebrada */
+        .fragmentos {
+            position: absolute;
+            top: calc(50% - 25px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 50px;
+            background: white;
+            border: 1px solid white;
+            clip-path: polygon(0 25%, 100% 25%, 50% 0);
+            animation: fragmento 2s linear infinite;
+        }
 
-    .reflection-layer-2 {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(to bottom, #777 0, #888 50%, #777 100%);
-      animation: ripple-2 5s linear infinite;
-      clip-path: inherit;
-      transform: translate(0, 10px);
-    }
+        /* Fragmentos da tela quebrada */
+        .fragmentos::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(-30deg, white 25%, black 0);
+            transform: rotate(30deg);
+        }
 
-    .reflection-layer-3 {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(to bottom, #999 0, #AAA 50%, #999 100%);
-      animation: ripple-3 5s linear infinite;
-      clip-path: inherit;
-      transform: translate(0, 20px);
-    }
+        /* Fragmentos da tela quebrada */
+        .fragmentos::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50px;
+            height: 100%;
+            background: linear-gradient(-60deg, white 25%, black 0);
+            transform: rotate(60deg);
+        }
 
-    @keyframes ripple-1 {
-      0% {
-        transform: translate(0, 0);
-      }
-      100% {
-        transform: translate(10px, -10px);
-      }
-    }
+        /* Mirrors quebrados */
+        .mirrors {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: #2D2D2D;
+            animation: abra 2s linear infinite;
+        }
 
-    @keyframes ripple-2 {
-      0% {
-        transform: translate(0, 10px);
-      }
-      100% {
-        transform: translate(20px, -20px);
-      }
-    }
+        /* Mirrors quebrados */
+        .mirrors::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 30px;
+            height: 60px;
+            background: linear-gradient(-60deg, white 50%, #2D2D2D 0);
+            transform: rotate(60deg);
+        }
 
-    @keyframes ripple-3 {
-      0% {
-        transform: translate(0, 20px);
-      }
-      100% {
-        transform: translate(30px, -30px);
-      }
-    }
+        /* Mirrors quebrados */
+        .mirrors::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 60px;
+            background: linear-gradient(60deg, white 50%, #2D2D2D 0);
+            transform: rotate(-60deg);
+        }
 
-    /* snippet */
-    .loading-element {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: #444;
-      animation: loading-animation 1s linear infinite;
-    }
+        @keyframes abrir {
+            0% {
+                clip-path: polygon(100% 25%, 100% 75%, calc(50% + 50px) 50%);
+            }
+            50% {
+                clip-path: polygon(50% 25%, calc(100% - 50px) 25%, 50% 75%);
+            }
+            100% {
+                clip-path: polygon(100% 25%, 100% 75%, calc(50% + 50px) 50%);
+            }
+        }
 
-    @keyframes loading-animation {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.2);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
+        @keyframes fragmento {
+            0% {
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                transform: translateX(-50%) scale(0.5);
+            }
+            100% {
+                transform: translateX(-50%) scale(1);
+            }
+        }
 
-    /* reveal detail on replay */
-    &:hover {
-      .reflection-layer-1 {
-        animation: ripple-1 2s linear infinite;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="codigo">
-    <span class="selector">.loading-element</span><span class="brace">{</span>
-    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
-    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
-    <span class="brace">}</span>
-  </div>
-  <div class="animation-container">
-    <div class="fractured-reflection">
-      <div class="reflection-layer-1"></div>
-      <div class="reflection-layer-2"></div>
-      <div class="reflection-layer-3"></div>
-      <div class="reflection-layer-4"></div>
-      <div class="reflection-layer-5"></div>
-    </div>
-  </div>
-</body>
+        @keyframes abra {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            25% {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            50% {
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+            75% {
+                transform: translate(-50%, -50%) rotate(135deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(180deg);
+            }
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top:15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+
+        .codigo > .selector {
+            color: white;
+        }
+
+        #codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top:15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+
+        #codigo > .selector {
+            color: white;
+        }
+
+        #codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top:15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55); 
+        }
+
+        #codigo > .selector {
+            color: white;
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top:15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+        .codigo > .selector { color: white;}
+    </style>
+    <body>
+        <div class="codigo">
+            <span class="selector">.tela_quebrada</span><span class="brace">{</span>
+            <span class="property">clip-path</span>: <span class="value-string">polygon(100% 25%, 100% 75%, calc(50% + 50px) 50%);</span>;
+            <span class="property">animation</span>: <span class="function">abrir</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+            <span class="brace">}</span>
+            <span class="selector">.fragmentos</span><span class="brace">{</span>
+            <span class="property">width</span>: <span class="value-number">100px</span>;
+            <span class="property">height</span>: <span class="value-number">50px</span>;
+            <span class="property">background</span>: <span class="value-string">white</span>;
+            <span class="property">clip-path</span>: <span class="value-string">polygon(0 25%, 100% 25%, 50% 0);</span>;
+            <span class="property">animation</span>: <span class="function">fragmento</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+            <span class="brace">}</span>
+            <span class="selector">.mirrors</span><span class="brace">{</span>
+            <span class="property">width</span>: <span class="value-number">60px</span>;
+            <span class="property">height</span>: <span class="value-number">60px</span>;
+            <span class="property">background</span>: <span class="value-color">#2D2D2D</span>;
+            <span class="property">animation</span>: <span class="function">abra</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+            <span class="brace">}</span>
+        </div>
+        <div class="animation-container">
+            <div class="tela_quebrada"></div>
+            <div class="fragmentos"></div>
+            <div class="fragmentos"></div>
+            <div class="mirrors"></div>
+        </div>
+    </body>
 </html>
