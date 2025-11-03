@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>'Mirrored Echoes of Disintegration'</title>
+  <style>
+    /* css_foundation */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* Mirrored Echoes of Disintegration */
+    .fragment,
+    .fragment::before,
+    .fragment::after {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: #A6E22E;
+      border-radius: 50%;
+      animation: fade-in 2s forwards;
+    }
+
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: scale(0);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .fragment1 {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: rotate 5s linear infinite, scale-up 5s ease-in-out forwards;
+    }
+
+    .fragment1::before {
+      top: 0;
+      left: 25;
+      animation: rotate 5.5s linear infinite, scale-up 5.5s ease-in-out forwards;
+    }
+
+    .fragment1::after {
+      top: 35;
+      left: 0;
+      animation: rotate 5s linear infinite, scale-up 5s ease-in-out forwards;
+    }
+
+    @keyframes scale-up {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* 
+      Existential echoes reflecting the ever-changing tapestry of our digital selves 
+    */
+    .echo1,
+    .echo1::before,
+    .echo1::after {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: #66D9EF;
+      border-radius: 50%;
+      animation: fade-in 2s forwards, shimmer 2s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(10px);
+      }
+    }
+
+    .echo1 {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: rotate 2s linear infinite;
+    }
+
+    .echo1::before {
+      top: 0;
+      left: 45;
+      animation: rotate 2.5s linear infinite;
+    }
+
+    .echo1::after {
+      top: 40;
+      left: 0;
+      animation: rotate 2.2s linear infinite;
+    }
+
+    /* 
+      Shattered silhouettes dissolve into a kaleidoscope of echoes 
+    */
+    .reflection {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #F92672;
+      clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+      animation: fade-in 3s forwards, mirror 3s ease-in-out;
+    }
+
+    .reflection::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #66D9EF;
+    }
+
+    @keyframes mirror {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0.5);
+      }
+    }
+
+    /* 
+      Dance of fragmented identities 
+    */
+    .broken-silhouette {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #A6E22E;
+      animation: fade-in 2s forwards, fragment 2s ease-in-out;
+    }
+
+    .broken-silhouette::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #F92672;
+    }
+
+    @keyframes fragment {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0.5);
+      }
+    }
+
+    /* 
+      Kaleidoscope of existential echoes 
+    */
+    .echo2 {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #66D9EF;
+      animation: fade-in 1s forwards, shimmer 1s linear infinite;
+    }
+
+    .echo2::before {
+      content: '';
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: #F92672;
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(2px);
+      }
+    }
+
+    /* 
+      Mirrored echoes of disintegration 
+    */
+    .echo3 {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #A6E22E;
+      animation: fade-in 2s forwards;
+    }
+
+    .echo3::before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #66D9EF;
+    }
+
+    /* 
+      Code snippet highlighting 
+    */
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="fragment fragment1"><div class="reflection"></div><div class="echo1"></div></div>
+    <div class="fragment fragment2"><div class="reflection"></div><div class="echo2"></div></div>
+    <div class="fragment fragment3"><div class="reflection"></div><div class="echo3"></div></div>
+  </div>
+</body>
+</html>

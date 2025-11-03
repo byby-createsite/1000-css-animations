@@ -198,3 +198,4 @@ Feel free to contribute to this repository.
 <a href="./shattering-the-facade-to-reveal-the-selves.html">Shattering the Facade to Reveal the Selves</a> <br/><br/>
 <a href="./beyond-the-fractured-mirror.html">**Beyond the Fractured Mirror**</a> <br/><br/>
 <a href="./fractured-mirrors-of-the-soul-echoes-of-disintegration.html">"Fractured Mirrors of the Soul: Echoes of Disintegration"</a> <br/><br/>
+<a href="./mirrored-echoes-of-disintegration.html">'Mirrored Echoes of Disintegration'</a> <br/><br/>
