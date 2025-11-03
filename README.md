@@ -192,3 +192,4 @@ Feel free to contribute to this repository.
 <a href="./breaking-the-illusion.html">**Breaking the Illusion**</a> <br/><br/>
 <a href="./shattering-silhouettes-of-identity.html">Shattering Silhouettes of Identity</a> <br/><br/>
 <a href="./ephemeral-echoes-of-identity.html">**Ephemeral Echoes of Identity**</a> <br/><br/>
+<a href="./beyond-the-shattered-facade.html">Beyond the Shattered Facade</a> <br/><br/>
