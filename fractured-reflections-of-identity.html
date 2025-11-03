@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>"Fractured Reflections of Identity"</title>
+  <style>
+    /* css_foundation - start */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    /* css_foundation - end */
+
+    .fractured-mirrors {
+      position: relative;
+      aspect-ratio: 9/16;
+      min-height: 100vh;
+    }
+
+    .mira {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: hsla(0, 0%, 0%, 0.2);
+      border-radius: 50%;
+      width: 80%;
+      height: 80%;
+      animation: expand 3s cubic-bezier(0, 0.5, 1, 1) forwards;
+    }
+
+    .mira::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: hsla(0, 0%, 0%, 0.5);
+      border-radius: 50%;
+      width: 90%;
+      height: 90%;
+      animation: expand 3s cubic-bezier(0, 0.5, 1, 1) forwards;
+    }
+
+    .mira::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: hsla(0, 0%, 0%, 1);
+      border-radius: 50%;
+      width: 95%;
+      height: 95%;
+      animation: expand 3s cubic-bezier(0, 0.5, 1, 1) forwards;
+    }
+
+    .fractures {
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: ripple 3s cubic-bezier(0.2, 0, 0.5, 1) forwards;
+    }
+
+    @keyframes expand {
+      0% {
+        width: 0;
+        height: 0;
+      }
+      100% {
+        width: 80%;
+        height: 80%;
+      }
+    }
+
+    @keyframes ripple {
+      0% {
+        top: -100%;
+        left: -100%;
+        width: 200%;
+        height: 200%;
+        opacity: 1;
+      }
+      100% {
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        opacity: 0;
+      }
+    }
+
+    @keyframes reflection {
+      0% {
+        top: -20%;
+        left: -20%;
+      }
+      100% {
+        top: 20%;
+        left: 20%;
+      }
+    }
+
+    .codigo {
+      opacity: 0;
+      animation: fade-in 2s forwards;
+    }
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="fractured-mirrors">
+    <div class="mira"></div>
+    <div class="mira::before"></div>
+    <div class="mira::after"></div>
+    <div class="fractures"></div>
+    <div class="codigo">
+      <span class="selector">.mira</span><span class="brace">{</span>
+      <span class="property">background-color</span>: <span class="value-string">hsla(0, 0%, 0%, 0.2)</span>;
+      <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+      <span class="property">animation</span>: <span class="function">expand</span> <span class="value-number">3s</span> <span class="value-string">cubic-bezier(0, 0.5, 1, 1)</span> <span class="value-string">forwards</span>;
+      <span class="brace">}</span>
+    </div>
+  </div>
+</body>
+</html>

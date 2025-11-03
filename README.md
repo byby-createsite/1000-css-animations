@@ -187,3 +187,8 @@ Feel free to contribute to this repository.
 <a href="./shattering-identities-a-reflection-odyssey.html">"Shattering Identities: A Reflection Odyssey"</a> <br/><br/>
 <a href="./echoes-in-the-abyss---a-fragmented-journey-through-identity.html">"Echoes in the Abyss - A Fragmented Journey Through Identity"</a> <br/><br/>
 <a href="./fractured-identity-odyssey.html">"Fractured Identity Odyssey"</a> <br/><br/>
+<a href="./shattering-the-facade-a-digital-odyssey-of-identity.html">"Shattering the Facade: A Digital Odyssey of Identity"</a> <br/><br/>
+<a href="./fractured-reflections-of-identity.html">"Fractured Reflections of Identity"</a> <br/><br/>
+<a href="./breaking-the-illusion.html">**Breaking the Illusion**</a> <br/><br/>
+<a href="./shattering-silhouettes-of-identity.html">Shattering Silhouettes of Identity</a> <br/><br/>
+<a href="./ephemeral-echoes-of-identity.html">**Ephemeral Echoes of Identity**</a> <br/><br/>
