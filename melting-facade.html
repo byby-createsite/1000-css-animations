@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Melting Facade</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: relative;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .fragments {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      aspect-ratio: 1;
+      transform-origin: center;
+      animation: fragment 1s ease-out;
+    }
+
+    @keyframes fragment {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(2);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
+
+    .fragment-1 {
+      background-color: rgba(255, 165, 0, 0.5);
+      top: -25px;
+      left: -25px;
+    }
+
+    .fragment-2 {
+      background-color: rgba(255, 255, 0, 0.5);
+      top: -15px;
+      left: -15px;
+    }
+
+    .fragment-3 {
+      background-color: rgba(0, 255, 0, 0.5);
+      top: -25px;
+      left: 15px;
+    }
+
+    .fragment-4 {
+      background-color: rgba(0, 0, 255, 0.5);
+      top: -25px;
+      left: -25px;
+    }
+
+    div::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    div::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.fragments</span><span class="brace">{</span>
+    <span class="property">aspect-ratio</span>: <span class="value-number">1</span>;
+    <span class="property">animation</span>: <span class="function">fragment</span> <span class="value-number">1s</span> <span class="value-string">ease-out</span>;
+    <span class="brace">}</span>
+    <span class="selector">.fragment-1</span><span class="brace">{</span>
+    <span class="property">background-color</span>: <span class="value-string">rgba(255, 165, 0, 0.5)</span>;
+    <span class="property">transform</span>: <span class="function">translate</span> <span class="value-number">-25px</span> <span class="value-string">px</span> <span class="value-number">-25px</span> <span class="value-string">px</span>;
+    <span class="brace">}</span>
+    <span class="selector">.fragment-2</span><span class="brace">{</span>
+    <span class="property">background-color</span>: <span class="value-string">rgba(255, 255, 0, 0.5)</span>;
+    <span class="property">transform</span>: <span class="function">translate</span> <span class="value-number">-15px</span> <span class="value-string">px</span> <span class="value-number">-15px</span> <span class="value-string">px</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="fragments fragment-1"></div>
+    <div class="fragments fragment-2"></div>
+    <div class="fragments fragment-3"></div>
+    <div class="fragments fragment-4"></div>
+  </div>
+</body>
+</html>

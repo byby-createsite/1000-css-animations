@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Dancing Shattered Identities Reborn</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dancing Shattered Identities Reborn</title>
+    <style>
+        /*
+        * Foundation
+        */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+            background-color: #333;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top:15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+
+        .selector       { color: #F92672; }
+        .property       { color: #66D9EF; }
+        .value-number   { color: #AE81FF; }
+        .value-string   { color: #E6DB74; }
+        .value-color    { color: #A6E22E; }
+        .function       { color: #A6E22E; }
+
+        /*
+        * Animations 
+        */
+        .loading-element {
+            border-radius: 50%;
+            animation: loading-animation 1s linear infinite;
+        }
+
+        @keyframes loading-animation {
+            0% {
+                transform: translate(0, 0);
+                opacity: 1;
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
+            }
+
+            50% {
+                transform: translate(20px, -20px);
+                opacity: 0.5;
+                box-shadow: 10px 10px 10px 10px rgba(255, 255, 255, 0.5);
+            }
+
+            100% {
+                transform: translate(40px, 40px);
+                opacity: 1;
+                box-shadow: 20px 20px 20px 20px rgba(255, 255, 255, 1);
+            }
+        }
+
+        /*
+        * Animation Container
+        */
+        .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            aspect-ratio: 9/16;
+        }
+
+        .mirrored-multiplicity {
+            position: absolute;
+            width: 10%;
+            height: 10%;
+            background-color: #fff;
+            animation: mirrored-multiplicity-animation 1s linear infinite;
+            opacity: 0.9;
+        }
+
+        .multiplying-mirrors {
+            transform: rotate(35deg);
+            animation: multiplying-mirrors-animation 1s linear infinite;
+            opacity: 0.8;
+        }
+
+        .mirrored-multiplicity::pseudo {
+            content: "";
+            position: absolute;
+            width: 15%;
+            height: 15%;
+            background-color: #fff;
+            transform: rotate(25deg) translate(5%, 5%);
+            animation: mirrored-multiplicity-infinity 1s linear infinite;
+            opacity: 0.7;
+        }
+
+        .mirror-rack {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            animation: mirror-rack-animation 1s linear infinite;
+            opacity: 0.7;
+        }
+
+        .multiplying-mirrors::pseudo {
+            content: "";
+            position: absolute;
+            width: 20%;
+            height: 20%;
+            background-color: #fff;
+            transform: rotate(15deg) translate(8%, 8%);
+            animation: multiplying-mirrors-infinito 1s linear infinite;
+            opacity: 0.6;
+        }
+        
+        @keyframes mirrored-multiplicity-animation {
+            0% {
+                transform: rotate(5deg) translate(5%, 5%);
+                opacity: 0.9;
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.9);
+            }
+            
+            50% {
+                transform: rotate(35deg) translate(10%, 10%);
+                opacity: 0.5;
+                box-shadow: 5px 5px 5px 5px rgba(255, 255, 255, 0.5);
+            }
+            
+            100% {
+                transform: rotate(65deg) translate(20%, 20%);
+                opacity: 0.1;
+                box-shadow: 10px 10px 10px 10px rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        @keyframes multiplying-mirrors-animation {
+            0% {
+                transform: rotate(20deg);
+                opacity: 0.8;
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
+            }
+            
+            50% {
+                transform: rotate(40deg);
+                opacity: 0.4;
+                box-shadow: 3px 3px 3px 3px rgba(255, 255, 255, 0.4);
+            }
+            
+            100% {
+                transform: rotate(60deg);
+                opacity: 0.2;
+                box-shadow: 6px 6px 6px 6px rgba(255, 255, 255, 0.2);
+            }
+        }
+        
+        @keyframes mirrored-multiplicity-infinity {
+            0% {
+                transform: rotate(20deg) translate(3%, 3%);
+                opacity: 0.7;
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+            }
+            
+            50% {
+                transform: rotate(40deg) translate(7%, 7%);
+                opacity: 0.3;
+                box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.3);
+            }
+            
+            100% {
+                transform: rotate(60deg) translate(15%, 15%);
+                opacity: 0.1;
+                box-shadow: 4px 4px 4px 4px rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        @keyframes multiplying-mirrors-infinito {
+            0% {
+                transform: rotate(15deg) translate(5%, 5%);
+                opacity: 0.6;
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+            }
+            
+            50% {
+                transform: rotate(35deg) translate(10%, 10%);
+                opacity: 0.2;
+                box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.2);
+            }
+            
+            100% {
+                transform: rotate(55deg) translate(25%, 25%);
+                opacity: 0.1;
+                box-shadow: 4px 4px 4px 4px rgba(255, 255, 255, 0.1);
+            }
+        }
+        
+        @keyframes mirror-rack-animation {
+            0% {
+                transform: rotate(10deg);
+                opacity: 0.7;
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+            }
+            
+            50% {
+                transform: rotate(50deg);
+                opacity: 0.3;
+                box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.3);
+            }
+            
+            100% {
+                transform: rotate(90deg);
+                opacity: 0.1;
+                box-shadow: 4px 4px 4px 4px rgba(255, 255, 255, 0.1);
+            }
+        }
+        
+        /*
+        * Interdependent Elements
+        */
+        .animation-container::pseudo {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            transform: scale(1.1) rotate(20deg);
+        }
+        
+        /*
+        * Interdependent Elements (Secondary)
+        */
+        .animation-container::pseudo::pseudo {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            background-color: #fff;
+            transform: scale(0.9) rotate(-10deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="codigo">
+        <span class="selector">.mirrored-multiplicity</span><span class="brace">{</span>
+        <span class="property">width</span>: <span class="value-number">10%</span>;
+        <span class="property">height</span>: <span class="value-number">10%</span>;
+        <span class="property">background-color</span>: <span class="value-color">#fff</span>;
+        <span class="property">animation</span>: <span class="function">mirrored-multiplicity-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+        <span class="property">opacity</span>: <span class="value-number">0.9</span>;
+        <span class="brace">}</span>
+    </div>
+    <div class="animation-container">
+        <!--<-- Element 1: Mirror Multiplicity -->
+        <div class="mirrored-multiplicity"></div>
+        <!--<-- Element 2: Multiplying Mirrors -->
+        <div class="multiplying-mirrors"></div>
+        <!--<-- Element 3: Infinity Ripple -->
+        <div class="multiplying-mirrors::pseudo"></div>
+        <!--<-- Element 4: Mirror Rack -->
+        <div class="mirror-rack"></div>
+        <!--<-- Element 5: Infinity Ripple (Secondary) -->
+        <div class="multiplying-mirrors::pseudo::pseudo"></div>
+    </div>
+</body>
+
+</html>

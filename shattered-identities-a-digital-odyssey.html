@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Shattered Identities: A Digital Odyssey</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shattered Identities: A Digital Odyssey</title>
+  <style>
+    /* Css foundation from problem */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: #121212;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* Fragmented Mirrors Animation */
+    .mirrors-container {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .mirrors-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+    }
+
+    .mirrors-container::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 150px;
+      height: 150px;
+      background-color: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .shattered-mirrors {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      animation: shattered-mirrors 2s infinite;
+    }
+
+    .shattered-mirrors::before,
+    .shattered-mirrors::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: shattered-mirrors-piece 2s infinite;
+    }
+
+    .shattered-mirrors::before {
+      top: 50px;
+      left: 50px;
+      animation-delay: 0.5s;
+    }
+
+    .shattered-mirrors::after {
+      top: 100px;
+      left: 100px;
+      animation-delay: 1s;
+    }
+
+    /* Animations */
+    @keyframes shattered-mirrors {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(360deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes shattered-mirrors-piece {
+      0% {
+        transform: translate(0px, 0px);
+        opacity: 1;
+      }
+      50% {
+        transform: translate(50px, 50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(0px, 0px);
+        opacity: 1;
+      }
+    }
+
+    /* Core animation example in the `div.codigo`: */
+    .loading-element {
+      border-radius: 50%;
+      animation: loading-animation 1s linear infinite;
+    }
+
+    /* Additional animations for replay value */
+    @keyframes loading-animation {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+        background-color: #fff;
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .loading-element-second-play {
+      animation: loading-animation-second-play 1s linear infinite;
+    }
+
+    @keyframes loading-animation-second-play {
+      0% {
+        transform: scale(1);
+        background-color: #fff;
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* The mirrored pieces that create visual illusions */
+    .mirrored-pieces {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .mirrored-pieces::before,
+    .mirrored-pieces::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #fff;
+      border-radius: 50%;
+      transform: translateX(50px);
+    }
+
+    .mirrored-pieces::before {
+      top: 50px;
+      left: 0;
+      animation: mirrored-pieces 2s infinite;
+    }
+
+    .mirrored-pieces::after {
+      top: 0;
+      left: 50px;
+      animation: mirrored-pieces 2s infinite;
+    }
+
+    /* The mirrored pieces animation */
+    @keyframes mirrored-pieces {
+      0% {
+        transform: translateX(0px);
+      }
+      50% {
+        transform: translateX(100px);
+      }
+      100% {
+        transform: translateX(0px);
+      }
+    }
+
+    /* Add a color effect on second play */
+    .mirrored-pieces-second-play::before,
+    .mirrored-pieces-second-play::after {
+      animation: mirrored-pieces-second-play 2s infinite;
+    }
+
+    @keyframes mirrored-pieces-second-play {
+      0% {
+        transform: translateX(0px);
+      }
+      50% {
+        transform: translateX(150px);
+      }
+      100% {
+        transform: translateX(0px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="mirrors-container">
+      <div class="shattered-mirrors"></div>
+    </div>
+  </div>
+</body>
+</html>

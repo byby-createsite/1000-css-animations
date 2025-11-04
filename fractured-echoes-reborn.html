@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Fractured Echoes Reborn</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top:15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+
+        .selector       { color: #F92672; }
+        .property       { color: #66D9EF; }
+        .value-number   { color: #AE81FF; }
+        .value-string   { color: #E6DB74; }
+        .value-color    { color: #A6E22E; }
+        .function       { color: #A6E22E; }
+
+        .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .fractured-glass {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: shatter 2s infinite;
+        }
+
+        .fractured-glass::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: shake 2s infinite;
+        }
+
+        .fragment {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: reflect 1s infinite;
+        }
+
+        .fragment1 {
+            top: 20%;
+        }
+
+        .fragment2 {
+            top: 40%;
+        }
+
+        .fragment3 {
+            top: 60%;
+        }
+
+        .mirror {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            background-color: #999;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: unify 2s infinite;
+        }
+
+        @keyframes shatter {
+            0% {
+                clip-path: polygon(50% 0, 100% 100%, 0 100%);
+            }
+            50% {
+                clip-path: polygon(100% 0, 0 100%, 50% 50%);
+            }
+            100% {
+                clip-path: polygon(50% 100, 0 0, 100% 0);
+            }
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(-10%);
+            }
+            50% {
+                transform: translateX(+10%);
+            }
+            100% {
+                transform: translateX(-10%);
+            }
+        }
+
+        @keyframes reflect {
+            from {
+                transform: rotate(-45deg) scale(1);
+            }
+            to {
+                transform: rotate(45deg) scale(0.5);
+            }
+        }
+
+        @keyframes unify {
+            from {
+                background-color: #999;
+            }
+            to {
+                background-color: #000;
+            }
+        }
+
+        @keyframes loading-animation {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+
+        .loading-element {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: loading-animation 1s infinite linear;
+        }
+    </style>
+</head>
+<body>
+    <div class="codigo">
+        <span class="selector">.loading-element</span><span class="brace">{</span>
+        <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+        <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+        <span class="brace">}</span>
+    </div>
+    <div class="animation-container">
+        <div class="fractured-glass">
+            <div class="fragment fragment1"></div>
+            <div class="fragment fragment2"></div>
+            <div class="fragment fragment3"></div>
+        </div>
+        <div class="mirror"></div>
+    </div>
+</body>
+</html>
