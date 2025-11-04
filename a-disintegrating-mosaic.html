@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>A Disintegrating Mosaic</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top:15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+
+        .selector       { color: #F92672; }
+        .property       { color: #66D9EF; }
+        .value-number   { color: #AE81FF; }
+        .value-string   { color: #E6DB74; }
+        .value-color    { color: #A6E22E; }
+        .function       { color: #A6E22E; }
+
+        .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .loading-element {
+            border-radius: 50%;
+            animation: loading-animation 1s linear infinite;
+        }
+
+        @keyframes loading-animation {
+            0% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1) rotate(180deg);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1) rotate(360deg);
+                opacity: 1;
+            }
+        }
+
+        /* Fragmenta identidade digital - Mosaico quebrado */
+        .mosaico::before, .mosaico::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #FFF;
+            border-radius: 50%;
+        }
+
+        /* Fragmenta identidade digital - Mosaico quebrado */
+        .mosaico::before {
+            background: #FFF;
+            transform: translateX(-10px) translateY(-10px);
+            animation: fragmentacao 2s linear infinite;
+        }
+
+        /* Fragmenta identidade digital - Mosaico quebrado */
+        .mosaico::after {
+            background: #FFF;
+            transform: translateX(0) translateY(0);
+            animation: fragmentacao 2s linear infinite;
+        }
+
+        @keyframes fragmentacao {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Fragmenta identidade digital - Mosaico quebrado */
+        .reflexoes {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 40% 100%, 0% 80%);
+            background: linear-gradient(90deg, #333 0%, #444 100%);
+            transform: scale(0);
+            animation: reflexao 1s linear infinite;
+        }
+
+        .reflexoes::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #FFF;
+            transform: scale(0);
+            animation: reflexao 1s linear infinite;
+        }
+
+        .reflexoes::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #FFF;
+            transform: scale(0);
+            animation: reflexao 1s linear infinite;
+        }
+
+        @keyframes reflexao {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Fragmenta identidade digital - Ecos do passado */
+        .eco::before, .eco::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(90deg, #333 0%, #444 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 40% 100%, 0% 80%);
+        }
+
+        .eco::before {
+            background: linear-gradient(90deg, #333 0%, #444 100%);
+            transform: translateX(-30px) translateY(0);
+            animation: eco 2s linear infinite;
+        }
+
+        .eco::after {
+            background: linear-gradient(90deg, #333 0%, #444 100%);
+            transform: translateX(30px) translateY(0);
+            animation: eco 2s linear infinite;
+        }
+
+        @keyframes eco {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="codigo">
+        <span class="selector">.mosaico</span><span class="brace">{</span>
+        <span class="property">background</span>: <span class="value-string">#555</span>;
+        <span class="property">transition</span>: <span class="function">ease-in-out</span> <span class="value-number">0.5s</span>;
+        <span class="brace">}</span>
+        <span class="selector">.mosaico::before</span><span class="bracket">{</span>
+        <span class="property">animation</span>: <span class="function">fragmentacao</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+        <span class="bracket">}</span>
+    </div>
+    <div class="animation-container">
+        <div class="mosaico">
+            <div class="reflexoes"></div>
+            <div class="eco"></div>
+        </div>
+    </div>
+</body>
+</html>
