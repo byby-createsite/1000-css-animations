@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Ephemeral Identity Reckoning</title>
+    <meta charset="UTF-8">
+    <title>Ephemeral Identity Reckoning</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+        background-color: black;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .codigo {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #272822;
+        color: #F8F8F2;
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 18px;
+        padding: 20px;
+        border-radius: 8px;
+        white-space: pre-line;
+        text-align: left;
+        line-height: 1.6;
+        max-height: 25%;
+        max-width: 75%;
+        width: 75%;
+        height: 25%;
+        top:15%;
+        overflow-y: hidden;
+        box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+      }
+
+      .selector       { color: #F92672; }
+      .property       { color: #66D9EF; }
+      .value-number   { color: #AE81FF; }
+      .value-string   { color: #E6DB74; }
+      .value-color    { color: #A6E22E; }
+      .function       { color: #A6E22E; }
+
+      .animation-container {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 50%;
+        overflow: hidden;
+        background: transparent;
+      }
+
+      /* Camadas do espelho */
+      .espelho {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100px;
+          height: 100px;
+          border: solid 5px white;
+          border-radius: 50%;
+          background: linear-gradient(to bottom right, #FF69B4, #F8E231);
+          transform: rotate(45deg);
+          transition: transform 1s linear;
+      }
+
+      .espelho:after {
+          content: '';
+          position: absolute;
+          top: -100px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: #00BFFF;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          z-index: -1;
+          animation: pulse 2s ease-in-out;
+      }
+
+      /* Fragmente do espelho */
+      .espelho-fragmento {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 200px;
+          height: 200px;
+          background: linear-gradient(to bottom right, #FF69B4, #F8E231);
+          transform: rotate(45deg);
+          animation: fragmento 2s ease-in-out;
+      }
+
+      @keyframes pulse {
+        0% {
+            transform: scale(1);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1.5);
+            opacity: 0.8;
+        }
+
+        95% {
+            box-shadow: 0px 0px 10px #008000;
+        }
+      }
+
+      @keyframes fragmento {
+        0% {
+            transform: translate(0, 0);
+            opacity: 0;
+        }
+        50% {
+            transform: translate(0, 50px);
+            opacity: 0.5;
+        }
+
+        100% {
+            transform: translate(0, -100px);
+            opacity: 0;
+        }
+      }
+
+      .mirror-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .muro {
+        position: relative;
+        width: 20px;
+        height: 100%;
+        background: #FFFFFF;
+        border-radius: 20px;
+      }
+
+      .muro:active {
+        box-shadow: 0px 0px 20px #FF69B4;
+      }
+
+      @keyframes pulse2 {
+        0% {
+            transform: translateX(0);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(100%);
+            opacity: 0.5;
+        }
+      }
+
+      .muro:after {
+        content: '';
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 5px;
+        height: 10px;
+        background: #FFFFFF;
+        border-radius: 50%;
+        animation: pulse2 1s ease-in-out infinite;
+      }
+
+      .espelho-fragmento2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 150px;
+        height: 150px;
+        background: linear-gradient(to bottom right, #FF69B4, #F8E231);
+        transform: rotate(45deg);
+        animation: fragmento2 2s ease-in-out;
+
+        .selector {
+          .property { color: #66D9EF; }
+          .value-number { color: #AE81FF; }
+          .value-string { color: #E6DB74; }
+          .value-color { color: #A6E22E; }
+          .function { color: #A6E22E; }
+          .brace {
+            color: #E6DB74;
+          }
+        }
+      }
+
+      /* Fragmente do espelho 2 */
+      .espelho-fragmento2:after {
+        content: '';
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 20px;
+        background: #FFFFFF;
+        border-radius: 50%;
+        box-shadow: 0px 0px 10px #008000;
+        animation: pulse 2s ease-in-out;
+      }
+
+      /* Camadas do labirinto */
+
+      .labirinto {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+        bottom: 0%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, #FF69B4, #F8E231);
+        animation: labirinto 2s ease-in-out infinite;
+      }
+
+      @keyframes labirinto {
+        0% {
+            transform: scale(1);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1.5);
+            opacity: 0.8;
+        }
+      }
+    </style>
+</head>
+
+<body>
+  <div class="codigo">
+        <span class="selector">.labirinto</span>
+        <span class="brace">{</span>
+        <span class="property">background</span>-<span class="property">linear</span>: <span class="value-string">linear-gradient(to right, #FF69B4, #F8E231)</span>;
+        <span class="property">animation</span>: <span class="function">labirinto</span> <span class="value-number">2s</span> <span class="value-string">ease-in-out</span> <span class="value-string">infinite</span>;
+        <span class="brace"></span>
+    </div>
+  <div class="animation-container">
+    <div class="mirrored-container">
+        <div class="espelho"> 
+            <div class="espelho-fragmento"> </div>
+            <div class="espelho-fragmento2"> </div>
+        </div>
+    </div>
+    <div class="mirror-container">
+        <div class="muro"></div>
+        <div class="muro"></div>
+        <div class="muro"></div>
+    </div>
+  </div>
+</body>
+</html>

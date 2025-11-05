@@ -2,263 +2,302 @@
 <html lang="pt-BR">
 <head>
     <title>Shattered Harmonies Within</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shattered Harmonies Within</title>
-  <style>
-    /* Css foundation rules */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+  /* css_foundation */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    body {
-      background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
-      background-color: #272828;
-      background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      overflow: hidden;
-    }
+  body {
+    background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+    background-color: black;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
 
-    /* Highlighter code block */
-    .codigo {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #272822;
-      color: #F8F8F2;
-      font-family: 'Consolas', 'Monaco', monospace;
-      font-size: 18px;
-      padding: 20px;
-      border-radius: 8px;
-      white-space: pre-line;
-      text-align: left;
-      line-height: 1.6;
-      max-height: 25%;
-      max-width: 75%;
-      width: 75%;
-      height: 25%;
-      top:15%;
-      overflow-y: hidden;
-      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
-    }
+  .codigo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #272822;
+    color: #F8F8F2;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    max-height: 25%;
+    max-width: 75%;
+    width: 75%;
+    height: 25%;
+    top:15%;
+    overflow-y: hidden;
+    box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+  }
 
-    .selector       { color: #F92672; }
-    .property       { color: #66D9EF; }
-    .value-number   { color: #AE81FF; }
-    .value-string   { color: #E6DB74; }
-    .value-color    { color: #A6E22E; }
-    .function       { color: #A6E22E; }
+  .selector       { color: #F92672; }
+  .property       { color: #66D9EF; }
+  .value-number   { color: #AE81FF; }
+  .value-string   { color: #E6DB74; }
+  .value-color    { color: #A6E22E; }
+  .function       { color: #A6E22E; }
 
-    /* Core animation structure */
-    .loading-element {
-      /* Fractal-like reflection */
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      background-color: #33CC33;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation: loading-morph 1s linear infinite;
-    }
+  /* animation-container */
+  .animation-container {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+  }
 
-    @keyframes loading-morph {
-      0% {
-        transform: translate(-50%, -50%) scale(1);
-        background-color: #33CC33;
-      }
-      20% {
-        transform: translate(-50%, -50%) scale(1.1);
-        background-color: #66CCCC;
-      }
-      40% {
-        transform: translate(-50%, -50%) scale(1);
-        background-color: #999999;
-      }
-      60% {
-        transform: translate(-50%, -50%) scale(0.9);
-        background-color: #FF9933;
-      }
-      80% {
-        transform: translate(-50%, -50%) scale(1);
-        background-color: #CC33CC;
-      }
-      100% {
-        transform: translate(-50%, -50%) scale(1);
-        background-color: #33CC33;
-      }
-    }
+  /* shards */
+  .shard-1 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background-color: #333;
+    border-radius: 100%;
+    clip-path: polygon(50% 0, 100% 100%, 75% 75%);
+    animation: shard-1-animation 2s infinite;
+  }
 
-    /* Fractured identity layers */
-    .identity-float-1 {
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      transform: translate(-50%, -10%);
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background-color: #CC0000;
-      animation: identity-float 1s ease-in-out;
-    }
+  @keyframes shard-1-animation {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-20%); }
+    100% { transform: translateX(-20%); }
+  }
 
-    @keyframes identity-float {
-      0% {
-        transform: translate(-50%, -10%);
-        opacity: 1;
-      }
-      20% {
-        transform: translate(-50%, -10%) translateX(10px);
-        opacity: 0.5;
-      }
-      40% {
-        transform: translate(-50%, -10%);
-        opacity: 1;
-      }
-      60% {
-        transform: translate(-50%, -10%) translateY(10px);
-        opacity: 0.5;
-      }
-      80% {
-        transform: translate(-50%, -10%);
-        opacity: 1;
-      }
-      100% {
-        transform: translate(-50%, -10%);
-        opacity: 1;
-      }
-    }
+  /* shards-2 */
+  .shard-2 {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background-color: #666;
+    border-radius: 100%;
+    clip-path: polygon(25% 0, 100% 100%, 50% 75%);
+    animation: shard-2-animation 3s infinite;
+  }
 
-    .identity-float-2 {
-      position: absolute;
-      top: 15%;
-      left: 55%;
-      transform: translate(-55%, -15%);
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background-color: #00CC00;
-      animation: identity-float 1s ease-in-out;
-    }
+  @keyframes shard-2-animation {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(10%); }
+    100% { transform: translateX(10%); }
+  }
 
-    /* Abyss */
-    .abyss {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      height: 50%;
-      background-color: #000000;
-      animation: abyss-dissolve 1s linear;
-    }
+  /* shards-3 */
+  .shard-3 {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    width: 10%;
+    height: 100%;
+    background-color: #888;
+    border-radius: 50%;
+    animation: shard-3-animation 1.5s infinite;
+  }
 
-    @keyframes abyss-dissolve {
-      0% {
-        height: 50%;
-      }
-      100% {
-        height: 0;
-      }
-    }
+  @keyframes shard-3-animation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10%); }
+    100% { transform: translateY(-10%); }
+  }
 
-    /* Kaleidoscope of colors */
-    .colors {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      animation: colors-shift 2s infinite;
-    }
+  /* shards-4 */
+  .shard-4 {
+    position: absolute;
+    top: 25%;
+    left: 75%;
+    width: 10%;
+    height: 100%;
+    background-color: #999;
+    border-radius: 50%;
+    animation: shard-4-animation 2.5s infinite;
+  }
 
-    @keyframes colors-shift {
-      0% {
-        background: linear-gradient(to right, #FF0000 0%, #00FF00 50%, #0000FF 100%);
-      }
-      20% {
-        background: linear-gradient(to right, #33CC33 0%, #66CCCC 50%, #FF9933 100%);
-      }
-      40% {
-        background: linear-gradient(to right, #FF0000 0%, #00FF00 50%, #0000FF 100%);
-      }
-    }
+  @keyframes shard-4-animation {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-5%); }
+    100% { transform: translateX(-5%); }
+  }
 
-    /* Animation container */
-    .animation-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 50%;
-      overflow: hidden;
-      background: transparent;
-    }
+  /* shard-5 */
+  .shard-5 {
+    position: absolute;
+    top: 75%;
+    left: 25%;
+    width: 10%;
+    height: 100%;
+    background-color: #ccc;
+    border-radius: 50%;
+    animation: shard-5-animation 3.5s infinite;
+  }
 
-    /* Initial state */
-    .shattered-identity-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
+  @keyframes shard-5-animation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(5%); }
+    100% { transform: translateY(5%); }
+  }
 
-    .shattered-identity-fragment {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: #33CC33;
-      animation: loading-morph 1s linear infinite;
-    }
+  /* shard-6 */
+  .shard-6 {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 10%;
+    height: 100%;
+    background-color: #333;
+    border-radius: 100%;
+    clip-path: polygon(50% 0, 100% 100%, 75% 75%);
+    animation: shard-6-animation 1.5s infinite;
+  }
 
-  </style>
-  <body>
-    <div class="codigo">
-      <span class="selector">.shattered-identity-container</span><span class="brace">{</span>
-      <span class="property">display</span>: <span class="value-string">flex</span>;
-      <span class="property">flex-direction</span>: <span class="value-string">column</span>;
-      <span class="property">align-items</span>: <span class="value-string">center</span>;
-      <span class="property">justify-content</span>: <span class="value-string">center</span>;
-      <span class="property">width</span>: <span class="value-number">100%</span>;
-      <span class="property">height</span>: <span class="value-number">100%</span>;
-      <span class="property">position</span>: <span class="value-string">absolute</span>;
-      <span class="property">top</span>: <span class="value-number">0</span>;
-      <span class="property">left</span>: <span class="value-number">0</span>;
-      <span class="brace">}</span>
-    </div>
-    <div class="animation-container">
-      <div class="shattered-identity-container">
-        <div class="shattered-identity-fragment">
-          <div class="loading-element">
-            <div class="identity-float-1">
-              <div class="identity-float-2">
-                <div class="abyss">
-                  <div class="colors"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+  @keyframes shard-6-animation {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-15%); }
+    100% { transform: translateX(-15%); }
+  }
+
+  /* shard-7 */
+  .shard-7 {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 10%;
+    height: 100%;
+    background-color: #999;
+    border-radius: 50%;
+    animation: shard-7-animation 2.5s infinite;
+  }
+
+  @keyframes shard-7-animation {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(5%); }
+    100% { transform: translateX(5%); }
+  }
+
+  /* shard-8 */
+  .shard-8 {
+    position: absolute;
+    top: 75%;
+    left: 75%;
+    width: 10%;
+    height: 100%;
+    background-color: #888;
+    border-radius: 50%;
+    animation: shard-8-animation 1s infinite;
+  }
+
+  @keyframes shard-8-animation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5%); }
+    100% { transform: translateY(-5%); }
+  }
+
+  /* shard-9 */
+  .shard-9 {
+    position: absolute;
+    top: 25%;
+    left: 75%;
+    width: 10%;
+    height: 100%;
+    background-color: #ccc;
+    border-radius: 50%;
+    animation: shard-9-animation 2.5s infinite;
+  }
+
+  @keyframes shard-9-animation {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-10%); }
+    100% { transform: translateX(-10%); }
+  }
+
+  /* shard-10 */
+  .shard-10 {
+    position: absolute;
+    top: 75%;
+    left: 25%;
+    width: 10%;
+    height: 100%;
+    background-color: #999;
+    border-radius: 50%;
+    animation: shard-10-animation 1s infinite;
+  }
+
+  @keyframes shard-10-animation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(5%); }
+    100% { transform: translateY(5%); }
+  }
+
+  /* Loading element */
+  .loading-element {
+    /* selector and CSS structure */
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .loading-element::before {
+    /* loading animation */
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 100%;
+    animation: loading- animation 1s infinite;
+  }
+  @keyframes loading- animation {
+    0% { transform: scale(1); }
+    50% { transform: scale(2); }
+    100% { transform: scale(1); }
+  }
+</style>
+</head>
+<body>
+  <div class="codigo">
+   <span class="selector">.loading-element</span><span class="brace">{</span>
+   <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+   <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+   <span class="brace">}</span>
+ </div>
+ <div class="animation-container">
+  <div class="shard-1"></div>
+  <div class="shard-2"></div>
+  <div class="shard-3"></div>
+  <div class="shard-4"></div>
+  <div class="shard-5"></div>
+  <div class="shard-6"></div>
+  <div class="shard-7"></div>
+  <div class="shard-8"></div>
+  <div class="shard-9"></div>
+  <div class="shard-10"></div>
+ </div>
+</body>
 </html>
