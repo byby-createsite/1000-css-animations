@@ -226,3 +226,4 @@ Feel free to contribute to this repository.
 <a href="./shattered-harmonies.html">Shattered Harmonies</a> <br/><br/>
 <a href="./shattered-harmonies-reborn.html">Shattered Harmonies Reborn</a> <br/><br/>
 <a href="./ephemeral-reflections-of-disintegration.html">Ephemeral Reflections of Disintegration</a> <br/><br/>
+<a href="./whispers-in-the-fractured-abyss.html">Whispers in the Fractured Abyss</a> <br/><br/>
