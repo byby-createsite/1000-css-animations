@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>**Echoes of Ephemeral Identity**</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: #000;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #:A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      aspect-ratio: 9/16;
+    }
+
+    .fratura {
+      position: absolute;
+      width: 80px;
+      height: 200px;
+      background: linear-gradient(to bottom, #fff, #000);
+      clip-path: polygon(50% 0, 80% 10%, 100% 50%, 80% 90%, 50% 100%);
+      border-radius: 10px;
+      animation: refracao 2s infinite;
+      transition: top 2s;
+    }
+
+    @keyframes refracao {
+      0% {
+        top: 0;
+      }
+      100% {
+        top: -50vh;
+      }
+    }
+
+    .espelho-1 {
+      position: absolute;
+      top: -20vh;
+      left: 10vw;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(to bottom right, #aaa, #555);
+      clip-path: polygon(50% 0, 50% 30%, 90% 0, 100% 100%, 0 100%);
+      border-radius: 10px;
+      animation: espelho 1.5s infinite;
+    }
+
+    @keyframes espelho {
+      0% {
+        transform: rotate(0);
+      }
+      50% {
+        transform: rotate(5deg);
+      }
+      100% {
+        transform: rotate(0);
+      }
+    }
+
+    .espelho-2 {
+      position: absolute;
+      top: 10vh;
+      left: -80vw;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(to bottom right, #aaa, #555);
+      clip-path: polygon(50% 0, 50% 30%, 90% 0, 100% 100%, 0 100%);
+      border-radius: 10px;
+      animation: espelho 2.3s infinite;
+    }
+
+    @keyframes espelho {
+      0% {
+        transform: rotate(0);
+      }
+      60% {
+        transform: rotate(10deg);
+      }
+      100% {
+        transform: rotate(0);
+      }
+    }
+
+    .espelho-3 {
+      position: absolute;
+      top: -90vh;
+      left: 10vw;
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(to bottom right, #000, #aaa);
+      clip-path: polygon(50% 0, 50% 30%, 90% 0, 100% 100%, 0 100%);
+      border-radius: 10px;
+      animation: pequeno-espelho 1.9s infinite;
+    }
+
+    @keyframes pequeno-espelho {
+      0% {
+        top: 0;
+      }
+      80% {
+        top: 20vh;
+      }
+      100% {
+        top: 0;
+      }
+    }
+
+    .espelho-4 {
+      position: absolute;
+      top: 80vh;
+      left: 90vw;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(to bottom right, #aaa, #555);
+      clip-path: polygon(50% 0, 50% 30%, 90% 0, 100% 100%, 0 100%);
+      border-radius: 10px;
+      animation: grande-espelho 2.8s infinite;
+    }
+
+    @keyframes grande-espelho {
+      0% {
+        transform: rotate(0);
+      }
+      50% {
+        transform: rotate(20deg);
+      }
+      100% {
+        transform: rotate(0);
+      }
+    }
+
+    .fragmentos {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #fff, #000);
+      clip-path: polygon(50% 0, 100% 90%, 100% 100%, 80% 90%);
+      border-radius: 10px;
+      animation: fragmentos 3s infinite;
+    }
+
+    @keyframes fragmentos {
+      0% {
+        bottom: 0;
+      }
+      50% {
+        bottom: 50vh;
+      }
+      100% {
+        bottom: 0;
+      }
+    }
+
+    .fragmentos-2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #000, #fff);
+      clip-path: polygon(50% 0, 100% 90%, 100% 100%, 80% 90%);
+      border-radius: 10px;
+      animation: fragmentos-2 2.5s infinite;
+      transform: rotate(5deg);
+    }
+
+    @keyframes fragmentos-2 {
+      0% {
+        top: 0;
+      }
+      60% {
+        top: -20vh;
+      }
+      100% {
+        top: 0;
+      }
+    }
+
+    .codigo {
+      z-index: 1;
+    }
+
+    @keyframes loading-animation {
+      0% {
+        border-radius: 50%;
+        background: linear-gradient(to bottom, #aaa, #555);
+      }
+      50% {
+        border-radius: 10px;
+        background: linear-gradient(to bottom, #fff, #000);
+      }
+      100% {
+        border-radius: 50%;
+        background: linear-gradient(to bottom, #aaa, #555);
+      }
+    }
+
+    .loading-element {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      animation: loading-animation 2s infinite;
+      transition: top 2s;
+    }
+
+    .container-reflexao {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    #reflexao {
+      width: 60vw;
+      height: 40vh;
+      background: linear-gradient(to bottom, #fff, #000);
+      border-radius: 10px;
+      box-shadow: -4px 10px 18px rgba(0, 0, 0, 0.6);
+    }
+
+    #reflexao-fragmentos {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 10vw);
+      width: 40px;
+      height: 20px;
+      background: linear-gradient(to bottom, #000, #fff);
+      border-radius: 10px;
+      animation: reflexao 3s infinite;
+    }
+
+    @keyframes reflexao {
+      0% {
+        transform: translate(-50%, 0);
+      }
+      50% {
+        transform: translate(-50%, 30vh);
+      }
+      100% {
+        transform: translate(-50%, 0);
+      }
+    }
+
+    #fragmento {
+      position: absolute;
+      top: -80vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 50%;
+      background: linear-gradient(to bottom, #fff, #000);
+      border-radius: 10px;
+      box-shadow: -4px 10px 18px rgba(0, 0, 0, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+    <span class="selector">#reflexao-fragmentos</span><span class="brace">{</span>
+    <span class="property">animation</span>: <span class="function">reflexao</span> <span class="value-number">3s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="br">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="fragmentos"></div>
+    <div class="fragmentos-2"></div>
+    <div class="fragmentos"></div>
+    <div id="fragmento"></div>
+    <div id="reflexao"></div>
+    <div class="container-reflexao">
+      <div id="reflexao-fragmentos"></div>
+    </div>
+    <div class="fratura"></div>
+    <div class="espelho-1"></div>
+    <div class="espelho-2"></div>
+    <div class="espelho-3"></div>
+    <div class="espelho-4"></div>
+  </div>
+  <div class="loading-element"></div>
+</body>
+</html>

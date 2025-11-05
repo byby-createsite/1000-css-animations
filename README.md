@@ -220,3 +220,4 @@ Feel free to contribute to this repository.
 <a href="./fractured-harmony-of-the-self.html">Fractured Harmony of the Self</a> <br/><br/>
 <a href="./a-disintegrating-mosaic.html">A Disintegrating Mosaic</a> <br/><br/>
 <a href="./reflections-of-self-destruction-in-fractured-mirrors.html">Reflections of Self-Destruction in Fractured Mirrors</a> <br/><br/>
+<a href="./echoes-of-ephemeral-identity.html">**Echoes of Ephemeral Identity**</a> <br/><br/>
