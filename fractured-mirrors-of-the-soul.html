@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <title>"Fractured Mirrors of the Soul"</title>
+    <title>Fractured Mirrors of the Soul</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fractured Mirrors of the Soul</title>
   <style>
-    /* CSS Foundation */
     * {
       margin: 0;
       padding: 0;
@@ -12,14 +14,13 @@
 
     body {
       background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
-      background-color: #1b1a19;
+      background-color:black;
       background-size: cover;
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100vh;
       overflow: hidden;
-      font-family: 'Consolas', 'Monaco', monospace;
     }
 
     .codigo {
@@ -65,171 +66,244 @@
       overflow: hidden;
       background: transparent;
       aspect-ratio: 9/16;
+      min-height: 100vh;
     }
 
-    .loading-element {
+    .fracture {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      background-color: #333;
+      animation: crack 3s infinite;
+    }
+
+    .fracture:before {
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to bottom, #ff9900, #ff6633);
-      border-radius: 50%;
-      animation: loading-animation 1s linear infinite;
+      background-color: #333;
+      transform: rotate(45deg);
+      animation: crack-2 3s infinite;
     }
 
-    /* Fractured Mirrors */
-    .fragmentos {
+    .fracture:after {
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(255, 255, 255, 0.2);
-      clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 50% 100%, 0% 50%);
-      animation: reflect-fragment 2s linear;
+      background-color: #333;
+      transform: rotate(90deg);
+      animation: crack-3 3s infinite;
     }
 
-    @keyframes reflect-fragment {
+    @keyframes crack {
+      0% {
+        clip-path: circle(25px at center center);
+      }
+      20% {
+        clip-path: inset(25px);
+      }
+      40% {
+        clip-path: circle(25px at center center);
+      }
+      60% {
+        clip-path: inset(25px);
+      }
+      80% {
+        clip-path: circle(25px at center center);
+      }
+    }
+
+    @keyframes crack-2 {
+      0% {
+        transform: rotate(45deg);
+      }
+      20% {
+        transform: rotate(90deg);
+      }
+      40% {
+        transform: rotate(45deg);
+      }
+      60% {
+        transform: rotate(90deg);
+      }
+      80% {
+        transform: rotate(45deg);
+      }
+    }
+
+    @keyframes crack-3 {
+      0% {
+        transform: rotate(90deg);
+      }
+      20% {
+        transform: rotate(135deg);
+      }
+      40% {
+        transform: rotate(90deg);
+      }
+      60% {
+        transform: rotate(135deg);
+      }
+      80% {
+        transform: rotate(90deg);
+      }
+    }
+
+    @keyframes ripple {
       0% {
         transform: scale(1);
+        opacity: 1;
       }
       50% {
-        transform: scale(1.5);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    /* Broken Identity */
-    .bico {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to right, #ff9900, #ff6633);
-      border-radius: 50%;
-      animation: bico-animation 2s linear;
-    }
-
-    @keyframes bico-animation {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.5);
-        transform: rotate(15deg);
-      }
-      100% {
-        transform: rotate(0deg);
-      }
-    }
-
-    /* Mirrors of the Soul */
-    .espelhos {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, #ff9900, #ff6633);
-      animation: espelhos-1 2s linear forwards;
-    }
-
-    @keyframes espelhos-1 {
-      0% {
-        transform: scale(0);
-      }
-      100% {
-        transform: scale(3);
-      }
-    }
-
-    .espelhos-2 {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, #ff9900, #ff6633);
-      animation: espelhos-2 2s ease-in-out forward;
-    }
-
-    @keyframes espelhos-2 {
-      0% {
+        transform: scale(1.1);
         opacity: 0;
       }
       100% {
-        transform: scale(2);
+        transform: scale(1);
         opacity: 1;
       }
     }
 
-    .espelhos-3 {
+    .glint {
       position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
-      height: 100%;
-      background: linear-gradient(to bottom, #ff9900, #ff6633);
-      animation: espelhos-3 1s linear forwards;
+      height: 20%;
+      background-color: #fff;
+      animation: ripple 2s infinite;
     }
 
-    @keyframes espelhos-3 {
+    .glint::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 20%;
+      background-color: #fff;
+      animation: ripple-2 2s infinite;
+    }
+
+    .glint::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 20%;
+      background-color: #fff;
+      animation: ripple-3 2s infinite;
+    }
+
+    .shard {
+      position: absolute;
+      width: 10px;
+      height: 100%;
+      background-color: #fff;
+    }
+
+    .shard::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 100%;
+      background-color: #fff;
+      animation: shard-2 2s infinite;
+    }
+
+    .shard::before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 100%;
+      background-color: #fff;
+      animation: shard-3 2s infinite;
+    }
+
+    .shard {
+      animation: shard 2s infinite;
+      animation-delay: calc(2s * var(--shard-index));
+    }
+    .shard::after {
+      animation: shard-2 2s infinite;
+      animation-delay: calc(2s * var(--shard-index));
+    }
+    .shard::before {
+      animation: shard-3 2s infinite;
+      animation-delay: calc(2s * var(--shard-index));
+    }
+
+    @keyframes shard {
       0% {
-        transform: scale(0);
+        transform: translateX(0);
       }
       100% {
-        transform: scale(1);
+        transform: translateX(100%);
       }
     }
 
+    @keyframes shard-2 {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+
+    @keyframes shard-3 {
+      0% {
+        transform: translateZ(0);
+      }
+      100% {
+        transform: translateZ(100%);
+      }
+    }
+
+    @keyframes reflection {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.1);
+      }
+    }
+
+    .reflection {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      animation: reflection 5s infinite;
+    }
+
+    .reflection::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #333;
+      animation: reflection-2 5s infinite;
+    }
   </style>
-</head>
-<body>
   <div class="codigo">
-    <span class="selector">.loading-element</span><span class="brace">{</span>
-    <span class="property">background</span>: <span class="value-string">linear-gradient(to bottom, #ff9900, #ff6633)</span>;
-    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="selector">.reflection</span><span class="brace">{</span>
+    <span class="property">animation</span>: <span class="function">reflection</span> <span class="value-number">5s</span> <span class="value-string">infinite</span>;
+    <span class="property">animation-delay</span>: <span class="value-string">calc(5s * var(--shard-index))</span>;
     <span class="brace">}</span>
   </div>
+  <div class="animation-container" style="--shard-index:0;" >
+    <div class="reflection"></div>
+  </div>
+</head>
+<body>
   <div class="animation-container">
-    <div class="loading-element"></div>
-    <div class="fragmentos"></div>
-    <div class="bico"></div>
-    <div class="espelhos"></div>
-    <div class="espelhos-2"></div>
-    <div class="espelhos-3"></div>
-    <div class="reflexo-1">
-      <div class="espelhos-reflexo top-left">
-        <div class="fragmentos-1 top-left"></div>
-        <div class="espelhos-1-reflexo top-left"></div>
-      </div>
-      <div class="espelhos-reflexo top-center">
-        <div class="fragmentos-1 top-center"></div>
-        <div class="espelhos-1-reflexo top-center"></div>
-      </div>
-      <div class="espelhos-reflexo top-right">
-        <div class="fragmentos-1 top-right"></div>
-        <div class="espelhos-1-reflexo top-right"></div>
-      </div>
-    </div>
-    <div class="reflexo-2">
-      <div class="espelhos-reflexo bottom-left">
-        <div class="fragmentos-2 bottom-left"></div>
-        <div class="espelhos-2-reflexo bottom-left"></div>
-      </div>
-      <div class="espelhos-reflexo bottom-center">
-        <div class="fragmentos-2 bottom-center"></div>
-        <div class="espelhos-2-reflexo bottom-center"></div>
-      </div>
-      <div class="espelhos-reflexo bottom-right">
-        <div class="fragmentos-2 bottom-right"></div>
-        <div class="espelhos-2-reflexo bottom-right"></div>
-      </div>
-    </div>
+    <div class="shard" style="--shard-index:1;"></div>
+  </div>
+  <div class="animation-container">
+    <div class="reflection" style="--shard-index:1;"></div>
+  </div>
+  <div class="animation-container">
+    <div class="fracture"></div>
+  </div>
+  <div class="animation-container">
+    <div class="glint"></div>
   </div>
 </body>
 </html>

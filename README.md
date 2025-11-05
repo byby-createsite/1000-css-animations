@@ -231,3 +231,6 @@ Feel free to contribute to this repository.
 <a href="./fractured-selves-in-infinite-corridors.html">Fractured Selves in Infinite Corridors</a> <br/><br/>
 <a href="./shattering-harmony-in-infinite-refractions.html">Shattering Harmony in Infinite Refractions</a> <br/><br/>
 <a href="./fractured-harmonies-in-ephemeral-abyss.html">Fractured Harmonies in Ephemeral Abyss</a> <br/><br/>
+<a href="./shattered-harmony-of-reflections.html">Shattered Harmony of Reflections</a> <br/><br/>
+<a href="./a-symphony-of-shattered-echoes.html">A Symphony of Shattered Echoes</a> <br/><br/>
+<a href="./fractured-mirrors-of-the-soul.html">Fractured Mirrors of the Soul</a> <br/><br/>
