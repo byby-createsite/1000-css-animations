@@ -228,3 +228,6 @@ Feel free to contribute to this repository.
 <a href="./ephemeral-reflections-of-disintegration.html">Ephemeral Reflections of Disintegration</a> <br/><br/>
 <a href="./whispers-in-the-fractured-abyss.html">Whispers in the Fractured Abyss</a> <br/><br/>
 <a href="./shattered-harmonies-within.html">Shattered Harmonies Within</a> <br/><br/>
+<a href="./fractured-selves-in-infinite-corridors.html">Fractured Selves in Infinite Corridors</a> <br/><br/>
+<a href="./shattering-harmony-in-infinite-refractions.html">Shattering Harmony in Infinite Refractions</a> <br/><br/>
+<a href="./fractured-harmonies-in-ephemeral-abyss.html">Fractured Harmonies in Ephemeral Abyss</a> <br/><br/>

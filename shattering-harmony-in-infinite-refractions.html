@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Shattering Harmony in Infinite Refractions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+      aspect-ratio: 9/16;
+    }
+
+    .shattered-mirror {
+      /* Fractured identities em fragmentos como espelhos quebrados */
+      width: 500px;
+      height: 280px;
+      background-image: linear-gradient(to bottom right, #1ABC9C, #2ECC71);
+      position: relative;
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    }
+
+    .shattered-mirror::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 250px;
+      height: 150px;
+      background-image: linear-gradient(to bottom, #FF69B4, #FFC0CB);
+      clip-path: polygon(0 0, 50% 100%, 100% 100%);
+      animation: break-into-chunks 2s linear infinite;
+    }
+
+    .shattered-mirror::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 120px;
+      background-image: linear-gradient(to bottom, #4CAF50, #8BC34A);
+      clip-path: polygon(0 0, 50% 100%, 100% 0);
+      animation: break-into-chunks 2.5s linear infinite;
+      animation-delay: 1s;
+    }
+
+    @keyframes break-into-chunks {
+      0% {
+        clip-path: polygon(50% 0, 100% 100%, 0 100%);
+      }
+      25% {
+        clip-path: polygon(50% 0, 70% 100%, 0 100%);
+      }
+      50% {
+        clip-path: polygon(50% 0, 90% 100%, 0 100%);
+      }
+      75% {
+        clip-path: polygon(50% 0, 105% 100%, 0 100%);
+      }
+      100% {
+        clip-path: polygon(50% 0, 200% 100%, 0 100%);
+
+      }
+    }
+
+    .broken-skeleton {
+      /* Identidades quebradas em cacos */
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to right, #E74C3C, #F1C40F);
+      position: relative;
+    }
+
+    .broken-skeleton::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px;
+      height: 240px;
+      background-image: linear-gradient(to bottom left, #8E24AA, #3F51B5);
+      animation: skeleton-disintegration 2s linear infinite;
+    }
+
+    @keyframes skeleton-disintegration {
+      0% {
+        transform: translate(-50%, -50%);
+      }
+      50% {
+        transform: translate(-50%, 20%);
+      }
+      100% {
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .rebirth {
+      /* Renascimento da identidade */
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to right, #8BC34A, #FF9800);
+      position: relative;
+      transform: translateZ(100px);
+      clip-path: polygon(0 0, 50% 100%, 100% 100%);
+    }
+
+    .rebirth::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 170px;
+      background-image: linear-gradient(to bottom, #3F51B5, #8E24AA);
+      clip-path: polygon(0 0, 50% 100%, 100% 0);
+      animation: birth-emergence 2.5s linear infinite;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes birth-emergence {
+      0% {
+        transform: translateZ(100px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateZ(0px);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.shattered-mirror</span><span class="brace">{</span>
+    <span class="property">clip-path</span>: <span class="value-string">'polygon(50% 0, 100% 100%, 0 100%)'</span>;
+    <span class="property">animation</span>: <span class="function">break-into-chunks</span> <span class="value-string">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="shattered-mirror"></div>
+    <div class="broken-skeleton"></div>
+    <div class="rebirth"></div>
+  </div>
+</body>
+</html>
