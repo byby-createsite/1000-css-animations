@@ -222,3 +222,4 @@ Feel free to contribute to this repository.
 <a href="./reflections-of-self-destruction-in-fractured-mirrors.html">Reflections of Self-Destruction in Fractured Mirrors</a> <br/><br/>
 <a href="./echoes-of-ephemeral-identity.html">**Echoes of Ephemeral Identity**</a> <br/><br/>
 <a href="./fractured-harmony-reborn.html">Fractured Harmony Reborn</a> <br/><br/>
+<a href="./fractured-harmony-of-the-self-a-symphony-of-disintegrating-mirrors.html">Fractured Harmony of the Self: A Symphony of Disintegrating Mirrors</a> <br/><br/>
