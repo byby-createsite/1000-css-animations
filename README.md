@@ -224,3 +224,4 @@ Feel free to contribute to this repository.
 <a href="./fractured-harmony-reborn.html">Fractured Harmony Reborn</a> <br/><br/>
 <a href="./fractured-harmony-of-the-self-a-symphony-of-disintegrating-mirrors.html">Fractured Harmony of the Self: A Symphony of Disintegrating Mirrors</a> <br/><br/>
 <a href="./shattered-harmonies.html">Shattered Harmonies</a> <br/><br/>
+<a href="./shattered-harmonies-reborn.html">Shattered Harmonies Reborn</a> <br/><br/>
