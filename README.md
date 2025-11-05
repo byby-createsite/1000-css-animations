@@ -236,3 +236,4 @@ Feel free to contribute to this repository.
 <a href="./fractured-mirrors-of-the-soul.html">Fractured Mirrors of the Soul</a> <br/><br/>
 <a href="./ephemeral-identity-reckoning.html">Ephemeral Identity Reckoning</a> <br/><br/>
 <a href="./shattered-echoes-of-rebirth.html">Shattered Echoes of Rebirth</a> <br/><br/>
+<a href="./disintegrating-mirrors-of-the-self.html">Disintegrating Mirrors of the Self</a> <br/><br/>
