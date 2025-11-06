@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Echoes of the Ephemeral Soul</title>
+    <style>
+        /* Fundamentos CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top:15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+
+        .selector       { color: #F92672; }
+        .property       { color: #66D9EF; }
+        .value-number   { color: #AE81FF; }
+        .value-string   { color: #E6DB74; }
+        .value-color    { color: #A6E22E; }
+        .function       { color: #A6E22E; }
+
+        /** Contêiner de animação */
+        .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .reflection {
+            position: relative;
+            width: 50vw;
+            height: 50vw;
+            border-radius: 50%;
+            background-color: #333;
+            transform: rotate(45deg);
+        }
+
+        @keyframes loading-animation {
+            0% {
+                transform: scale(1) translateX(-50%) translateY(0);
+                opacity: 1;
+            }
+
+            25% {
+                transform: scale(0.5) translateX(-50%) translateY(20px);
+                opacity: 0.5;
+                filter: hue-rotate(20deg);
+            }
+
+            50% {
+                transform: scale(1) translateX(-50%) translateY(-20px);
+                opacity: 1;
+                filter: hue-rotate(0deg);
+            }
+
+            75% {
+                transform: scale(0.5) translateX(-50%) translateY(-20px);
+                opacity: 0.5;
+                filter: hue-rotate(40deg);
+            }
+
+            100% {
+                transform: scale(1) translateX(-50%) translateY(20px);
+                opacity: 1;
+                filter: hue-rotate(0deg);
+            }
+        }
+
+        .reflection::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #333, #666);
+            transform: scale(0.8);
+            animation: loading-animation 1.5s linear infinite;
+        }
+
+        .reflection::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, #666, #999);
+            transform: scale(0.6);
+            animation: loading-animation 1s 0.5s linear infinite;
+        }
+
+        .fragment {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20%;
+            height: 20%;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+
+        .fragment:nth-child(1) {
+            animation: fragment-animation 2s linear infinite;
+            animation-delay: 0s;
+        }
+
+        .fragment:nth-child(2) {
+            animation: fragment-animation 2s linear infinite;
+            animation-delay: 0.5s;
+        }
+
+        .fragment:nth-child(3) {
+            animation: fragment-animation 2s linear infinite;
+            animation-delay: 1s;
+        }
+
+        @keyframes fragment-animation {
+            0% {
+                transform: scale(1) translateX(-50%) translateY(0);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(0.5) translateX(-50%) translateY(20px);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: scale(1) translateX(-50%) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .codigo {
+            font-size: 16px;
+        }
+
+        .selector       { font-size: 16px; color: #F92672; }
+        .property       { font-size: 16px; color: #66D9EF; }
+        .value-number   { font-size: 16px; color: #AE81FF; }
+        .value-string   { font-size: 16px; color: #E6DB74; }
+        .value-color    { font-size: 16px; color: #A6E22E; }
+        .function       { font-size: 16px; color: #A6E22E; }
+
+        .animation-container::after {
+            content: "";
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #fff, #333);
+        }
+
+        .animation-container::before {
+            content: "";
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #333, #fff);
+        }
+    </style>
+</head>
+<body>
+    <div class="codigo">
+        <span class="selector">.reflection</span><span class="brace">{</span>
+        <span class="property">background-color</span>: <span class="value-color">#333</span>;
+        <span class="property">transform</span>: <span class="function">rotate</span><span class="value-string">(</span><span class="value-degree">45dg</span><span class="value-string">)</span>;
+        <span class="brace">}</span>
+        <span class="selector">.reflection::before</span><span class="brace">{</span>
+        <span class="property">content</span>: <span class="value-string">""</span>;
+        <span class="property">position</span>: <span class="value-string">absolute</span>;
+        <span class="property">top</span>: <span class="value-number">0</span><span class="value-string">;</span>
+        <span class="property">left</span>: <span class="value-number">0</span><span class="value-string">;</span>
+        <span class="property">width</span>: <span class="value-number">100%</span><span class="value-string">;</span>
+        <span class="property">height</span>: <span class="value-number">100%</span><span class="value-string">;</span>
+        <span class="property">background</span>: <span class="value-color">#333</span><span class="value-string">;</span><span class="value-string"> linear-gradient</span><span class="value-string">(</span><span class="value-string">to</span><span class="value-string"> right</span><span class="value-string">,</span><span class="value-color">#333</span><span class="value-string">,</span><span class="value-color">#666</span><span class="value-string">)</span>;
+        <span class="property">transform</span>: <span class="function">scale</span><span class="value-number">(</span><span class="value-number">0.8</span><span class="value-string">)</span>;
+        <span class="property">animation</span>: <span class="function">loading-animation</span><span class="value-number">1.5s</span><span class="value-string"> linear infinite</span>;
+        <span class="brace">}</span>
+    </div>
+    <div class="animation-container">
+        <div class="reflection"></div>
+        <div class="reflection"></div>
+        <div class="reflection"></div>
+        <div class="fragment"></div>
+        <div class="fragment"></div>
+        <div class="fragment"></div>
+    </div>
+</body>
+</html>

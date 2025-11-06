@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Fractured Harmonies of Selves</title>
+<style>
+  /* CSS foundation */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+    background-color: black;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .codigo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #272822;
+    color: #F8F8F2;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    max-height: 25%;
+    max-width: 75%;
+    width: 75%;
+    height: 25%;
+    top:15%;
+    overflow-y: hidden;
+    box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+  }
+
+  .selector       { color: #F92672; }
+  .property       { color: #66D9EF; }
+  .value-number   { color: #AE81FF; }
+  .value-string   { color: #E6DB74; }
+  .value-color    { color: #A6E22E; }
+  .function       { color: #A6E22E; }
+
+  .animation-container {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    background: transparent;
+  }
+
+  /* 
+    Fragmentação da identidade: 
+    Numa infinidade de reflexos, harmonias quebradas evocam uma crise existencial, 
+    convidando o espectador a refletir sobre a natureza do ego. 
+  */
+
+  /* 
+    Elementos principais: Fragmentos de identidade 
+    (1) Círculo de reflexão 
+    (2) Linha de tensão 
+    (3) Fragmento de ego 
+  */
+
+  .animation-container:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    animation: loading-animation 3s infinite;
+  }
+
+  .animation-container:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    animation: loading-animation 5s infinite;
+  }
+
+  .fragmento-ego {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    height: 20%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: loading-animation 4s infinite;
+  }
+
+  .tensao {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10%;
+    height: 10%;
+    background-color: rgba(255, 0, 0, 0.5);
+    animation: loading-animation 2s infinite;
+  }
+
+  /* 
+    Movimento contínuo: animação de fragmentação da identidade. 
+    Movemos cada elemento de modo a criar um efeito de 'explosão'
+    - Círculo de reflexão se quebra 
+    - Fragmento de ego é empurrado 
+    - Linha de tensão se desintegra 
+  */
+  @keyframes loading-animation {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    25% {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+    75% {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .codigo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #272822;
+    color: #F8F8F2;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    max-height: 25%;
+    max-width: 75%;
+    width: 75%;
+    height: 25%;
+    top:15%;
+    overflow-y: hidden;
+    box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+  }
+  
+  .codigo > span.selector       { color: #F92672; }
+  .codigo > span.property       { color: #66D9EF; }
+  .codigo > span.value-number   { color: #AE81FF; }
+  .codigo > span.value-string   { color: #E6DB74; }
+  .codigo > span.value-color    { color: #A6E22E; }
+  .codigo > span.function       { color: #A6E22E; }
+
+  .codigo > span.selector      { background: #272822; }
+  .codigo > span.property      { background: #272822; }
+  .codigo > span.value-number  { background: #272822; }
+  .codigo > span.value-string  { background: #272822; }
+  .codigo > span.value-color   { background: #272822; }
+  .codigo > span.function      { background: #272822; }
+
+  .codigo > span.brace         { background: #272822; }
+
+  .codigo > span.codigo {
+    display: inline-block;
+    background: #272822;
+    color: #F8F8F2;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    padding: 3px;
+  }
+</style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">background-color</span>: <span class="value-number">#4CAF50</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="fragmento-ego"></div>
+    <div class="tensao"></div>
+    <div class="animation-container:after"></div>
+    <div class="animation-container:before"></div>
+  </div>
+</body>
+</html>

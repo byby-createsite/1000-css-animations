@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Melting Identity Mirror</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .melting-mirror {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to bottom, #0A0A0A, #0A0A0A);
+      border-radius: 100%;
+        transform: rotate(45deg);
+    }
+
+    .mirrored-shards {
+      position:relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Fases de melhoria gradual e contínua da identidade */
+      .shard-1 {
+        width: 100px;
+        height: 100px;
+        background-color: #FFD700;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 12;
+        animation: fragmento-1 3.5s infinite linear;
+      }
+      .shard-2 {
+        width: 50px;
+        height: 50px;
+        background-color: #FFA07A;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 11;
+        animation: fragmento-2 3.5s infinite linear;
+      }
+      .shard-3 {
+        width: 30px;
+        height: 30px;
+        background-color: #FF69B4;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 10;
+        animation: fragmento-3 3.5s infinite linear;
+      }
+      .shard-4 {
+        width: 80px;
+        height: 80px;
+        background-color: #8F0A1A;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 9;
+        animation: fragmento-4 3.5s infinite linear;
+      }
+      .shard-5 {
+        width: 20px;
+        height: 20px;
+        background-color: #00BFFF;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 8;
+        animation: fragmento-5 3.5s infinite linear;
+      }
+      .shard-6 {
+        width: 60px;
+        height: 60px;
+        background-color: #9D32CC;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 7;
+        animation: fragmento-6 3.5s infinite linear;
+      }
+    }
+    /* Animação do facho de luz, criando efeito de iluminação nos fragmentos da mente */
+    .ligth-beam {
+        width: 10px;
+        height: 10px;
+        background-color: #8BC34A;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 2;
+        animation: fragmento-10 1s infinite linear;
+    }
+
+    /* Nuvens de consciência emergentes na melhoria do ego */
+    .nuvens {
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        display:flex;
+        flex-direction:row-reverse;
+        .n2 {
+          width: 30px;
+          height: 60px;
+          background-color: #FF69B4;
+          border-radius: 0 0 50% 50%;
+          margin-left: 10%;
+          animation: nuvem 3.5s infinite linear;
+        }
+        .n3 {
+          width: 20px;
+          height: 100px;
+          background-color: #FFA07A;
+          border-radius: 0 0 50% 50%;
+          margin-left: 10%;
+          animation: nuvem 3.5s infinite linear;
+        }
+        .n4 {
+          width: 40px;
+          height: 80px;
+          background-color: #9D32CC;
+          border-radius: 0 0 50% 50%;
+          margin-left: 10%;
+          animation: nuvem 3.5s infinite linear;
+        }
+        .n5 {
+          width: 60px;
+          height: 50px;
+          background-color: #8F0A1A;
+          border-radius: 0 0 50% 50%;
+          animation: nuvem 3.5s infinite linear;
+        }
+        .n6 {
+          width: 70px;
+          height: 110px;
+          background-color: #00BFFF;
+          border-radius: 0 0 50% 50%;
+          margin-left: 10%;
+          animation: nuvem 3.5s infinite linear;
+        }
+    }
+
+    /* Animações */
+
+    @keyframes fragmento-1 {
+      0% {
+        transform: rotate(45deg) translateX(0px) translateY(-200px);
+      }
+      25% {
+        transform: rotate(45deg) translateX(50px) translateY(-50px);
+      }
+      50% {
+        transform: rotate(45deg) translateX(0px) translateY(-200px);
+      }
+      75% {
+        transform: rotate(45deg) translateX(-50px) translateY(-50px);
+      }
+      100% {
+        transform: rotate(45deg) translateX(0px) translateY(-200px);
+      }
+    }
+    @keyframes fragmento-2 {
+      0% {
+        transform: rotate(45deg) translateX(30px) translateY(100px);
+      }
+      25% {
+        transform: rotate(45deg) translateX(50px) translateY(-50px);
+      }
+      50% {
+        transform: rotate(45deg) translateX(30px) translateY(100px);
+      }
+      75% {
+        transform: rotate(45deg) translateX(-50px) translateY(-50px);
+      }
+      100% {
+        transform: rotate(45deg) translateX(30px) translateY(100px);
+      }
+    }
+    @keyframes fragmento-3 {
+      0% {
+        transform: rotate(45deg) translateX(-50px) translateY(50px);
+      }
+      25% {
+        transform: rotate(45deg) translateX(50px) translateY(-50px);
+      }
+      50% {
+        transform: rotate(45deg) translateX(-50px) translateY(50px);
+      }
+      75% {
+        transform: rotate(45deg) translateX(-50px) translateY(150px);
+      }
+      100% {
+        transform: rotate(45deg) translateX(-50px) translateY(50px);
+      }
+    }
+    @keyframes fragmento-4 {
+      0% {
+        transform: rotate(45deg) translateX(0px) translateY(0px);
+      }
+      25% {
+        transform: rotate(45deg) translateX(0px) translateY(100px);
+      }
+      50% {
+        transform: rotate(45deg) translateX(0px) translateY(0px);
+      }
+      75% {
+        transform: rotate(45deg) translateX(0px) translateY(-150px);
+      }
+      100% {
+        transform: rotate(45deg) translateX(0px) translateY(0px);
+      }
+    }
+    @keyframes fragmento-5 {
+      0% {
+        transform: rotate(45deg) translateY(100px);
+      }
+      25% {
+        transform: rotate(45deg) translateY(150px);
+      }
+      50% {
+        transform: rotate(45deg) translateY(100px);
+      }
+      75% {
+        transform: rotate(45deg) translateY(50px);
+      }
+      100% {
+        transform: rotate(45deg) translateY(100px);
+      }
+    }
+    @keyframes fragmento-6 {
+      0% {
+        transform: rotate(45deg) translateY(50px);
+      }
+      25% {
+        transform: rotate(45deg) translateX(-30px) translateY(200px);
+      }
+      50% {
+        transform: rotate(45deg) translateY(50px);
+      }
+      75% {
+        transform: rotate(45deg) translateX(30px) translateY(200px);
+      }
+      100% {
+        transform: rotate(45deg) translateY(50px);
+      }
+    }
+    @keyframes fragmento-10 {
+      0% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(1.2);
+      }
+      50% {
+        transform: scale(1);
+      }
+      75% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    @keyframes nuvem {
+      0% {
+        margin-left: -1vw;
+      }
+      100% {
+        margin-left: 10vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="codigo">
+      <span class="selector">.melting-mirror</span>
+      <span class="brace">{</span>
+      <br>
+      <span class="property">width</span>
+      <span class="value-number">100%</span>;
+      <span class="property">height</span>
+      <span class="value-number">100%</span>;
+      <br>
+      <span class="property">border-radius</span
+      ><span class="property">:</span><span class="value-number">50%</span>;<br>
+      <span class="property">background</span>
+      <span class="function">:</span><span class="value-string">linear-gradient(to bottom, #0A0A0A, #0A0A0A)</span>;<br>
+      <span class="property">animation</span><span class="property"> :</span><span class="function">melt-down 0</span><span class="value-number">s</span><span class="value-string">linear</span><span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="melting-mirror">
+      <div class="mirrored-shards">
+        <div class="shard-1"></div>
+        <div class="shard-2"></div>
+        <div class="shard-3"></div>
+        <div class="shard-4"></div>
+        <div class="shard-5"></div>
+        <div class="shard-6"></div>
+      </div>
+      <div class="nuvens">
+        <div class="n2"></div>
+        <div class="n3"></div>
+        <div class="n4"></div>
+        <div class="n5"></div>
+        <div class="n6"></div>
+      </div>
+      <div class="ligth-beam"></div>
+    </div>
+  </div>
+</body>
+</html>

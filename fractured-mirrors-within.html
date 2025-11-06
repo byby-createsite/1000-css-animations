@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Fractured Mirrors Within</title>
+  <style>
+    /* 
+    * Fundação CSS para o projeto.
+    * */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* Animação principal */
+    .animation-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(90deg, #ff69b4, #1ec5e4);
+      animation: grow 5s infinite;
+    }
+
+    .animation-container::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      border-radius: 50%;
+      background: white;
+      transform: translateY(0);
+      animation: pulse 1s infinite, move 5s infinite;
+    }
+
+    /* Animção da reflexão */
+    .animation-container .reflection {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: white;
+      transform: scaleX(0);
+      animation: scale 2s infinite;
+    }
+
+    @keyframes grow {
+      0% {
+        width: 0;
+        height: 0;
+      }
+      100% {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes move {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    @keyframes scale {
+      0% {
+        transform: scaleX(0);
+      }
+      100% {
+        transform: scaleX(1);
+      }
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    /* 
+    * Animacao com código CSS
+    * */
+    .loading-element {
+      /* A forma da animação será um círculo */
+      border-radius: 50%;
+      /* A animação será executada durante 1 segundo */
+      animation: loading-animation 1s linear infinite;
+    }
+
+    @keyframes loading-animation {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    <div class="codigo">
+      <span class="selector">.animation-container</span><span class="brace">{</span>
+        <span class="property">aspect-ratio</span>: <span class="value-number">9/16</span>;
+        <span class="property">background-color</span>: <span class="value-string">rgba(255, 0, 0, .1)</span>;
+        <span class="property">animation</span>: <span class="function">animate-mirrors</span> <span class="value-string">1s</span> <span class="value-string">ease-in-out</span> <span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+    </div>
+    
+    <div class="animation-container">
+      <!-- 
+      * Reflexões da alma.
+      * -->
+      <div class="reflection"></div>
+      <!-- 
+      * Miragem que se desintegra, simbolizando a desintegração da identidade.
+      * -->
+      <div class="miragem"></div>
+      <!-- 
+      * O reflexo da alma que desaparece com a desintegração da identidade.
+      * -->
+      <div class="alma-desaparece"></div>
+      <!-- 
+      * A corredor infinito.
+      * -->
+      <div class="corredor-infinito"></div>
+      <!-- 
+      * As reflexões se desintegram e se espalham pelo corredor.
+      * -->
+      <div class="reflexoes"></div>
+    </div>
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <!-- 
+    * Fundo da animacao e das reflexoes.
+    * -->
+    <div class="fundo" style="background: radial-gradient(#000,#000);"></div>
+    <!-- 
+    * Reflexões.
+    * -->
+    <div class="reflexoes-externas" style="background: radial-gradient(#fff,#fff);">
+      <!-- 
+      * Reflexões que se espalham pelo corredor.
+      * -->
+    </div>
+  </div>
+  <div class="codigo">
+    <!-- 
+    * Exemplo de animacao com código CSS.
+    * -->
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+      <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+      <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+</body>
+</html>

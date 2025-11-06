@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Fractured Identity Symphonies</title>
+    <style>
+        /* CSS Foundation */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top:15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+
+        .selector       { color: #F92672; }
+        .property       { color: #66D9EF; }
+        .value-number   { color: #AE81FF; }
+        .value-string   { color: #E6DB74; }
+        .value-color    { color: #A6E22E; }
+        .function       { color: #A6E22E; }
+
+        /* Animation Container */
+        .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            aspect-ratio: 9/16;
+            min-height: 100vh;
+            padding: 10px;
+        }
+
+        /* Fractured Identity Layers */
+        .fractured-identity {
+            position: relative;
+            width: 200px;
+            height: 150px;
+            animation: identity-dissolve 3s ease-out;
+        }
+
+        /* Background Fractals */
+        .fractal-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: 100px 100px;
+        }
+
+        /* Fragmented Identity */
+        .fragment {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #FF69B4;
+            border-radius: 50%;
+            animation: fragment-dissolve 2s ease-in;
+        }
+
+        .fragment-1 {
+            top: 25%;
+            left: 25%;
+            animation-delay: -1s;
+        }
+
+        .fragment-2 {
+            top: 25%;
+            right: 25%;
+            animation-delay: -0.5s;
+        }
+
+        .fragment-3 {
+            top: 75%;
+            left: 25%;
+        }
+
+        .fragment-4 {
+            top: 75%;
+            right: 25%;
+            animation-delay: 0.5s;
+        }
+
+        /* Dissolving Fragments */
+        @keyframes fragment-dissolve {
+            0% {
+                width: 50px;
+                height: 50px;
+                background-color: #FF69B4;
+                animation-timing-function: ease-in;
+            }
+            100% {
+                width: 100px;
+                height: 100px;
+                background-color: rgba(255, 105, 180, 0);
+            }
+        }
+
+        /* Fracturing Background */
+        .fractal-layer {
+            background-image: linear-gradient(45deg, #F8E231, #FF69B4, #34A8FF, #F4C7E1);
+            background-position: 0 0, 20px 20px, 40px 40px, 60px 60px;
+            background-size: 100px 100px;
+        }
+
+        @keyframes identity-dissolve {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Reveal Hue Shift on Replay */
+        .fragment {
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 50px;
+                height: 50px;
+                background-color: #34A8FF;
+                border-radius: 50%;
+                animation: fragment-hue-shift 2s ease-in;
+                animation-delay: 3s;
+            }
+        }
+
+        @keyframes fragment-hue-shift {
+            0% {
+                background-color: #34A8FF;
+                animation-timing-function: ease-in;
+            }
+            100% {
+                background-color: rgba(52, 168, 255, 0);
+            }
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top:15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+
+        .codigo > span {
+            display: inline-block;
+        }
+
+        .codigo > span.selector {
+            color: #F92672;
+        }
+        .codigo > span.property {
+            color: #66D9EF;
+        }
+        .codigo > span.value-number {
+            color: #AE81FF;
+        }
+        .codigo > span.value-string {
+            color: #E6DB74;
+        }
+        .codigo > span.value-color {
+            color: #A6E22E;
+        }
+        .codigo > span.function {
+            color: #A6E22E;
+        }
+
+        .codigo > span.brace {
+            color: #F8E231;
+        }
+
+        .codigo > span.comment {
+            color: #999;
+            font-style: italic;
+        }
+
+        .codigo {
+            background-color: black;
+        }
+
+        .codigo span {
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        }
+
+        .codigo {
+            animation: codigo-load 0.3s ease-in-out;
+        }
+
+        @keyframes codigo-load {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Reveal Fragmentation */
+        .fragment {
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 50px;
+                height: 50px;
+                background-color: #34A8FF;
+                border-radius: 50%;
+                animation: fragment-ripple 2s ease-in;
+                animation-delay: 2s;
+            }
+        }
+
+        @keyframes fragment-ripple {
+            0% {
+                width: 0;
+                height: 0;
+                background-color: #34A8FF;
+                animation-timing-function: ease-in;
+            }
+            100% {
+                width: 100px;
+                height: 100px;
+                background-color: rgba(52, 168, 255, 0);
+            }
+        }
+
+        .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            max-height: 25%;
+            width: 75%;
+            height: 25%;
+            background: #272822;
+            padding: 20px;
+            border-radius: 8px;
+            color: #F8F8F2;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            font-size: 18px;
+        }
+
+        .loading-element {
+            span {
+                font-size: 18px;
+            }
+        }
+
+        .codigo > span.selector {
+            /* Código */
+            color: #f92672;
+        }
+
+        .loading-element { 
+          border-radius: 50%;
+          animation: loading-animation 5s linear infinite;
+        }
+
+        @keyframes loading-animation { 
+          0% {
+            transform: scale(1);
+            opacity: 0;
+          }
+          100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+
+        .codigo > span.brace {
+            /* Chaves */
+            color: #f8e231;
+        }
+
+        .codigo > span.property {
+            /* Propriedades */
+            color: #66d9ef;
+        }
+
+        .codigo > span.value-number {
+            /* Valores numéricos */
+            color: #ae81ff;
+        }
+
+        .codigo > span.value-string {
+            /* Valores de cadeia de caracteres */
+            color: #e6db74;
+        }
+
+        .codigo > span.value-color {
+            /* Valores de cor */
+            color: #a6e22e;
+        }
+
+        .codigo > span.function {
+            /* Funções */
+            color: #a6e22e;
+        }
+
+        .codigo {
+            display: block;
+            text-align: left;
+            max-height: 20%;
+            width: 75%;
+            background: #272822;
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="codigo">
+        <span class="selector">.loading-element</span><span class="brace">{</span>
+        <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+        <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">5s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+        <span class="brace">}</span>
+    </div>
+    <div class="animation-container">
+        <div class="fractured-identity">
+            <div class="fractal-layer" style="background-image: linear-gradient(45deg, #F8E231, #FF69B4, #34A8FF, #F4C7E1); background-position: 0 0, 20px 20px, 40px 40px, 60px 60px;"></div>
+            <div class="fragment" style="top: 25%; left: 25%;"><div class="fragment"><div class="fragment"></div></div><div class="fragment"><div class="fragment"></div></div></div>
+            <div class="fragment" style="top: 25%; right: 25%;"><div class="fragment"><div class="fragment"></div></div><div class="fragment"><div class="fragment"></div></div></div>
+            <div class="fragment" style="top: 75%; left: 25%;"><div class="fragment"><div class="fragment"></div></div><div class="fragment"><div class="fragment"></div></div></div>
+            <div class="fragment" style="top: 75%; right: 25%;"><div class="fragment"><div class="fragment"></div></div><div class="fragment"><div class="fragment"></div></div></div>
+        </div>
+        <div class="fragment">Fraco, vazio</div>
+        <div class="fragment">Sobrevivente</div>
+        <div class="fragment">Viver, lutar, amar</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Mirrored Echoes of the Abyss</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mirrored Echoes of the Abyss</title>
+  <style>
+    /* css_foundation */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* Animation Container Styles */
+    .reflection {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border-radius: 50%;
+      box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+      animation: reflect 1s infinite;
+    }
+
+    .reflection:nth-child(1) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .reflection:nth-child(2) {
+      top: 40%;
+      left: 60%;
+    }
+
+    .reflection:nth-child(3) {
+      top: 30%;
+      left: 40%;
+    }
+
+    .reflection:nth-child(4) {
+      top: 20%;
+      left: 20%;
+    }
+
+    .reflection:nth-child(5) {
+      top: 10%;
+      left: 10%;
+    }
+
+    @keyframes reflect {
+      0% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Fragmented Identity */
+    .fragment {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #666;
+      border-radius: 50%;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%);
+      animation: fragment 2s infinite;
+    }
+
+    .fragment:nth-child(1) {
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -100%);
+    }
+
+    .fragment:nth-child(2) {
+      top: 30%;
+      left: 40%;
+      transform: translate(-100%, -50%);
+    }
+
+    .fragment:nth-child(3) {
+      top: 10%;
+      left: 60%;
+      transform: translate(50%, -50%);
+    }
+
+    @keyframes fragment {
+      0% {
+        transform: translate(-50%, 0);
+      }
+      50% {
+        transform: translate(50%, 0);
+      }
+      100% {
+        transform: translate(-50%, 0);
+      }
+    }
+
+    /* Corridor Effect */
+    .corridor {
+      position: absolute;
+      width: 100%;
+      height: 10px;
+      background-color: #fff;
+      animation: corridor 2s infinite;
+    }
+
+    .corridor:nth-child(4) {
+      top: 60%;
+      left: 20%;
+      width: 50%;
+    }
+
+    .corridor:nth-child(5) {
+      top: 60%;
+      left: 60%;
+      width: 50%;
+    }
+
+    @keyframes corridor {
+      0% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(10px);
+      }
+    }
+
+    /* Replay Value */
+    .echo {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #666;
+      border-radius: 50%;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      animation: echo 2s infinite;
+      opacity: 0;
+      animation-delay: 1s;
+    }
+
+    .echo:nth-child(6) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @keyframes echo {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
+
+    /* Fragmented Identity */
+    .fragment {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #666;
+      border-radius: 50%;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%);
+      animation: fragment 2s infinite;
+    }
+
+    .fragment:nth-child(7) {
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -150%);
+    }
+
+    @keyframes fragment {
+      0% {
+        transform: translate(-50%, 0);
+      }
+      50% {
+        transform: translate(50%, 0);
+      }
+      100% {
+        transform: translate(-50%, 0);
+      }
+    }
+
+    /* Interdependent Elements */
+    .reflection, .fragment, .corridor, .echo {
+      transform-origin: center;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .reflection .fragment {
+      z-index: 50;
+    }
+
+    .reflection .corridor {
+      opacity: 0.5;
+    }
+
+    .reflection .echo {
+      opacity: 1;
+    }
+
+    /* CSS Codigo */
+    <div class="codigo">
+      <span class="selector">.loading-element</span><span class="brace">{</span>
+      <span class="property">transform</span>: <span class="function">translate(10px, 20px)</span>;
+      <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+    </div>
+
+    /* 
+      - O objetivo aqui é criar uma sensação de infinito e ilimitado, 
+      refletindo a essência da identidade como um mistério que vai além da compreensão humana. 
+      É uma forma de abordar a existência como um labirinto onde a autoconsciência é apenas um fragmento de uma identidade maior, uma espécie de eco da realidade que persiste mesmo quando perdido de vista.
+    */
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.reflection</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">reflect</span> <span class="value-number">1s</span> <span class="value-string">infinite</span>;
+    <span class="property">clip-path</span>: <span class="function">polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%)</span>;
+    <span class="brace">}</span>
+    <br />
+    <span class="selector">.fragment</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">clip-path</span>: <span class="function">polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%)</span>;
+    <span class="property">animation</span>: <span class="function">fragment</span> <span class="value-number">2s</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+    <br />
+    <span class="selector">.corridor</span><span class="brace">{</span>
+    <span class="property">background-color</span>: <span class="value-string">#fff</span>;
+    <span class="property">animation</span>: <span class="function">corridor</span> <span class="value-number">2s</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+    <br />
+    <span class="selector">.echo</span><span class="brace">{</span>
+    <span class="property">background-color</span>: <span class="value-string">#666</span>;
+    <span class="property">box-shadow</span>: <span class="function">0px 0px 10px rgba(0, 0, 0, 0.5)</span>;
+    <span class="property">animation</span>: <span class="function">echo</span> <span class="value-number">2s</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="reflection"></div>
+    <div class="reflection"></div>
+    <div class="reflection"></div>
+    <div class="reflection"></div>
+    <div class="reflection"></div>
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <div class="corridor"></div>
+    <div class="corridor"></div>
+    <div class="echo"></div>
+    <div class="echo"></div>
+  </div>
+</body>
+</html>

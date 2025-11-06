@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Shattered Harmonies Within Ephemeral Selves</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shattered Harmonies Within Ephemeral Selves</title>
+  <style>
+    /* Fundação CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .reflexo::before {
+      /* 
+        Refletindo o espelho quebrado, um símbolo da identidade quebrada da alma.
+      */
+      content: "";
+      position: absolute;
+      top: -500px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      animation: girar-reflexo 10s linear infinite;
+    }
+
+    .reflexo::after {
+      /* 
+        Outro reflexo, mais frágil, representando a fragilidade da identidade.
+      */
+      content: "";
+      position: absolute;
+      top: 500px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      animation: girar-reflexo 10s linear infinite;
+    }
+
+    .espelho {
+      /* 
+        O espelho quebrado, um símbolo da alma quebrada.
+      */
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: rgb(0, 0, 0);
+    }
+
+    @keyframes girar-reflexo {
+      0% { transform: translateX(-50%) rotate(0deg); }
+      100% { transform: translateX(-50%) rotate(360deg); }
+    }
+    
+    @keyframes dançar-pedras {
+      0% { transform: translateX(0) scale(1); }
+      50% { transform: translateX(20px) scale(1.2); }
+      100% { transform: translateX(0) scale(1); }
+    }
+
+    .pedras::before {
+      /* 
+        As pedras que dançam, representando a busca pela identidade.
+      */
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      background-color: rgb(255, 0, 0);
+      animation: dançar-pedras 5s linear infinite;
+    }
+
+    @keyframes girar-pedras {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(1000px); }
+    }
+
+    .pedras::after {
+      /* 
+        Mais pedras que dançam, representando a busca pela identidade.
+      */
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -500px;
+      transform: translateX(0);
+      width: 10px;
+      height: 10px;
+      background-color: rgb(0, 255, 0);
+      animation: girar-pedras 10s linear infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.reflexo::before</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">girar-reflexo</span> <span class="value-number">10s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="reflexo"></div>
+    <div class="espelho"></div>
+    <div class="pedras"></div>
+  </div>
+</body>
+</html>
