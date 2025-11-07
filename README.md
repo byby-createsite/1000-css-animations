@@ -1,16 +1,12 @@
 
-**Bem-vindo ao Repositório CSS-Animations**
+**Bem-vindo ao Repositório 1000-css-animations**
 
 Este repositório foi desenvolvido para a ByBy, uma empresa inovadora no setor educacional, com o objetivo de compartilhar conhecimento e inspiração.
 
 **O que você encontrará aqui**
 
-Aqui estão disponíveis todas as animações criadas com CSS compartilhadas no TikTok (Instagram descontinuado) da <a href="https://tiktok.com/@byby.inc">ByBy</a>
+Aqui estão disponíveis todas as animações criadas com CSS compartilhadas no TikTok  da <a href="https://tiktok.com/@byby.inc">ByBy</a>
 Todas as animações são open-source, permitindo que qualquer pessoa as visualize, utilize ou modifique.
-
-**Contribuições**
-
-Se sinta livre para contribuir com este repositório. 
 
 **Contato para qualquer questão**
 
@@ -18,6 +14,10 @@ Se sinta livre para contribuir com este repositório.
 <a href="mailto:byby.inc.business@gmail.com"> byby.inc.business@gmail.com /</a> <br/>
 <a href="#">https://mail.google.com/mail/u/0/?to=byby.inc.business@gmail.com&su&body&tf=cm</a> <br/>
 
+
+**Contribuições**
+
+Envie-me um e-mail caso tenha interesse
 
 <br/> <br/> <br/>
 
@@ -27,21 +27,22 @@ This repository was developed for ByBy, an innovative company in the educational
 
 **What you will find here**
 
-Here you will find all the animations created with CSS shared on TikTok (Instagram discontinued) by <a href="https://tiktok.com/@byby.inc">ByBy</a>
+Here you will find all the animations created with CSS shared on TikTok by <a href="https://tiktok.com/@byby.inc">ByBy</a>
 All animations are open source, allowing anyone to view, use or modify them.
 
-**Contributions**
-
-Feel free to contribute to this repository.
 
 **Contact for any questions**
 
 <a href="mailto:byby.inc.business@gmail.com"> byby.inc.business@gmail.com /</a> <br/>
 <a href="#">https://mail.google.com/mail/u/0/?to=byby.inc.business@gmail.com&su&body&tf=cm</a> <br/>
 
+**Contributions**
 
+Send me an e-mail if interested.
 
  <br/><br/><br/>
+
+212/1000
 <a href="./LICENSE.md">License</a> <br/><br/>
 <a href="./abrir-bau.html">Magic Chest (Instagram)</a> <br/><br/>
 <a href="./abrir-envelope.html">Animated Envelope (Instagram)</a> <br/><br/>
