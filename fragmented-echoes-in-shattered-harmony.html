@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Fragmented Echoes in Shattered Harmony</title>
+  <style>
+    /* Estilo de fundo para todos os elementos */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Estilo do corpo da página */
+    body {
+      background: url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Estilo para o código */
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    /* Estilo para a seleção de classes */
+    .selector { color: #F92672; }
+    .property { color: #66D9EF; }
+    .value-number { color: #AE81FF; }
+    .value-string { color: #E6DB74; }
+    .value-color { color: #A6E22E; }
+    .function { color: #A6E22E; }
+
+    /* Estilo para o contênero de animação */
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* Estilo para os elementos de reflexão */
+    .reflection {
+      position: absolute;
+      width: 20vmin;
+      height: 20vmin;
+      background-color: #333;
+      border-radius: 50%;
+      animation: reflect 5s infinite;
+    }
+
+    /* Estilo para os elementos de identidade */
+    .identity {
+      position: absolute;
+      width: 10vmin;
+      height: 10vmin;
+      background-color: #ccc;
+      border-radius: 50%;
+      animation: identity 3s infinite;
+    }
+
+    /* Estilo para as linhas de reflexão */
+    .reflection-line {
+      position: absolute;
+      width: 0.5vmin;
+      height: 10vmin;
+      background-color: #666;
+      border-radius: 0.5vmin;
+      animation: reflection-line 5s infinite;
+    }
+
+    /* Ação do estilo para a reflexão */
+    @keyframes reflect {
+      0% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+      25% {
+        transform: translate(5vmin, 0);
+        opacity: 0.5;
+      }
+      50% {
+        transform: translate(10vmin, 0);
+        opacity: 0;
+      }
+      75% {
+        transform: translate(5vmin, 0);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+    }
+
+    /* Ação do estilo para a identidade */
+    @keyframes identity {
+      0% {
+        background-color: #ccc;
+        transform: translate(0, 0);
+      }
+      25% {
+        background-color: #999;
+        transform: translate(2vmin, 0);
+      }
+      50% {
+        background-color: #666;
+        transform: translate(4vmin, 0);
+      }
+      75% {
+        background-color: #999;
+        transform: translate(2vmin, 0);
+      }
+      100% {
+        background-color: #ccc;
+        transform: translate(0, 0);
+      }
+    }
+
+    /* Ação do estilo para as linhas de reflexão */
+    @keyframes reflection-line {
+      0% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+      25% {
+        transform: translate(2.5vmin, 0);
+        opacity: 0.5;
+      }
+      50% {
+        transform: translate(5vmin, 0);
+        opacity: 0;
+      }
+      75% {
+        transform: translate(2.5vmin, 0);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+    }
+
+    /* Exemplo de código */
+    .loading-element {
+      border-radius: 50%;
+      animation: loading-animation 1s linear infinite;
+    }
+    .loading-element {
+      background-color: #333;
+      width: 10vmin;
+      height: 10vmin;
+      border: 0.5vmin solid #666;
+      border-radius: 50%;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.reflection</span><span class="brace">{</span>
+    <span class="property">width</span>: <span class="value-number">20vmin</span>;
+    <span class="property">height</span>: <span class="value-number">20vmin</span>;
+    <span class="property">background-color</span>: <span class="value-color">#333</span>;
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">reflect</span> <span class="value-number">5s</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="reflection" style="top: 0; left: 0;"></div>
+    <div class="reflection-line" style="top: 50%; left: 0;"></div>
+    <div class="reflection" style="top: 50%; left: 0;"></div>
+    <div class="reflection-line" style="top: 50%; left: 25%;"></div>
+    <div class="reflection" style="top: 100%; left: 0;"></div>
+    <div class="reflection-line" style="top: 100%; left: 0;"></div>
+    <div class="reflection" style="top: 100%; left: 50%;"></div>
+    <div class="reflection-line" style="top: 100%; left: 75%;"></div>
+    <div class="reflection" style="bottom: 0; left: 0;"></div>
+    <div class="reflection-line" style="bottom: 0; left: 0;"></div>
+    <div class="reflection" style="bottom: 0; left: 50%;"></div>
+    <div class="reflection-line" style="bottom: 0; left: 75%;"></div>
+  </div>
+</body>
+</html>

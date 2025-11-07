@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Disintegrating Selves Symphony</title>
+  <style>
+    /* css_foundation */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: #000; /* changed background-color to palette_mood */
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    /* Disintegrating Selves Symphony */
+
+    /* Lágrimas (Lágrimas que se espalham) */
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .fractura {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #F92672;
+      border-radius: 50%;
+      animation: expandir 1s linear infinite;
+      transform-origin: center;
+    }
+
+    .fractura:nth-child(1) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .fractura:nth-child(2) {
+      top: 40%;
+      left: 40%;
+    }
+
+    .fractura:nth-child(3) {
+      top: 60%;
+      left: 60%;
+    }
+
+    @keyframes expandir {
+      0% {
+        width: 0px;
+        height: 0px;
+        transform: translate(-50%, -50%) scale(0);
+      }
+      100% {
+        width: 20px;
+        height: 20px;
+        transform: translate(-50%, -50%) scale(1.5);
+      }
+    }
+
+    /* Fragamentos do espelho */
+    .espelho {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #A6E22E;
+      border-radius: 50%;
+      animation: girar 1s linear infinite;
+    }
+
+    .espelho:nth-child(1) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .espelho:nth-child(2) {
+      top: 50%;
+      left: 80%;
+      transform: translate(-50%, -50%);
+    }
+
+    .espelho:nth-child(3) {
+      top: 20%;
+      left: 40%;
+    }
+
+    @keyframes girar {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Luzes que se formam */
+    .luz {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #F92672;
+      border-radius: 50%;
+      animation: formar 1s linear infinite;
+      transform-origin: center;
+    }
+
+    .luz:nth-child(1) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .luz:nth-child(2) {
+      top: 60%;
+      left: 40%;
+    }
+
+    .luz:nth-child(3) {
+      top: 40%;
+      left: 60%;
+    }
+
+    @keyframes formar {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.fractura</span><span class="brace">{</span>
+    <span class="property">width</span>: <span class="value-number">10px</span>;
+    <span class="property">height</span>: <span class="value-number">10px</span>;
+    <span class="property">background-color</span>: <span class="value-color">#F92672</span>;
+    <span class="property">animation</span>: <span class="function">expandir</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="fractura"></div>
+    <div class="fractura"></div>
+    <div class="fractura"></div>
+    <div class="espelho"></div>
+    <div class="espelho"></div>
+    <div class="espelho"></div>
+    <div class="luz"></div>
+    <div class="luz"></div>
+    <div class="luz"></div>
+  </div>
+</body>
+</html>

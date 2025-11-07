@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Shattered Harmonies Within Fractured Identity</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .load-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30vh;
+      height: 30vh;
+      background-color: lightgray;
+      border-radius: 50%;
+    }
+
+    .load-container::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 100%;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 30px 30px 0;
+      border-color: transparent #272822 transparent transparent;
+      transform-origin: top right;
+      animation: pulse 10s cubic-bezier(0.42, 0, 0.83, 1.17);
+    }
+
+    .load-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 30px 30px;
+      border-color: transparent transparent transparent #272822;
+      transform-origin: bottom left;
+      animation: pulse 10s cubic-bezier(0.42, 0, 0.83, 1.17) -1s;
+    }
+
+    .fragment {
+      width: 10vh;
+      height: 10vh;
+      border-radius: 50%;
+      background-color: gray;
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: fragmentation 10s cubic-bezier(0.42, 0, 0.83, 1.17);
+    }
+
+    .fragment1 {
+      width: 10vh;
+      height: 10vh;
+      border-radius: 50%;
+      background-color: white;
+      position: absolute;
+      top: 55%;
+      left: 65%;
+      transform: translate(-50%, -50%);
+      animation: fragmentation 10s cubic-bezier(0.42, 0, 0.83, 1.17);
+    }
+
+    .fragment2 {
+      width: 20vh;
+      height: 2vh;
+      background-color: gray;
+      position: absolute;
+      top: 80%;
+      left: 60%;
+      transform: translate(-50%, -50%);
+      animation: fragmentation 10s cubic-bezier(0.42, 0, 0.83, 1.17);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0); }
+      50% { transform: scale(1.5); }
+      100% { transform: scale(0); }
+    }
+
+    @keyframes fragmentation {
+      0% { transform: scale(0); }
+      50% { transform: scale(1); }
+      100% { transform: scale(0); opacity: 0; }
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .animation-container .element {
+      position: absolute;
+      top: 100%;
+      left: 100%;
+      width: 10vh;
+      height: 10vh;
+      border-radius: 50%;
+      background-color: gray;
+      animation: fade-in 2s ease-out;
+    }
+
+    .animation-container .element1 {
+      position: absolute;
+      top: 90%;
+      left: 95%;
+      width: 20vh;
+      height: 2vh;
+      background-color: white;
+      animation: fade-in 2s ease-out;
+    }
+
+    .animation-container .element2 {
+      position: absolute;
+      top: 70%;
+      left: 90%;
+      width: 5vh;
+      height: 5vh;
+      border-radius: 50%;
+      background-color: lightgray;
+      animation: fade-in 2s ease-out;
+    }
+
+    @keyframes fade-in {
+      0% { transform: translateY(-100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.load-container </span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">pulse</span> <span class="value-number">10s</span> <span class="value-string">cubic-bezier(0.42, 0, 0.83, 1.17)</span>;
+    <span class="brace">}</span>
+    <span class="selector">.fragment </span><span class="brace">{</span>
+    <span class="property">width</span>: <span class="value-number">10vh</span>;
+    <span class="property">height</span>: <span class="value-number">10vh</span>;
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">background-color</span>: <span class="value-color">gray</span>;
+    <span class="property">animation</span>: <span class="function">fragmentation</span> <span class="value-number">10s</span> <span class="value-string">cubic-bezier(0.42, 0, 0.83, 1.17)</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="load-container"></div>
+    <div class="fragment"></div>
+    <div class="fragment1"></div>
+    <div class="fragment2"></div>
+    <div class="element"></div>
+    <div class="element1"></div>
+    <div class="element2"></div>
+  </div>
+</body>
+</html>

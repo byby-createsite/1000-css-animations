@@ -42,7 +42,8 @@ Send me an e-mail if interested.
 
  <br/><br/><br/>
 
-212/1000
+228/1000
+<br/><br/>
 <a href="./LICENSE.md">License</a> <br/><br/>
 <a href="./abrir-bau.html">Magic Chest (Instagram)</a> <br/><br/>
 <a href="./abrir-envelope.html">Animated Envelope (Instagram)</a> <br/><br/>
@@ -256,3 +257,19 @@ Send me an e-mail if interested.
 <a href="./shattered-harmonies-within-ephemeral-selves.html">Shattered Harmonies Within Ephemeral Selves</a> <br/><br/>
 <a href="./fractured-identity-symphonies.html">Fractured Identity Symphonies</a> <br/><br/>
 <a href="./infinite-disintegration-of-echoes-in-harmony.html">Infinite Disintegration of Echoes in Harmony</a> <br/><br/>
+<a href="./dancing-echoes-in-the-abyss.html">Dancing Echoes in the Abyss</a> <br/><br/>
+<a href="./melting-identity-mirrors.html">Melting Identity Mirrors</a> <br/><br/>
+<a href="./echoes-of-impermanence-shattered-harmony.html">Echoes of Impermanence: Shattered Harmony</a> <br/><br/>
+<a href="./shattered-echoes-of-impermanence-symphony.html">Shattered Echoes of Impermanence Symphony</a> <br/><br/>
+<a href="./fragmented-echoes-in-shattered-harmony.html">Fragmented Echoes in Shattered Harmony</a> <br/><br/>
+<a href="./disintegrated-harmonies-of-the-ephemeral-self.html">Disintegrated Harmonies of the Ephemeral Self</a> <br/><br/>
+<a href="./disintegrating-selves-symphony.html">Disintegrating Selves Symphony</a> <br/><br/>
+<a href="./fractals-of-the-self.html">Fractals of the Self</a> <br/><br/>
+<a href="./disappearing-selves-in-cosmic-harmony.html">Disappearing Selves in Cosmic Harmony</a> <br/><br/>
+<a href="./disintegrating-duality-in-quantum-realms.html">Disintegrating Duality in Quantum Realms</a> <br/><br/>
+<a href="./ephemeral-mirrors.html">Ephemeral Mirrors</a> <br/><br/>
+<a href="./shattering-echoes-of-ephemeral-selves.html">Shattering Echoes of Ephemeral Selves</a> <br/><br/>
+<a href="./shattered-harmonies-within-fractured-identity.html">Shattered Harmonies Within Fractured Identity</a> <br/><br/>
+<a href="./fractured-identity-echoes.html">Fractured Identity Echoes</a> <br/><br/>
+<a href="./disintegrating-echoes-of-impermanence-symphony.html">Disintegrating Echoes of Impermanence Symphony</a> <br/><br/>
+<a href="./echoing-fragmentation.html">Echoing Fragmentation</a> <br/><br/>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Disappearing Selves in Cosmic Harmony</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+            background-size: cover;
+            background-color: #272822;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top:15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+
+        .selector       { color: #F92672; }
+        .property       { color: #66D9EF; }
+        .value-number   { color: #AE81FF; }
+        .value-string   { color: #E6DB74; }
+        .value-color    { color: #A6E22E; }
+        .function       { color: #A6E22E; }
+
+        .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .loading-element {
+            border-radius: 50%;
+            animation: loading-animation 1s linear infinite;
+        }
+
+        @keyframes loading-animation {
+            0% {
+                transform: scale(0.6) translateX(0) translateY(0);
+            }
+            50% {
+                transform: scale(1) translateX(50%) translateY(-50%);
+            }
+            100% {
+                transform: scale(0.6) translateX(0) translateY(0);
+            }
+        }
+
+        
+        .particle {
+            position: absolute;
+            background-color: #66D9EF;
+            animation: particle-animation 3s infinite;
+        }
+
+        @keyframes particle-animation {
+            0% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            50% {
+                transform: translate(0, 10%) scale(1.1);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Sinfonia Celeste */
+        #particle-1 {
+            top: 40%;
+            left: 40%;
+            transform-origin: top left;
+        }
+
+        #particle-2 {
+            top: 20%;
+            left: 20%;
+            transform-origin: bottom right;
+        }
+
+        #particle-3 {
+            top: 60%;
+            left: 80%;
+            transform-origin: top right;
+        }
+
+        #particle-4 {
+            top: 10%;
+            left: 60%;
+            transform-origin: bottom left;
+        }
+
+        /* Onde as partículas se dissolvem */
+        #dissolution-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to bottom, #66D9EF, #A6E22E);
+            animation: dissolution-wave 4s infinite;
+        }
+
+        @keyframes dissolution-wave {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* A esfera que se desvanece */
+        #desvanece {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #66D9EF;
+            animation: desvanece 5s infinite;
+            filter: blur(2px);
+        }
+
+        @keyframes desvanece {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* O fundo das estrelas */
+        #background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #A6E22E;
+            /* background-image: linear-gradient(to bottom, #66D9EF, #A6E22E); */
+        }
+    </style>
+</head>
+<body>
+    <div class="codigo">
+        <span class="selector">.loading-element</span><span class="brace">{</span>
+        <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+        <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+        <span class="brace">}</span>
+    </div>
+    <div class="animation-container">
+        <!-- Partículas que se dissolvem -->
+        <div class="particle" id="particle-1"></div>
+        <div class="particle" id="particle-2"></div>
+        <div class="particle" id="particle-3"></div>
+        <div class="particle" id="particle-4"></div>
+        <!-- Onde as partículas se dissolvem -->
+        <div id="dissolution-wave"></div>
+        <!-- A esfera que se desvanece -->
+        <div id="desvanece"></div>
+        <!-- O fundo das estrelas -->
+        <div id="background"></div>
+    </div>
+</body>
+</html>

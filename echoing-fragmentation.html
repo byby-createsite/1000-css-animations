@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Echoing Fragmentation</title>
+  <style>
+    /* css_foundation */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* Fragilidade da Identidade */
+    .shattered-mirror {
+      display: flex;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      animation: shatter 1s linear infinite;
+    }
+
+    @keyframes shatter {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .fragment {
+      position: absolute;
+      width: 20vmin;
+      height: 20vmin;
+      border-radius: 50%;
+      transform: scale(1);
+      animation: fragment-scale 1s linear infinite, fragment-fade 1s linear infinite;
+    }
+
+    @keyframes fragment-scale {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fragment-fade {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* Reflexos da Identidade */
+    .reflection {
+      position: absolute;
+      width: 10vmin;
+      height: 10vmin;
+      border-radius: 50%;
+      background-color: #ffffff;
+      z-index: 10;
+      transform: translateX(-10vmin);
+      animation: reflection-move 1s linear infinite;
+    }
+
+    @keyframes reflection-move {
+      0% {
+        transform: translateX(-10vmin);
+      }
+      50% {
+        transform: translateX(10vmin);
+      }
+      100% {
+        transform: translateX(-10vmin);
+      }
+    }
+
+    /* Distracções e Reflexões */
+    .distraction {
+      position: absolute;
+      width: 5vmin;
+      height: 5vmin;
+      border-radius: 50%;
+      background-color: #cccccc;
+      z-index: 5;
+      transform: translateX(15vmin);
+      animation: distraction-move 1s linear infinite;
+    }
+
+    @keyframes distraction-move {
+      0% {
+        transform: translateX(15vmin);
+      }
+      50% {
+        transform: translateX(-10vmin);
+      }
+      100% {
+        transform: translateX(15vmin);
+      }
+    }
+
+    /* Código */
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    /* Exemplo de Código */
+    <div class="codigo">
+      <span class="selector">.shattered-mirror</span><span class="brace">{</span>
+      <span class="property">animation</span>: <span class="function">shatter</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+    </div>
+
+    <div class="codigo">
+      <span class="selector">.fragment</span><span class="brace">{</span>
+      <span class="property">animation</span>: <span class="function">fragment-scale</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>, <span class="function">fragment-fade</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+    </div>
+</style>
+</head>
+<body>
+  <div class="animation-container">
+    <!-- Fragmentos da Espelha Quebrada -->
+    <div class="shattered-mirror">
+      <div class="fragment" style="top: 20vmin; left: 20vmin; transform: translateY(10vmin);"></div>
+      <div class="fragment" style="top: 30vmin; left: 40vmin; transform: translateY(15vmin);"></div>
+      <div class="fragment" style="top: 40vmin; left: 60vmin; transform: translateY(20vmin);"></div>
+      <div class="fragment" style="top: 50vmin; left: 80vmin; transform: translateY(25vmin);"></div>
+      <div class="fragment" style="top: 60vmin; left: 10vmin; transform: translateY(30vmin);"></div>
+    </div>
+
+    <!-- Reflexos da Identidade -->
+    <div class="reflection" style="top: 25vmin; left: 30vmin;"></div>
+    <div class="reflection" style="top: 35vmin; left: 50vmin;"></div>
+    <div class="reflection" style="top: 45vmin; left: 70vmin;"></div>
+    <div class="reflection" style="top: 55vmin; left: 90vmin;"></div>
+
+    <!-- Distracções e Reflexões -->
+    <div class="distraction" style="top: 20vmin; left: 40vmin;"></div>
+    <div class="distraction" style="top: 30vmin; left: 60vmin;"></div>
+    <div class="distraction" style="top: 40vmin; left: 80vmin;"></div>
+  </div>
+
+  <!-- Código -->
+  <div class="codigo">
+    <span class="selector">.shattered-mirror</span><span class="brace">{</span>
+    <span class="property">animation</span>: <span class="function">shatter</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+</body>
+</html>

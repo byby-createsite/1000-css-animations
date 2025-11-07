@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Fractured Identity Echoes</title>
+  <style>
+    /* css_foundation */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .leaf-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+      width: 95vw;
+      overflow: hidden;
+      transition: all 1s ease;
+    }
+
+    .leaf {
+      position: relative;
+      top: 10vh;
+      left: 5vw;
+      width: 20px;
+      height: 30px;
+      background-color: #fff;
+      border-radius: 20px 20px 0px 0px;
+      z-index: 10;
+      clip-path: polygon(0 0, 30% 0, 100% 60%, 80% 100%, 50% 90%, 10% 100%, 0 70%);
+      transition: all 1s ease;
+    }
+
+    @keyframes fade-out {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes shift {
+      from { transform: translateX(-10vw) }
+      to { transform: translateX(10vw) }
+    }
+
+    .leaf:nth-child(1) {
+      animation: fade-out 2s linear infinite backwards;
+      animation-delay: -1s;
+    }
+
+    .leaf:nth-child(2) {
+      animation: fade-in 1s linear backwards;
+      animation-delay: -2s;
+      animation-name: fade-in;
+    }
+
+    .leaf:nth-child(3) {
+      clip-path: polygon(0 0, 40% 0, 100% 40%, 60% 100%, 50% 80%, 15% 100%, 0 55%);
+      animation: shift 4s linear infinite forwards;
+      animation-delay: -3s;
+    }
+
+    .leaf:nth-child(4) {
+      clip-path: polygon(0 0, 50% 0, 100% 50%, 60% 100%, 40% 90%, 0 100%, 0 60%);
+      animation: fade-out 2s linear infinite backwards forwards;
+      animation-delay: -4s;
+    }
+
+    .leaf:nth-child(5) {
+      animation: fade-in 3s linear backwards forwards;
+      animation-delay: -5s;
+    }
+
+    .leaf:nth-child(1).leaf:nth-child(5) {
+      animation: shift 2s linear infinite forwards backwards;
+      animation-delay: -6s;
+    }
+
+    .fragment {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: inset 0px 0px 20px #000;
+      transition: all 2s ease;
+    }
+
+    .fragment:nth-child(6) {
+      width: 20px;
+      height: 20px;
+      top: 70vh;
+      left: 60vw;
+      transform: translateX(-20px) rotate(0deg);
+    }
+
+    .fragment:nth-child(7) {
+      width: 40px;
+      height: 40px;
+      top: 60vh;
+      left: 70vw;
+      transform: translateX(-20px) rotate(-30deg);
+    }
+
+    .fragment:nth-child(8) {
+      width: 60px;
+      height: 60px;
+      top: 50vh;
+      left: 80vw;
+      transform: translateX(-20px) rotate(30deg);
+    }
+
+    .fragment:nth-child(9) {
+      width: 40px;
+      height: 40px;
+      top: 40vh;
+      left: 90vw;
+      transform: translateX(-20px) rotate(-15deg);
+    }
+
+    .fragment:nth-child(10) {
+      width: 20px;
+      height: 20px;
+      top: 30vh;
+      left: 80vw;
+      transform: translateX(-20px) rotate(15deg);
+    }
+
+    .fragment:nth-child(11) {
+      width: 60px;
+      height: 60px;
+      top: 20vh;
+      left: 70vw;
+      transform: translateX(-20px) rotate(-45deg);
+    }
+
+    .fragment:nth-child(12) {
+      width: 10px;
+      height: 10px;
+      top: 10vh;
+      left: 80vw;
+      transform: translateX(-20px) rotate(0deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.leaf</span><span class="brace">{</span>
+    <span class="property">clip-path</span>: <span class="value-string">polygon(0 0, 30% 0, 100% 60%, 80% 100%, 50% 90%, 10% 100%, 0 70%);</span>
+    <span class="property">width</span>: <span class="value-number">20px;</span>
+    <span class="property">height</span>: <span class="value-number">30px;</span>
+    <span class="property">background-color</span>: <span class="value-string">#fff;</span>
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="leaf-container">
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf"></div>
+      <div class="leaf fragment"></div>
+      <div class="leaf fragment"></div>
+      <div class="leaf fragment"></div>
+      <div class="leaf fragment"></div>
+      <div class="leaf fragment"></div>
+      <div class="leaf fragment"></div>
+      <div class="leaf fragment"></div>
+      <div class="leaf fragment"></div>
+    </div>
+  </div>
+</body>
+</html>

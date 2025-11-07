@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Melting Identity Mirrors</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* Refletos quebrados e fragmentados, espelhando a instabilidade da identidade */
+
+    .refletos {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      aspect-ratio: 1;
+      background-color: #333;
+      border-radius: 50%;
+      animation: quebra-identidade 2s linear infinite;
+    }
+
+    .refletos::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #999;
+      z-index: -1;
+      animation: distorcao-espelho 3s linear infinite;
+    }
+
+    @keyframes quebra-identidade {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes distorcao-espelho {
+      0% {
+        transform: rotate(0deg);
+      }
+      20% {
+        transform: rotate(20deg);
+      }
+      50% {
+        transform: rotate(0deg);
+      }
+      70% {
+        transform: rotate(-10deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    /* Fragmentos de espelhos se fundem, criando um espectro de distorção */
+
+    .fragmento {
+      position: relative;
+      width: 10px;
+      height: 10px;
+      aspect-ratio: 1;
+      background-color: #666;
+      border-radius: 50%;
+      animation: fundacao-espectro 2s linear infinite;
+    }
+
+    .fragmento::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #888;
+      z-index: -1;
+      animation: transitorio 3s linear infinite;
+    }
+
+    @keyframes fundacao-espectro {
+      0% {
+        opacity: 0;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes transitorio {
+      0% {
+        transform: translateX(-10px);
+      }
+      50% {
+        transform: translateX(10px);
+      }
+      100% {
+        transform: translateX(-10px);
+      }
+    }
+
+    /* Refletos danificados, se distorcem e se afastam */
+
+    .refletodanificado {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      aspect-ratio: 1;
+      background-color: #333;
+      border-radius: 50%;
+      animation: danificacao 2s linear infinite;
+    }
+
+    .refletodanificado::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #999;
+      z-index: -1;
+      animation: distorcao-aumentada 3s linear infinite;
+    }
+
+    @keyframes danificacao {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes distorcao-aumentada {
+      0% {
+        transform: rotate(0deg);
+      }
+      20% {
+        transform: rotate(20deg);
+      }
+      50% {
+        transform: rotate(0deg);
+      }
+      70% {
+        transform: rotate(-10deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    .codigo {
+      span.selector {
+        padding-right: 10px;
+      }
+    }
+
+    .codigo {
+      <span class="selector">.loading-element</span>
+      <span class="brace">{</span>
+        <span class="selector">.refletos</span>
+        <span class="property">width</span>
+        <span class="value-number">50px</span>;
+        <span class="property">height</span>
+        <span class="value-number">50px</span>;
+        <span class="property">animation</span>
+        <span class="function">quebra-identidade</span>
+        <span class="value-number">2s</span>
+        <span class="value-string">linear</span>
+        <span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+    }
+  </style>
+  <div class="animation-container"><div class="refletos"></div><div class="refletodanificado"></div><div class="fragmento"></div></div>
+  <div class="codigo">
+    <span class="selector">.loading-element</span>
+    <span class="brace">{</span>
+      <span class="selector">.refletos</span>
+      <span class="property">width</span>
+      <span class="value-number">50px</span>;
+      <span class="property">height</span>
+      <span class="value-number">50px</span>;
+      <span class="property">animation</span>
+      <span class="function">quebra-identidade</span>
+      <span class="value-number">2s</span>
+      <span class="value-string">linear</span>
+      <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+</head>
+<body>
+</body>
+</html>

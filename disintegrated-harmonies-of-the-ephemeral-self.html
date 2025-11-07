@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Disintegrated Harmonies of the Ephemeral Self</title>
+    <style>
+        /* css_foundation */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top:15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+
+        .selector       { color: #F92672; }
+        .property       { color: #66D9EF; }
+        .value-number   { color: #AE81FF; }
+        .value-string   { color: #E6DB74; }
+        .value-color    { color: #A6E22E; }
+        .function       { color: #A6E22E; }
+
+        .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        /* O corpo se desintegra em reflexos, cada um um eco distorcido de si mesmo. */
+        .body-reflexes {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #FFFFFF;
+            animation: reflexo 5s ease-out infinite;
+        }
+
+        /* Refletir em múltiplos planos, em diferentes tamanhos e cores. */
+        @keyframes reflexo {
+            0% {
+                transform: translate(0px, -10px) scale(1);
+            }
+            25% {
+                transform: translate(0px, -20px) scale(1.2);
+            }
+            50% {
+                transform: translate(0px, -30px) scale(1.5);
+            }
+            100% {
+                transform: translate(0px, -40px) scale(2);
+            }
+        }
+
+        /* O reflexo se desintegra em mais reflexos menores. */
+        .reflexo-pequeno {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            top: -20px;
+            left: 0;
+            background-color: #FFFFFF;
+            animation: reflexo-pequeno 3s ease-out infinite;
+        }
+
+        @keyframes reflexo-pequeno {
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+            50% {
+                transform: translate(0px, 20px) scale(1.2);
+            }
+            100% {
+                transform: translate(0px, -20px) scale(1);
+            }
+        }
+
+        /* O corpo se desintegra completamente e se transforma em uma névoa. */
+        .nevoa {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.2);
+            animation: nevoa 5s ease-out infinite;
+        }
+
+        @keyframes nevoa {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Cada reflexo é único e se move de forma diferente. */
+        .reflexo-unico {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #FFFFFF;
+            animation: reflexo-unico 3s ease-out infinite;
+        }
+
+        @keyframes reflexo-unico {
+            0% {
+                transform: translate(10px, -10px) scale(1);
+            }
+            50% {
+                transform: translate(-10px, 20px) scale(1.5);
+            }
+            100% {
+                transform: translate(10px, -20px) scale(1);
+            }
+        }
+
+        /* O corpo se move para cima ao longo do tempo. */
+        .corpo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #FFFFFF;
+            animation: corpo 5s ease-out infinite;
+        }
+
+        @keyframes corpo {
+            0% {
+                top: 0px;
+            }
+            100% {
+                top: -100px;
+            }
+        }
+
+        /* Exemplo do CSS snippet de animação */
+        <div class="codigo">
+            <span class="selector">.nevoa</span>
+            <span class="brace">{</span>
+            <span class="property">background-color</span>:
+            <span class="value-string">rgba(255, 255, 255, 0.2)</span>;
+            <span class="property">animation</span>:
+            <span class="function">nevoa</span> <span class="value-number">5s</span> <span class="value-string">ease-out</span> <span class="value-string">infinite</span>;
+            <span class="brace">}</span>
+        </div>
+    </style>
+</head>
+<body>
+    <div class="animation-container">
+        <div class="corpo"></div>
+        <div class="reflexo-unico"></div>
+        <div class="reflexo-unico"></div>
+        <div class="reflexo-unico"></div>
+        <div class="reflexo-pequeno"></div>
+        <div class="reflexo-pequeno"></div>
+        <div class="reflexo-pequeno"></div>
+        <div class="reflexo-pequeno"></div>
+        <div class="body-reflexes"></div>
+        <div class="body-reflexes"></div>
+        <div class="body-reflexes"></div>
+        <div class="body-reflexes"></div>
+    </div>
+    <div class="codigo">
+        <span class="selector">.reflexo-unico</span>
+        <span class="brace">{</span>
+        <span class="property">background-color</span>:
+        <span class="value-string">#FFFFFF</span>;
+        <span class="property">animation</span>:
+        <span class="function">reflexo-unico</span> <span class="value-number">3s</span> <span class="value-string">ease-out</span> <span class="value-string">infinite</span>;
+        <span class="brace">}</span>
+    </div>
+</body>
+</html>
