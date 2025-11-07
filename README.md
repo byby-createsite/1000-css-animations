@@ -21,7 +21,7 @@ Envie-me um e-mail caso tenha interesse
 
 <br/> <br/> <br/>
 
-**Welcome to the CSS-Animations Repository**
+**Welcome to the 1000-css-animations Repository**
 
 This repository was developed for ByBy, an innovative company in the educational sector, with the goal of sharing knowledge and inspiration.
 
