@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Fading Silhouettes in the Abyss of Ephemeral Identity</title>
+  <style>
+    /* Fundação CSS padrão */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+    .sombra {
+      /* Criação de sombras no conteúdo de silhuetas */
+      box-shadow: -20px 20px 20px rgba(0, 0, 0, 0.8);
+    }
+    .silhueta-1 {
+      /* Primeira silhueta: animação de transição suave para a sombra */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      animation: dissolver 5s linear infinite;
+    }
+     @keyframes dissolver {
+       0% { 
+         /* Fase inicial de dissolução */
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 1) !important;
+       } 
+       20% {
+         /* Aumento de opacidade e perda de forma */
+         width: 90%;
+         height: 90%;
+         border-radius: 40%;
+         background-color: rgba(255, 255, 255, 0.5) !important;
+         transform: scale(0.8, 0.8) rotate(45deg);
+       } 
+       40% {
+         /* Continuação da animação de dissolução */
+         width: 80%;
+         height: 80%;
+         border-radius: 30%;
+         background-color: rgba(255, 255, 255, 0.2) !important;
+         transform: scale(0.6, 0.6) rotate(60deg);
+       } 
+       60% {
+         /* Aumento da perda de forma e opacidade */
+         width: 60%;
+         height: 60%;
+         border-radius: 20%;
+         background-color: rgba(255, 255, 255, 0.1) !important;
+         transform: scale(0.4, 0.4) rotate(80deg);
+       } 
+       80% {
+         /* Continuação da animação de dissolução */
+         width: 30%;
+         height: 30%;
+         border-radius: 10%;
+         background-color: rgba(255, 255, 255, 0.05) !important;
+         transform: scale(0.2, 0.2) rotate(100deg);
+       } 
+       100% {
+         /* Fase final de dissolução */
+         width: 0;
+         height: 0;
+         background-color: transparent !important;
+         transform: scale(0, 0);
+       }
+     }
+    .loading-element {
+      /* Código CSS do elemento com animação */
+      border-radius: 50%;
+      animation: dissolver 5s linear infinite;
+      transition: all 5s;
+      box-shadow: -20px 20px 20px rgba(0, 0, 0, 0.8);
+    }
+    /* Ajusta o posicionamento da animação no container */
+    .loading-element::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 2px;
+      height: 150px;
+      background-color: rgba(0, 0, 0, 0.5);
+      animation: dissolver 5s linear infinite;
+    }
+    /* Animação secundária para a segunda parte do loader */
+    @keyframes dissolver {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+      <span class="selector">.loading-element</span><span class="brace">{</span>
+      <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+      <span class="property">animation</span>: <span class="function">dissolver</span> <span class="value-number">5s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>; 
+      <span class="brace">}</span>
+    </div>
+  <div class="animation-container">
+    <div class="sombra loading-element">
+    </div>
+    <div class="loading-element" style="animation-delay: 2s;">
+    </div>
+    <div class="loading-element" style="animation-delay: 4s;">
+    </div>
+  </div>
+</body>
+</html>

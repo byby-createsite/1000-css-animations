@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Melting Identities in Quantum Harmonies</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ilusão de Identidades no Quantum</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+    /* Aqui fica a essência da animação */
+
+    .loading-element {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      background-color: #66D9EF;
+      animation: loading-animation 1s linear infinite;
+    }
+
+    @keyframes loading-animation {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        background-color: #66D9EF;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(3);
+        background-color: #FF69B4;
+      }
+    }
+
+    .animation-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%. -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+      aspect-ratio: 9/16;
+      min-height: 100vh;
+    }
+
+    .elemento-quantum-1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-color: #66D9EF;
+      animation: movimento-x 1s linear infinite;
+    }
+
+    @keyframes movimento-x {
+      0% {
+        transform: translateX(0);
+        background-color: #66D9EF;
+      }
+      100% {
+        transform: translateX(100%);
+        background-color: #FF69B4;
+      }
+    }
+
+    .elemento-quantum-2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #66D9EF;
+      animation: movimento-y 1s linear infinite;
+    }
+
+    @keyframes movimento-y {
+      0% {
+        transform: translateY(0);
+        background-color: #66D9EF;
+      }
+      100% {
+        transform: translateY(100%);
+        background-color: #FF69B4;
+      }
+    }
+
+    .elemento-quantum-3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 5px;
+      height: 5px;
+      background-color: #66D9EF;
+      animation: brilho 1s linear infinite;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes brilho {
+      0% {
+        transform: scale(1);
+        background-color: #66D9EF;
+      }
+      100% {
+        transform: scale(2);
+        background-color: #8A2BE2;
+      }
+    }
+
+    /* O fundo se move quando você vira o vídeo */
+    @keyframes background-move {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(100%, 0);
+      }
+    }
+
+    .fundo-movendo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #F8F8F2;
+      animation: background-move 10s linear infinite;
+    }
+
+    /* E aqui fica o detalhe que só surge na segunda vez */
+    .detalhe-aparece-2a-vez {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 5px;
+      height: 5px;
+      background-color: #66D9EF;
+      animation: detalhe-2a-vez 1s linear infinite;
+    }
+
+    @keyframes detalhe-2a-vez {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      33.33% {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+      66.67% {
+        transform: translate(-50%, -50%) rotate(180deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <div class="loading-element"></div>
+    <div class="elemento-quantum-1"></div>
+    <div class="elemento-quantum-2"></div>
+    <div class="elemento-quantum-3"></div>
+    <div class="fundo-movendo"></div>
+    <div class="detalhe-aparece-2a-vez"></div>
+  </div>
+  <div class="codigo">
+    <span class="selector">.loading-element</span>
+    <span class="brace">{</span>
+    <span class="property">animation</span>
+    : <span class="function">loading-animation</span>
+    <span class="value-number">1s</span>
+    <span class="value-string">linear</span>
+    <span class="value-string">infinite</span>;
+    <span class="property">transform</span>
+    : <span class="function">translate(-50%, -50%)</span>;
+    <span class="property">background-color</span>
+    : <span class="value-color">#66D9EF;</span>;
+    <span class="brace">}</span>
+  </div>
+</body>
+</html>

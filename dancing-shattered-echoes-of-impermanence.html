@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Dancing Shattered Echoes of Impermanence</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dancing Shattered Echoes of Impermanence</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: #000;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .fragmento-identidade {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-image: linear-gradient(90deg, rgb(0, 255, 0), rgb(255, 0, 0));
+      animation: animacao-fragmento 2s infinite;
+    }
+
+    @keyframes animacao-fragmento {
+      0% {
+        transform: scale(1);
+        border-radius: 50%;
+        background-image: linear-gradient(90deg, rgb(0, 255, 0), rgb(255, 0, 0));
+      }
+      25% {
+        transform: scale(1.2);
+        border-radius: 30%;
+        background-image: linear-gradient(90deg, rgb(0, 0, 255), rgb(0, 0, 0));
+      }
+      50% {
+        transform: scale(1);
+        border-radius: 50%;
+        background-image: linear-gradient(90deg, rgb(255, 255, 0), rgb(0, 0, 255));
+      }
+      75% {
+        transform: scale(1.2);
+        border-radius: 30%;
+        background-image: linear-gradient(90deg, rgb(0, 255, 0), rgb(0, 255, 255));
+      }
+      100% {
+        transform: scale(1);
+        border-radius: 50%;
+        background-image: linear-gradient(90deg, rgb(105, 105, 105), rgb(200, 200, 200));
+      }
+    }
+
+    @keyframes animacao-radiacao {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .radiacao-fragmento {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #00FF00;
+      animation: animacao-radiacao 2s infinite;
+    }
+
+    .duplicado {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #FF0000;
+      animation: animacao-radiacao 2s infinite;
+    }
+
+    .radiacao-fragmento, .duplicado {
+      animation-delay: -0.5s;
+    }
+
+    .radiacao-fragmento:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .radiacao-fragmento:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    .duplicado:nth-child(1) {
+      animation-delay: 0.5s;
+    }
+
+    .duplicado:nth-child(2) {
+      animation-delay: 1s;
+    }
+
+    .radiacao-fragmento:nth-child(3) {
+      animation-delay: 1.5s;
+    }
+
+    .radiacao-fragmento:nth-child(4) {
+      animation-delay: 2s;
+    }
+
+    .radiacao-fragmento:nth-child(5) {
+      animation-delay: 2.5s;
+    }
+
+    .duplicado:nth-child(5) {
+      animation-delay: 2.5s;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .fragmento-identidade:nth-child(1) {
+      background-image: linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 0, 255));
+    }
+
+    .fragmento-identidade:nth-child(2) {
+      background-image: linear-gradient(90deg, rgb(0, 255, 0), rgb(255, 0, 255));
+    }
+
+    .fragmento-identidade:nth-child(3) {
+      background-image: linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 0, 0));
+    }
+
+    .fragmento-identidade:nth-child(4) {
+      background-image: linear-gradient(90deg, rgb(0, 255, 0), rgb(0, 0, 0));
+    }
+
+    .fragmento-identidade:nth-child(5) {
+      background-image: linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 255, 255));
+    }
+
+    .fragmento-identidade:nth-child(6) {
+      background-image: linear-gradient(90deg, rgb(0, 255, 0), rgb(200, 200, 200));
+    }
+
+    .fragmento-identidade:nth-child(7) {
+      background-image: linear-gradient(90deg, rgb(255, 0, 0), rgb(100, 100, 100));
+    }
+
+    .fragmento-identidade:nth-child(8) {
+      background-image: linear-gradient(90deg, rgb(0, 255, 0), rgb(0, 0, 255));
+    }
+
+    .fragmento-identidade:nth-child(9) {
+      background-image: linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 0, 255));
+    }
+
+    .fragmento-identidade:nth-child(10) {
+      background-image: linear-gradient(90deg, rgb(255, 0, 0), rgb(200, 200, 200));
+    }
+
+    .fragmento-identidade:nth-child(11) {
+      background-image: linear-gradient(90deg, rgb(0, 255, 0), rgb(255, 0, 255));
+    }
+
+    .fragmento-identidade:nth-child(12) {
+      background-image: linear-gradient(90deg, rgb(0, 255, 0), rgb(0, 0, 255));
+    }
+
+    <div class="codigo">
+      <span class="selector">.radiacao-fragmento</span><span class="brace">{</span>
+      <span class="property">width</span>: <span class="value-number">10px</span>;
+      <span class="property">height</span>: <span class="value-number">10px</span>;
+      <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+      <span class="property">animation</span>: <span class="function">animacao-radiacao</span> <span class="value-number">1.2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="property">animation-delay</span>: <span class="value-string">-0.5</span>;
+      <span class="brace">}</span>
+    </div>
+
+    <div class="animation-container">
+      <div class="fragmento-identidade"></div>
+      <div class="fragmento-identidade"></div>
+      <div class="fragmento-identidade"></div>
+      <div class="fragmento-identidade"></div>
+      <div class="fragmento-identidade"></div>
+      <div class="fragmento-identidade"></div>
+      <div class="fragmento-identidade"></div>
+      <div class="fragmento-identidade"></div>
+      <div class="fragmento-identidade"></div>
+      <div class="fragmento-identidade"></div>
+      <div class="fragmento-identidade"></div>
+      <div class="fragmento-identidade"></div>
+      <div class="radiacao-fragmento"></div>
+      <div class="duplicado"></div>
+      <div class="radiacao-fragmento"></div>
+      <div class="duplicado"></div>
+      <div class="radiacao-fragmento"></div>
+      <div class="duplicado"></div>
+      <div class="radiacao-fragmento"></div>
+      <div class="duplicado"></div>
+      <div class="radiacao-fragmento"></div>
+      <div class="duplicado"></div>
+      <div class="radiacao-fragmento"></div>
+      <div class="duplicado"></div>
+      <div class="radiacao-fragmento"></div>
+      <div class="duplicado"></div>
+      <div class="radiacao-fragmento"></div>
+      <div class="duplicado"></div>
+    </div>
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.fragmento-identidade</span><span class="brace">{</span>
+    <span class="property">width</span>: <span class="value-number">100%</span>;
+    <span class="property">height</span>: <span class="value-number">100%</span>;
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">animacao-fragmento</span> <span class="value-number">2</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="property">background-image</span>: <span class="value-string">linear-gradient(90deg, rgb(240, 240, 240), rgb(100, 100, 100))</span>;
+    <span class="property">animation-delay</span>: <span class="value-string">-1</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="fragmento-identidade"></div>
+    <div class="fragmento-identidade"></div>
+    <div class="fragmento-identidade"></div>
+    <div class="fragmento-identidade"></div>
+    <div class="fragmento-identidade"></div>
+    <div class="fragmento-identidade"></div>
+    <div class="fragmento-identidade"></div>
+    <div class="fragmento-identidade"></div>
+    <div class="fragmento-identidade"></div>
+    <div class="fragmento-identidade"></div>
+    <div class="fragmento-identidade"></div>
+    <div class="fragmento-identidade"></div>
+    <div class="radiacao-fragmento"></div>
+    <div class="duplicado"></div>
+    <div class="radiacao-fragmento"></div>
+    <div class="duplicado"></div>
+    <div class="radiacao-fragmento"></div>
+    <div class="duplicado"></div>
+    <div class="radiacao-fragmento"></div>
+    <div class="duplicado"></div>
+    <div class="radiacao-fragmento"></div>
+    <div class="duplicado"></div>
+    <div class="radiacao-fragmento"></div>
+    <div class="duplicado"></div>
+    <div class="radiacao-fragmento"></div>
+    <div class="duplicado"></div>
+    <div class="radiacao-fragmento"></div>
+    <div class="duplicado"></div>
+    <div class="radiacao-fragmento"></div>
+    <div class="duplicado"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Shattered Echoes of the Fractured Selves Symphony</title>
+  <style>
+    /* css_foundation */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* .codigo */
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    /* .animation-container */
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* keyframes: Shattered Echoes */
+    @keyframes shattered {
+      0% {
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        transform: translateX(-50%) translateY(-50%) rotate(90deg);
+        opacity: 0.2;
+      }
+      40% {
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+        opacity: 0.5;
+      }
+      50% {
+        transform: translateX(-50%) translateY(-50%) rotate(180deg);
+        opacity: 1;
+      }
+      70% {
+        transform: translateX(-50%) translateY(-50%) rotate(180deg);
+        opacity: 0.5;
+      }
+      90% {
+        transform: translateX(-50%) translateY(-50%) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Shattered Silhouettes */
+    .shattered-silhouette {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: shattered 1.5s linear infinite;
+    }
+
+    /* Fragmented Identity */
+    .fragmented-identity {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #ff69b4;
+      border-radius: 50%;
+      animation: shattered 2s linear infinite;
+    }
+
+    /* Existential Crisis */
+    .existential-crisis {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background-color: #0097a7;
+      border-radius: 50%;
+      animation: shattered 2.5s linear infinite;
+    }
+
+    /* Self-Discovery */
+    .self-discovery {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background-color: #ffff00;
+      border-radius: 50%;
+      animation: shattered 3s linear infinite;
+    }
+
+    /* Shattered Echoes of the Fractured Selves */
+    .shattered-echoes {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background-color: #000;
+      border-radius: 50%;
+      animation: shattered 3.5s linear infinite;
+    }
+
+    /* Interdependence */
+    .interdependence {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background-color: #808080;
+      border-radius: 50%;
+      animation: shattered 4s linear infinite;
+    }
+
+    /* Micro-Details: Hue Shift */
+    .hue-shift {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #ff69b4;
+      border-radius: 50%;
+      animation: hue 1.2s linear infinite;
+    }
+
+    @keyframes hue {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+
+    /* Replay Value Check */
+    .replay-value-check {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #ff69b4;
+      border-radius: 50%;
+      animation: shattered 2s linear infinite;
+    }
+
+    /* Example CSS snippet */
+    <div class="codigo">
+      <span class="selector">.shattered-silhouette</span><span class="brace">{</span>
+      <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+      <span class="property">animation</span>: <span class="function">shattered</span> <span class="value-number">1.5s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+    </div>
+
+    /* .codigo */
+    <div class="codigo">
+      <span class="selector">.fragmented-identity</span><span class="brace">{</span>
+      <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+      <span class="property">animation</span>: <span class="function">shattered</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+    </div>
+
+    /* .codigo */
+    <div class="codigo">
+      <span class="selector">.existential-crisis</span><span class="brace">{</span>
+      <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+      <span class="property">animation</span>: <span class="function">shattered</span> <span class="value-number">2.5s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+    </div>
+
+    /* .codigo */
+    <div class="codigo">
+      <span class="selector">.self-discovery</span><span class="brace">{</span>
+      <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+      <span class="property">animation</span>: <span class="function">shattered</span> <span class="value-number">3s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+    </div>
+
+    /* .codigo */
+    <div class="codigo">
+      <span class="selector">.shattered-echoes</span><span class="brace">{</span>
+      <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+      <span class="property">animation</span>: <span class="function">shattered</span> <span class="value-number">3.5s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+    </div>
+
+    /* .codigo */
+    <div class="codigo">
+      <span class="selector">.interdependence</span><span class="brace">{</span>
+      <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+      <span class="property">animation</span>: <span class="function">shattered</span> <span class="value-number">4s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+    </div>
+
+    /* .codigo */
+    <div class="codigo">
+      <span class="selector">.micro-details-hue-shift</span><span class="brace">{</span>
+      <span class="property">filter</span>: <span class="function">hue-rotate</span>(0deg);
+      <span class="property">animation</span>: <span class="function">hue</span> <span class="value-number">1.2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+    </div>
+
+    /* Replay Value Check */
+    <div class="codigo">
+      <span class="selector">.replay-value-check</span><span class="brace">{</span>
+      <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+      <span class="property">animation</span>: <span class="function">shattered</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+    </div>
+  </style>
+  <div class="animation-container">
+    <!-- Shattered Silhouettes -->
+    <div class="shattered-silhouette">
+    </div>
+    <!-- Fragmented Identity -->
+    <div class="fragmented-identity">
+    </div>
+    <!-- Existential Crisis -->
+    <div class="existential-crisis">
+    </div>
+    <!-- Self-Discovery -->
+    <div class="self-discovery">
+    </div>
+    <!-- Shattered Echoes of the Fractured Selves -->
+    <div class="shattered-echoes">
+    </div>
+    <!-- Interdependence -->
+    <div class="interdependence">
+    </div>
+    <!-- Micro-Details: Hue Shift -->
+    <div class="hue-shift">
+    </div>
+    <!-- Replay Value Check -->
+    <div class="replay-value-check">
+    </div>
+  </div>
+</head>
+<body>
+  <!-- .codigo -->
+  <div class="codigo">
+    <span class="selector">.shattered-silhouette</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">shattered</span> <span class="value-number">1.5s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <!-- .codigo -->
+  <div class="codigo">
+    <span class="selector">.fragmented-identity</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">shattered</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <!-- .codigo -->
+  <div class="codigo">
+    <span class="selector">.existential-crisis</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">shattered</span> <span class="value-number">2.5s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <!-- .codigo -->
+  <div class="codigo">
+    <span class="selector">.self-discovery</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">shattered</span> <span class="value-number">3s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <!-- .codigo -->
+  <div class="codigo">
+    <span class="selector">.shattered-echoes</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">shattered</span> <span class="value-number">3.5s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <!-- .codigo -->
+  <div class="codigo">
+    <span class="selector">.interdependence</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">shattered</span> <span class="value-number">4s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <!-- .codigo -->
+  <div class="codigo">
+    <span class="selector">.micro-details-hue-shift</span><span class="brace">{</span>
+    <span class="property">filter</span>: <span class="function">hue-rotate</span>(0deg);
+    <span class="property">animation</span>: <span class="function">hue</span> <span class="value-number">1.2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <!-- Replay Value Check -->
+  <div class="codigo">
+    <span class="selector">.replay-value-check</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">shattered</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+</body>
+</html>

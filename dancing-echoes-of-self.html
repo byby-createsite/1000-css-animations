@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Dancing Echoes of Self</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dancing Echoes of Self</title>
+    <style>
+        /* css_foundation */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top:15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+
+        .selector { color: #F92672; }
+        .property { color: #66D9EF; }
+        .value-number { color: #AE81FF; }
+        .value-string { color: #E6DB74; }
+        .value-color { color: #A6E22E; }
+        .function { color: #A6E22E; }
+
+        .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        .loading-element {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #2e4053;
+            animation: loading-animation 1s linear infinite;
+        }
+
+        .codigo {
+            <span class="selector">.loading-element</span> <span class="brace">{</span>
+                <span class="property">background</span>: <span class="value-string">radial-gradient(#2e4053, #2e4053 80%, #1a1d23 100%</span>);
+                <span class="property">box-shadow</span>: <span class="value-string">-8px 10px 18px rgba(0, 0, 0, 0.55)</span>;
+                <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+                <span class="property">display</span>: <span class="value-string">flex</span>;
+                <span class="property">justify-content</span>: <span class="value-string">center</span>;
+                <span class="property">align-items</span>: <span class="value-string">center</span>;
+            <span class="brace">}</span>
+        }
+
+        @keyframes loading-animation {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+                backdrop-filter: blur(0);
+            }
+            10% {
+                transform: scale(1.2);
+                opacity: 0.7;
+                backdrop-filter: blur(5px);
+            }
+            20% {
+                transform: scale(0.8);
+                opacity: 0.3;
+                backdrop-filter: blur(10px);
+            }
+            30% {
+                transform: scale(1);
+                opacity: 0.9;
+                backdrop-filter: blur(0);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+                backdrop-filter: blur(0);
+            }
+        }
+
+        .silhueta-01 {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            transform: rotate(45deg) translate(0, -50px);
+            animation: silhueta-animacao 2s linear infinite;
+        }
+
+        .codigo {
+            <span class="selector">.silhueta-01</span> <span class="brace">{</span>
+                <span class="property">background</span>: <span class="value-string">#fff</span>;
+                <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+                <span class="property">transform</span>: <span class="function">rotate</span><span class="value-string"></span>(<span class="value-number">45</span>°)<span class="value-string"> </span><span class="value-string">translate</span><span class="value-string"> </span>(<span class="value-number">0</span>px, <span class="value-number">-50</span>px);
+                <span class="property">animation</span>: <span class="function">silhueta-animacao</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+            <span class="brace">}</span>
+        }
+
+        @keyframes silhueta-animacao {
+            0% {
+                opacity: 1;
+                transform: rotate(45deg) translate(0, -50px);
+            }
+            10% {
+                opacity: 0.7;
+                transform: rotate(42deg) translate(2px, -52px);
+            }
+            20% {
+                opacity: 0.3;
+                transform: rotate(40deg) translate(5px, -55px);
+            }
+            30% {
+                opacity: 0.9;
+                transform: rotate(45deg) translate(0, -50px);
+            }
+            100% {
+                opacity: 1;
+                transform: rotate(45deg) translate(0, -50px);
+            }
+        }
+
+        .silhueta-02 {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border-radius: 50%;
+            transform: rotate(45deg) translate(-30px, -50px);
+            animation: silhueta-animacao-02 3s linear infinite;
+        }
+
+        .codigo {
+            <span class="selector">.silhueta-02</span> <span class="brace">{</span>
+                <span class="property">background</span>: <span class="value-string">#fff</span>;
+                <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+                <span class="property">transform</span>: <span class="function">rotate</span><span class="value-string"></span>(<span class="value-number">45</span>°)<span class="value-string"> </span><span class="value-string">translate</span><span class="value-string"> </span>(<span class="value-number">-30</span>px, <span class="value-number">-50</span>px);
+                <span class="property">animation</span>: <span class="function">silhueta-animacao-02</span> <span class="value-number">3s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+            <span class="brace">}</span>
+        }
+
+        @keyframes silhueta-animacao-02 {
+            0% {
+                opacity: 1;
+                transform: rotate(45deg) translate(-30px, -50px);
+            }
+            10% {
+                opacity: 0.7;
+                transform: rotate(42deg) translate(-32px, -52px);
+            }
+            20% {
+                opacity: 0.3;
+                transform: rotate(40deg) translate(-35px, -55px);
+            }
+            30% {
+                opacity: 0.9;
+                transform: rotate(45deg) translate(-30px, -50px);
+            }
+            100% {
+                opacity: 1;
+                transform: rotate(45deg) translate(-30px, -50px);
+            }
+        }
+
+        .silhueta-03 {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            transform: rotate(45deg);
+        }
+
+        .codigo {
+            <span class="selector">.silhueta-03</span> <span class="brace">{</span>
+                <span class="property">background</span>: <span class="value-string">#fff</span>;
+                <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+                <span class="property">transform</span>: <span class="function">rotate</span><span class="value-string"></span>(<span class="value-number">45</span>°);
+                <span class="property">animation</span>: <span class="function">silhueta-animacao-03</span> <span class="value-number">4s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+            <span class="brace">}</span>
+        }
+
+        @keyframes silhueta-animacao-03 {
+            0% {
+                opacity: 1;
+                transform: rotate(45deg);
+            }
+            5% {
+                opacity: 0.7;
+                transform: rotate(42deg);
+            }
+            10% {
+                opacity: 0.3;
+                transform: rotate(40deg);
+            }
+            15% {
+                opacity: 0.9;
+                transform: rotate(45deg);
+            }
+            20% {
+                opacity: 1;
+                transform: rotate(48deg);
+            }
+            25% {
+                opacity: 0.7;
+                transform: rotate(50deg);
+            }
+            30% {
+                opacity: 0.3;
+                transform: rotate(52deg);
+            }
+            35% {
+                opacity: 0.9;
+                transform: rotate(55deg);
+            }
+            40% {
+                opacity: 1;
+                transform: rotate(60deg);
+            }
+            100% {
+                opacity: 1;
+                transform: rotate(60deg);
+            }
+        }
+
+        .silhueta-04 {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border-radius: 50%;
+            transform: rotate(45deg);
+            animation: silhueta-animacao-04 4s linear infinite;
+        }
+
+        .codigo {
+            <span class="selector">.silhueta-04</span> <span class="brace">{</span>
+                <span class="property">background</span>: <span class="value-string">#fff</span>;
+                <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+                <span class="property">transform</span>: <span class="function">rotate</span><span class="value-string"></span>(<span class="value-number">45</span>°);
+                <span class="property">animation</span>: <span class="function">silhueta-animacao-04</span> <span class="value-number">4s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+            <span class="brace">}</span>
+        }
+
+        @keyframes silhueta-animacao-04 {
+            0% {
+                opacity: 1;
+                transform: rotate(45deg);
+            }
+            10% {
+                opacity: 0.7;
+                transform: rotate(42deg);
+            }
+            20% {
+                opacity: 0.3;
+                transform: rotate(40deg);
+            }
+            30% {
+                opacity: 0.9;
+                transform: rotate(45deg);
+            }
+            5% {
+                opacity: 1;
+                transform: rotate(48deg);
+            }
+            15% {
+                opacity: 0.7;
+                transform: rotate(50deg);
+            }
+            25% {
+                opacity: 0.3;
+                transform: rotate(52deg);
+            }
+            35% {
+                opacity: 0.9;
+                transform: rotate(55deg);
+            }
+            40% {
+                opacity: 1;
+                transform: rotate(60deg);
+            }
+            45% {
+                opacity: 0.7;
+                transform: rotate(62deg);
+            }
+            50% {
+                opacity: 0.3;
+                transform: rotate(65deg);
+            }
+            55% {
+                opacity: 0.9;
+                transform: rotate(70deg);
+            }
+            60% {
+                opacity: 1;
+                transform: rotate(75deg);
+            }
+            100% {
+                opacity: 1;
+                transform: rotate(75deg);
+            }
+        }
+
+        .silhueta-05 {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            transform: rotate(45deg);
+            animation: silhueta-animacao-05 6s linear infinite;
+        }
+
+        .codigo {
+            <span class="selector">.silhueta-05</span> <span class="brace">{</span>
+                <span class="property">background</span>: <span class="value-string">#fff</span>;
+                <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+                <span class="property">transform</span>: <span class="function">rotate</span><span class="value-string"></span>(<span class="value-number">45</span>°);
+                <span class="property">animation</span>: <span class="function">silhueta-animacao-05</span> <span class="value-number">6s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+            <span class="brace">}</span>
+        }
+
+        @keyframes silhueta-animacao-05 {
+            0% {
+                opacity: 1;
+                transform: rotate(45deg);
+            }
+            15% {
+                opacity: 0.7;
+                transform: rotate(42deg);
+            }
+            20% {
+                opacity: 0.3;
+                transform: rotate(40deg);
+            }
+            25% {
+                opacity: 0.9;
+                transform: rotate(45deg);
+            }
+            5% {
+                opacity: 1;
+                transform: rotate(48deg);
+            }
+            25% {
+                opacity: 1;
+                transform: rotate(50deg);
+            }
+            30% {
+                opacity: 0.7;
+                transform: rotate(52deg);
+            }
+            35% {
+                opacity: 0.3;
+                transform: rotate(55deg);
+            }
+            40% {
+                opacity: 0.9;
+                transform: rotate(60deg);
+            }
+            45% {
+                opacity: 1;
+                transform: rotate(62deg);
+            }
+            50% {
+                opacity: 0.7;
+                transform: rotate(65deg);
+            }
+            55% {
+                opacity: 0.3;
+                transform: rotate(70deg);
+            }
+            60% {
+                opacity: 0.9;
+                transform: rotate(75deg);
+            }
+            65% {
+                opacity: 1;
+                transform: rotate(78deg);
+            }
+            100% {
+                opacity: 1;
+                transform: rotate(78deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="codigo">
+        <span class="selector">.silhueta-01</span><span class="brace">{</span>
+        <span class="property">background</span>: <span class="value-string">#fff</span>;
+        <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+        <span class="property">transform</span>: <span class="function">rotate</span><span class="value-string"></span>(<span class="value-number">45</span>°)<span class="value-string"> </span><span class="value-string">translate</span><span class="value-string"> </span>(<span class="value-number">0</span>px, <span class="value-number">-50</span>px);
+        <span class="property">animation</span>: <span class="function">silhueta-animacao</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+        <span class="brace">}</span>
+    </div>
+    <div class="animation-container">
+        <div class="loading-element"></div>
+        <div class="silhueta-01"></div>
+        <div class="silhueta-02"></div>
+        <div class="silhueta-03"></div>
+        <div class="silhueta-04"></div>
+        <div class="silhueta-05"></div>
+    </div>
+</body>
+</html>

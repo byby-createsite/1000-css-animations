@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Shattered Harmonies of the Fractured Selves</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shattered Harmonies</title>
+    <style>
+        /* Fundação do CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background:url("https://vinixodin.com/thumb.jpg") no-repeat center center;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top:15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+
+        .selector       { color: #F92672; }
+        .property       { color: #66D9EF; }
+        .value-number   { color: #AE81FF; }
+        .value-string   { color: #E6DB74; }
+        .value-color    { color: #A6E22E; }
+        .function       { color: #A6E22E; }
+
+        /* Conteúdo do CSS */
+
+        /* Código */
+        <div class="codigo">
+            <span class="selector">.elemento-fragmentado</span><span class="brace">{</span>
+            <span class="property">transform</span>: <span class="function">translateX</span><span class="value-string">(<span class="value-number">100%</span>)</span><span class="brace">)</span>;
+            <span class="property">animation</span>: <span class="function">fragmentacao</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+            <span class="brace">}</span>
+        </div>
+
+        /* Cenário de animação */
+        .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            aspect-ratio: 9/16;
+            min-height: 100vh;
+        }
+
+        /* Elementos da animação */
+        .elemento-fragmentado {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+            animation: fragmentacao 1s linear infinite;
+            animation-delay: calc((10) * 0.5s);
+            transform-origin: center;
+            position: relative;
+            z-index: 0;
+        }
+
+        .fragmento-1::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+            animation: fragmentacao 1s linear infinite;
+            animation-delay: calc((1) * 0.5s);
+            transform-origin: center;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+        }
+
+        .fragmento-2::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+            animation: fragmentacao 1s linear infinite;
+            animation-delay: calc((4) * 0.5s);
+            transform-origin: center;
+            bottom: 10px;
+            right: 30px;
+            z-index: 1;
+        }
+
+        .fragmento-3::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+            animation: fragmentacao 1s linear infinite;
+            animation-delay: calc((6) * 0.5s);
+            transform-origin: center;
+            top: 10px;
+            right: 20px;
+            z-index: 2;
+        }
+
+        .harmonia-fragmentada {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(-180deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+            animation: fragmentacao-harmonia 1s linear infinite;
+            animation-delay: 0s;
+            position: relative;
+            z-index: 0;
+        }
+
+        .fragmento-harmonia-1::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 1px;
+            background: linear-gradient(-180deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+            animation: fragmentacao-harmonia 1s linear infinite;
+            animation-delay: calc((2) * 0.5s);
+            left: 40px;
+            z-index: 1;
+        }
+
+        .fragmento-harmonia-2::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 1px;
+            background: linear-gradient(-180deg, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%);
+            animation: fragmentacao-harmonia 1s linear infinite;
+            animation-delay: calc((8) * 0.5s);
+            right: 40px;
+            z-index: 1;
+        }
+
+        /* Animações */
+        @keyframes fragmentacao {
+            0% {
+                transform: translateX(0);
+                background-size: 50px 50px;
+            }
+            100% {
+                transform: translateX(500px);
+                background-size: 300px 300px;
+            }
+        }
+
+        @keyframes fragmentacao-harmonia {
+            0% {
+                left: 0;
+                background-size: 20px 2px;
+            }
+            100% {
+                left: 80%;
+                background-size: 120px 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="codigo">
+        <span class="selector">.loading-element</span><span class="brace">{</span>
+        <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+        <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+        <span class="brace">}</span>
+    </div>
+    <div class="animation-container">
+        <div class="elemento-fragmentado"></div>
+        <div class="fragmento-1"></div>
+        <div class="fragmento-2"></div>
+        <div class="fragmento-3"></div>
+        <div class="harmonia-fragmentada"></div>
+        <div class="fragmento-harmonia-1"></div>
+        <div class="fragmento-harmonia-2"></div>
+    </div>
+</body>
+</html>
