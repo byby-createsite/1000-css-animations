@@ -42,7 +42,7 @@ Send me an e-mail if interested.
 
  <br/><br/><br/>
 
-115/1000
+120/1000
 <br/><br/>
 <a href="./reflections-of-self-a-cracked-mirror-of-digital-identity.html">Reflections of Self: A Cracked Mirror of Digital Identity</a> <br/><br/>
 <a href="./sundayblues-mazedigger-devlife-codestruggles-cssanimation.html">Sundayblues mazedigger devlife codestruggles cssanimation</a> <br/><br/><a href="./sunday-mirror-self.html">Sunday mirror self</a> <br/><br/><a href="./code-reveal.html">Code reveal</a> <br/><br/><a href="./web-of-life.html">Web of life</a> <br/><br/><a href="./sundayblues.html">Sundayblues</a> <br/><br/><a href="./code-reveal.html">Code reveal</a> <br/><br/><a href="./liberation-station.html">Liberation station</a> <br/><br/><a href="./liberation.html">Liberation</a> <br/><br/><a href="./weblab-mirror-effect.html">Weblab mirror effect</a> <br/><br/><a href="./mirror-code.html">Mirror code</a> <br/><br/><a href="./fractured-selves-a-digital-identity-odyssey.html">Fractured Selves: A Digital Identity Odyssey</a> <br/><br/>
@@ -159,4 +159,4 @@ Send me an e-mail if interested.
 <a href="./whispering-fractures-of-self.html">Whispering Fractures of Self</a> <br/><br/>
 <a href="./dancing-shadows-of-the-self.html">Dancing Shadows of the Self</a> <br/><br/>
 <a href="./dancing-echoes-of-ephemeral-selves.html">Dancing Echoes of Ephemeral Selves</a> <br/><br/>
-<a href="./digital-dreamscape.html">Digital dreamscape</a> <br/><br/><a href="./ephemeral-identity.html">Ephemeral identity</a> <br/><br/><a href="./ephemeral-existence.html">Ephemeral existence</a> <br/><br/><a href="./fading-whispers.html">Fading whispers</a> <br/><br/><a href="./echoes-of-impermanence.html">Echoes of impermanence</a> <br/><br/>
+<a href="./digital-dreamscape.html">Digital dreamscape</a> <br/><br/><a href="./ephemeral-identity.html">Ephemeral identity</a> <br/><br/><a href="./ephemeral-existence.html">Ephemeral existence</a> <br/><br/><a href="./fading-whispers.html">Fading whispers</a> <br/><br/><a href="./echoes-of-impermanence.html">Echoes of impermanence</a> <br/><br/><a href="./ephemeral-identity-shifts.html">Ephemeral identity shifts</a> <br/><br/>
