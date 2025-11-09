@@ -1,0 +1,209 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background:url("./thumb.jpg") no-repeat center center;
+    background-color: black;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .codigo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #272822;
+    color: #F8F8F2;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    max-height: 25%;
+    max-width: 75%;
+    width: 75%;
+    height: 25%;
+    top:15%;
+    overflow-y: hidden;
+    box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+  }
+
+  .selector       { color: #F92672; }
+  .property       { color: #66D9EF; }
+  .value-number   { color: #AE81FF; }
+  .value-string   { color: #E6DB74; }
+  .value-color    { color: #A6E22E; }
+  .function       { color: #A6E22E; }
+
+  .animation-container {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    background: transparent;
+  }
+
+  .loading-element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .loading-element::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    animation: loading-animation 1s linear infinite;
+  }
+
+  .loading-element::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 1);
+    animation: loading-circle 1s linear infinite;
+  }
+
+  .loading-element .cicle1 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    animation: loading-ellipse 3s linear infinite;
+  }
+
+  @keyframes loading-animation {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes loading-circle {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes loading-ellipse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .codigo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #272822;
+    color: #F8F8F2;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    max-height: 25%;
+    max-width: 75%;
+    width: 75%;
+    height: 25%;
+    top:15%;
+    overflow-y: hidden;
+    box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+  }
+
+  .selector       { color: #F92672; }
+  .property       { color: #66D9EF; }
+  .value-number   { color: #AE81FF; }
+  .value-string   { color: #E6DB74; }
+  .value-color    { color: #A6E22E; }
+  .function       { color: #A6E22E; }
+
+  <span class="selector">.loading-element</span>{<span class="property">border-radius</span>: <span class="value-number">50%</span>;<span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;}
+  <span class="selector">.loading-element::before</span>{<span class="property">background-color</span>: <span class="value-string">rgba(255, 255, 255, 0.1)</span>;<span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;}
+  <span class="selector">.loading-element::after</span>{<span class="property">animation</span>: <span class="function">loading-circle</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;}
+  <span class="selector">.loading-element .cicle1</span>{<span class="property">background-color</span>: <span class="value-string">rgba(255, 255, 255, 0.5)</span>;<span class="property">animation</span>: <span class="function">loading-ellipse</span> <span class="value-number">3s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;}
+
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <div class="loading-element">
+      <div class="cicle1">
+      </div>
+    </div>
+  </div>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+    <span class="selector">.loading-element::before</span><span class="brace">{</span>
+    <span class="property">background-color</span>: <span class="value-string">rgba(255, 255, 255, 0.1)</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+    <span class="selector">.loading-element::after</span><span class="brace">{</span>
+    <span class="property">animation</span>: <span class="function">loading-circle</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+    <span class="selector">.loading-element .cicle1</span><span class="brace">{</span>
+    <span class="property">background-color</span>: <span class="value-string">rgba(255, 255, 255, 0.5)</span>;
+    <span class="property">animation</span>: <span class="function">loading-ellipse</span> <span class="value-number">3s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+</body>
+</html>
+```
+Esse código cria um elemento de carregamento, que parece uma fratura, que contém círculos em expansão.
