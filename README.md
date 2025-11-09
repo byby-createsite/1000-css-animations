@@ -159,4 +159,4 @@ Send me an e-mail if interested.
 <a href="./whispering-fractures-of-self.html">Whispering Fractures of Self</a> <br/><br/>
 <a href="./dancing-shadows-of-the-self.html">Dancing Shadows of the Self</a> <br/><br/>
 <a href="./dancing-echoes-of-ephemeral-selves.html">Dancing Echoes of Ephemeral Selves</a> <br/><br/>
-<a href="./digital-dreamscape.html">Digital dreamscape</a> <br/><br/><a href="./ephemeral-identity.html">Ephemeral identity</a> <br/><br/><a href="./ephemeral-existence.html">Ephemeral existence</a> <br/><br/><a href="./fading-whispers.html">Fading whispers</a> <br/><br/>
+<a href="./digital-dreamscape.html">Digital dreamscape</a> <br/><br/><a href="./ephemeral-identity.html">Ephemeral identity</a> <br/><br/><a href="./ephemeral-existence.html">Ephemeral existence</a> <br/><br/><a href="./fading-whispers.html">Fading whispers</a> <br/><br/><a href="./echoes-of-impermanence.html">Echoes of impermanence</a> <br/><br/>

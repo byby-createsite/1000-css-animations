@@ -1,0 +1,189 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:url("./thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    /* A CSS animation que irá animar o conteúdo do .animation-container */
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* Crie um código CSS para o elemento com classe .loading-element */
+    .loading-element {
+      /* Dê um formato arredondado ao elemento */
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      left: 25%;
+      top: 25%;
+      background: #66D9EF;
+      animation: loading-animation 1s linear infinite;
+    }
+
+    /* Crie um efeito de animação para o elemento com a classe .loading-element */
+    @keyframes loading-animation {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
+
+    /* Adicione mais elementos ao .animation-container para criar uma composição mais rica */
+    .animation-container::before, 
+    .animation-container::after {
+      content: '';
+      position: absolute;
+    }
+
+    .animation-container::before {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      background: #F92672;
+      animation: pulse-animation 1s linear infinite;
+    }
+
+    @keyframes pulse-animation {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .animation-container::after {
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 20px;
+      height: 20px;
+      background: #66D9EF;
+      animation: rotate-animation 1s linear infinite;
+    }
+
+    @keyframes rotate-animation {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(90deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    .animacao-fragmento {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: #F92672;
+      animation: fragmento-animacao 1s linear infinite;
+    }
+
+    @keyframes fragmento-animacao {
+      0% {
+        left: 0;
+      }
+      50% {
+        left: 50%;
+      }
+      100% {
+        left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span>
+    <span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: 
+      <span class="function">loading-animation</span> 
+      <span class="value-number">1s</span> 
+      <span class="value-string">linear</span> 
+      <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="loading-element">
+    </div>
+    <div class="animacao-fragmento"></div>
+    <div class="animation-container::before"></div>
+    <div class="animation-container::after"></div>
+  </div>
+</body>
+</html>
+```
