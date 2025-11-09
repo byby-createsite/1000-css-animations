@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* Base styles */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url("./thumb.jpg") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top:15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector       { color: #F92672; }
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; }
+    .value-string   { color: #E6DB74; }
+    .value-color    { color: #A6E22E; }
+    .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+      aspect-ratio: 9/16;
+    }
+
+    /* Layers 1-3: Fading Whispers */
+    .fading-whispers {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fading-whisper-1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background-color: #333;
+      color: #888;
+      font-size: 24px;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      line-height: 100%;
+      pointer-events: none;
+    }
+
+    .fading-whisper-1::before {
+      content: 'Fading whispers do self...';
+      position: absolute;
+      top: 0%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 16px;
+      line-height: 16px;
+      white-space: pre-wrap;
+      pointer-events: none;
+      color: #F8F8F2;
+      text-shadow: 0 0 10px #555;
+    }
+
+    .fading-whisper-2 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      height: 50%;
+      background-color: #444;
+      color: #666;
+      font-size: 24px;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      line-height: 100%;
+      pointer-events: none;
+    }
+
+    .fading-whisper-2::before {
+      content: 'Impermanência é tudo...';
+      position: absolute;
+      bottom: 100%;
+      left: 100%;
+      transform: translate(-100%, 100%);
+      font-size: 16px;
+      line-height: 16px;
+      white-space: pre-wrap;
+      pointer-events: none;
+      color: #F8F8F2;
+      text-shadow: 0 0 10px #555;
+    }
+
+    .fading-whisper-3 {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 100%;
+      height: 50%;
+      background-color: #555;
+      color: #777;
+      font-size: 24px;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      line-height: 100%;
+      pointer-events: none;
+    }
+
+    .fading-whisper-3::before {
+      content: 'E tudo desaparece no vazio...';
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      transform: translateX(100%);
+      font-size: 16px;
+      line-height: 16px;
+      white-space: pre-wrap;
+      pointer-events: none;
+      color: #F8F8F2;
+      text-shadow: 0 0 10px #555;
+    }
+
+    /* Animação de dissolução */
+    @keyframes dissolve {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .fading-whisper-1 {
+      animation: dissolve 2s linear;
+    }
+
+    .fading-whisper-2 {
+      animation: dissolve 2s linear 1s;
+    }
+
+    .fading-whisper-3 {
+      animation: dissolve 2s linear 2s;
+    }
+
+    /* Core CSS snippet para a animação */
+    <div class="codigo">
+      <span class="selector">.fading-whispers</span><span class="brace">{</span>
+      <span class="property">position</span>: <span class="value-string">absolute</span>;
+      <span class="property">top</span>: <span class="value-number">50%</span>;
+      <span class="property">left</span>: <span class="value-number">50%</span>;
+      <span class="property">transform</span>: <span class="function">translate(-50%, -50%)</span>;
+      <span class="brace">}</span>
+    </div>
+
+    /* Animação de fade */
+    @keyframes fade {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* Core CSS snippet para a animação */
+    <div class="codigo">
+      <span class="selector">.loading-element</span><span class="brace">{</span>
+      <span class="property">animation</span>: <span class="function">fade</span> <span class="value-number">2s</span> <span class="value-string">linear</span>;
+      <span class="brace">}</span>
+    </div>
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <div class="fading-whispers">
+      <div class="fading-whisper-1"></div>
+      <div class="fading-whisper-2"></div>
+      <div class="fading-whisper-3"></div>
+    </div>
+  </div>
+  <div class="codigo">
+    <span class="selector">.fading-whispers</span><span class="brace">{</span>
+    <span class="property">position</span>: <span class="value-string">absolute</span>;
+    <span class="property">top</span>: <span class="value-number">50%</span>;
+    <span class="property">left</span>: <span class="value-number">50%</span>;
+    <span class="property">transform</span>: <span class="function">translate(-50%, -50%)</span>;
+    <span class="brace">}</span>
+  </div>
+</body>
+</html>
