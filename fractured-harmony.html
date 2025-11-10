@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Foundation: background, font, margin, padding, box-sizing -->
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .selector { color: #F92672; } /* color for selectors (e.g., .example) */
+    .property { color: #66D9EF; } /* color for properties (e.g., border-radius) */
+    .value-number { color: #AE81FF; } /* color for numbers (e.g., 50%) */
+    .value-string { color: #E6DB74; } /* color for strings (e.g., linear) */
+    .value-color { color: #A6E22E; } /* color for colors (e.g., #000) */
+    .function { color: #A6E22E; } /* color for function names (e.g., example-animation) */
+
+    /* Animation container */
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* Animation logic: Fractured Harmony */
+    .fractured-animation {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      background: linear-gradient(to bottom, #ff0000 0%, #00ff00 50%, #0000ff 100%);
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      animation: fractured-identity 1s linear infinite;
+    }
+
+    /* Micro-detail: hue shift on second playthrough */
+    .micro-detail {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      background: linear-gradient(to bottom, #ff0000 0%, #00ff99 50%, #0000ff 100%);
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      animation: fractured-identity 2s linear infinite;
+      transform: rotate(45deg);
+    }
+    /* Fracture movement animation */
+    .fracture-movement {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      background: linear-gradient(to bottom, #ff0000 0%, #00ff00 50%, #0000ff 100%);
+    }
+
+    @keyframes fractured-identity {
+    0% {
+      transform: scale(1);
+    }
+    20% {
+      transform: scale(1.5);
+    }
+    40% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(1.2);
+    }
+    80% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  </style>
+</head>
+<body>
+  <!-- Code snippet container -->
+  <div class="codigo">
+    <span class="selector">.fractured-animation</span>
+    <span class="brace">{</span>
+    <span class="property">background</span>:
+      <span class="value-string">linear-gradient</span>(to bottom, <span class="value-string">#ff0000</span> 0%, <span class="value-string">#00ff00</span> 50%, <span class="value-string">#0000ff</span> 100%);
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>:
+      <span class="function">fractured-identity</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+
+  <!-- Animated scene container -->
+  <div class="animation-container">
+    <!-- Fracture elements -->
+    <div class="fracture-movement">&nbsp;</div>
+    <div class="fracture-movement">&nbsp;</div>
+    <div class="fracture-movement">&nbsp;</div>
+    <div class="fracture-movement">&nbsp;</div>
+    <div class="fracture-movement">&nbsp;</div>
+    <div class="fracture-movement">&nbsp;</div>
+    <div class="fracture-movement">&nbsp;</div>
+    <div class="fracture-movement">&nbsp;</div>
+    <div class="fracture-movement">&nbsp;</div>
+    <div class="fracture-movement">&nbsp;</div>
+
+    <!-- Fractured animation elements -->
+    <div class="fractured-animation">&nbsp;</div>
+    <div class="fractured-animation">&nbsp;</div>
+    <div class="fractured-animation">&nbsp;</div>
+    <div class="fractured-animation">&nbsp;</div>
+    <div class="fractured-animation">&nbsp;</div>
+    <div class="fractured-animation">&nbsp;</div>
+    <!-- Micro-detail (only visible on second playthrough) -->
+    <div class="micro-detail">&nbsp;</div>
+  </div>
+</body>
+</html>
