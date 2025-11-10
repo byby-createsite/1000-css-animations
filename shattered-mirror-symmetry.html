@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block.
+       You may change background-color to match the chosen palette, but keep the rest intact. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background:url("/thumb") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } /* class selector color */
+    .property       { color: #66D9EF; } /* property color */
+    .value-number   { color: #AE81FF; } /* value color */
+    .value-string   { color: #E6DB74; } /* value color */
+    .value-color    { color: #A6E22E; } /* color */
+    .function       { color: #A6E22E; } /* function color */
+    .mirror {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      border-radius: 50%;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      animation: shattered-mirror 2s;
+    }
+    .shards {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform-origin: top left;
+    }
+    .shard {
+      position: absolute;
+      width: 100px;
+      height: 20px;
+      background: #fff;
+      transform-origin: top left;
+      animation: shard-dance 2s infinite;
+    }
+    @keyframes shattered-mirror {
+      0% {
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      }
+      20% {
+        clip-path: polygon(50% 0%, 80% 50%, 50% 100%, 20% 50%);
+      }
+      40% {
+        clip-path: polygon(50% 0%, 60% 50%, 50% 100%, 40% 50%);
+      }
+      60% {
+        clip-path: polygon(50% 0%, 40% 50%, 50% 100%, 60% 50%);
+      }
+      80% {
+        clip-path: polygon(50% 0%, 20% 50%, 50% 100%, 80% 50%);
+      }
+      100% {
+        clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
+      }
+    }
+    @keyframes shard-dance {
+      0% {
+        transform: scale(1) rotate(0deg) translateX(0px) translateY(0px);
+      }
+      20% {
+        transform: scale(1) rotate(10deg) translateX(-10px) translateY(0px);
+      }
+      40% {
+        transform: scale(1) rotate(20deg) translateX(-20px) translateY(0px);
+      }
+      60% {
+        transform: scale(1) rotate(-20deg) translateX(20px) translateY(-10px);
+      }
+      80% {
+        transform: scale(1) rotate(-10deg) translateX(10px) translateY(-20px);
+      }
+      100% {
+        transform: scale(1) rotate(0deg) translateX(0px) translateY(0px);
+      }
+    }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } /* class selector color */
+    .property       { color: #66D9EF; } /* property color */
+    .value-number   { color: #AE81FF; } /* value color */
+    .value-string   { color: #E6DB74; } /* value color */
+    .value-color    { color: #A6E22E; } /* color */
+    .function       { color: #A6E22E; } /* function color */
+    .echo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      background: #fff;
+      animation: echo-dance 2s infinite;
+    }
+    @keyframes echo-dance {
+      0% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+      }
+      20% {
+        transform: translate(-50%, -50%) scale(1) rotate(10deg);
+      }
+      40% {
+        transform: translate(-50%, -50%) scale(1.2) rotate(-10deg);
+      }
+      60% {
+        transform: translate(-50%, -50%) scale(1.2) rotate(20deg);
+      }
+      80% {
+        transform: translate(-50%, -50%) scale(0.8) rotate(-20deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+      }
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } /* class selector color */
+    .property       { color: #66D9EF; } /* property color */
+    .value-number   { color: #AE81FF; } /* value color */
+    .value-string   { color: #E6DB74; } /* value color */
+    .value-color    { color: #A6E22E; } /* color */
+    .function       { color: #A6E22E; } /* function color */
+    .loading-element {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      background: #fff;
+      animation: loading-animation 1s;
+    }
+    .loading-element::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border-radius: 50%;
+      content: " ";
+      width: 100px;
+      height: 100px;
+      animation: loading-animation 1s;
+    }
+    .loading-element::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border-radius: 50%;
+      content: " ";
+      width: 100px;
+      height: 100px;
+      animation: loading-animation 1s;
+    }
+    @keyframes loading-animation {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    .shard {
+      position: absolute;
+      width: 100px;
+      height: 20px;
+      background: #fff;
+      transform-origin: top left;
+      animation: shard-merge 2s infinite;
+    }
+    .shard::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: #fff;
+      transform-origin: top left;
+      animation: shard-merge 2s infinite;
+    }
+    .shard::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: #fff;
+      transform-origin: top left;
+      animation: shard-merge 2s infinite;
+    }
+    @keyframes shard-merge {
+      0% {
+        transform: scale(1);
+        transform-origin: top left;
+      }
+      20% {
+        transform: scale(1.2);
+        transform-origin: top left;
+      }
+      40% {
+        transform: scale(1.2);
+        transform-origin: top right;
+      }
+      60% {
+        transform: scale(1);
+        transform-origin: top right;
+      }
+      80% {
+        transform: scale(1);
+        transform-origin: top left;
+      }
+      100% {
+        transform: scale(1);
+        transform-origin: top left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <div class="mirror"></div>
+    <div class="shards">
+      <div class="shard"></div>
+      <div class="shard"></div>
+      <div class="shard"></div>
+      <div class="shard"></div>
+      <div class="shard"></div>
+      <div class="shard"></div>
+      <div class="shard"></div>
+      <div class="shard"></div>
+      <div class="shard"></div>
+      <div class="shard"></div>
+      <div class="shard"></div>
+      <div class="shard"></div>
+    </div>
+    <div class="echo"></div>
+    <div class="echo"></div>
+    <div class="echo"></div>
+    <div class="echo"></div>
+    <div class="echo"></div>
+    <div class="echo"></div>
+    <div class="echo"></div>
+    <div class="echo"></div>
+    <div class="echo"></div>
+    <div class="echo"></div>
+  </div>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-string">1</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+</body>
+</html>
