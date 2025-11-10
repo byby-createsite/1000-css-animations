@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block. 
+     You may change background-color to match the chosen palette, but keep the rest intact. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background:url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } 
+    .property       { color: #66D9EF; } 
+    .value-number   { color: #AE81FF; } 
+    .value-string   { color: #E6DB74; } 
+    .value-color    { color: #A6E22E; } 
+    .function       { color: #A6E22E; }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+    /* animation snippet */
+    .loading-element {
+      border-radius: 50%;
+      animation: loading-animation 1s linear infinite;
+    }
+    @keyframes loading-animation {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+        background-color: #A6E22E;
+      }
+      25% {
+        transform: translate(-50%, -50%) rotate(45deg);
+        background-color: #E6DB74;
+      }
+      50% {
+        transform: translate(-50%, -50%) rotate(90deg);
+        background-color: #F92672;
+      }
+      75% {
+        transform: translate(-50%, -50%) rotate(135deg);
+        background-color: #66D9EF;
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(180deg);
+        background-color: #A6E22E;
+      }
+    }
+    /* main CSS for the animation */
+    .threads {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .thread {
+      position: relative;
+      display: inline-block;
+      width: 2px;
+      height: 150px;
+      background-color: #66D9EF;
+      animation: thread-animation 2s linear infinite;
+    }
+    .thread::before {
+      content: '';
+      position: absolute;
+      top: 100%;
+      width: 2px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #66D9EF;
+      animation: thread-end-animation 1s linear infinite;
+    }
+    @keyframes thread-animation {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(50px);
+      }
+      100% {
+        transform: translateX(-50px);
+      }
+    }
+    @keyframes thread-end-animation {
+      0% {
+        opacity: 1;
+      }
+      25% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      75% {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    /* container for the threads */
+    .threads-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span>
+    <span class="brace">{</span>
+    <span class="property">background-color</span>
+    <span class="value-string">#A6E22E</span>;
+    <span class="property">border-radius</span>
+    <span class="value-number">50%</span>;
+    <span class="property">animation</span>
+    <span class="function">loading-animation</span>
+    <span class="value-number">1s</span>
+    <span class="value-string">linear</span>
+    <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="threads-container">
+      <div class="threads">
+        <div class="thread"></div>
+        <div class="thread"></div>
+        <div class="thread"></div>
+        <div class="thread"></div>
+        <div class="thread"></div>
+        <div class="thread"></div>
+        <div class="thread"></div>
+        <div class="thread"></div>
+        <div class="thread"></div>
+        <div class="thread"></div>
+        <div class="thread"></div>
+        <div class="thread"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
