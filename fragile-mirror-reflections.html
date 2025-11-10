@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block.
+    You may change background-color to match the chosen palette, but keep the rest intact. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .function       { color: #A6E22E; }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+    .loading-element {
+      position: absolute;
+      top: calc(50% - 50px);
+      left: calc(50% - 50px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #FF69B4;
+      animation: loading-animation 1s linear infinite;
+    }
+    @keyframes loading-animation {
+      0% {
+        transform: scale(0);
+        background-color: #FF69B4;
+      }
+      50% {
+        transform: scale(1.5);
+        background-color: #C9E4CA;
+      }
+      100% {
+        transform: scale(0);
+        background-color: #FF69B4;
+      }
+    }
+    .fragment {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+    .fragment.bottom-left {
+      border-width: 20px 20px 0 0;
+      border-color: transparent transparent #FF69B4 transparent;
+    }
+    .fragment.bottom-right {
+      border-width: 0 20px 20px 0;
+      border-color: transparent #FF69B4 transparent transparent;
+    }
+    .fragment.top-left {
+      border-width: 20px 0 0 20px;
+      border-color: #FF69B4 transparent transparent transparent;
+    }
+    .fragment.top-right {
+      border-width: 0 20px 20px 0;
+      border-color: transparent transparent transparent #FF69B4;
+    }
+    .animated-fade {
+      position: relative;
+      animation: fade 2s ease-in-out forwards;
+    }
+    @keyframes fade {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @supports (aspect-ratio: 9/16) {
+      /* This class will be used to create a shattered glass effect */
+      .shattered-glass {
+        pointer-events: none;
+        aspect-ratio: 9/16;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #333;
+      }
+      .glass-reflections {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vw;
+        height: 60vh;
+        background-color: #FF69B4;
+        clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+        transform: rotate(45deg);
+        z-index: 1;
+        animation: shattered-glass 5s ease-in-out infinite both;
+      }
+      @keyframes shattered-glass {
+        0% {
+          transform: rotate(45deg) scale(1);
+        }
+        50% {
+          transform: rotate(45deg) scale(0.9);
+        }
+        100% {
+          transform: rotate(45deg) scale(1);
+        }
+      }
+      .shattered-glass-piece {
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        width: 50px;
+        height: 100px;
+        background-color: #FF69B4;
+        clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+        transform-origin: top center;
+        animation: shattered-glass-piece 5s ease-in-out infinite both;
+      }
+      @keyframes shattered-glass-piece {
+        0% {
+          transform: rotate(45deg) scale(1);
+        }
+        50% {
+          transform: rotate(45deg) scale(0.9);
+        }
+        100% {
+          transform: rotate(45deg) scale(1);
+        }
+      }
+      .shattered-glass-pieces {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        gap: 10px;
+        width: 100%;
+        height: 100vh;
+      }
+      .shattered-faces {
+        grid-column: 3 / 7;
+        grid-row: 3 / 7;
+      }
+      .reflection {
+        position: absolute;
+        z-index: -1;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        transform: scaleX(-1);
+        clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+        animation: fade-in 2s ease-in-out forwards;
+      }
+      @keyframes fade-in {
+        100% {
+          width: 90%;
+          height: 80%;
+          transform: scale(1);
+        }
+      }
+      /* This class will be used to create the final mirror-like reflection */
+      .mirror {
+        position: absolute;
+        z-index: -1;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        transform: scale(1);
+        clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+        animation: mirror 5s ease-in-out infinite both;
+      }
+      @keyframes mirror {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .shard {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100px;
+        background-color: #FF69B4;
+        clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+        transform-origin: top center;
+        animation: shard 5s ease-in-out infinite both;
+      }
+      @keyframes shard {
+        0% {
+          transform: rotate(45deg) scale(1);
+        }
+        50% {
+          transform: rotate(45deg) scale(0.9);
+        }
+        100% {
+          transform: rotate(45deg) scale(1);
+        }
+      }
+      .reflection {
+        position: absolute;
+        z-index: -1;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        transform: scaleX(-1);
+        clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+        animation: fade-in 2s ease-in-out forwards;
+      }
+      @keyframes fade-in {
+        100% {
+          width: 100%;
+          height: 80%;
+          transform: scale(1);
+        }
+      }
+      .fragments {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        background-color: #FF69B4;
+        clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+        transform-origin: top center;
+        animation: fragments 5s ease-in-out infinite both;
+      }
+      @keyframes fragments {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(0.9);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+  </style>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="shattered-glass"></div>
+    <div class="glass-reflections">
+      <div class="shattered-faces">
+        <div class="reflection">
+        </div>
+        <div class="shard">
+        </div>
+        <div class="shard">
+        </div>
+        <div class="reflection">
+        </div>
+        <div class="fragments">
+        </div>
+      </div>
+      <div class="shards">
+        <div class="shattered-glass-piece">
+        </div>
+        <div class="shattered-glass-piece">
+        </div>
+        <div class="shattered-glass-piece">
+        </div>
+        <div class="shattered-glass-piece">
+        </div>
+        <div class="shattered-glass-piece">
+        </div>
+        <div class="shattered-glass-piece">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
