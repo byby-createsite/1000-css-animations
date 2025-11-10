@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block.
+       You may change background-color to match the chosen palette, but keep the rest intact. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background:url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } /* Selector color */
+    .property       { color: #66D9EF; } /* Property color */
+    .value-number   { color: #AE81FF; } /* Value number color */
+    .value-string   { color: #E6DB74; } /* Value string color */
+    .value-color    { color: #A6E22E; } /* Value color color */
+    .function       { color: #A6E22E; } /* Function color */
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* Define shape for loading elements */
+    .loading-element {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #FF69B4;
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    /* Load and move first element */
+    .loading-element:nth-child(1) {
+      background-color: #FF69B4;
+      animation: loading-animation 1s ease-in-out infinite, move-up 2s ease-in-out infinite;
+      transform: scale(1) translate(0, -10px);
+    }
+
+    /* Define animation for elements */
+    @keyframes move-up {
+      0% {
+        transform: scale(1) translate(0, 0);
+      }
+      50% {
+        transform: scale(0.5) translate(0, -20px);
+      }
+      100% {
+        transform: scale(1) translate(0, 0);
+      }
+    }
+
+    /* Load and move second element */
+    .loading-element:nth-child(2) {
+      animation: loading-animation 1s linear infinite;
+    }
+
+    /* Define animation for elements */
+    @keyframes moving-element {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(20px, 0);
+      }
+    }
+
+    @keyframes loading-animation {
+      0% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.5;
+        transform: scale(0.5);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes changing-color {
+      0% {
+        background-color: #FF69B4;
+      }
+      50% {
+        background-color: #A6A6A6;
+      }
+      100% {
+        background-color: #FF69B4;
+      }
+    }
+
+    .loading-element:after {
+      content: "";
+    }
+
+    .loading-element:nth-child(1):after {
+      animation: changing-color 1s linear infinite;
+      background-color: #FF69B4;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+    }
+
+    .loading-element:nth-child(2):after {
+      animation: changing-color 1s linear infinite;
+      background-color: #A6A6A6;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+    }
+
+    <div class="codigo">
+      <span class="selector">.loading-element</span><span class="brace">{</span>
+      <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="property">transform</span>: <span class="function">translate</span> <span class="value-string">(</span><span class="value-number">(0)</span><span class="value-string">,</span><span class="value-string"> </span><span class="value-number">0)</span><span class="value-string">)</span>;
+      <span class="property">opacity</span>: <span class="value-number">0.5</span>;
+      <span class="brace">}</span>
+    </div>
+
+    /* Load first 6 elements */
+    .loading-element:nth-child(n+1):first-child {
+      animation: loading-animation 1s ease-in-out infinite;
+      transform: scale(1) translate(0, -10px);
+    }
+
+    /* Define load timing for elements */
+    .loading-element:nth-child(n+1):last-child {
+      animation-delay: 0.8s;
+    }
+
+    /* Load second 6 elements */
+    .loading-element:nth-child(n+7):first-child {
+      animation: loading-animation 1s linear infinite;
+    }
+
+    /* Define load timing for elements */
+    .loading-element:nth-child(n+7):last-child {
+      animation-delay: 0.8s;
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+  </div>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">background-color</span>: <span class="value-color">#FF69B4</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">ease-in-out</span> <span class="value-string">infinite</span>;
+    <span class="property">animation</span>: <span class="function">moving-element</span> <span class="value-number">2s</span> <span class="value-string">ease-in-out</span> <span class="value-string">infinite</span>;
+    <span class="property">transform</span>: <span class="function">translate</span> <span class="value-string">(</span><span class="value-number">(0)</span><span class="value-string">,</span><span class="value-string"> </span><span class="value-number">0)</span><span class="value-string">)</span>;
+    <span class="property">opacity</span>: <span class="value-number">0.5</span>;
+    <span class="brace">}</span>
+  </div>
+</body>
+</html>
