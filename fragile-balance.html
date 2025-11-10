@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- HTML Document Meta Information -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fragile Balance</title>
+  
+  <!-- CSS Styles -->
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block.
+       You may change background-color to match the chosen palette, but keep the rest intact. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: url("/thumb") no-repeat center center;
+      background-color: #000;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } /* Color for class selector */
+    .property       { color: #66D9EF; } /* Color for property */
+    .value-number   { color: #AE81FF; } /* Color for numerical value */
+    .value-string   { color: #E6DB74; } /* Color for string value */
+    .value-color    { color: #A6E22E; } /* Color for color value */
+    .function       { color: #A6E22E; } /* Color for function names */
+    
+    /* Main CSS Code for the Animation */
+    .loading-element {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 200px;
+      background-color: #000;
+      border: 2px solid #FFF;
+      border-radius: 50%;
+      animation: loading-animation 1s linear infinite;
+    }
+    @keyframes loading-animation {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      25% {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(0.9);
+      }
+      75% {
+        transform: translate(-50%, -50%) scale(1.05);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+    
+    /* Animation Container Styles */
+    .animation-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      aspect-ratio: 9/16;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: transparent;
+    }
+    
+    /* Animated Elements Styles */
+    .fragment {
+      position: absolute;
+      background-color: #FFF;
+      opacity: 0;
+      transform: scale(0);
+      animation: fall 2s ease-out forwards;
+    }
+    @keyframes fall {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1) translateX(50%);
+      }
+      100% {
+        transform: scale(1.5) translateX(50%) rotate(45deg);
+      }
+    }
+    .silhouette {
+      position: absolute;
+      background-color: #000;
+      width: 100%;
+      height: 100%;
+      transform: scale(0.5) rotate(-45deg);
+      animation: rotate 2s ease-in-out infinite;
+    }
+    @keyframes rotate {
+      0% {
+        transform: scale(0.5) rotate(-45deg);
+      }
+      50% {
+        transform: scale(0.5) rotate(45deg);
+      }
+      100% {
+        transform: scale(0.5) rotate(-45deg);
+      }
+    }
+    
+    /* Glass Shards Styles */
+    .glass-shard {
+      position: absolute;
+      background-color: #FFF;
+      width: 50px;
+      height: 50px;
+      transform: translateX(50%) scale(0);
+      animation: shard-fall 2s ease-in-out forwards;
+    }
+    @keyframes shard-fall {
+      0% {
+        transform: translateX(50%) scale(0);
+      }
+      50% {
+        transform: translateX(50%) scale(1);
+      }
+      100% {
+        transform: translateX(50%) scale(1.5);
+      }
+    }
+    
+    /* Mirrored Labyrinth Styles */
+    .labyrinth {
+      position: absolute;
+      background-color: #000;
+      width: 100%;
+      height: 100%;
+      transform: scale(0.5);
+      animation: rotate-mirror 2s ease-in-out infinite;
+    }
+    @keyframes rotate-mirror {
+      0% {
+        transform: scale(0.5) rotate(-45deg);
+      }
+      50% {
+        transform: scale(0.5) rotate(45deg);
+      }
+      100% {
+        transform: scale(0.5) rotate(-45deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <div class="labyrinth"></div>
+    <div class="fragment" style="left: 20%; top: 20%; z-index: 10;"></div>
+    <div class="fragment" style="left: 40%; top: 20%; z-index: 9;"></div>
+    <div class="fragment" style="left: 60%; top: 20%; z-index: 8;"></div>
+    <div class="fragment" style="left: 20%; top: 40%; z-index: 7;"></div>
+    <div class="fragment" style="left: 40%; top: 40%; z-index: 6;"></div>
+    <div class="fragment" style="left: 60%; top: 40%; z-index: 5;"></div>
+    <div class="fragment" style="left: 20%; top: 60%; z-index: 4;"></div>
+    <div class="fragment" style="left: 40%; top: 60%; z-index: 3;"></div>
+    <div class="fragment" style="left: 60%; top: 60%; z-index: 2;"></div>
+    <div class="fragment" style="left: 20%; top: 80%; z-index: 1;"></div>
+    <div class="silhouette"></div>
+    <div class="glass-shard"></div>
+    <div class="glass-shard"></div>
+    <div class="glass-shard"></div>
+    <div class="glass-shard"></div>
+    <div class="glass-shard"></div>
+  </div>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+</body>
+</html>
