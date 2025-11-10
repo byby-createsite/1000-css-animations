@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impermanence Echoes</title>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block.
+       You may change background-color to match the chosen palette, but keep the rest intact. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background:url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    /* Code snippet container */
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } /* Color: class/id selector */
+    .property       { color: #66D9EF; } /* Color: CSS property e.g. 'width' */
+    .value-number   { color: #AE81FF; } /* Color: number value e.g. 20px */
+    .value-string   { color: #E6DB74; } /* Color: string value e.g. 'center' */
+    .function       { color: #A6E22E; } /* Color: CSS function e.g. 'translateX' */
+    
+    /* Main animation container */
+    .animation-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 9/16;
+      min-height: 100vh;
+      overflow: hidden;
+      background: transparent;
+    }
+    
+    /* Animation snippet */
+    <div class="codigo">
+      <span class="selector">.loading-element</span>
+      <span class="brace">{</span>
+      <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+      <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+    </div>
+    
+    /* Main CSS implementation for the animation */
+    /* Main animation container */
+    .animation-container {
+      --num-elements: 6;
+    }
+    
+    .loading-element {
+      background-color: hsl(0, 70%, 70%);
+      width: 10vmin;
+      height: 18vmin;
+      animation: loading-animation 1.5s linear infinite;
+      position: absolute;
+      top: calc(50% - 9vmin / 2);
+      left: calc(50% - 9vmin / 2);
+      aspect-ratio: 9/16;
+      border-radius: var(--radius, 50%);
+      box-shadow: var(--box-shadow, 0 0 0);
+      transform-origin: center;
+    }
+    
+    /* Micro-detail: Reveal delayed reveal on second playthrough */
+    .loading-element:nth-child(3n + 3) {
+      animation-delay: var(--delay-third, 0.6s);
+    }
+    
+    .loading-element:nth-child(5n + 1) {
+      box-shadow: var(--box-shadow-offset, 2px 2px 10px rgba(0, 0, 0, 0.2));
+    }
+    
+    .animated-circle {
+      position: absolute;
+      background-color: hsl(120, 70%, 70%);
+      border-radius: 50%;
+      width: 4vmin;
+      height: 4vmin;
+      aspect-ratio: 1;
+      animation: spin 3s linear infinite;
+      transition: opacity 0.2s ease-in;
+    }
+    
+    /* Micro-detail: Hue shift on second playthrough */
+    .animated-circle:nth-child(1) {
+      animation-delay: 0.4s;
+      opacity: 0;
+    }
+    .animated-circle:nth-child(1) {
+      animation-delay: 1s;
+      opacity: 1;
+    }
+    
+    /* Create a matrix of circles */
+    .loading-element {
+      z-index: var(--z-index, 10);
+    }
+    
+    @keyframes loading-animation {
+      0% {
+        --radius: 50%;
+        --box-shadow: 0 0 0;
+        --delay-third: calc(0.6s * (1 + sin(0 * 5)));
+        --box-shadow-offset: 0 0 0;
+        --z-index: 2;
+      }
+      50% {
+        --radius: 0;
+        --box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+        --delay-third: calc(0.6s * (1 + sin(50 * 5)));
+        --box-shadow-offset: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        --z-index: 10;
+      }
+      100% {
+        --radius: 50%;
+        --box-shadow: 0 0 0;
+        --delay-third: calc(0.6s * (1 + sin(100 * 5)));
+        --box-shadow-offset: 0 0 0;
+        --z-index: 2;
+      }
+    }
+    
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <div class="loading-element" style="--z-index: 1;"></div>
+    <div class="loading-element" style="--z-index: 4;"></div>
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+    <div class="loading-element"></div>
+    <div class="animated-circle"></div>
+    <div class="animated-circle"></div>
+    <div class="animated-circle"></div>
+    <div class="animated-circle"></div>
+  </div>
+  <div class="codigo">
+    <span class="selector">.loading-element</span>
+    <span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+</body>
+</html>
