@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<style>
+/* The block below must appear exactly at the very top of the <style> block.
+   You may change background-color to match the chosen palette, but keep the rest intact. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background:url("/thumb") no-repeat center center;
+  background-color: black;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 25%;
+  max-width: 75%;
+  width: 75%;
+  height: 25%;
+  top: 15%;
+  overflow-y: hidden;
+  box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+}
+.selector       { color: #F92672; } /* CSS selector */
+.property       { color: #66D9EF; } /* CSS property */
+.value-number   { color: #AE81FF; } /* CSS value (number) */
+.value-string   { color: #E6DB74; } /* CSS value (string) */
+.value-color    { color: #A6E22E; } /* CSS value (color) */
+.function       { color: #A6E22E; } /* CSS function */
+.brace          { color: #666; } /* Curly braces */
+.comment        { color: #999; } /* HTML comment */
+/* Animation styles */
+.animation-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background: transparent;
+}
+/* Shattered Echoes Rebirth animation */
+@keyframes shatter {
+  0% { transform: scale(1) rotate(0deg) translateX(0); }
+  20% { transform: scale(1.1) rotate(10deg) translateX(-10px); }
+  40% { transform: scale(1) rotate(0deg) translateX(0); }
+  60% { transform: scale(0.9) rotate(-5deg) translateX(10px); }
+  80% { transform: scale(1) rotate(0deg) translateX(0); }
+  100% { transform: scale(1) rotate(0deg) translateX(0); }
+}
+@keyframes echo {
+  0% { transform: scale(1) rotate(0deg) translateZ(0); }
+  50% { transform: scale(1.1) rotate(5deg) translateZ(20px); }
+  100% { transform: scale(1) rotate(0deg) translateZ(0); }
+}
+@keyframes rebirth {
+  0% { opacity: 0; transform: scale(0) rotate(0deg) translateZ(0); }
+  40% { opacity: 1; transform: scale(1) rotate(0deg) translateZ(0); }
+  80% { opacity: 1; transform: scale(1.1) rotate(10deg) translateZ(0); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg) translateZ(0); }
+}
+/* Animated elements */
+.animation-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  animation: echo 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+}
+.animation-container::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  animation: rebirth 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+}
+/* Shattered elements */
+.animation-container .shatter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50%;
+  animation: shatter 2s linear infinite;
+}
+.animation-container .shatter-1 {
+  animation: shatter 2s linear infinite;
+  transform: translate(-50px, -50px);
+}
+.animation-container .shatter-2 {
+  animation: shatter 2s linear infinite;
+  transform: translate(50px, -50px);
+}
+.animation-container .shatter-3 {
+  animation: shatter 2s linear infinite;
+  transform: translate(-50px, 50px);
+}
+.animation-container .shatter-4 {
+  animation: shatter 2s linear infinite;
+  transform: translate(50px, 50px);
+}
+</style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">background</span>: <span class="value-string">url('/thumb')</span>;
+    <span class="property">animation</span>: <span class="function">shattered-echo-rebirth</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+
+  <div class="animation-container">
+    <div class="shatter-1"></div>
+    <div class="shatter-2"></div>
+    <div class="shatter-3"></div>
+    <div class="shatter-4"></div>
+    <div class="shatter-5"></div>
+    <div class="shatter-6"></div>
+    <div class="shatter-7"></div>
+    <div class="shatter-8"></div>
+    <div class="shatter-9"></div>
+    <div class="shatter-10"></div>
+    <div class="shatter-11"></div>
+    <div class="shatter-12"></div>
+  </div>
+</body>
+</html>

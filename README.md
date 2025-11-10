@@ -42,7 +42,7 @@ Send me an e-mail if interested.
 
  <br/><br/><br/>
 
-120/1000
+125/1000
 <br/><br/>
 <a href="./reflections-of-self-a-cracked-mirror-of-digital-identity.html">Reflections of Self: A Cracked Mirror of Digital Identity</a> <br/><br/>
 <a href="./sundayblues-mazedigger-devlife-codestruggles-cssanimation.html">Sundayblues mazedigger devlife codestruggles cssanimation</a> <br/><br/><a href="./sunday-mirror-self.html">Sunday mirror self</a> <br/><br/><a href="./code-reveal.html">Code reveal</a> <br/><br/><a href="./web-of-life.html">Web of life</a> <br/><br/><a href="./sundayblues.html">Sundayblues</a> <br/><br/><a href="./code-reveal.html">Code reveal</a> <br/><br/><a href="./liberation-station.html">Liberation station</a> <br/><br/><a href="./liberation.html">Liberation</a> <br/><br/><a href="./weblab-mirror-effect.html">Weblab mirror effect</a> <br/><br/><a href="./mirror-code.html">Mirror code</a> <br/><br/><a href="./fractured-selves-a-digital-identity-odyssey.html">Fractured Selves: A Digital Identity Odyssey</a> <br/><br/>
@@ -165,3 +165,8 @@ Send me an e-mail if interested.
 <a href="./fading-whispers.html">Fading whispers</a> <br/><br/>
 <a href="./echoes-of-impermanence.html">Echoes of impermanence</a> <br/><br/>
 <a href="./ephemeral-identity-shifts.html">Ephemeral identity shifts</a> <br/><br/>
+<a href="./shattered-echoes-rebirth.html">Shattered Echoes Rebirth</a> <br/><br/>
+<a href="./dancing-echoes-of-impermanence.html">Dancing Echoes of Impermanence</a> <br/><br/>
+<a href="./fractured-reflections-reborn.html">Fractured Reflections Reborn</a> <br/><br/>
+<a href="./impermanence-revisited.html">Impermanence Revisited</a> <br/><br/>
+<a href="./mirrored-selves-ephemeral-harmony.html">Mirrored Selves Ephemeral Harmony</a> <br/><br/>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block.
+      You may change background-color to match the chosen palette, but keep the rest intact. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector { color: #F92672; }
+    .property { color: #66D9EF; }
+    .value-number { color: #AE81FF; }
+    .value-string { color: #E6DB74; }
+    .value-color { color: #A6E22E; }
+    .function { color: #A6E22E; }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+    /* 
+      Main animation styles: 
+      particles' movement, fading and color 
+    */
+    @keyframes dancing-particles {
+      0% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(200px, 200px);
+        opacity: 0;
+      }
+    }
+    @keyframes color-hue-shift {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+    @keyframes fractal-pattern {
+      0% {
+        clip-path: polygon(0 0, 100% 0, 100% 0);
+      }
+      100% {
+        clip-path: polygon(0 0, 100% 100%, 100% 100%);
+      }
+    }
+    .particle-1, .particle-2, .particle-3, .particle-4, .particle-5, .particle-6, .particle-7, .particle-8, .particle-9, .particle-10, .particle-11, .particle-12 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      background: #66D9EF;
+      border-radius: 50%;
+      animation: 2s infinite dancing-particles, 2s infinite color-hue-shift;
+      animation-delay: -0.16s;
+    }
+    .particle-1 { background: #AE81FF; animation-duration: 1.6s; animation-delay: 0s; }
+    .particle-2 { background: #66D9EF; animation-duration: 1.4s; animation-delay: -0.08s; }
+    .particle-3 { background: #A6E22E; animation-duration: 1.9s; animation-delay: -0.12s; }
+    .particle-4 { background: #66D9EF; animation-duration: 1.7s; animation-delay: -0.16s; }
+    .particle-5 { background: #F8F8F2; animation-duration: 1.6s; animation-delay: -0.08s; }
+    .particle-6 { background: #AE81FF; animation-duration: 2s; animation-delay: 0.04s; }
+    .particle-7 { background: #66D9EF; animation-duration: 1.5s; animation-delay: -0.16s; }
+    .particle-8 { background: #66D9EF; animation-duration: 1.4s; animation-delay: 0.08s; }
+    .particle-9 { background: #A6E22E; animation-duration: 1.9s; animation-delay: 0.04s; }
+    .particle-10 { background: #66D9EF; animation-duration: 1.6s; animation-delay: -0.12s; }
+    .particle-11 { background: #F8F8F2; animation-duration: 1.7s; animation-delay: -0.16s; }
+    .particle-12 { background: #66D9EF; animation-duration: 2s; animation-delay: 0s; }
+    .fractal-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #66D9EF;
+      clip-path: polygon(0 0, 100% 0, 100% 0);
+      animation: 2s infinite fractal-pattern;
+    }
+    /* 
+      Initial container styles
+      particles' movement, fading and color 
+    */
+    .animation-container {
+      aspect-ratio: 9/16;
+      min-height: 100vh;
+    }
+    .loading-element {
+      border-radius: 50%;
+      animation: loading-animation 1s linear infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.particle-1</span><span class="brace">{</span>
+    <span class="property">background</span>: <span class="value-string">#66D9EF</span>;
+    <span class="property">animation</span>: <span class="function">dancing-particles</span> <span class="value-number">2s</span> <span class="value-string">infinite</span>;
+    <span class="property">animation-delay</span>: <span class="value-number">0s</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="fractal-container"></div>
+    <div class="particle-1"></div>
+    <div class="particle-2"></div>
+    <div class="particle-3"></div>
+    <div class="particle-4"></div>
+    <div class="particle-5"></div>
+    <div class="particle-6"></div>
+    <div class="particle-7"></div>
+    <div class="particle-8"></div>
+    <div class="particle-9"></div>
+    <div class="particle-10"></div>
+    <div class="particle-11"></div>
+    <div class="particle-12"></div>
+  </div>
+</body>
+</html>
