@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block.
+   You may change background-color to match the chosen palette, but keep the rest intact. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background:url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } 
+    .property       { color: #66D9EF; } 
+    .value-number   { color: #AE81FF; } 
+    .value-string   { color: #E6DB74; } 
+    .value-color    { color: #A6E22E; } 
+    .function       { color: #A6E22E; }
+    .animation-container, .shattered-mirror {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .shattered-mirror {
+      aspect-ratio: 9/16;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .fragment, .shattered-fragment {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      aspect-ratio: 9/16;
+    }
+    .fragment {
+      background-color: #2c3e50;
+      width: 10%;
+      height: 50%;
+      animation: rise 1s ease-in-out;
+      animation-fill-mode: both;
+    }
+    .shattered-fragment {
+      background-color: #2c3e50;
+      width: 8%;
+      height: 50%;
+      animation: shatter 1s ease-in-out 1s;
+      animation-fill-mode: both;
+      opacity: 0;
+      pointer-events: none;
+    }
+    @keyframes rise {
+      0% {
+        transform: translate(-50%, -50%) scale(0);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+    @keyframes shatter {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+    .loading-element {
+      border-radius: 50%;
+      animation: loading-animation 1s linear infinite;
+    }
+    @keyframes loading-animation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    .codigo {
+      span.selector {
+        font-weight: bold;
+      }
+      span.brace {
+        color: #66D9EF;
+      }
+      span.property {
+        font-style: italic;
+      }
+      span.value-number {
+        font-weight: bold;
+      }
+      span.value-string {
+        font-style: italic;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.shattered-mirror</span><span class="brace">{</span>
+      <span class="property">display</span>: <span class="value-string">flex</span>;
+      <span class="property">flex-direction</span>: <span class="value-string">column</span>;
+      <span class="property">aspect-ratio</span>: <span class="value-number">9/16</span>;
+      <span class="property">min-height</span>: <span class="value-number">100vh</span>;
+      <span class="property">position</span>: <span class="value-string">absolute</span>;
+      <span class="property">top</span>: <span class="value-number">50%</span>;
+      <span class="property">left</span>: <span class="value-number">50%</span>;
+      <span class="property">transform</span>: <span class="value-string">translate(-50%, -50%)</span>;
+      <span class="property">width</span>: <span class="value-number">100%</span>;
+      <span class="property">height</span>: <span class="value-number">100%</span>;
+      <span class="brace">}</span>
+    </div>
+  <div class="animation-container">
+  <!-- 12 fragments -->
+    <div class="shattered-mirror">
+      <div class="fragment"></div>
+      <div class="shattered-fragment"></div>
+      <div class="fragment"></div>
+      <div class="shattered-fragment"></div>
+      <div class="fragment"></div>
+      <div class="shattered-fragment"></div>
+      <div class="fragment"></div>
+      <div class="shattered-fragment"></div>
+      <div class="fragment"></div>
+      <div class="shattered-fragment"></div>
+      <div class="fragment"></div>
+      <div class="shattered-fragment"></div>
+      <div class="fragment"></div>
+      <div class="shattered-fragment"></div>
+    </div>
+  </div>
+</body>
+</html>
