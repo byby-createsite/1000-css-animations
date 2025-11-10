@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <style>
+        /* The block below must appear exactly at the very top of the <style> block.
+         You may change background-color to match the chosen palette, but keep the rest intact. */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: url("/thumb") no-repeat center center;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top: 15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+        .selector {
+            color: #F92672;
+        }
+        .property {
+            color: #66D9EF;
+        }
+        .value-number {
+            color: #AE81FF;
+        }
+        .value-string {
+            color: #E6DB74;
+        }
+        .value-color {
+            color: #A6E22E;
+        }
+        .function {
+            color: #A6E22E;
+        }
+        .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+        }
+        /* Animation snippet */
+        .codigo {
+            span.selector {
+                display: inline-block;
+                margin-left: 5px;
+            }
+            span.brace {
+                color: #F92672;
+            }
+        }
+        .loading-element {
+            /* Morphing fragments */
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 10px;
+            height: 10px;
+            background-color: #A6E22E;
+            border-radius: 100%;
+            animation: falling 2s linear infinite;
+        }
+        /* Falling fragments */
+        .loading-element:nth-child(2) {
+            top: 20px;
+            left: 10px;
+            animation: falling 2s linear infinite;
+        }
+        .loading-element:nth-child(3) {
+            top: 20px;
+            left: 30px;
+            animation: falling 2s linear infinite;
+        }
+        /* Fragments collision */
+        .loading-element:nth-child(1) {
+            animation: collision 2s linear;
+        }
+        .loading-element:nth-child(2) {
+            animation: collision 2s linear;
+        }
+        .loading-element:nth-child(3) {
+            animation: collision 2s linear;
+        }
+        .loading-element:nth-child(4) {
+            top: 30px;
+            left: 10px;
+            animation: falling 2s linear infinite;
+        }
+        /* Kaleidoscope of reflections */
+        .loading-element:nth-child(5) {
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            background-color: #A6E22E;
+            animation: kaleidoscope 2s linear infinite;
+        }
+        .loading-element:nth-child(6) {
+            clip-path: polygon(0 0, 50% 50%, 100% 0, 50% 100%);
+            background-color: #E6DB74;
+            animation: kaleidoscope 2s linear infinite;
+        }
+        .loading-element:nth-child(7) {
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            background-color: #A6E22E;
+            animation: kaleidoscope 2s linear infinite;
+        }
+        /* Echoes of self-discovery */
+        .loading-element:nth-child(8) {
+            clip-path: polygon(0 0, 50% 50%, 100% 0, 50% 100%);
+            background-color: #66D9EF;
+            animation: echo 2s linear infinite;
+        }
+        .loading-element:nth-child(9) {
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            background-color: #66D9EF;
+            animation: echo 2s linear infinite;
+        }
+        .loading-element:nth-child(10) {
+            clip-path: polygon(0 0, 50% 50%, 100% 0, 50% 100%);
+            background-color: #66D9EF;
+            animation: echo 2s linear infinite;
+        }
+        /* Fragments disintegration */
+        .loading-element:nth-child(11) {
+            animation: disintegration 2s linear infinite;
+        }
+        .loading-element:nth-child(12) {
+            animation: disintegration 2s linear infinite;
+        }
+
+        /* Animations */
+        @keyframes falling {
+            0% {
+                top: 0;
+                left: 100px;
+            }
+            100% {
+                top: 100px;
+                left: 100px;
+            }
+        }
+        @keyframes collision {
+            0% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(2);
+            }
+            50% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(0.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        @keyframes kaleidoscope {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(90deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+        @keyframes echo {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @keyframes disintegration {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="codigo">
+        <span class="selector">.loading-element</span><span class="brace">{</span>
+        <span class="property">border-radius</span>: <span class="value-string">50%</span>;
+        <span class="property">animation</span>: <span class="function">falling</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+        <span class="brace">}</span>
+    </div>
+    <div class="animation-container">
+        <div class="loading-element"></div>
+        <div class="loading-element"></div>
+        <div class="loading-element"></div>
+        <div class="loading-element"></div>
+        <div class="loading-element"></div>
+        <div class="loading-element"></div>
+        <div class="loading-element"></div>
+        <div class="loading-element"></div>
+        <div class="loading-element"></div>
+        <div class="loading-element"></div>
+        <div class="loading-element"></div>
+        <div class="loading-element"></div>
+        <div class="loading-element"></div>
+    </div>
+</body>
+</html>
