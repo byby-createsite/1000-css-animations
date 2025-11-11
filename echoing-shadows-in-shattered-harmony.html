@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+  /* The block below must appear exactly at the very top of the <style> block.
+     You may change background-color to match the chosen palette, but keep the rest intact. */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background:url("/thumb") no-repeat center center;
+    background-color: black;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .codigo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #272822;
+    color: #F8F8F2;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 18px;
+    padding: 20px;
+    border-radius: 8px;
+    white-space: pre-line;
+    text-align: left;
+    line-height: 1.6;
+    max-height: 25%;
+    max-width: 75%;
+    width: 75%;
+    height: 25%;
+    top: 15%;
+    overflow-y: hidden;
+    box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+  }
+  .selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .function       { color: #A6E22E; }
+
+  .animation-container {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    background: transparent;
+  }
+
+  /* Shattered Silhouettes */
+  .shattered {
+    position: absolute;
+    display: inline-block;
+    transform-origin: center;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  /* Ocean Waves */
+  /* The wave animation */
+  @keyframes waveAnimation {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(100vw, 0);
+    }
+  }
+  .wave {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #2a2e39;
+    animation: waveAnimation 10s linear infinite;
+  }
+
+  /* Fractured Identity */
+  /* Fracture animation */
+  @keyframes fractureAnimation {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh);
+      opacity: 0;
+    }
+  }
+  .fracture {
+    position: absolute;
+    display: inline-block;
+    pointer-events: none;
+    z-index: 10;
+    animation: fractureAnimation 2s linear infinite;
+  }
+  .fracture::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #a9a2d3;
+  }
+
+  /* Echoing Shadows */
+  /* Shadow animation */
+  @keyframes shadowAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .shadow {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #2a2e39;
+    animation: shadowAnimation 3s ease-in-out infinite;
+    transform: translateY(-200vh);
+  }
+
+  /* Self-Discovery */
+  /* Discovery animation */
+  @keyframes discoveryAnimation {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .discovery {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #2a2e39;
+    animation: discoveryAnimation 4s ease-in-out infinite;
+    transform: scale(0);
+  }
+
+  /* Shattered Shadows Layer */
+  .shattered-shadows {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Loading Animation */
+  .loading-element {
+    border-radius: 50%;
+    animation: loading-animation 1s linear infinite;
+  }
+  @keyframes loading-animation {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.1);
+      opacity: 0;
+    }
+  }
+
+  /* Animation Container Styles */
+  .animation-container > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+  }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <!-- Shattered Silhouettes -->
+    <div class="shattered" style="animation-delay: 0s;"></div>
+    <div class="shattered" style="animation-delay: 1s;"></div>
+    <div class="shattered" style="animation-delay: 2s;"></div>
+
+    <!-- Ocean Waves -->
+    <div class="wave" style="background-color: #2a2e39;"></div>
+    <div class="wave" style="background-color: #2a2e39; transform: translateX(100vw);"></div>
+
+    <!-- Fractured Identity -->
+    <div class="fracture"></div>
+    <div class="fracture" style="animation-delay: 1s;"></div>
+    <div class="fracture" style="animation-delay: 2s;"></div>
+
+    <!-- Echoing Shadows -->
+    <div class="shadow"></div>
+    <div class="shadow" style="animation-delay: 1s;"></div>
+    <div class="shadow" style="animation-delay: 2s;"></div>
+
+    <!-- Self-Discovery -->
+    <div class="discovery"></div>
+    <div class="discovery" style="animation-delay: 1s;"></div>
+    <div class="discovery" style="animation-delay: 2s;"></div>
+
+    <!-- Shattered Shadows Layer -->
+    <div class="shattered-shadows">
+      <div class="shattered" style="animation-delay: 0s;"></div>
+      <div class="shattered" style="animation-delay: 1s;"></div>
+      <div class="shattered" style="animation-delay: 2s;"></div>
+    </div>
+
+    <!-- Shattered Silhouettes Group 1 -->
+    <div class="shattered-shadows">
+      <div class="shattered" style="animation-delay: 3s;"></div>
+      <div class="shattered" style="animation-delay: 4s;"></div>
+      <div class="shattered" style="animation-delay: 5s;"></div>
+    </div>
+
+    <!-- Shattered Silhouettes Group 2 -->
+    <div class="shattered-shadows">
+      <div class="shattered" style="animation-delay: 6s;"></div>
+      <div class="shattered" style="animation-delay: 7s;"></div>
+      <div class="shattered" style="animation-delay: 8s;"></div>
+    </div>
+
+    <!-- Ocean Waves Group 1 -->
+    <div class="wave-shadows">
+      <div class="wave" style="background-color: #2a2e39; transform: translateX(0);"></div>
+      <div class="wave" style="background-color: #2a2e39; transform: translateX(100vw);"></div>
+    </div>
+
+    <!-- Fractured Identity 2 -->
+    <div class="fracture-fracture">
+      <div class="fracture" style="animation-delay: 1s;"></div>
+      <div class="fracture" style="animation-delay: 2s;"></div>
+      <div class="fracture" style="animation-delay: 3s;"></div>
+    </div>
+
+    <!-- Echoing Shadows Group 2 -->
+    <div class="shadow-shadows">
+      <div class="shadow" style="animation-delay: 1s;"></div>
+      <div class="shadow" style="animation-delay: 2s;"></div>
+      <div class="shadow" style="animation-delay: 3s;"></div>
+    </div>
+  </div>
+</body>
+</html>
