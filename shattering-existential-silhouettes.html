@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<title>Shattering Existential Silhouettes</title>
+<style>
+/* The block below must appear exactly at the very top of the <style> block. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background:url("/thumb") no-repeat center center;
+  background-color: black;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 25%;
+  max-width: 75%;
+  width: 75%;
+  height: 25%;
+  top: 15%;
+  overflow-y: hidden;
+  box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+}
+.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .function       { color: #A6E22E; }
+
+.animation-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background: transparent;
+}
+
+.loading-element {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  animation: loading-animation 1s linear infinite;
+}
+
+@keyframes loading-animation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.figure {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #333;
+  animation: figure-animation 2s linear infinite;
+}
+
+@keyframes figure-animation {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.2) rotate(30deg);
+  }
+  50% {
+    transform: scale(0.8) rotate(60deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(90deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.fragment {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #555;
+  animation: fragment-animation 1.5s linear;
+  transition: opacity 0.5s ease-out;
+}
+
+@keyframes fragment-animation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.fragment:nth-child(2) {
+  animation-delay: 0.1s;
+  opacity: 0.75;
+}
+
+.fragment:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.fragment:nth-child(4) {
+  animation-delay: 0.3s;
+  opacity: 0.5;
+}
+
+.fragment:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.fragment:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.fragment:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+.fragment:nth-child(8) {
+  animation-delay: 0.7s;
+}
+
+.fragment:nth-child(9) {
+  animation-delay: 0.8s;
+}
+</style>
+</head>
+<body>
+<div class="codigo">
+  <span class="selector">.loading-element</span><span class="brace">{</span>
+  <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+  <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+  <span class="brace">}</span>
+  <span class="selector">.figure</span><span class="brace">{</span>
+  <span class="property">animation</span>: <span class="function">figure-animation</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+  <span class="brace">}</span>
+  <span class="selector">.fragment</span><span class="brace">{</span>
+  <span class="property">animation</span>: <span class="function">fragment-animation</span> <span class="value-number">1.5s</span> <span class="value-string">linear</span>;
+  <span class="property">transition</span>: <span class="property">opacity</span> <span class="value-number">0.5s</span> <span class="value-string">ease-out</span>;
+  <span class="brace">}</span>
+</div>
+<div class="animation-container">
+  <div class="loading-element"></div>
+  <div class="figure">
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+  </div>
+</div>
+</body>
+</html>
