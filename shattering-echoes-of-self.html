@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <style>
+        
+        /* The block below must appear exactly at the very top of the <style> block.
+         You may change background-color to match the chosen palette, but keep the rest intact. */
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+         body {
+            background:url("/thumb") no-repeat center center;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+         }
+         .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top: 15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+         }
+         .selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .function       { color: #A6E22E; }
+         
+         /* Fractured Identity */
+         .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+         }
+         
+         /* Silhouette Layer */
+         .silhouette-layer {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(white, transparent);
+            transform: rotate(45deg);
+         }
+         
+         /* Silhouette Shapes */
+         .silhouette-shape {
+            position: absolute;
+            width: 10%;
+            height: 10%;
+            background: #fff;
+            border-radius: 50%;
+            animation: shake 1s linear infinite;
+         }
+         
+         /* Animate Silhouette Shapes */
+         @keyframes shake {
+            0% {
+               transform: translateX(0) rotate(0deg);
+            }
+            50% {
+               transform: translateX(5%) rotate(45deg);
+            }
+            100% {
+               transform: translateX(0) rotate(0deg);
+            }
+         }
+         
+         /* Echo Layer */
+         .echo-layer {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #333, #555);
+            transform: rotate(45deg);
+         }
+         
+         /* Echo Shapes */
+         .echo-shape {
+            position: absolute;
+            width: 5%;
+            height: 5%;
+            background: #999;
+            border-radius: 50%;
+            animation: echo 1s linear infinite;
+         }
+         
+         /* Animate Echo Shapes */
+         @keyframes echo {
+            0% {
+               transform: translateX(0) rotate(0deg) scale(1);
+            }
+            50% {
+               transform: translateX(2%) rotate(45deg) scale(1.5);
+            }
+            100% {
+               transform: translateX(0) rotate(0deg) scale(1);
+            }
+         }
+         
+         
+         .loading-element {
+            border-radius: 50%;
+            animation: loading-animation 1s linear infinite;
+         }
+         
+         @keyframes loading-animation {
+            0% {
+               transform: scale(1);
+            }
+            100% {
+               transform: scale(2);
+            }
+         }
+         
+         .codigo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            .loading-element {
+               .selector {
+                  color: #F92672;
+               }
+               .property {
+                  color: #66D9EF;
+               }
+               .value-number {
+                  color: #AE81FF;
+               }
+               .function {
+                  color: #A6E22E;
+               }
+            }
+         }
+         
+         
+         .animation-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .silhouette-layer {
+               .silhouette-shape {
+                 .selector {
+                    color: #F92672;
+                 }
+                 .property {
+                    color: #66D9EF;
+                 }
+                 .value-number {
+                    color: #AE81FF;
+                 }
+               }
+            }
+            .echo-layer {
+               .echo-shape {
+                .selector {
+                   color: #F92672;
+                }
+                .property {
+                   color: #66D9EF;
+                }
+                .value-number {
+                   color: #AE81FF;
+                }
+               }
+            }
+         }
+    </style>
+</head>
+<body>
+
+<div class="codigo">
+   <span class="selector">.loading-element</span><span class="brace">{</span>
+   <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+   <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+   <span class="brace">}</span>
+</div>
+
+<div class="animation-container">
+   <div class="silhouette-layer">
+      <div class="silhouette-shape"></div>
+   </div>
+   <div class="echo-layer">
+      <div class="echo-shape"></div>
+   </div>
+</div>
+
+</body>
+</html>
