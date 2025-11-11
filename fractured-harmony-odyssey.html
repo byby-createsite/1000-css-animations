@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fractured Harmony Odyssey</title>
+  <!-- CSS Foundation -->
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block.
+      You may change background-color to match the chosen palette, but keep the rest intact. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background:url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    /* CSS Animation Styles */
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } 
+    .property       { color: #66D9EF; } 
+    .value-number   { color: #AE81FF; } 
+    .value-string   { color: #E6DB74; } 
+    .value-color    { color: #A6E22E; } 
+    .function       { color: #A6E22E; }
+    @keyframes loading-animation {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    .loading-element {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #00FFFF;
+      animation: loading-animation 1s linear infinite;
+    }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+    
+    .layer-1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #0000FF, #00FFFF);
+    }
+    
+    .layer-2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 100%;
+      background: linear-gradient(to bottom, #00FF00, #80FF00);
+    }
+    
+    .layer-3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(to bottom, #FF0000, #FF80FF);
+    }
+    
+    .circle-1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      background: #0000FF;
+      animation: circle-animation 2s linear infinite;
+    }
+    
+    .circle-2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 30px;
+      border-radius: 30px;
+      background: #00FFFF;
+      animation: circle-animation 2s linear infinite;
+    }
+    
+    @keyframes circle-animation {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.5); }
+      100% { transform: scale(1); }
+    }
+    
+    @keyframes echo-animation {
+      0%   { left: 20%; }
+      50%  { left: 80%; }
+      100% { left: 20%; }
+    }
+   
+   </style>
+  </head>
+  <body>
+    <div class="codigo">
+      <span class="selector">.layer-1</span>
+      <span class="brace">{</span>
+      <span class="property">background</span>
+      <span class="function">linear-gradient</span>
+      <span class="value-string">(to bottom, #0000FF, #00FFFF)</span>;
+      <span class="brace">}</span>
+      <span class="selector">.animation-container</span>
+      <span class="brace">{</span>
+      <span class="property">position</span>
+      <span class="value-string">absolute</span>.
+      <br>
+      <span class="selector">.layer-2</span>
+      <span class="brace">{</span>
+      <span class="property">background</span>
+      <span class="function">linear-gradient</span>
+      <span class="value-string">(to bottom, #00FF00, #80FF00)</span>;
+      <span class="brace">}</span>
+    </div>
+    <div class="animation-container">
+      <!--
+      Fractured Harmony Odyssey
+      -->
+      <div class="layer-1"></div>
+      <div class="layer-2"></div>
+      <div class="layer-3"></div>
+      <div class="circle-1"></div>
+      <div class="circle-2"></div>
+      <div class="loading-element"></div>
+    </div>
+  </body>
+</html>
