@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* css_foundation */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background:url("/thumb") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } 
+    .property       { color: #66D9EF; } 
+    .value-number   { color: #AE81FF; } 
+    .value-string   { color: #E6DB74; } 
+    .value-color    { color: #A6E22E; } 
+    .function       { color: #A6E22E; }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+    /* animation */
+    .loading-element {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #F92672;
+      animation: loading-animation 1s linear infinite;
+    }
+    @keyframes loading-animation {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(50px, 0); }
+      100% { transform: translate(0, 0); }
+    }
+    .fragment {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #66D9EF;
+      animation: fragment-animation 2s linear infinite;
+    }
+    @keyframes fragment-animation {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(50px, 0); }
+      100% { transform: translate(0, 0); }
+    }
+    /* Shattering Harmony */
+    .shatter-layer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #272822;
+    }
+    .shatter-element {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #66D9EF;
+      animation: shatter-animation 3s linear infinite;
+    }
+    @keyframes shatter-animation {
+      0% { transform: translate(-50%, -50%); }
+      50% { transform: translate(50px, 70%); }
+      100% { transform: translate(-50%, -50%); }
+    }
+    /* Harmony */
+    .harmony-element {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #F92672;
+      animation: harmony-animation 4s linear infinite;
+    }
+    @keyframes harmony-animation {
+      0% { transform: translate(-50%, -50%); }
+      50% { transform: translate(20px, 20px); }
+      100% { transform: translate(-50%, -50%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+    <span class="selector">.fragment</span><span class="brace">{</span>
+    <span class="property">animation</span>: <span class="function">fragment-animation</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+    <span class="selector">.shatter-element</span><span class="brace">{</span>
+    <span class="property">animation</span>: <span class="function">shatter-animation</span> <span class="value-number">3s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+    <span class="selector">.harmony-element</span><span class="brace">{</span>
+    <span class="property">animation</span>: <span class="function">harmony-animation</span> <span class="value-number">4s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="shatter-layer"></div>
+    <div class="loading-element"></div>
+    <div class="fragment"></div>
+    <div class="shatter-element"></div>
+    <div class="harmony-element"></div>
+    <div class="fragment"></div>
+    <div class="shatter-element"></div>
+    <div class="fragment"></div>
+    <div class="loading-element"></div>
+    <div class="shatter-element"></div>
+    <div class="harmony-element"></div>
+    <div class="fragment"></div>
+  </div>
+</body>
+</html>
