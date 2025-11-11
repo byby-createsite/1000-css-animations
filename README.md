@@ -191,3 +191,4 @@ Send me an e-mail if interested.
 <a href="./shattered-harmony-rising.html">Shattered Harmony Rising</a> <br/><br/>
 <a href="./fractured-echoes-in-ephemeral-silence.html">Fractured Echoes in Ephemeral Silence</a> <br/><br/>
 
+<a href="./shattered-silhouettes-unite.html">Shattered Silhouettes Unite</a> <br/><br/>
