@@ -3,7 +3,7 @@
 <head>
   <style>
     /* The block below must appear exactly at the very top of the <style> block.
-    You may change background-color to match the chosen palette, but keep the rest intact. */
+   You may change background-color to match the chosen palette, but keep the rest intact. */
     * {
       margin: 0;
       padding: 0;
@@ -41,143 +41,189 @@
       overflow-y: hidden;
       box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
     }
-    .selector       { color: #F92672; } /* Selectors color */
-    .property       { color: #66D9EF; } /* Property color */
-    .value-number   { color: #AE81FF; } /* Number value color */
-    .value-string   { color: #E6DB74; } /* String value color */
-    .value-color    { color: #A6E22E; } /* Color value color */
-    .function       { color: #A6E22E; } /* Function name color */
-    /* Code snippet below for validation */
-    .codigo > span:not(.comment) {
-      display: inline-block;
-      margin: 0 4px;
+    .selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .function       { color: #A6E22E; }
+    /* Shattered Harmony container */
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
     }
-    .codigo > span.comment {
-      display: block;
-      margin-bottom: 16px;
-      font-size: 14px;
-      color: #999;
-    }
-    .codigo > span.selector {
-      font-weight: bold;
-    }
-    .codigo > span.property {
-      text-transform: capitalize;
-    }
-    .codigo > span.brace {
-      color: #FFC080; /* Highlight closing brackets */
-    }
-    /* Animation implementation */
-    @keyframes arrangeShapes {
-      0% {
-        transform: rotate(0deg) translate(0%,0%);
-      }
-      50% {
-        transform: rotate(30deg) translate(30%, -50%);
-      }
-      100% {
-        transform: rotate(0deg) translate(0%,0%);
-      }
-    }
-    @keyframes dissolveOutline {
-      0% {
-        opacity: 1;
-        border-radius: 50%;
-      }
-      100% {
-        opacity: 0;
-        border-radius: 0;
-      }
-    }
-    @keyframes shiftOutline {
-      0% {
-        transform: translate(-50%, -50%);
-      }
-      100% {
-        transform: translate(-30%, -120%);
-      }
-    }
-    .animation-loader {
+
+    /* Loading animation */
+    .loading-element {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-      /* Aspect ratio to maintain */
-      aspect-ratio: 9/16;
-      min-height: 100vh;
-    }
-    .shard {
-      position: absolute;
-      /* Aspect ratio to maintain */
-      aspect-ratio: 9/16;
-      min-height: 100vh;
-      background-color: #666;
-      transform-origin: center;
       border-radius: 50%;
-      animation: arrangeShapes 4s 1s infinite forwards;
+      animation: loading-animation 1s linear infinite;
     }
-    .shard.shape-1 {
+    @keyframes loading-animation {
+      0% {
+        transform: translate(-50%, -50%) scale(0);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(0);
+      }
+    }
+
+    /* Celestial body */
+    .celestial-body {
+      position: absolute;
       top: 50%;
       left: 50%;
-      z-index: 10;
-      animation: shiftOutline 3s 2s infinite forwards;
+      transform: translate(-50%, -50%);
+      aspect-ratio: 1/1;
+      width: 20%;
+      background: #333;
+      border-radius: 50%;
     }
-    .shard.shape-2 {
-      top: 20%;
-      left: 20%;
-      z-index: 5;
-      animation: dissolveOutline 4s 1s infinite forwards;
+    .celestial-body::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      height: 90%;
+      border-radius: 50%;
+      background: #555;
+      animation: celestial-animation 1s linear infinite;
     }
-    .shard.shape-3 {
-      top: 30%;
-      left: 70%;
-      z-index: 3;
-      animation: dissolveOutline 3.5s 1s infinite forwards;
+    @keyframes celestial-animation {
+      0% {
+        transform: rotate(0);
+        opacity: 0;
+      }
+      50% {
+        transform: rotate(180deg);
+        opacity: 1;
+      }
+      100% {
+        transform: rotate(360deg);
+        opacity: 0;
+      }
     }
-    .shard.shape-4 {
-      top: 60%;
-      left: 30%;
-      z-index: 3;
-      animation: dissolveOutline 3s 1.5s infinite forwards;
+
+    /* Fragment animation */
+    .fragment {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      aspect-ratio: 1/1;
+      width: 10%;
+      background: #666;
+      border-radius: 50%;
+      animation: fragment-animation 1s linear infinite;
     }
-    .shard.shape-5 {
-      top: 80%;
-      left: 80%;
-      z-index: 2;
-      animation: shiftOutline 4s 1.5s infinite forwards;
+    @keyframes fragment-animation {
+      0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+      }
+    }
+
+    /* Whispers animation */
+    .whisper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      aspect-ratio: 1/1;
+      width: 5%;
+      background: #777;
+      border-radius: 50%;
+      animation: whisper-animation 1s linear infinite;
+    }
+    @keyframes whisper-animation {
+      0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+      }
+    }
+
+    /* Micro-detail: hue shift on 2nd playthrough */
+    .detail {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      aspect-ratio: 1/1;
+      width: 1%;
+      background: #888;
+      border-radius: 50%;
+      animation: detail-animation 1s linear infinite;
+    }
+    @keyframes detail-animation {
+      0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+        filter: hue-rotate(0deg);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        filter: hue-rotate(45deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+        filter: hue-rotate(90deg);
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Code snippet for validation -->
   <div class="codigo">
     <span class="selector">.loading-element</span><span class="brace">{</span>
-    <span class="property">animation</span>: <span class="function">arrangeShapes</span> <span class="value-number">4s</span> <span class="value-string">1s</span> <span class="value-string">infinite</span> forwards;
     <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
     <span class="brace">}</span>
   </div>
-  <!-- The animated scene -->
   <div class="animation-container">
-    <div class="animation-loader">
-      <div class="shard shape-1"></div>
-      <div class="shard shape-2"></div>
-      <div class="shard shape-3"></div>
-      <div class="shard shape-4"></div>
-      <div class="shard shape-5"></div>
-      <!-- Remaining 7 shards -->
-      <div class="shard"></div>
-      <div class="shard"></div>
-      <div class="shard"></div>
-      <div class="shard"></div>
-      <div class="shard"></div>
-      <div class="shard"></div>
-      <div class="shard"></div>
-    </div>
+    <!-- Celestial body -->
+    <div class="celestial-body"></div>
+    <!-- Fragments -->
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <!-- Whispers -->
+    <div class="whisper"></div>
+    <div class="whisper"></div>
+    <div class="whisper"></div>
+    <!-- Details (micro-detail) -->
+    <div class="detail"></div>
+    <div class="detail"></div>
+    <div class="detail"></div>
+    <div class="detail"></div>
   </div>
 </body>
 </html>
