@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background:url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .function       { color: #A6E22E; }
+
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+    .loading-element {
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      position: relative;
+    }
+    .loading-element::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      transform: rotate(45deg);
+    }
+    .loading-element::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      transform: rotate(45deg);
+    }
+    .loading-element {
+      border-radius: 50%;
+      animation: loading-animation 10s infinite linear;
+    }
+    .loading-element::before, .loading-element::after {
+      transition: transform 10s infinite ease;
+    }
+    @keyframes loading-animation {
+      0% {
+        transform: scale(0);
+      }
+      25% {
+        transform: scale(0.25);
+      }
+      50% {
+        transform: scale(0.5);
+      }
+      75% {
+        transform: scale(0.5);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
+
+    .animation-container::after {
+      content: '';
+      position: absolute;
+      aspect-ratio: 9/16;
+      min-height: 100vh;
+      top: 0;
+      left: 0;
+      background: #000;
+      z-index: 10;
+    }
+    .animation-container:after {
+      animation: fade-in 10s infinite linear;
+    }
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .selves {
+      position: absolute;
+      aspect-ratio: 9/16;
+      min-height: 100vh;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+    }
+    .self {
+      position: relative;
+      aspect-ratio: 9/16;
+      height: 10%;
+      width: 20%;
+      background: rgba(255, 255, 255, 0.05);
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+    .self::before {
+      content: '';
+      position: absolute;
+      aspect-ratio: 9/16;
+      height: 50%;
+      width: 50%;
+      border-radius: 50%;
+      background: #fff;
+      top: 10%;
+      right: 10%;
+      animation: fragment 3s infinite ease;
+    }
+    .fragment {
+      position: absolute;
+      aspect-ratio: 9/16;
+      height: 20%;
+      width: 10%;
+      background: rgba(255, 255, 255, 0.05);
+      top: 0;
+      left: 0;
+      animation: fragment-animation 3s infinite linear;
+    }
+    @keyframes fragment {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    @keyframes fragment-animation {
+      0% {
+        opacity: 0;
+        transform: translate(-10px, 0);
+      }
+      25% {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+      75% {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(10px, 0);
+      }
+    }
+
+    .fragment {
+      animation-delay: calc(3s * ({i / 6}));
+      i {}
+    }
+    .animation-container .self {
+      animation: fragment 3s infinite ease, fade-out 10s infinite linear;
+    }
+    .self {
+      animation-delay: calc(3s * ({i / 6}));
+      i {}
+    }
+
+    @keyframes fade-out {
+      0% {
+        transform: scale(1);
+      }
+      25% {
+        transform: scale(0.5);
+      }
+      50% {
+        transform: scale(0.5);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
+
+    .codigo {
+      <span class="selector">.loading-element</span><span class="brace">{</span>
+      <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+      <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">10s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.animation-container</span><span class="brace">{</span>
+    <span class="comment">The animated scene.</span>
+    <span class="property">position</span>: <span class="value-string">absolute</span>;
+    <span class="property">top</span>: <span class="value-number">75%</span>;
+    <span class="property">left</span>: <span class="value-string">50%</span>;
+    <span class="property">transform</span>: <span class="function">translate</span><span class="value-string">(-50%, -50%)</span>;
+    <span class="property">display</span>: <span class="value-string">flex</span>;
+    <span class="property">align-items</span>: <span class="value-string">center</span>;
+    <span class="property">justify-content</span>: <span class="value-string">space-around</span>;
+    <span class="property">width</span>: <span class="value-number">100%</span>;
+    <span class="property">height</span>: <span class="value-string">50%</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <!-- 
+      The animation-container must include 5 to 12 animated elements.
+      Use aspect-ratio: 9/16 plus min-height: 100vh for vertical composition.
+    -->
+    <div class="selves">
+      <div class="self">
+        <div class="fragment"></div>
+      </div>
+      <div class="self">
+        <div class="fragment"></div>
+      </div>
+      <div class="self">
+        <div class="fragment"></div>
+      </div>
+      <div class="self">
+        <div class="fragment"></div>
+      </div>
+      <div class="self">
+        <div class="fragment"></div>
+      </div>
+      <div class="self">
+        <div class="fragment"></div>
+      </div>
+      <div class="self">
+        <div class="fragment"></div>
+      </div>
+      <div class="self">
+        <div class="fragment"></div>
+      </div>
+      <div class="self">
+        <div class="fragment"></div>
+      </div>
+      <div class="self">
+        <div class="fragment"></div>
+      </div>
+      <div class="self">
+        <div class="fragment"></div>
+      </div>
+      <div class="self">
+        <div class="fragment"></div>
+      </div>
+      <div class="self">
+        <div class="fragment"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
