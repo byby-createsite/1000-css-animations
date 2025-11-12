@@ -42,7 +42,7 @@ Send me an e-mail if interested.
 
  <br/><br/><br/>
 
-166/1000
+167/1000
 <br/><br/>
 <a href="./reflections-of-self-a-cracked-mirror-of-digital-identity.html">Reflections of Self: A Cracked Mirror of Digital Identity</a> <br/><br/>
 <a href="./sundayblues-mazedigger-devlife-codestruggles-cssanimation.html">Sundayblues mazedigger devlife codestruggles cssanimation</a> <br/><br/><a href="./sunday-mirror-self.html">Sunday mirror self</a> <br/><br/><a href="./code-reveal.html">Code reveal</a> <br/><br/><a href="./web-of-life.html">Web of life</a> <br/><br/><a href="./sundayblues.html">Sundayblues</a> <br/><br/><a href="./code-reveal.html">Code reveal</a> <br/><br/><a href="./liberation-station.html">Liberation station</a> <br/><br/><a href="./liberation.html">Liberation</a> <br/><br/><a href="./weblab-mirror-effect.html">Weblab mirror effect</a> <br/><br/><a href="./mirror-code.html">Mirror code</a> <br/><br/><a href="./fractured-selves-a-digital-identity-odyssey.html">Fractured Selves: A Digital Identity Odyssey</a> <br/><br/>
@@ -214,3 +214,4 @@ Send me an e-mail if interested.
 <a href="./shattering-mirrors.html">Shattering Mirrors</a> <br/><br/>
 <a href="./beyond-the-shattered-reflection.html">Beyond the Shattered Reflection</a> <br/><br/>
 <a href="./fractured-identity-symphony.html">Fractured Identity Symphony</a> <br/><br/>
+<a href="./fracturing-self-discovery.html">Fracturing Self-Discovery</a> <br/><br/>
