@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <title>Shattering Whispers</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* css_foundation */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background:url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .function       { color: #A6E22E; }
+
+    /* animation rules */
+    @keyframes shattering {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(0.1);
+        transform-origin: top center;
+      }
+    }
+    @keyframes reassemble {
+      from {
+        transform: scale(0.1);
+        transform-origin: top center;
+      }
+      to {
+        transform: scale(1);
+        transform-origin: top center;
+      }
+    }
+    .shard {
+      position: absolute;
+      width: 20px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 50%;
+      animation: shattering 2s ease-in-out infinite;
+    }
+    .reassemble {
+      position: absolute;
+      width: 20px;
+      height: 10px;
+      background-color: #ccc;
+      border-radius: 50%;
+      animation: reassemble 2s ease-in-out infinite;
+    }
+    .shard.reassemble {
+      animation: reassemble 2s ease-in-out infinite;
+    }
+    .fragment {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #666;
+      border-radius: 50%;
+      animation: shattering 5s ease-in-out infinite;
+    }
+    .whisper {
+      position: absolute;
+      width: 10px;
+      height: 20px;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: reassemble 5s ease-in-out infinite;
+    }
+
+    /* css implementation of the snippet */
+    <div class="codigo">
+      <span class="selector">.shard</span><span class="brace">{</span>
+      <span class="property">animation</span>: <span class="function">shattering</span> <span class="value-number">2s</span> <span class="value-string">ease-in-out</span> <span class="value-string">infinite</span>;
+      <span class="property">animation-fill-mode</span>: <span class="value-string">forwards</span>;
+      <span class="property">background-color</span>: <span class="value-color">#ccc</span>;
+      <span class="brace">}</span>
+    </div>
+
+    .animation-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50vh;
+      overflow: hidden;
+      background: transparent;
+    }
+    .fragment {
+      top: 10%;
+      left: 20%;
+    }
+    .whisper {
+      top: 50%;
+      left: 40%;
+    }
+    .shard {
+      top: 30%;
+      left: 10%;
+    }
+    .reassemble {
+      top: 60%;
+      left: 30%;
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.shard</span><span class="brace">{</span>
+    <span class="property">animation</span>: <span class="function">shattering</span> <span class="value-number">2s</span> <span class="value-string">ease-in-out</span> <span class="value-string">infinite</span>;
+    <span class="property">animation-fill-mode</span>: <span class="value-string">forwards</span>;
+    <span class="property">background-color</span>: <span class="value-color">#ccc</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="fragment"></div>
+    <div class="whisper"></div>
+    <div class="shard"></div>
+    <div class="reassemble"></div>
+    <div class="shard"></div>
+    <div class="whisper"></div>
+    <div class="fragment"></div>
+    <div class="shard"></div>
+    <div class="reassemble"></div>
+    <div class="whisper"></div>
+    <div class="fragment"></div>
+    <div class="shard"></div>
+  </div>
+</body>
+</html>
