@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block.
+       You may change background-color to match the chosen palette, but keep the rest intact. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background:url("https://picsum.photos/seed/picsum/200/300") no-repeat center center;
+  background-color: black;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 25%;
+  max-width: 75%;
+  width: 75%;
+  height: 25%;
+  top: 15%;
+  overflow-y: hidden;
+  box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+}
+.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .function       { color: #A6E22E; }
+.animation-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background: transparent;
+}
+.loading-element {
+  border-radius: 50%;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(#666, #333);
+  animation: loading-animation 1s linear infinite;
+}
+@keyframes loading-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+    background: radial-gradient(#ccc, #666);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Orb Layers
+    The following blocks create the layers of orbs.
+    Each pair is a circle of 4 different colors, creating a gradient effect.
+    This effect creates a hypnotic experience for the user.
+    There are 6 circles for a total of 6 layers of this effect.
+*/
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(#333, black);
+  animation: orb-animation 2s linear infinite;
+}
+/* Orb Layers Animation
+    This animation creates the movement of the orbs.
+    Each orb moves from top to bottom with a slight delay between the orbs for a fluid effect.
+*/
+@keyframes orb-animation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50vh);
+  }
+}
+
+/* Layer Animation
+  The following animation creates the shattering effect of the orbs.
+  The color shatters in 3 parts, revealing the next layer.
+  For an even effect, it moves from left to right and back again.
+*/
+.shatter {
+  position: absolute;
+  background: radial-gradient(#333, black);
+  animation: shatter-animation 3s linear infinite;
+  clip-path: polygon(50% 0, 70% 30%, 100% 40%, 80% 60%, 80% 90%, 50% 100%, 10% 90%, 20% 60%, 40% 40%, 10% 30%);
+}
+/* Layer Animation
+    This animation creates the movement of the shattered orbs.
+*/
+@keyframes shatter-animation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Reassembly
+    In this final stage, all the layers reassemble to its original shape.
+    It reveals the final layer by revealing more and more of it.
+    To prevent it from moving, it stays at the same position.
+*/
+.reassembly {
+  position: absolute;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  background: radial-gradient(#333, black);
+  animation: reassembly-animation 3s linear infinite;
+}
+@keyframes reassembly-animation {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(0.1);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+    <span class="selector">.orb</span><span class="brace">{</span>
+    <span class="property">background-image</span>: <span class="value-string">radial-gradient(#333, black)</span>;
+    <span class="property">animation</span>: <span class="function">orb-animation</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+    <span class="selector">.shatter</span><span class="brace">{</span>
+    <span class="property">background-image</span>: <span class="value-string">radial-gradient(#333, black)</span>;
+    <span class="property">animation</span>: <span class="function">shatter-animation</span> <span class="value-number">3s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="property">clip-path</span>: <span class="value-string">polygon(50% 0, 70% 30%, 100% 40%, 80% 60%, 80% 90%, 50% 100%, 10% 90%, 20% 60%, 40% 40%, 10% 30%);</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="loading-element"></div>
+    <div class="orb"></div>
+    <div class="orb" style="top: 10vh; left: 20vw;"></div>
+    <div class="orb" style="top: 15vh; left: 50vw;"></div>
+    <div class="orb" style="top: 20vh; left: 80vw;"></div>
+    <div class="orb" style="top: 25vh; left: 20vw;"></div>
+    <div class="shatter" style="top: 15vh; left: 30vw;"></div>
+    <div class="shatter" style="top: 20vh; left: 50vw;"></div>
+    <div class="reassembly" style="top: 25vh; left: 70vw;"></div>
+  </div>
+</body>
+</html>
