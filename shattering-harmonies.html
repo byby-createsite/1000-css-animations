@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block. 
+       You may change background-color to match the chosen palette, but keep the rest intact. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background:url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .function       { color: #A6E22E; }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+    
+    /* Animation for the shattered mirror effect */
+    @keyframes shatter {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+    
+    .shattered-mirror {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: RGBA(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      animation: shatter 2s 1s linear;
+    }
+    
+    /* Fragmented glass pieces */
+    .glass-piece {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: RGBA(255, 255, 255, 0.8);
+      border-radius: 50%;
+      animation: fade 3s 1s infinite;
+    }
+    
+    /* Fade-out animation for the glass pieces */
+    @keyframes fade {
+      0% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50px, 50px);
+        opacity: 0;
+      }
+    }
+    
+    .glass-piece:nth-child(1) {
+      top: 10px;
+      left: 10px;
+      animation-delay: 0s;
+    }
+    
+    .glass-piece:nth-child(2) {
+      top: 20px;
+      right: 20px;
+      animation-delay: 0.2s;
+    }
+    
+    .glass-piece:nth-child(3) {
+      bottom: 20px;
+      left: 30px;
+      animation-delay: 0.4s;
+    }
+    
+    .glass-piece:nth-child(4) {
+      top: 10px;
+      left: 70px;
+      animation-delay: 0.6s;
+    }
+    
+    /* Loading Element */
+    .loading-element {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      animation: loading-animation 1s linear infinite;
+    }
+    
+    /* Loadign Animation */
+    @keyframes loading-animation {
+      0% {
+        border-bottom: 10px solid RGBA(255, 255, 255, 0.5);
+      }
+      50% {
+        border-bottom: 10px solid RGBA(0, 128, 0, 0.5);
+      }
+      100% {
+        border-bottom: 10px solid RGBA(255, 255, 255, 0.5);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="shattered-mirror"></div>
+    <div class="glass-piece"></div>
+    <div class="glass-piece"></div>
+    <div class="glass-piece"></div>
+    <div class="glass-piece"></div>
+  </div>
+</body>
+</html>
