@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shifting Horizons</title>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background:url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .function       { color: #A6E22E; }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+    @keyframes loading-animation {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    @keyframes shattered-id {
+      0% {
+        transform: scale(1);
+      }
+      20% {
+        transform: scale(0.8);
+        opacity: 0.8;
+      }
+      40% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      60% {
+        transform: scale(1.2);
+        opacity: 0.8;
+      }
+      80% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    .loading-element {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0 0 0 3px #A6E22E;
+      animation: loading-animation 1s linear infinite;
+    }
+    .loading-element::before {
+      position: absolute;
+      content: "";
+      width: 6px;
+      height: 2px;
+      background-color: #A6E22E;
+      transform: translateX(-50%) rotate(45deg);
+      animation: shattered-id 1s linear infinite;
+    }
+    .loading-element::after {
+      position: absolute;
+      content: "";
+      width: 6px;
+      height: 2px;
+      background-color: #A6E22E;
+      transform: translateX(50%) rotate(45deg);
+      animation: shattered-id 1s linear infinite;
+      transform-origin: right bottom;
+    }
+    .fractals {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #A6E22E;
+      box-shadow: 0 0 0 3px #A6E22E;
+      animation: rotate 10s linear infinite;
+    }
+    .fractals::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #A6E22E;
+      box-shadow: 0 0 0 3px #A6E22E;
+      animation: rotate 10s linear infinite;
+    }
+    .fractals::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #A6E22E;
+      box-shadow: 0 0 0 3px #A6E22E;
+      animation: rotate 10s linear infinite;
+      transform-origin: right top;
+    }
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    .animated-scene {
+      position: relative;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0 0 0 3px #A6E22E;
+      animation: scale 5s linear infinite;
+    }
+    .animated-scene::before {
+      position: absolute;
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #A6E22E;
+      transform: translateX(-50%) rotate(45deg);
+      animation: shattered-id 5s linear infinite;
+    }
+    .animated-scene::after {
+      position: absolute;
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #A6E22E;
+      transform: translateX(50%) rotate(45deg);
+      animation: shattered-id 5s linear infinite;
+      transform-origin: right bottom;
+    }
+    @keyframes scale {
+      0% {
+        transform: scale(1);
+      }
+      20% {
+        transform: scale(1.1);
+      }
+      40% {
+        transform: scale(1);
+      }
+      60% {
+        transform: scale(1.2);
+      }
+      80% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="loading-container">
+      <div class="loading-element"></div>
+      <div class="loading-element"></div>
+      <div class="loading-element"></div>
+      <div class="loading-element"></div>
+      <div class="loading-element"></div>
+      <div class="loading-element"></div>
+      <div class="loading-element"></div>
+      <div class="loading-element"></div>
+      <div class="loading-element"></div>
+      <div class="loading-element"></div>
+      <div class="loading-element"></div>
+      <div class="loading-element"></div>
+      <div class="loading-element"></div>
+    </div>
+  </div>
+</body>
+</html>
