@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <style>
+        /* The block below must appear exactly at the very top of the <style> block.
+        You may change background-color to match the chosen palette, but keep the rest intact. */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        body {
+          background:url("/thumb") no-repeat center center;
+          background-color: black;
+          background-size: cover;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          overflow: hidden;
+        }
+        .codigo {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          background: #272822;
+          color: #F8F8F2;
+          font-family: 'Consolas', 'Monaco', monospace;
+          font-size: 18px;
+          padding: 20px;
+          border-radius: 8px;
+          white-space: pre-line;
+          text-align: left;
+          line-height: 1.6;
+          max-height: 25%;
+          max-width: 75%;
+          width: 75%;
+          height: 25%;
+          top: 15%;
+          overflow-y: hidden;
+          box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+        .selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .function       { color: #A6E22E; }
+        .animation-container {
+          position: absolute;
+          top: 75%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 50%;
+          overflow: hidden;
+          background: transparent;
+        }
+        .glass {
+          position: relative;
+          width: 300px;
+          height: 400px;
+          transform: translate(-50%, -50%);
+          aspect-ratio: 9/16;
+        }
+        .glass::before, .glass::after, .shatter-container::before, .shatter-container::after {
+          content: '';
+          position: absolute;
+          border-radius: 50%;
+        }
+        .glass::before {
+          top: 0%;
+          left: -100px;
+          width: 200px;
+          height: 300px;
+          transform: rotate(-30deg) skew(-10deg);
+          background: linear-gradient(to top, #8B9467, #964B00);
+        }
+        .glass::after {
+          top: 0%;
+          right: -100px;
+          width: 200px;
+          height: 300px;
+          background: linear-gradient(to top, #964B00, #8B9467);
+        }
+        .shatter-container {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+        .shatter-container::before, .shatter-container::after {
+          flex-grow: 1;
+        }
+        .shatter-container::before {
+          background: linear-gradient(to bottom, #964B00, #8B9467);
+        }
+        .shatter-container::after {
+          background: linear-gradient(to bottom, #8B9467, #964B00);
+        }
+        .square {
+          position: absolute;
+          aspect-ratio: 1;
+          background-color: #964B00;
+          transform-origin: left;
+          width: 10px;
+          height: 10px;
+        }
+        .square.slow {
+          animation-delay: 1s;
+        }
+        .square.fast {
+          animation-delay: 2s;
+        }
+        .square.slower {
+          animation-delay: 0.5s;
+        }
+        @keyframes slow {
+          0% {
+            transform: translate(0px, 0px) scale(1);
+          }
+          50% {
+            transform: translate(100px, -200px) scale(5);
+          }
+          95% {
+            transform: translate(0px, 200px) scale(2);
+          }
+          100% {
+            transform: translate(0px, 0px) scale(1);
+          }
+        }
+        @keyframes slow2 {
+          0% {
+            transform: translate(100px, 200px) scale(2);
+          }
+          50% {
+            transform: translate(0px, -200px) scale(5);
+          }
+          95% {
+            transform: translate(100px, 0px) scale(2);
+          }
+          100% {
+            transform: translate(0px, 0px) scale(1);
+          }
+        }
+        @keyframes fast {
+          0% {
+            transform: translate(0px, 250px) scale(2);
+          }
+          50% {
+            transform: translate(200px, -300px) scale(5);
+          }
+          95% {
+            transform: translate(0px, -250px) scale(3);
+          }
+          100% {
+            transform: translate(0px, 0px) scale(1);
+          }
+        }
+        .square.slow {
+          animation: slow infinite ease-out;
+        }
+        .square.fast {
+          animation: fast infinite ease-out;
+        }
+        .square.slower {
+          animation: slow2 infinite ease-out;
+        }
+        .square.second {
+          animation-delay: 4s;
+        }
+        @keyframes slow-delayed {
+          0% {
+            transform: translate(0px, 0px) scale(1);
+          }
+          50% {
+            transform: translate(100px, -200px) scale(5);
+          }
+          95% {
+            transform: translate(0px, 200px) scale(2);
+          }
+          100% {
+            transform: translate(0px, 0px) scale(1);
+          }
+        }
+        .square.second-slow {
+          animation-delay: 4.5s;
+          animation: slow-delayed infinite ease-out;
+        }
+
+       <span class="selector">.shatter-container</span><span class="brace">{</span>
+       <span class="property">display</span>: <span class="value-string">flex</span>;
+       <span class="property">flex-direction</span>: <span class="value-string">column</span>;
+       <span class="property">width</span>: <span class="value-string">100%</span>;
+       <span class="property">height</span>: <span class="value-string">100%</span>;
+       <span class="property">animation</span>: <span class="function">shattering</span> <span class="value-number">10s</span> <span class="value-string">ease-out</span>;
+       <span class="brace">}</span>
+    </style>
+</head>
+<body>
+    <div class="codigo">
+       <span class="selector">.glass</span><span class="brace">{</span>
+       <span class="property">position</span>: <span class="value-string">relative</span>;
+       <span class="property">width</span>: <span class="value-number">300px</span>;
+       <span class="property">height</span>: <span class="value-number">400px</span>;
+       <span class="property">transform</span>: <span class="value-string">translate(-50%, -50%)</span>;
+       <span class="property">aspect-ratio</span>: <span class="value-string">9/16</span>;
+       <span class="property">background</span>: <span class="value-string">linear-gradient(to top, #8B9467, #964B00)</span>;
+       <span class="property">animation</span>: <span class="function">shattered</span> <span class="value-number">10s</span> <span class="value-string">ease-out</span>;
+       <span class="brace">}</span>
+        <span class="selector">.square</span><span class="brace">{</span>
+        <span class="property">position</span>: <span class="value-string">absolute</span>;
+        <span class="property">aspect-ratio</span>: <span class="value-string">1</span>;
+        <span class="property">width</span>: <span class="value-number">10px</span>;
+        <span class="property">height</span>: <span class="value-number">10px</span>;
+        <span class="property">background-color</span>: <span class="value-color">#964B00</span>;
+        <span class="property">transform-origin</span>: <span class="value-string">left</span>;
+        <span class="property">animation</span>: <span class="function">slow</span> <span class="value-number">5s</span> <span class="value-string">ease-out</span>;
+        <span class="property">animation-delay</span>: <span class="value-number">2s</span>;
+        <span class="property">top</span>: <span class="value-number">50%</span>;
+        <span class="property">left</span>: <span class="value-number">50%</span>;
+        <span class="property">z-index</span>: <span class="value-number">2</span>;
+        <span class="brace">}</span>
+        <span class="selector">.square.fast</span><span class="brace">{</span>
+        <span class="property">animation</span>: <span class="function">fast</span> <span class="value-number">5s</span> <span class="value-string">ease-out</span>;
+        <span class="property">animation-delay</span>: <span class="value-number">2s</span>;
+        <span class="property">top</span>: <span class="value-number">50%</span>;
+        <span class="property">left</span>: <span class="value-number">50%</span>;
+        <span class="property">z-index</span>: <span class="value-number">1</span>;
+        <span class="brace">}</span>
+        <span class="selector">.square.slower</span><span class="brace">{</span>
+        <span class="property">animation</span>: <span class="function">slow2</span> <span class="value-number">5s</span> <span class="value-string">ease-out</span>;
+        <span class="property">animation-delay</span>: <span class="value-number">2s</span>;
+        <span class="property">top</span>: <span class="value-number">50%</span>;
+        <span class="property">left</span>: <span class="value-number">50%</span>;
+        <span class="property">z-index</span>: <span class="value-number">3</span>;
+        <span class="brace">}</span>
+        <span class="selector">.square.second</span><span class="brace">{</span>
+        <span class="property">animation-delay</span>: <span class="value-number">6s</span>;
+        <span class="brace">}</span>
+        <span class="selector">.square.second-slow</span><span class="brace">{</span>
+        <span class="property">animation-delay</span>: <span class="value-number">6.5s</span>;
+        <span class="property">animation</span>: <span class="function">slow</span> <span class="value-number">5s</span> <span class="value-string">ease-out</span>;
+        <span class="brace">}</span>
+       <span class="brace">}</span>
+    </div>
+    <div class="animation-container">
+        <div class="glass">
+        </div>
+        <div class="shatter-container"></div>
+    </div>
+</body>
+</html>

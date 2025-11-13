@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block.
+       You may change background-color to match the chosen palette, but keep the rest intact. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background:url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } /* Selector color */
+    .property       { color: #66D9EF; } /* Property value color */
+    .value-number   { color: #AE81FF; } /* Number value color */
+    .value-string   { color: #E6DB74; } /* String value color */
+    .value-color    { color: #A6E22E; } /* Color value color */
+    .function       { color: #A6E22E; } /* Animation function color */
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+    .loading-element {
+      position: absolute;
+      border-radius: 50%;
+      width: 2vmin;
+      height: 2vmin;
+      background-color: #66D9EF;
+      animation: loading-animation 1s linear infinite;
+    }
+    @keyframes loading-animation {
+      0% {
+        transform: translate(-6vmin, -4vmin) rotate(40deg);
+      }
+      50% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+      100% {
+        transform: translate(4vmin, 2vmin) rotate(-40deg);
+      }
+    }
+    /* Fragmented Mirror Elements */
+    .fragment {
+      position: absolute;
+      width: 100vmin;
+      height: 150vmin;
+      background-color: #272822;
+      clip-path: polygon(0 0, 100vmin 0, 100vmin 50vmin, 0 100vmin);
+      transform-origin: center;
+      animation: fragment-animation 3s linear infinite;
+    }
+    @keyframes fragment-animation {
+      0% {
+        clip-path: polygon(0 0, 100vmin 0, 100vmin 50vmin, 0 100vmin);
+        transform: rotate(0deg);
+      }
+      50% {
+        clip-path: polygon(0 0, 80vmin 0, 80vmin 60vmin, 0 100vmin);
+        transform: rotate(20deg);
+      }
+      100% {
+        clip-path: polygon(0 0, 100vmin 0, 100vmin 50vmin, 0 100vmin);
+        transform: rotate(0deg);
+      }
+    }
+    /* Kaleidoscope Effect */
+    .kaleidoscope {
+      position: absolute;
+      width: 70vmin;
+      height: 70vmin;
+      background-color: #66D9EF;
+      animation: kaleidoscope-animation 2s linear infinite;
+    }
+    @keyframes kaleidoscope-animation {
+      0% {
+        transform: rotate(0deg) translateX(10vmin);
+      }
+      50% {
+        transform: rotate(10deg) translateX(5vmin);
+      }
+      100% {
+        transform: rotate(0deg) translateX(10vmin);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <!-- Fragmented Mirror Elements -->
+    <div class="fragment"></div>
+    <div class="fragment" style="transform: translate(0, -20vmin);"></div>
+    <div class="fragment" style="transform: translate(-10vmin, 10vmin);"></div>
+    <div class="fragment" style="transform: translate(5vmin, -15vmin);"></div>
+    <!-- Kaleidoscope Effect -->
+    <div class="kaleidoscope"></div>
+    <div class="kaleidoscope" style="transform: scale(1.2) rotate(10deg);"></div>
+    <div class="kaleidoscope" style="transform: translate(-5vmin, 10vmin) rotate(-10deg);"></div>
+    <div class="loading-element" style="left: 5vmin;"></div>
+    <div class="loading-element" style="left: 15vmin; top: 10vmin;"></div>
+    <!-- Micro-details to check replay value -->
+    <div class="loading-element hidden" style="left: 3vmin; top: -5vmin;"></div>
+    <div class="fragment hidden" style="transform: translate(2vmin, 20vmin);"></div>
+    <div class="fragment hidden" style="transform: translate(-8vmin, -20vmin);"></div>
+  </div>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+</body>
+</html>

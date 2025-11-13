@@ -42,7 +42,7 @@ Send me an e-mail if interested.
 
  <br/><br/><br/>
 
-180/1000
+219/1000
 <br/><br/>
 <a href="./reflections-of-self-a-cracked-mirror-of-digital-identity.html">Reflections of Self: A Cracked Mirror of Digital Identity</a> <br/><br/>
 <a href="./sundayblues-mazedigger-devlife-codestruggles-cssanimation.html">Sundayblues mazedigger devlife codestruggles cssanimation</a> <br/><br/><a href="./sunday-mirror-self.html">Sunday mirror self</a> <br/><br/><a href="./code-reveal.html">Code reveal</a> <br/><br/><a href="./web-of-life.html">Web of life</a> <br/><br/><a href="./sundayblues.html">Sundayblues</a> <br/><br/><a href="./code-reveal.html">Code reveal</a> <br/><br/><a href="./liberation-station.html">Liberation station</a> <br/><br/><a href="./liberation.html">Liberation</a> <br/><br/><a href="./weblab-mirror-effect.html">Weblab mirror effect</a> <br/><br/><a href="./mirror-code.html">Mirror code</a> <br/><br/><a href="./fractured-selves-a-digital-identity-odyssey.html">Fractured Selves: A Digital Identity Odyssey</a> <br/><br/>
@@ -228,3 +228,23 @@ Send me an e-mail if interested.
 <a href="./dancing-fragmented-selves.html">Dancing Fragmented Selves</a> <br/><br/>
 <a href="./ephemeral-whispers-in-the-abyss.html">Ephemeral Whispers in the Abyss</a> <br/><br/>
 <a href="./ephemeral-echoes.html">Ephemeral Echoes</a> <br/><br/>
+<a href="./fractured-identity-tapestry.html">Fractured Identity Tapestry</a> <br/><br/>
+<a href="./echoes-of-the-fragmented-self.html">Echoes of the Fragmented Self</a> <br/><br/>
+<a href="./shattered-harmony-of-whispers.html">Shattered Harmony of Whispers</a> <br/><br/>
+<a href="./shattered-identity-mirrored.html">Shattered Identity Mirrored</a> <br/><br/>
+<a href="./fragmented-selves-harmony.html">Fragmented Selves Harmony</a> <br/><br/>
+<a href="./fractured-elegy-of-whispers.html">Fractured Elegy of Whispers</a> <br/><br/>
+<a href="./reflections-in-shattered-glass.html">Reflections in Shattered Glass</a> <br/><br/>
+<a href="./shattered-harmony-echoes.html">Shattered Harmony Echoes</a> <br/><br/>
+<a href="./shattered-harmony-echoes-css-a-symphony-of-fractured-identity.html">Shattered Harmony Echoes CSS: A Symphony of Fractured Identity</a> <br/><br/>
+<a href="./shattered-echoes-of-broken-selves.html">Shattered Echoes of Broken Selves</a> <br/><br/>
+<a href="./shattered-mirrors-reflected.html">Shattered Mirrors Reflected</a> <br/><br/>
+<a href="./shattered-symphony-of-a-fractured-self.html">Shattered Symphony of a Fractured Self</a> <br/><br/>
+<a href="./shattered-elegy-of-self-reflection.html">Shattered Elegy of Self Reflection</a> <br/><br/>
+<a href="./shattered-echoes-of-a-fractured-soul.html">Shattered Echoes of a Fractured Soul</a> <br/><br/>
+<a href="./fractured-harmony-of-synchronic-whispers.html">Fractured Harmony of Synchronic Whispers</a> <br/><br/>
+<a href="./-ephemeralexistencewith-that-in-mind-the-idea-isanimation-shattering-the-facade.html">, #EphemeralExistence".
+
+With that in mind, the idea is:
+
+animation: Shattering the Facade</a> <br/><br/>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector { color: #F92672; }
+    .property { color: #66D9EF; }
+    .value-number { color: #AE81FF; }
+    .value-string { color: #E6DB74; }
+    .value-color { color: #A6E22E; }
+    .function { color: #A6E22E; }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+    
+    /* Fractured Identity */
+    .loading-element {
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-size: 100% 0%;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      aspect-ratio: 1;
+      width: 15vh;
+      animation: loading-animation 1s linear infinite;
+    }
+    
+    @keyframes loading-animation {
+      0% { background-size: 0 0; }
+      50% { background-size: 100% 0; }
+      100% { background-size: 0 0; }
+    }
+    
+    /* Glitch Art Shattering */
+    @keyframes fragment-shatter {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(5vh, 5vh) scale(0.5); }
+    }
+    
+    .fragment {
+      background-image: linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 255, 0));
+      border-radius: 50%;
+      width: 2.5vh;
+      height: 2.5vh;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: fragment-shatter 0.5s linear infinite;
+    }
+    
+    /* Mirror Effects */
+    @keyframes mirror-effect {
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .mirror {
+      clip-path: circle(50% at 50% 50%);
+      width: 20vh;
+      height: 20vh;
+      background-image: linear-gradient(90deg, rgb(0, 255, 0), rgb(255, 0, 0));
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: mirror-effect 1s linear infinite;
+    }
+    
+    /* Kaleidoscope Effect */
+    .kaleidoscope {
+      clip-path: circle(100% at 50% 50%);
+      width: 40vh;
+      height: 40vh;
+      background-image: linear-gradient(90deg, rgb(255, 255, 255), rgb(0, 0, 0));
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .kaleidoscope::before, .kaleidoscope::after {
+      content: '';
+      clip-path: circle(100% at 50% 50%);
+      width: 40vh;
+      height: 40vh;
+      background-image: linear-gradient(90deg, rgb(0, 0, 0), rgb(255, 255, 255));
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: mirror-effect 1s linear infinite;
+    }
+    .kaleidoscope::before {
+      animation-delay: 0.5s;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">background-image</span>: <span class="value-string">linear-gradient(90deg, rgb(0, 0, 255), rgb(0, 255, 255));</span>;
+    <span class="property">background-size</span>: <span class="value-number">100%</span>;<span class="property">animation</span>:<span class="function">glitch-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="property">top</span>: <span class="value-number">50%</span>;
+    <span class="property">left</span>: <span class="value-number">50%</span>;
+    <span class="property">transform</span>: <span class="value-string">translate(-50%, -50%);</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="loading-element"></div>
+    <!-- 
+    Glitch Art Shattering 
+    -->
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <div class="fragment"></div>
+    <!-- 
+    Mirror Effects 
+    -->
+    <div class="mirror"></div>
+    <div class="mirror"></div>
+    <div class="mirror"></div>
+    <!-- 
+    Kaleidoscope Effect 
+    -->
+    <div class="kaleidoscope"></div>
+    <div class="kaleidoscope::before"></div>
+    <div class="kaleidoscope::after"></div>
+  </div>
+</body>
+</html>

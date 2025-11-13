@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* The foundation of CSS styles. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background:url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } 
+    .property       { color: #66D9EF; }
+    .value-number   { color: #AE81FF; } 
+    .value-string   { color: #E6DB74; } 
+    .value-color    { color: #A6E22E; } 
+    .function       { color: #A6E22E; }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* CSS Shattered Echoes of a Fractured Soul */
+    .loading-element {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: #333;
+    }
+
+    .loading-element::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: "";
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-top: 10px solid #ff69b4;
+      animation: loading-animation 1s linear infinite;
+    }
+    @keyframes loading-animation {
+      0% {
+        transform: translate(-50%, -50%) rotate(0);
+      }
+      50% {
+        border-top-color: #33cc33;
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+    @keyframes shard-assemble {
+      0% {
+        transform: translate(-50%, -50%) scale(0);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+    @keyframes shimmer {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+    .shard {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: "";
+      width: 100px;
+      height: 100px;
+      background-color: #ff69b4;
+      box-shadow: 0 0 10px #ff69b4;
+      animation: shard-assemble 3s linear forwards;
+    }
+    .shard:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+    .shard:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+    .shard:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    /* Shimmering effect on shards */
+    .shard::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: "";
+      width: 0;
+      height: 0;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      animation: shimmer 1s ease-in-out infinite;
+    }
+    .shard::before:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+    .shard::before:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+    /* Fragment effect */
+    .shard::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      content: "";
+      width: 0;
+      height: 0;
+      border: 1px solid #333;
+      border-radius: 50%;
+      animation: loading-animation 1.5s linear infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.shard</span><span class="brace">{</span>
+    <span class="property">position</span>: <span class="value-string">absolute</span>;<span class="property"> top</span>: <span class="value-string">50%</span>;<span class="property"> left</span>: <span class="value-string">50%</span>;<span class="property"> transform</span>: <span class="value-string">translate(-50%, -50%)</span>;<span class="property"> content</span>: <span class="value-string">""</span>;<span class="property"> width</span>: <span class="value-number">100px</span>;<span class="property"> height</span>: <span class="value-number">100px</span>;<span class="property"> background-color</span>: <span class="value-color">#ff69b4</span>;<span class="property"> box-shadow</span>: <span class="value-string">0 0 10px #ff69b4</span>;<span class="property"> animation</span>: <span class="function">shard-assemble</span> <span class="value-number">3s</span> <span class="value-string">linear</span> <span class="value-string">forwards</span>;<span class="property"> animation-delay</span>: <span class="value-number">0.2s</span>;
+    <span class="property">animation-delay: 0.4s;</span><span class="property">animation-delay: 0.6s;</span>
+    <span class="selector">.shard::before</span><span class="brace">{</span>
+    <span class="property">position</span>: <span class="value-string">absolute</span>;<span class="property"> top</span>: <span class="value-string">50%</span>;<span class="property"> left</span>: <span class="value-string">50%</span>;<span class="property"> transform</span>: <span class="value-string">translate(-50%, -50%)</span>;<span class="property"> content</span>: <span class="value-string">""</span>;<span class="property"> width</span>: <span class="value-number">0</span>;<span class="property"> height</span>: <span class="value-number">0</span>;<span class="property"> border</span>: <span class="property">1px solid #fff</span>;<span class="property"> animation</span>: <span class="function">shimmer</span> <span class="value-number">1s</span> <span class="value-string">ease-in-out</span> <span class="value-string">infinite</span>;<span class="property"> animation-delay</span>: <span class="value-number">0</span>;
+    <span class="selector">.shard::before:nth-child(2)</span><span class="brace">{</span>
+    <span class="property">animation-delay</span>: <span class="value-string">0.3s;</span>
+    <span class="selector">.shard::after</span><span class="brace">{</span>
+    <span class="property">position</span>: <span class="value-string">absolute</span>;<span class="property"> top</span>: <span class="value-string">50%</span>;<span class="property"> left</span>: <span class="value-string">50%</span>;<span class="property"> transform</span>: <span class="value-string">translate(-50%, -50%)</span>;<span class="property"> content</span>: <span class="value-string">""</span>;<span class="property"> width</span>: <span class="value-number">0</span>;<span class="property"> height</span>: <span class="value-number">0</span>;<span class="property"> border</span>: <span class="property">1px solid #333</span>;<span class="property"> animation</span>: <span class="function">loading-animation</span> <span class="value-number">1</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="selector">.loading-element::before</span><span class="brace">{</span>
+    <span class="property">position</span>: <span class="value-string">absolute</span>;<span class="property"> top</span>: <span class="value-string">50%</span>;<span class="property"> left</span>: <span class="value-string">50%</span>;<span class="property"> transform</span>: <span class="value-string">translate(-50%, -50%)</span>;<span class="property"> content</span>: <span class="value-string">""</span>;<span class="property"> width</span>: <span class="value-number">0</span>;<span class="property"> height</span>: <span class="value-number">0</span>;<span class="property"> border</span>: <span class="property">10px solid transparent</span>;<span class="property"> border-top</span>: <span class="property">10px solid #ff69b4</span>;
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">position</span>: <span class="value-string">relative</span>;<span class="property"> width</span>: <span class="value-number">300px</span>;<span class="property"> height</span>: <span class="value-number">200px</span>;<span class="property"> border-radius</span>: <span class="value-string">50%</span>;<span class="property"> background-color</span>: <span class="value-color">#333</span>;
+    <span class="brace">}</span>
+    <span class="selector">.animation-container</span><span class="brace">{</span>
+    <span class="property">position</span>: <span class="value-string">absolute</span>;<span class="property"> top</span>: <span class="value-string">50%</span>;<span class="property"> left</span>: <span class="value-string">50%</span>;<span class="property"> transform</span>: <span class="value-string">translate(-50%, -50%)</span>;<span class="property"> display</span>: <span class="value-string">flex</span>;<span class="property"> align-items</span>: <span class="value-string">center</span>;<span class="property"> justify-content</span>: <span class="value-string">center</span>;<span class="property"> width</span>: <span class="value-string">100%</span>;<span class="property"> height</span>: <span class="value-string">50%</span>;<span class="property"> overflow</span>: <span class="value-string">hidden</span>;<span class="property"> background</span>: <span class="value-color">transparent</span>;
+    <span class="property">aspect-ratio</span>: <span class="value-number">9/16</span>;<span class="property">min-height</span>: <span class="value-string">100vh</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="loading-element"></div>
+    <div class="shard"></div>
+    <div class="shard"></div>
+    <div class="shard"></div>
+    <div class="shard"></div>
+  </div>
+</body>
+</html>
