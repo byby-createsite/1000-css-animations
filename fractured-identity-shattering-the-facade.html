@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <style>
+        /* The block below must appear exactly at the very top of the <style> block.
+        You may change background-color to match the chosen palette, but keep the rest intact. */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background:url("/thumb") no-repeat center center;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .codigo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #272822;
+            color: #F8F8F2;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 8px;
+            white-space: pre-line;
+            text-align: left;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            top: 15%;
+            overflow-y: hidden;
+            box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+        .selector       { color: #F92672; } 
+        .property       { color: #66D9EF; } 
+        .value-number   { color: #AE81FF; } 
+        .value-string   { color: #E6DB74; } 
+        .value-color    { color: #A6E22E; } 
+        .function       { color: #A6E22E; }
+        
+        .loading-element {
+            border-radius: 50%;
+            aspect-ratio: 1;
+            width: 100px;
+            height: 100px;
+            background-color: #666;
+            animation: loading-animation 1s linear infinite;
+        }
+        
+        @keyframes loading-animation {
+            0% { transform: scale(1.2); }
+            20% { transform: scale(0.8); }
+            40% { transform: scale(1); }
+            60% { transform: scale(0.6); }
+            80% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+        
+        .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            aspect-ratio: 9/16;
+            min-height: 100vh;
+        }
+        
+        /* Layer 0: Shattered Facade */
+        .shattered-facade {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0 50%);
+        }
+        
+        /* Layer 1: Reflections */
+        .reflections {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #444;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0 50%);
+            transform: scale(1.2, 1);
+        }
+        
+        /* Layer 2: Web of Emotions */
+        .emotions {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 100px 100px;
+            border-color: transparent transparent #666 transparent;
+            transform: rotate(45deg);
+        }
+        
+        /* Micro-detail for replay value check */
+        .micro-detail {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #F2C464;
+            border-radius: 50%;
+            animation: micro-detail-animation 1s linear infinite;
+            transform: translate(50px, 0);
+        }
+        
+        @keyframes micro-detail-animation {
+            0% { transform: translate(50px, 0); }
+            20% { transform: translate(50px, -5px); }
+            40% { transform: translate(50px, 0); }
+            60% { transform: translate(50px, 5px); }
+            80% { transform: translate(50px, 0); }
+            100% { transform: translate(50px, 0); }
+        }
+        
+        @keyframes fragment-animation {
+            0% { opacity: 0; transform: scale(0); }
+            20% { opacity: 0.5; transform: scale(1.2); left: -200px; }
+            40% { opacity: 0; transform: scale(0); left: -200px; }
+            60% { opacity: 0; transform: scale(0); left: -200px; }
+            80% { opacity: 0.5; transform: scale(1.2); left: -200px; }
+            100% { opacity: 0; transform: scale(0); left: -200px; }
+        }
+        
+        /* Animated Fragment */
+        .animated-fragment {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: #999;
+            animation: fragment-animation 2s linear infinite;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="codigo">
+        <span class="selector">.shattered-facade</span><span class="brace">{</span>
+        <span class="property">position</span>: <span class="value-string">absolute</span>;
+        <span class="property">width</span>: <span class="value-number">100%</span>;
+        <span class="property">height</span>: <span class="value-number">100%</span>;
+        <span class="property">background-color</span>: <span class="value-color">#333</span>;
+        <span class="property">clip-path</span>: <span class="value-string">polygon(50% 0%, 100% 50%, 50% 100%, 0 50%);</span>;
+        <span class="brace">}</span>
+    </div>
+    <div class="codigo">
+        <span class="selector">.reflections</span><span class="brace">{</span>
+        <span class="property">position</span>: <span class="value-string">absolute</span>;
+        <span class="property">width</span>: <span class="value-number">100%</span>;
+        <span class="property">height</span>: <span class="value-number">100%</span>;
+        <span class="property">background-color</span>: <span class="value-color">#444</span>;
+        <span class="property">clip-path</span>: <span class="value-string">polygon(50% 0%, 100% 50%, 50% 100%, 0 50%);</span>;
+        <span class="property">transform</span>: <span class="function">scale(1.2, 1)</span>;
+        <span class="brace">}</span>
+    </div>
+    <div class="animation-container">
+        <div class="shattered-facade"></div>
+        <div class="reflections"></div>
+        <div class="emotions"></div>
+        <div class="micro-detail"></div>
+        <div class="animated-fragment"></div>
+    </div>
+</body>
+</html>
