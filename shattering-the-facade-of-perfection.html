@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block. 
+       You may change background-color to match the chosen palette, but keep the rest intact. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } 
+    .property       { color: #66D9EF; } 
+    .value-number   { color: #AE81FF; } 
+    .value-string   { color: #E6DB74; } 
+    .value-color    { color: #A6E22E; } 
+    .function       { color: #A6E22E; }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+    
+    @keyframes loading-animation {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    .loading-element {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      animation: loading-animation 1s linear infinite;
+      background: #A6E22E;
+      transform-origin: center;
+      transform: translate(-50%, -50%);
+    }
+    .broken-mirror {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: broken-mirror-animation 3s infinite;
+    }
+    @keyframes broken-mirror-animation {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+        clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+      }
+      20% {
+        transform: translate(-50%, -50%) rotate(30deg);
+        clip-path: polygon(50% 0%, 80% 100%, 0% 100%);
+      }
+      40% {
+        transform: translate(-50%, -50%) rotate(60deg);
+        clip-path: polygon(50% 0%, 90% 100%, 0% 100%);
+      }
+      60% {
+        transform: translate(-50%, -50%) rotate(90deg);
+        clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+      }
+      80% {
+        transform: translate(-50%, -50%) rotate(120deg);
+        clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(150deg);
+        clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+      }
+    }
+    .fragments {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: fragments-animation 2s infinite;
+    }
+    @keyframes fragments-animation {
+      0% {
+        top: 40%;
+        left: 45%;
+      }
+      20% {
+        top: 35%;
+        left: 50%;
+      }
+      40% {
+        top: 30%;
+        left: 55%;
+      }
+      60% {
+        top: 25%;
+        left: 60%;
+      }
+      80% {
+        top: 20%;
+        left: 65%;
+      }
+      100% {
+        top: 15%;
+        left: 70%;
+      }
+    }
+    .shattered-glass {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      background: #E6DB74;
+      filter: blur(5px);
+      animation: shattered-glass-animation 1s infinite;
+    }
+    @keyframes shattered-glass-animation {
+      0% {
+        filter: blur(0px);
+      }
+      20% {
+        filter: blur(10px);
+      }
+      40% {
+        filter: blur(20px);
+      }
+      60% {
+        filter: blur(10px);
+      }
+      80% {
+        filter: blur(0px);
+      }
+      100% {
+        filter: blur(0px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="loading-element"></div>
+    <div class="broken-mirror"></div>
+    <div class="fragments">
+      <div class="shattered-glass"></div>
+    </div>
+    <div class="shattered-glass"></div>
+    <div class="shattered-glass"></div>
+    <div class="shattered-glass"></div>
+    <div class="shattered-glass"></div>
+    <div class="shattered-glass"></div>
+    <div class="shattered-glass"></div>
+    <div class="shattered-glass"></div>
+    <div class="shattered-glass"></div>
+  </div>
+</body>
+</html>
