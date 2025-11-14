@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shattered Echoes of a Fractured Self</title>
+  <style>
+/* The block below must appear exactly at the very top of the <style> block.
+You may change background-color to match the chosen palette, but keep the rest intact. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: url("/thumb") no-repeat center center;
+  background-color: #141414;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 25%;
+  max-width: 75%;
+  width: 75%;
+  height: 25%;
+  top: 15%;
+  overflow-y: hidden;
+  box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+}
+.selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .function       { color: #A6E22E; }
+
+/* Core CSS snippet */
+.codigo span.selector {
+  font-weight: bold;
+}
+
+.codigo span.brace {
+  color: #66D9EF;
+}
+
+.codigo span.property {
+  font-weight: bold;
+}
+
+.codigo span.value-number {
+  color: #E6DB74;
+}
+
+.codigo span.value-string {
+  color: #66D9EF;
+}
+
+.codigo span.function {
+  color: #A6E22E;
+}
+
+.animation-container {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* Animation CSS */
+.animation-container::before, .animation-container::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  animation: fragment 1s infinite linear;
+  background-color: #444;
+}
+
+.animation-container::before {
+  width: 10px; height: 10px;
+  left: 20%;
+  top: 40%;
+  animation-timing-function: cubic-bezier(0.1, 0.6, 0.36, 0.8);
+}
+
+.animation-container::after {
+  width: 15px; height: 15px;
+  left: 25%;
+  top: 45%;
+  animation-timing-function: cubic-bezier(0.3, 0.2, 0.4, 1);
+}
+
+.shard {
+  position: absolute;
+  width: 5px; height: 5px;
+  background-color: #555;
+}
+
+.shard::before {
+  content: '';
+  position: absolute;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background-color: #444;
+  animation: ripple 2s infinite linear;
+  z-index: 2;
+}
+
+.shard::after {
+  content: '';
+  position: absolute;
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  background-color: #333;
+  animation: ripple-2 2.5s infinite linear;
+  z-index: 3;
+}
+
+/* Helper classes */
+.shard1 {
+  left: 40%; top: 20%;
+  animation-delay: -0.25s;
+  animation-timing-function: cubic-bezier(0.7, 0.2, 0.7, 0.8);
+}
+
+.shard2 {
+  left: 50%; top: 30%;
+  animation-delay: -0.125s;
+  animation-timing-function: cubic-bezier(0.5, 0.4, 0.65, 0.85);
+}
+
+.shard3 {
+  left: 35%; top: 45%;
+  animation-delay: -0.25s;
+}
+
+.shard4 {
+  left: 60%; top: 35%;
+  animation-timing-function: cubic-bezier(0.3, 0.5, 0.7, 1);
+  animation-delay: 0.25s;
+}
+
+.shard5 {
+  left: 50%; top: 55%;
+  animation-delay: -0.125s;
+  animation-timing-function: cubic-bezier(0.3, 0.5, 0.7, 1);
+}
+
+.shard6 {
+  left: 40%; top: 50%;
+  animation-timing-function: cubic-bezier(0.7, 0.2, 0.7, 0.8);
+  animation-delay: -0.5s;
+}
+
+.shard7 {
+  left: 60%; top: 50%;
+  animation-timing-function: cubic-bezier(0.3, 0.5, 0.7, 1);
+  animation-delay: 0s;
+}
+
+.shard8 {
+  left: 35%; top: 65%;
+  animation-timing-function: cubic-bezier(0.4, 0.6, 0.6, 0.7);
+  animation-delay: 0.1s;
+}
+
+.shard9 {
+  left: 55%; top: 35%;
+  animation-timing-function: cubic-bezier(0.6, 0.7, 0.3, 0.1);
+  animation-delay: -0.25s;
+}
+
+.shard10 {
+  left: 45%; top: 45%;
+  animation-timing-function: cubic-bezier(0.4, 0.6, 0.6, 0.7);
+  animation-delay: -0.5s;
+}
+
+.shard11 {
+  left: 30%; top: 55%;
+  animation-timing-function: cubic-bezier(0.3, 0.6, 0.8, 0.5);
+  animation-delay: 0.25s;
+}
+
+.shard12 {
+  left: 65%; top: 60%;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.7, 0.6);
+  animation-delay: -0.125s;
+}
+
+@keyframes fragment {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0); top: -10% }
+  100% { transform: scale(1); top: 10% }
+}
+
+@keyframes ripple-2 {
+  0% { transform: scale(0); top: -5% }
+  100% { transform: scale(1); top: 5% }
+}
+
+/* Add CSS snippet */
+.codigo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #272822;
+  color: #F8F8F2;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 18px;
+  padding: 20px;
+  border-radius: 8px;
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+  max-height: 25%;
+  max-width: 75%;
+  width: 75%;
+  height: 25%;
+  top: 15%;
+  overflow-y: hidden;
+  box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+}
+.codigo span.selector {
+  font-weight: bold;
+}
+
+.codigo span.brace {
+  color: #66D9EF;
+}
+
+.codigo span.property {
+  font-weight: bold;
+}
+
+.codigo span.value-number {
+  color: #E6DB74;
+}
+
+.codigo span.value-string {
+  color: #66D9EF;
+}
+
+.codigo span.function {
+  color: #A6E22E;
+}
+
+<div class="codigo">
+  <span class="selector">.animation-container::before</span> <span class="brace">{</span>
+    <span class="property">animation-duration</span>: <span class="value-number">1s</span>;
+    <span class="property">animation-delay</span>: <span class="value-string">-0.5s</span>;
+    <span class="property">animation-timing-function</span>: <span class="value-string">ease-in-out</span>;
+    <span class="property">animation-fill-mode</span>: <span class="value-string">forwards</span>;
+  <span class="brace">}</span>
+  <span class="selector">.animation-container::before</span> <span class="brace">{</span>
+    <span class="property">animation-name</span>: <span class="function">fragment</span>;
+    <span class="property">animation-iteration-count</span>: <span class="value-number">infinite</span>;
+  <span class="brace">}</span>
+</div>
+
+<div class="animation-container">
+  <div class="shard shard1"></div>
+  <div class="shard shard2"></div>
+  <div class="shard shard3"></div>
+  <div class="shard shard4"></div>
+  <div class="shard shard5"></div>
+  <div class="shard shard6"></div>
+  <div class="shard shard7"></div>
+  <div class="shard shard8"></div>
+  <div class="shard shard9"></div>
+  <div class="shard shard10"></div>
+  <div class="shard shard11"></div>
+  <div class="shard shard12"></div>
+
+  <div class="shard shard1 ripple"></div>
+  <div class="shard shard2 ripple"></div>
+  <div class="shard shard3 ripple"></div>
+  <div class="shard shard4 ripple"></div>
+  <div class="shard shard5 ripple"></div>
+  <div class="shard shard6 ripple"></div>
+  <div class="shard shard7 ripple"></div>
+  <div class="shard shard8 ripple"></div>
+  <div class="shard shard9 ripple"></div>
+  <div class="shard shard10 ripple"></div>
+  <div class="shard shard11 ripple"></div>
+  <div class="shard shard12 ripple"></div>
+
+  <div class="shard shard1 ripple-2"></div>
+  <div class="shard shard2 ripple-2"></div>
+  <div class="shard shard3 ripple-2"></div>
+  <div class="shard shard4 ripple-2"></div>
+  <div class="shard shard5 ripple-2"></div>
+  <div class="shard shard6 ripple-2"></div>
+  <div class="shard shard7 ripple-2"></div>
+  <div class="shard shard8 ripple-2"></div>
+  <div class="shard shard9 ripple-2"></div>
+  <div class="shard shard10 ripple-2"></div>
+  <div class="shard shard11 ripple-2"></div>
+  <div class="shard shard12 ripple-2"></div>
+
+  <div class="shard shard1 ripple ripple-2"></div>
+  <div class="shard shard2 ripple ripple-2"></div>
+  <div class="shard shard3 ripple ripple-2"></div>
+  <div class="shard shard4 ripple ripple-2"></div>
+  <div class="shard shard5 ripple ripple-2"></div>
+  <div class="shard shard6 ripple ripple-2"></div>
+  <div class="shard shard7 ripple ripple-2"></div>
+  <div class="shard shard8 ripple ripple-2"></div>
+  <div class="shard shard9 ripple ripple-2"></div>
+  <div class="shard shard10 ripple ripple-2"></div>
+  <div class="shard shard11 ripple ripple-2"></div>
+  <div class="shard shard12 ripple ripple-2"></div>
+</div>
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <div class="shard shard1"></div>
+    <div class="shard shard2"></div>
+    <div class="shard shard3"></div>
+    <div class="shard shard4"></div>
+    <div class="shard shard5"></div>
+    <div class="shard shard6"></div>
+    <div class="shard shard7"></div>
+    <div class="shard shard8"></div>
+    <div class="shard shard9"></div>
+    <div class="shard shard10"></div>
+    <div class="shard shard11"></div>
+    <div class="shard shard12"></div>
+  </div>
+  <div class="codigo">
+    <span class="selector">.animation-container::before</span> <span class="brace">{</span>
+      <span class="property">animation-duration</span>: <span class="value-number">1s</span>;
+      <span class="property">animation-delay</span>: <span class="value-string">-0.5s</span>;
+      <span class="property">animation-timing-function</span>: <span class="value-string">ease-in-out</span>;
+      <span class="property">animation-fill-mode</span>: <span class="value-string">forwards</span>;
+    <span class="brace">}</span>
+    <span class="selector">.animation-container::before</span> <span class="brace">{</span>
+      <span class="property">animation-name</span>: <span class="function">fragment</span>;
+      <span class="property">animation-iteration-count</span>: <span class="value-number">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+</body>
+</html>
