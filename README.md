@@ -259,3 +259,4 @@ animation: Shattering the Facade</a> <br/><br/>
 <a href="./shattered-harmony-of-broken-facades.html">Shattered Harmony of Broken Facades</a> <br/><br/>
 <a href="./beyond-the-facade.html">Beyond the Facade</a> <br/><br/>
 <a href="./shattering-illusions-of-perfection.html">Shattering Illusions of Perfection</a> <br/><br/>
+<a href="./shattering-illusions-of-perfection.html">Shattering Illusions of Perfection</a> <br/><br/>
