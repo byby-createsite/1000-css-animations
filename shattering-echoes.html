@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Shattering Echoes</title>
+    <style>
+        /* The block below must appear exactly at the very top of the <style> block.
+           You may change background-color to match the chosen palette, but keep the rest intact. */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        body {
+          background:url("/thumb") no-repeat center center;
+          background-color: black;
+          background-size: cover;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          overflow: hidden;
+        }
+        .codigo {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          background: #272822;
+          color: #F8F8F2;
+          font-family: 'Consolas', 'Monaco', monospace;
+          font-size: 18px;
+          padding: 20px;
+          border-radius: 8px;
+          white-space: pre-line;
+          text-align: left;
+          line-height: 1.6;
+          max-height: 25%;
+          max-width: 75%;
+          width: 75%;
+          height: 25%;
+          top: 15%;
+          overflow-y: hidden;
+          box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+        }
+        .selector       { color: #F92672; } /* selector color */ 
+        .property       { color: #66D9EF; } /* property color */ 
+        .value-number   { color: #AE81FF; } /* value number color */ 
+        .value-string   { color: #E6DB74; } /* value string color */ 
+        .value-color    { color: #A6E22E; } /* value color color */ 
+        .function       { color: #A6E22E; } /* function color */ 
+        
+        
+        .animation-container {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 50%;
+          overflow: hidden;
+          background: transparent;
+          aspect-ratio: 9/16;
+          min-height: 100vh;
+        }
+        .shattered-self {
+          position: absolute;
+          animation: shattering 2s linear infinite;
+          transform-origin: center;
+          transform-box: fill-box;
+        }
+        @keyframes shattering {
+          0% { transform: scale(1); }
+          20% { transform: scale(1.2); }
+          40% { transform: scale(0.8); }
+          60% { transform: scale(1.5); }
+          80% { transform: scale(0.5); }
+          100% { transform: scale(1); }
+        }
+        @keyframes fragment-fall {
+          0% { transform: translateY(-100px); }
+          100% { transform: translateY(0); opacity: 0; }
+        }
+        .animation-elements {
+          width: 50px;
+          height: 50px;
+          background-color: #FF69B4;
+          border-radius: 50%;
+          animation: fragment-fall 2s ease 0s 1 forwards;
+          position: absolute;
+        }
+        .fragment-1 {
+          top: 20%;
+          left: 20%;
+          transform: rotate(45deg);
+        }
+        .fragment-2 {
+          top: 30%;
+          left: 30%;
+          transform: rotate(-45deg);
+        }
+        .fragment-3 {
+          top: 40%;
+          left: 40%;
+          transform: rotate(90deg);
+        }
+        .shattered-particles {
+          width: 10px;
+          height: 10px;
+          background-color: #66D9EF;
+          border: 1px solid #66D9EF;
+          transform: rotate(10deg);
+          position: absolute;
+          animation: particle-fall 1s ease-out infinite;
+        }
+        @keyframes particle-fall {
+          0% { transform: translateY(-100px); }
+          100% { transform: translateY(0); opacity: 0; }
+        }
+        .particle-1 {
+          top: 35%;
+          left: 45%;
+        }
+        .particle-2 {
+          top: 25%;
+          left: 55%;
+        }
+        .particle-3 {
+          top: 15%;
+          left: 65%;
+        }
+        .shattered-self,
+        .fragment-1,
+        .fragment-2,
+        .fragment-3,
+        .particle-1,
+        .particle-2,
+        .particle-3 {
+          z-index: 1;
+        }
+        .animation-fade {
+          width: 20px;
+          height: 20px;
+          background-color: #F8F8F2;
+          border-radius: 50%;
+          animation: fading 2s ease-in-out infinite;
+          position: absolute;
+          transform: rotate(180deg);
+          z-index: 0;
+        }
+        @keyframes fading {
+          0% { opacity: 0; }
+          20% { opacity: 1; }
+          40% { opacity: 0; }
+          60% { opacity: 1; }
+          80% { opacity: 0; }
+          100% { opacity: 1; }
+        }
+        .fade-1 {
+          top: 55%;
+          left: 10%;
+        }
+        .fade-2 {
+          top: 65%;
+          left: 20%;
+        }
+        .fade-3 {
+          top: 75%;
+          left: 30%;
+        }
+        .animation-container::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: #272822;
+          opacity: 0.5;
+          z-index: -1;
+        }
+        .animation-container::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: #66D9EF;
+          opacity: 0.2;
+          z-index: -2;
+        }
+        
+        .loading-element {
+          border-radius: 50%;
+          animation: loading-animation 1s linear infinite;
+        }
+        
+        @keyframes loading-animation {
+          0% {
+            transform: scale(1, 1);
+          }
+          50% {
+            transform: scale(1.2, 0.8);
+          }
+          100% {
+            transform: scale(1, 1);
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="codigo">
+        <span class="selector">.shattered-self</span><span class="brace">{</span>
+        <span class="property">animation</span>: <span class="function">shattering</span> <span class="value-number">2s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+        <span class="property">transform-box</span>: <span class="value-string">fill-box</span>;
+        <span class="property">transform-origin</span>: <span class="value-string">center</span>;
+        <span class="brace">}</span>
+        <span class="selector">.fragment-1</span><span class="brace">{</span>
+        <span class="property">animation</span>: <span class="function">fragment-fall</span> <span class="value-number">2s</span> <span class="value-string">ease</span> <span class="value-number">0s</span> <span class="value-number">1</span> <span class="value-string">forwards</span>;
+        <span class="property">position</span>: <span class="value-string">absolute</span>;
+        <span class="property">top</span>: <span class="value-number">20%</span>;
+        <span class="property">left</span>: <span class="value-number">20%</span>;
+        <span class="property">transform</span>: <span class="value-string">rotate(45deg)</span>;
+        <span class="brace">}</span>
+        <span class="selector">.fragment-2</span><span class="brace">{</span>
+        <span class="property">animation</span>: <span class="function">fragment-fall</span> <span class="value-number">2s</span> <span class="value-string">ease</span> <span class="value-number">0s</span> <span class="value-number">1</span> <span class="value-string">forwards</span>;
+        <span class="property">position</span>: <span class="value-string">absolute</span>;
+        <span class="property">top</span>: <span class="value-number">30%</span>;
+        <span class="property">left</span>: <span class="value-number">30%</span>;
+        <span class="property">transform</span>: <span class="value-string">rotate(-45deg)</span>;
+        <span class="brace">}</span>
+        <span class="selector">.fragment-3</span><span class="brace">{</span>
+        <span class="property">animation</span>: <span class="function">fragment-fall</span> <span class="value-number">2s</span> <span class="value-string">ease</span> <span class="value-number">0s</span> <span class="value-number">1</span> <span class="value-string">forwards</span>;
+        <span class="property">position</span>: <span class="value-string">absolute</span>;
+        <span class="property">top</span>: <span class="value-number">40%</span>;
+        <span class="property">left</span>: <span class="value-number">40%</span>;
+        <span class="property">transform</span>: <span class="value-string">rotate(90deg)</span>;
+        <span class="brace">}</span>
+        <span class="selector">.shattered-particles</span><span class="brace">{</span>
+        <span class="property">width</span>: <span class="value-number">10px</span>;
+        <span class="property">height</span>: <span class="value-number">10px</span>;
+        <span class="property">background-color</span>: <span class="value-color">#66D9EF</span>;
+        <span class="property">border</span>: <span class="value-string">1px solid #66D9EF</span>;
+        <span class="property">transform</span>: <span class="value-string">rotate(10deg)</span>;
+        <span class="property">position</span>: <span class="value-string">absolute</span>;
+        <span class="property">animation</span>: <span class="function">particle-fall</span> <span class="value-number">1s</span> <span class="value-string">ease-out</span> <span class="value-string">infinite</span>;
+        <span class="brace">}</span>
+        <span class="selector">.particle-1</span><span class="brace">{</span>
+        <span class="property">top</span>: <span class="value-number">35%</span>;
+        <span class="property">left</span>: <span class="value-number">45%</span>;
+        <span class="brace">}</span>
+        <span class="selector">.particle-2</span><span class="brace">{</span>
+        <span class="property">top</span>: <span class="value-number">25%</span>;
+        <span class="property">left</span>: <span class="value-number">55%</span>;
+        <span class="brace">}</span>
+        <span class="selector">.particle-3</span><span class="brace">{</span>
+        <span class="property">top</span>: <span class="value-number">15%</span>;
+        <span class="property">left</span>: <span class="value-number">65%</span>;
+        <span class="brace">}</span>
+        <span class="selector">.animation-fade</span><span class="brace">{</span>
+        <span class="property">width</span>: <span class="value-number">20px</span>;
+        <span class="property">height</span>: <span class="value-number">20px</span>;
+        <span class="property">background-color</span>: <span class="value-color">#F8F8F2</span>;
+        <span class="property">border-radius</span>: <span class="value-string">50%</span>;
+        <span class="property">animation</span>: <span class="function">fading</span> <span class="value-number">2s</span> <span class="value-string">ease-in-out</span> <span class="value-string">infinite</span>;
+        <span class="property">position</span>: <span class="value-string">absolute</span>;
+        <span class="property">transform</span>: <span class="value-string">rotate(180deg)</span>;
+        <span class="property">z-index</span>: <span class="value-number">0</span>;
+        <span class="brace">}</span>
+        <span class="selector">.fade-1</span><span class="brace">{</span>
+        <span class="property">top</span>: <span class="value-number">55%</span>;
+        <span class="property">left</span>: <span class="value-number">10%</span>;
+        <span class="brace">}</span>
+        <span class="selector">.fade-2</span><span class="brace">{</span>
+        <span class="property">top</span>: <span class="value-number">65%</span>;
+        <span class="property">left</span>: <span class="value-number">20%</span>;
+        <span class="brace">}</span>
+        <span class="selector">.fade-3</span><span class="brace">{</span>
+        <span class="property">top</span>: <span class="value-number">75%</span>;
+        <span class="property">left</span>: <span class="value-number">30%</span>;
+        <span class="brace">}</span>
+    </div>
+    <div class="animation-container">
+        <div class="shattered-self"></div>
+        <div class="fragment-1"></div>
+        <div class="fragment-2"></div>
+        <div class="fragment-3"></div>
+        <div class="shattered-particles"></div>
+        <div class="particle-1"></div>
+        <div class="particle-2"></div>
+        <div class="particle-3"></div>
+        <div class="animation-fade"></div>
+        <div class="fade-1"></div>
+        <div class="fade-2"></div>
+        <div class="fade-3"></div>
+        <div class="animation-container::before"></div>
+        <div class="animation-container::after"></div>
+    </div>
+</body>
+</html>
