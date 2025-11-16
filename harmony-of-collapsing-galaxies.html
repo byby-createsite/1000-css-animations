@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block.
+    You may change background-color to match the chosen palette, but keep the rest intact. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector { color: #F92672; }
+    .property { color: #66D9EF; }
+    .value-number { color: #AE81FF; }
+    .value-string { color: #E6DB74; }
+    .value-color { color: #A6E22E; }
+    .function { color: #A6E22E; }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 9/16; /* added this property */
+      min-height: 100vh;
+      overflow: hidden;
+      background: transparent;
+    }
+    
+    /* Galaxy Animation */
+    #galaxy-1,
+    #galaxy-2 {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #ccc;
+      animation: spin 2s linear infinite;
+    }
+    #galaxy-1 {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    #galaxy-2 {
+      top: 20%;
+      left: 20%;
+    }
+    
+    #galaxy-3 {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #666;
+      animation: pulse 2s ease-in-out infinite;
+      box-shadow: 0 0 10px #666;
+    }
+    #galaxy-3 {
+      top: 40%;
+      left: 60%;
+    }
+    
+    #star-1,
+    #star-2,
+    #star-3 {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #fff;
+      animation: blink 1s ease-in-out infinite;
+      z-index: 1;
+    }
+    #star-1 {
+      top: 10%;
+      left: 10%;
+    }
+    #star-2 {
+      top: 60%;
+      left: 80%;
+    }
+    #star-3 {
+      top: 30%;
+      left: 40%;
+    }
+    
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    @keyframes pulse {
+      0% {
+        width: 50px;
+        height: 50px;
+      }
+      50% {
+        width: 70px;
+        height: 70px;
+      }
+      100% {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    <span class="selector">.animation-container</span> {
+      <span class="brace">{</span>
+        <span class="property">background</span>: <span class="value-string">radial-gradient(rgb(70, 70, 70), rgb(0, 0, 0));</span>;
+        <span class="property">position</span>: <span class="value-string">absolute</span>;
+        <span class="property">top</span>: <span class="value-number">75%</span>;
+        <span class="property">left</span>: <span class="value-number">50%</span>;
+        <span class="property">transform</span>: <span class="function">translate(-50%, -50%)</span>;
+        <span class="property">display</span>: <span class="value-string">flex</span>;
+        <span class="property">align-items</span>: <span class="value-string">center</span>;
+        <span class="property">justify-content</span>: <span class="value-string">center</span>;
+        <span class="property">width</span>: <span class="value-number">100%</span>;
+        <span class="property">height</span>: <span class="value-number">50%</span>;
+        <span class="property">overflow</span>: <span class="value-string">hidden</span>;
+        <span class="property">background</span>: <span class="value-string">transparent</span>;
+      <span class="brace">}</span>
+    }
+    
+    .loading-element {
+      <span class="selector">.loading-element</span><span class="brace">{</span>
+        <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+        <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+      <span class="brace">}</span>
+    }
+    
+    @keyframes loading-animation {
+      0% {
+        transform: scale(1, 1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1.5, 1.5);
+        opacity: 0;
+      }
+    }
+    
+    /* Galaxy Collision Animation */
+    .colliding-galaxies {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #ccc;
+      animation: collision 2s linear infinite;
+    }
+    .colliding-galaxies {
+      top: 20%;
+      left: 20%;
+    }
+    
+    @keyframes collision {
+      0% {
+        transform: scale(1, 1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.5, 1.5);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(0.5, 0.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">loading-animation</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div id="galaxy-1"></div>
+    <div id="galaxy-2"></div>
+    <div id="galaxy-3"></div>
+    <div id="star-1"></div>
+    <div id="star-2"></div>
+    <div id="star-3"></div>
+    <div class="colliding-galaxies"></div>
+  </div>
+</body>
+</html>

@@ -42,7 +42,7 @@ Send me an e-mail if interested.
 
  <br/><br/><br/>
 
-220/1000
+221/1000
 <br/><br/>
 <a href="./reflections-of-self-a-cracked-mirror-of-digital-identity.html">Reflections of Self: A Cracked Mirror of Digital Identity</a> <br/><br/>
 <a href="./sundayblues-mazedigger-devlife-codestruggles-cssanimation.html">Sundayblues mazedigger devlife codestruggles cssanimation</a> <br/><br/><a href="./sunday-mirror-self.html">Sunday mirror self</a> <br/><br/><a href="./code-reveal.html">Code reveal</a> <br/><br/><a href="./web-of-life.html">Web of life</a> <br/><br/><a href="./sundayblues.html">Sundayblues</a> <br/><br/><a href="./code-reveal.html">Code reveal</a> <br/><br/><a href="./liberation-station.html">Liberation station</a> <br/><br/><a href="./liberation.html">Liberation</a> <br/><br/><a href="./weblab-mirror-effect.html">Weblab mirror effect</a> <br/><br/><a href="./mirror-code.html">Mirror code</a> <br/><br/><a href="./fractured-selves-a-digital-identity-odyssey.html">Fractured Selves: A Digital Identity Odyssey</a> <br/><br/>
@@ -270,3 +270,4 @@ animation: Shattering the Facade</a> <br/><br/>
 <a href="./celestial-wonders-dancing-with-gravitational-waves.html">Celestial Wonders Dancing with Gravitational Waves</a> <br/><br/>
 <a href="./echoes-through-the-cosmic-web.html">Echoes Through the Cosmic Web</a> <br/><br/>
 <a href="./harmony-of-expanding-space.html">Harmony of Expanding Space</a> <br/><br/>
+<a href="./harmony-of-collapsing-galaxies.html">Harmony of Collapsing Galaxies</a> <br/><br/>
