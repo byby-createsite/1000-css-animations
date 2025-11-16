@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block.
+   You may change background-color to match the chosen palette, but keep the rest intact. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background:url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .function       { color: #A6E22E; }
+    .selector {
+      color: #F92672;
+    }
+    .loading-element {
+      position: relative;
+      width: 50vw;
+      height: 50vh;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: orbit 6s linear infinite;
+    }
+    .loading-element::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      background: #ff0000;
+      border-radius: 50%;
+      animation: pulse 3s linear infinite;
+    }
+    .loading-element::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 25%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      width: 25px;
+      height: 25px;
+      background: #ff00ff;
+      border-radius: 50%;
+      animation: orbit-invert 6s linear infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    @keyframes orbit {
+      0% {
+        transform: rotate(0deg) translate(50%, 50%);
+      }
+      100% {
+        transform: rotate(360deg) translate(50%, 50%);
+      }
+    }
+    @keyframes orbit-invert {
+      0% {
+        transform: rotate(0deg) translate(25%, 50%);
+      }
+      100% {
+        transform: rotate(360deg) translate(25%, 50%);
+      }
+    }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+    @keyframes celestial {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(0, -30%);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+    .celestial-bodies {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      aspect-ratio: 9/16;
+      background: linear-gradient(45deg, rgba(255, 0, 0, .2), rgba(0, 0, 255, .2));
+      animation: celestial 6s linear infinite;
+    }
+    .celestial-bodies::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      background: #0000ff;
+      border-radius: 50%;
+      animation: pulsate 3s linear infinite;
+    }
+    @keyframes pulsate {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .codigo {
+      span.selector {
+        font-weight: bold;
+      }
+      span.property {
+        font-weight: bold;
+      }
+      span.brace {
+        font-size: 1.3em;
+      }
+      span.brace:before {
+        content: '{';
+      }
+      span.brace:after {
+        content: '}';
+      }
+      span.function {
+        font-family: 'Courier New', Courier, monospace;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <div class="animation-container">
+      <div class="celestial-bodies"></div>
+    </div>
+  </div>
+  <div class="codigo">
+    <span class="selector">.loading-element</span><span class="brace">{</span>
+    <span class="property">border-radius</span>: <span class="value-string">50%</span>;
+    <span class="property">animation</span>: <span class="function">orbit</span> <span class="value-number">6s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+    <span class="property">box-shadow</span>: <span class="value-string">10px 10px 20px rgba(0,0,0,.3)</span>;
+    <span class="brace">}</span>
+  </div>
+</body>
+</html>
