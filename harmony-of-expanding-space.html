@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Harmony of Expanding Space</title>
+    <style>
+    /* The block below must appear exactly at the very top of the <style> block.
+    You may change background-color to match the chosen palette, but keep the rest intact. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background:url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } 
+    .property       { color: #66D9EF; } 
+    .value-number   { color: #AE81FF; } 
+    .value-string   { color: #E6DB74; } 
+    .value-color    { color: #A6E22E; } 
+    .function       { color: #A6E22E; }
+    .loading-element {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: #fff;
+      animation: expanding 1s linear infinite;
+    }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+    @keyframes expanding {
+      0% {
+        transform: scale(0);
+        background-color: #ff69b4;
+      }
+      25% {
+        transform: scale(1);
+        background-color: #ff69b4;
+      }
+      50% {
+        transform: scale(1.2);
+        background-color: #1ce3f5;
+      }
+      75% {
+        transform: scale(0.8);
+        background-color: #ff69b4;
+      }
+      100% {
+        transform: scale(0);
+        background-color: #ff69b4;
+      }
+    }
+    .asteroid {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: asteroid 2s infinite;
+    }
+    .asteroid1 {
+      top: 10%;
+      left: 10%;
+      animation-delay: 0.2s;
+    }
+    .asteroid2 {
+      top: 40%;
+      left: 80%;
+      animation-delay: 0.5s;
+    }
+    .asteroid3 {
+      top: 60%;
+      left: 20%;
+      animation-delay: 0.8s;
+    }
+    @keyframes asteroid {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(100px, -100px);
+      }
+      100% {
+        transform: translate(0px, 0px);
+      }
+    }
+    #star {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: star 2s infinite;
+    }
+    @keyframes star {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
+    </style>
+</head>
+<body>
+    <div class="codigo">
+        <span class="selector">.loading-element</span><span class="brace">{</span>
+        <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+        <span class="property">animation</span>: <span class="function">expanding</span> <span class="value-number">1s</span> <span class="value-string">linear</span> <span class="value-string">infinite</span>;
+        <span class="brace">}</span>
+        <span class="selector">#star</span><span class="brace">{</span>
+        <span class="property">width</span>: <span class="value-number">10px</span>;
+        <span class="property">height</span>: <span class="value-number">10px</span>;
+        <span class="property">background-color</span>: <span class="value-color">#fff</span>;
+        <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+        <span class="property">animation</span>: <span class="function">star</span> <span class="value-number">2s</span> <span class="value-string">infinite</span>;
+        <span class="brace">}</span>
+        <span class="selector">.asteroid</span><span class="brace">{</span>
+        <span class="property">position</span>: <span class="value-string">absolute</span>;
+        <span class="property">width</span>: <span class="value-number">20px</span>;
+        <span class="property">height</span>: <span class="value-number">20px</span>;
+        <span class="property">background-color</span>: <span class="value-color">#fff</span>;
+        <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+        <span class="property">animation</span>: <span class="function">asteroid</span> <span class="value-number">2s</span> <span class="value-string">infinite</span>;
+        <span class="brace">}</span>
+        <span class="selector">.asteroid1</span><span class="brace">{</span>
+        <span class="property">top</span>: <span class="value-number">10%</span>;
+        <span class="property">left</span>: <span class="value-number">10%</span>;
+        <span class="property">animation-delay</span>: <span class="value-number">0.2s</span>;
+        <span class="brace">}</span>
+        <span class="selector">.asteroid2</span><span class="brace">{</span>
+        <span class="property">top</span>: <span class="value-number">40%</span>;
+        <span class="property">left</span>: <span class="value-number">80%</span>;
+        <span class="property">animation-delay</span>: <span class="value-number">0.5s</span>;
+        <span class="brace">}</span>
+        <span class="selector">.asteroid3</span><span class="brace">{</span>
+        <span class="property">top</span>: <span class="value-number">60%</span>;
+        <span class="property">left</span>: <span class="value-number">20%</span>;
+        <span class="property">animation-delay</span>: <span class="value-number">0.8s</span>;
+        <span class="brace">}</span>
+    </div>
+    <div class="animation-container">
+        <div class="loading-element"></div>
+        <div class="asteroid asteroid1"></div>
+        <div class="asteroid asteroid2"></div>
+        <div class="asteroid asteroid3"></div>
+        <div id="star"></div>
+    </div>
+</body>
+</html>
