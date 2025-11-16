@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block.
+    You may change background-color to match the chosen palette, but keep the rest intact. */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* The block below must appear exactly at the very top of the <style> block. */
+    .codigo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #272822;
+      color: #F8F8F2;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 18px;
+      padding: 20px;
+      border-radius: 8px;
+      white-space: pre-line;
+      text-align: left;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      top: 15%;
+      overflow-y: hidden;
+      box-shadow: -8px 10px 18px rgba(0, 0, 0, 0.55);
+    }
+    .selector       { color: #F92672; } .property       { color: #66D9EF; } .value-number   { color: #AE81FF; } .value-string   { color: #E6DB74; } .value-color    { color: #A6E22E; } .function       { color: #A6E22E; }
+
+    /* This snippet is the "core" and the rest of the CSS will expand it to implement the animation in .animation-container. */
+    .animation-container .element {
+      position: absolute;
+      background-size: 100% 100%;
+      background: radial-gradient(circle, #66D9EF 30%, #272822 70%);
+      border-radius: 50%;
+    }
+    .animation-container .element:nth-child(1) {
+      aspect-ratio: 9/16;
+      width: 50px;
+      top: calc(50% - 25px);
+      left: calc(50% - 25px);
+      animation: expand 2s infinite 1s;
+    }
+    .animation-container .element:nth-child(2) {
+      aspect-ratio: 9/16;
+      width: 20px;
+      top: calc(50% - 10px);
+      left: calc(50% - 10px);
+      animation: expand 2s infinite 1.5s;
+    }
+    .animation-container .element:nth-child(3) {
+      aspect-ratio: 9/16;
+      width: 10px;
+      top: calc(50% - 5px);
+      left: calc(50% - 5px);
+    }
+
+    .animation-container .element:before, .animation-container .element:after {
+      content: "";
+      position: absolute;
+      background: #66D9EF;
+      border-radius: 50%;
+      transform-origin: center;
+      transform: scale(0);
+      transition: transform 1s;
+      animation: pulse 2s infinite;
+    }
+    .animation-container .element:before {
+      width: 10px;
+      height: 10px;
+      top: -5px;
+      left: -5px;
+    }
+    .animation-container .element:after {
+      width: 5px;
+      height: 5px;
+      top: -2.5px;
+      left: -2.5px;
+    }
+    .animation-container .element:hover:after {
+      transform: scale(1);
+    }
+
+    @keyframes expand {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* The snippet below is a validation rule and must appear exactly inside the <div class="codigo"> in the output. */
+
+    .loading-element {
+      border-radius: 50%;
+      animation: loading-animation 1s linear infinite;
+    }
+
+    @keyframes loading-animation {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <span class="selector">.animation-container .element</span><span class="brace">{</span>
+    <span class="property">aspect-ratio</span>: <span class="value-number">9/16</span>;
+    <span class="property">position</span>: <span class="value-string">absolute</span>;
+    <span class="property">background</span>: <span class="value-string">radial-gradient(circle, #66D9EF 30%, #272822 70%);</span>);
+    <span class="property">border-radius</span>: <span class="value-number">50%</span>;
+    <span class="property">animation</span>: <span class="function">expand</span> <span class="value-number">2s</span> <span class="value-string">infinite</span> <span class="value-number">1s</span>;
+    <span class="brace">}</span>
+  </div>
+  <div class="animation-container">
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+    <div class="element"></div>
+  </div>
+</body>
+</html>
