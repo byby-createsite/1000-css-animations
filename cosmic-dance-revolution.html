@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<style>
+		/* Foundation */
+		* {
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+		}
+		body {
+		  background:url("/thumb") no-repeat;
+		  background-position: 55% 40%;
+		  background-color: black;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  height: 100vh;
+		  overflow: hidden;
+		}
+		.codigo {
+			position: absolute;
+			top: 15%;
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background:url("/gold_snippet") no-repeat center center;
+			color: white;
+			font-family: 'Consolas', 'Monaco', monospace;
+			font-size: 45px;
+			font-weight: bold;
+			text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+			text-align: center;
+			border-radius: 12px;
+			line-height: 1.6;
+			max-height: 25%;
+			max-width: 75%;
+			width: 75%;
+			height: 25%;
+			overflow-y: hidden;
+			border: 6px solid;
+			border-image: linear-gradient(
+				135deg,
+				#D4AF37 0%,
+				#F9E79F 15%,
+				#B8860B 30%,
+				#CFB53B 45%,
+				#E6C35C 60%,
+				#B8860B 75%,
+				#D4AF37 90%,
+				#C9A961 100%
+			) 1;
+			box-shadow: 
+				inset 0 2px 4px rgba(212, 175, 55, 0.3),
+				inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+				0 4px 12px rgba(184, 134, 11, 0.5),
+				0 8px 25px rgba(0, 0, 0, 0.6);
+		}
+		
+		.animation-container {
+		  position: absolute;
+		  top: 75%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  width: 100%;
+		  height: 50%;
+		  overflow: hidden;
+		  background: transparent;
+		}
+		
+		.loading-element
+		{
+		  border-radius: 50%;
+		  animation: loading-animation 1s linear infinite;
+		}
+		
+		@keyframes loading-animation {
+		  0% {
+			transform: rotate(0deg);
+		  }
+		  100% {
+			transform: rotate(360deg);
+		  }
+		}
+		
+		/* 
+		* Main Animated container 
+		* This will be the root of the cosmic dance scene
+		*/
+		#cosmic-container {
+		  position: relative;
+		  width: 100%;
+		  height: auto;
+		  /* 
+		* Set the number of galaxies, adjust this value 
+		* to change the complexity of the animation
+		*/
+		  counter-reset: galaxy 12;
+		}
+		
+		#cosmic-container::after {
+		  content: "";
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  background-image: linear-gradient(
+			to bottom right,
+			rgba(255, 255, 255, 0),
+			rgba(255, 255, 255, 0)
+		  ),
+		  linear-gradient(
+			to bottom left,
+			rgba(0, 0, 0, 0),
+			rgba(0, 0, 0, 0)
+		  );
+		  background-size: 100% 200px, 100% 200px;
+		  animation: galaxy-clouds 5s linear infinite;
+		}
+		
+		@keyframes galaxy-clouds {
+		  0% {
+			background-size: 100% 0px, 100% 0px;
+		  }
+		  100% {
+			background-size: 100% 200px, 100% 200px;
+		  }
+		}
+		
+		.galaxy-counter::before {
+		  content: counter(galaxy);
+		  counter-increment: galaxy;
+		  position: absolute;
+		  font-size: 40px;
+		  font-weight: bold;
+		  color: white;
+		  z-index: 100;
+		}
+		
+		.galaxy {
+		  position: absolute;
+		  /* Set the animation duration, can be adjusted to change the pace of the animation */
+		  animation: orbit 45s cubic-bezier(0.2, 0.4, 0.7, 1.4) infinite;
+		  animation-delay: calc(-45s * counter(galaxy));
+		  width: 150px;
+		  height: 150px;
+		  border-radius: 50%;
+		  background-image: linear-gradient(
+			to bottom,
+			rgba(255, 255, 255, 1),
+			rgba(0, 0, 0, 0.2)
+		  );
+		  background-size: 100% 100px;
+		  background-position: center 0px;
+		  background-repeat: no-repeat;
+		  z-index: 0;
+		}
+		
+		.galaxy:hover {
+		  background-size: 100% 50px;
+		}
+		
+		@keyframes orbit {
+		  0% {
+			transform: rotate(0deg) translate3d(50%, 50%, 0);
+		  }
+		  100% {
+			transform: rotate(360deg) translate3d(50%, 50%, 0);
+		  }
+		}
+		
+		.galaxy::before {
+		  content: "";
+		  position: absolute;
+		  /* Set the size of the halo, adjust this value to change the size of the halo */
+		  width: 250px;
+		  height: 250px;
+		  border-radius: 50%;
+		  background-color: rgba(255, 255, 255, 0.2);
+		  z-index: -1;
+		  box-shadow: 
+			0 0 50px rgba(255, 255, 255, 0.4),
+			0 0 100px rgba(0, 0, 0, 0.1);
+		}
+		#cosmic-container div.galaxy:nth-child(11),
+		#cosmic-container div.galaxy:nth-child(12) {
+		  /* Set the animation timing, can be adjusted to change the pace of the animation */
+		  animation-duration: 70s;
+		  animation-delay: calc(70s * count(galaxy) - 35s);
+		}
+		
+		#cosmic-container div.galaxy:nth-child(11):before {
+		  /* Set the size of the halo for this specific galaxy, 
+		  can be adjusted to change the size of the halo */
+		  width: 200px;
+		  height: 200px;
+		}
+		
+		#cosmic-container div.galaxy:nth-child(12):before {
+		  /* Set the size of the halo for this specific galaxy, 
+		  can be adjusted to change the size of the halo */
+		  width: 250px;
+		  height: 250px;
+		}
+	</style>
+</head>
+<body>
+  <div class="codigo">
+    <div>.loading-element
+    {
+    border-radius: 50%;
+    animation: loading-animation 1s linear infinite;
+  	}
+  	</div>
+  </div>
+  <div class="animation-container">
+    <div id="cosmic-container">
+      <!-- 
+      * This will be the root of the cosmic dance scene, 
+      you can add more galaxies by duplicating the .galaxy class
+      -->
+      <div class="galaxy-counter"></div>
+      <div class="galaxy"></div>
+      <div class="galaxy"></div>
+      <div class="galaxy"></div>
+      <div class="galaxy"></div>
+      <div class="galaxy"></div>
+      <div class="galaxy"></div>
+      <div class="galaxy"></div>
+      <div class="galaxy"></div>
+      <div class="galaxy"></div>
+      <div class="galaxy"></div>
+      <div class="galaxy"></div>
+      <div class="galaxy"></div>
+    </div>
+  </div>
+</body>
+</html>
