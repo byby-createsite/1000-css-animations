@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block.
+    You may change background-color to match the chosen palette, but keep the rest intact. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("/thumb");
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-image: url("/gold_snippet");
+      background-repeat: no-repeat;
+      background-position: center center;
+      color: white;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 45px;
+      font-weight: bold;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+      text-align: center;
+      border-radius: 12px;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      overflow-y: hidden;
+    /* Borda de ouro realista */
+    border: 6px solid;
+    border-image: linear-gradient(
+        135deg,
+        #D4AF37 0%,
+        #F9E79F 15%,
+        #B8860B 30%,
+        #CFB53B 45%,
+        #E6C35C 60%,
+        #B8860B 75%,
+        #D4AF37 90%,
+        #C9A961 100%
+    ) 1;
+    box-shadow: 
+        inset 0 2px 4px rgba(212, 175, 55, 0.3),
+        inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+        0 4px 12px rgba(184, 134, 11, 0.5),
+        0 8px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .loading-element {
+      border-radius: 50%;
+      animation: loading-animation 1s linear infinite;
+    }
+
+    .animation-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    /* Animation styles */
+    .galaxy {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #66CCCC;
+      animation: rotate 5s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    .star {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: #FFFF00;
+      animation: twinkle 1s ease-in-out infinite;
+    }
+
+    @keyframes twinkle {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.2;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .planet {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #00FFFF;
+      animation: orbit 5s linear infinite;
+    }
+
+    @keyframes orbit {
+      0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    .rocket {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 10px;
+      background-color: #FF0000;
+      animation: launch 5s linear infinite;
+    }
+
+    @keyframes launch {
+      0% {
+        transform: translate(-50%, -50%) scale(1, 1);
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1.5, 1.5);
+      }
+    }
+
+    /* Pseudo-elements for added layers */
+
+    .galaxy::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #000000;
+      animation: fade-in 2s ease-in-out infinite;
+    }
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .star::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #000000;
+      animation: fade-out 2s ease-in-out infinite;
+    }
+
+    @keyframes fade-out {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <div>.loading-element { border-radius: 50%; animation: loading-animation 1s linear infinite; }</div>
+  </div>
+  <div class="animation-container">
+    <div class="galaxy"></div>
+    <div class="star"></div>
+    <div class="planet"></div>
+    <div class="rocket"></div>
+    <div class="galaxy::before"></div>
+    <div class="star::after"></div>
+  </div>
+</body>
+</html>
