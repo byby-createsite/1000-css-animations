@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <style>
+    /* The block below must appear exactly at the very top of the <style> block.
+       You may change background-color to match the chosen palette, but keep the rest intact. */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: url("/thumb") no-repeat center center;
+      background-color: black;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .codigo {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: url("/gold_snippet") no-repeat center center;
+      color: white;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 45px;
+      font-weight: bold;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+      text-align: center;
+      border-radius: 12px;
+      line-height: 1.6;
+      max-height: 25%;
+      max-width: 75%;
+      width: 75%;
+      height: 25%;
+      overflow-y: hidden;
+      /* Borda de ouro realista */
+      border: 6px solid;
+      border-image: linear-gradient(
+        135deg,
+        #D4AF37 0%,
+        #F9E79F 15%,
+        #B8860B 30%,
+        #CFB53B 45%,
+        #E6C35C 60%,
+        #B8860B 75%,
+        #D4AF37 90%,
+        #C9A961 100%
+      ) 1;
+      box-shadow: 
+        inset 0 2px 4px rgba(212, 175, 55, 0.3),
+        inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+        0 4px 12px rgba(184, 134, 11, 0.5),
+        0 8px 25px rgba(0, 0, 0, 0.6);
+    }
+    .animation-container {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    @keyframes merge-galaxies {
+      0% {
+        transform: translateX(0) translateY(0);
+      }
+      50% {
+        transform: translateX(10%) translateY(10%);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(-10%) translateY(-10%);
+        opacity: 0;
+      }
+    }
+    .galaxy {
+      position: absolute;
+      width: 500px;
+      height: 300px;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    .galaxy:nth-child(1) {
+      top: 0%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      background-color: #333;
+    }
+    .galaxy:nth-child(2) {
+      top: -10%;
+      left: 50%;
+      transform: translate(-50%, 10%);
+      animation: merge-galaxies 5s infinite;
+    }
+    .galaxy:nth-child(3) {
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, -10%);
+      background-color: #666;
+    }
+    .galaxy:nth-child(4) {
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, 20%);
+      animation: merge-galaxies 5s infinite;
+    }
+    .galaxy:nth-child(5) {
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      background-color: #999;
+    }
+    .galaxy:nth-child(6) {
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, 40%);
+      animation: merge-galaxies 5s infinite;
+    }
+    .galaxy:nth-child(7) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #aaa;
+    }
+    .galaxy:nth-child(8) {
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, 60%);
+      animation: merge-galaxies 5s infinite;
+    }
+    .galaxy:nth-child(9) {
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -70%);
+      background-color: #ccc;
+    }
+    .galaxy:nth-child(10) {
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, 80%);
+      animation: merge-galaxies 5s infinite;
+    }
+    .galaxy:nth-child(11) {
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -90%);
+      background-color: #fff;
+    }
+
+    .loading-element {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      animation: loading-animation 1s linear infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="codigo">
+    <div>.galaxy
+    {
+      width: 500px;
+      height: 300px;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }</div>
+    <div>.galaxy:nth-child(1) {
+      top: 0%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      background-color: #333;
+    }</div>
+  </div>
+  <div class="animation-container">
+    <div class="galaxy" style="top: 0%; left: 50%; transform: translate(-50%, 0%); background-color: #333;"></div>
+    <div class="galaxy" style="top: -10%; left: 50%; transform: translate(-50%, 10%);"></div>
+    <div class="galaxy" style="top: 10%; left: 50%; transform: translate(-50%, -10%); background-color: #666;"></div>
+    <div class="galaxy" style="top: 20%; left: 50%; transform: translate(-50%, 20%);"></div>
+    <div class="galaxy" style="top: 30%; left: 50%; transform: translate(-50%, -30%); background-color: #999;"></div>
+    <div class="galaxy" style="top: 40%; left: 50%; transform: translate(-50%, 40%);"></div>
+    <div class="galaxy" style="top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #aaa;"></div>
+    <div class="galaxy" style="top: 60%; left: 50%; transform: translate(-50%, 60%);"></div>
+    <div class="galaxy" style="top: 70%; left: 50%; transform: translate(-50%, -70%); background-color: #ccc;"></div>
+    <div class="galaxy" style="top: 80%; left: 50%; transform: translate(-50%, 80%);"></div>
+    <div class="galaxy" style="top: 90%; left: 50%; transform: translate(-50%, -90%); background-color: #fff;"></div>
+  </div>
+</body>
+</html>
