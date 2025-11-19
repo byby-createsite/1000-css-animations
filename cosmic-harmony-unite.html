@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Cosmic Harmony Unite</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 66% 89%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            /* Define the container for the animation */
+  #galaxy-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #02061f;
+    overflow: hidden;
+  }
+  
+  /* Define the galaxy elements with clip-path and rotation */
+  .galaxy {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 100%, 0 50%);
+    animation: rotate 20s linear infinite;
+  }
+  
+  .galaxy:nth-child(1) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(30deg);
+    background: linear-gradient(to bottom, #c8e9f5, #cbe6ea);
+  }
+  
+  .galaxy:nth-child(2) {
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, #9bc7ef, #a3d3f0);
+  }
+  
+  .galaxy:nth-child(3) {
+    top: 0;
+    right: 0;
+    background: linear-gradient(to bottom, #66b2b2, #64a9ad);
+  }
+  
+  .galaxy:nth-child(4) {
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%) rotate(-30deg);
+    background: linear-gradient(to bottom, #66d4c1, #6ac7b8);
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Define the star elements with infinite animation */
+  .star {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation: spin 2s linear infinite;
+  }
+  
+  .star:nth-child(1) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .star:nth-child(2) {
+    top: 10%;
+    right: 10%;
+    animation-delay: 1s;
+  }
+  
+  .star:nth-child(3) {
+    top: 90%;
+    left: 90%;
+    animation-delay: 2s;
+  }
+  
+  .star:nth-child(4) {
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 3s;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Define the gas element with infinite animation */
+  .gas {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: #fff;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    animation: move 2s linear infinite;
+  }
+  
+  .gas:nth-child(5) {
+    top: 50%;
+    left: 50%;
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(0, -100%);
+    }
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>// Example usage
+  new Element('div', {
+    className: 'galaxy',
+    style: {
+      top: 0,
+      left: 0
+    }
+  }).appendTo(document.body);
+  new Element('div', {
+    className: 'star',
+    style: {
+      top: 0,
+      right: 0
+    }
+  }).appendTo(document.body);
+  new Element('div', {
+    className: 'gas',
+    style: {
+      bottom: 0,
+      right: 0
+    }
+  }).appendTo(document.body);
+  
+  // Initialize the animation
+  document.addEventListener('DOMContentLoaded', function () {
+    const galaxyElements = document.querySelectorAll('.galaxy');
+    const starElements = document.querySelectorAll('.star');
+    const gasElements = document.querySelectorAll('.gas');
+    
+    galaxyElements.forEach(function (element) {
+      element.style.transform = 'translate(' + getRandomNumber(0, window.innerWidth) + 'px, ' + getRandomNumber(0, window.innerHeight) + 'px)';
+    });
+    
+    starElements.forEach(function (element) {
+      element.style.animationDelay = getRandomNumber(0, 10) + 's';
+    });
+    
+    gasElements.forEach(function (element) {
+      element.style.transform = 'translate(' + getRandomNumber(0, window.innerWidth) + 'px, ' + getRandomNumber(0, window.innerHeight) + 'px)';
+    });
+  });
+  
+  function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }</div>
+        </div>
+        <div class="animation-container">
+            <!-- Galaxy elements -->
+  <div id="galaxy-container">
+    <div class="galaxy"></div>
+    <div class="galaxy"></div>
+    <div class="galaxy"></div>
+    <div class="galaxy"></div>
+  </div>
+  
+  <!-- Star elements -->
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  <div class="star"></div>
+  
+  <!-- Gas element -->
+  <div class="gas"></div>
+        </div>
+        </body>
+        </html>
