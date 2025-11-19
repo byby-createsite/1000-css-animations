@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Harmony of Cosmic Dance</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 36% 23%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            /* Set up the animation container with a fixed width and height */
+  .cosmic-dance {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    background-color: #1b1b1b;
+  }
+
+  /* Define the clip-path geometry for the galaxies and stars */
+  .galaxy {
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #cccccc;
+    transition: opacity 2s;
+  }
+
+  .star {
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    transition: opacity 1s;
+  }
+
+  /* Create a pulsating effect for the galaxies and stars */
+  .pulsate {
+    animation: pulsate 5s infinite;
+  }
+
+  /* Define the animation for the galaxies */
+  @keyframes pulsate {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* Define the animation for the stars */
+  @keyframes sparkle {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>/* CSS Snippet used in animation: clip-path polygon() used to create a triangle-like shape */
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);</div>
+        </div>
+        <div class="animation-container">
+            <div class="cosmic-dance">
+    <!-- Galaxy 1 -->
+    <div class="galaxy pulsate" id="galaxy-1" style="left: 100px; top: 50px;"></div>
+    <div class="star pulsate" id="star-1" style="left: 110px; top: 60px;" class="sparkle"></div>
+
+    <!-- Galaxy 2 -->
+    <div class="galaxy pulsate" id="galaxy-2" style="left: 300px; top: 200px;"></div>
+    <div class="star pulsate" id="star-2" style="left: 310px; top: 220px;" class="sparkle"></div>
+
+    <!-- Galaxy 3 -->
+    <div class="galaxy pulsate" id="galaxy-3" style="left: 500px; top: 100px;"></div>
+    <div class="star pulsate" id="star-3" style="left: 510px; top: 120px;" class="sparkle"></div>
+  </div>
+        </div>
+        </body>
+        </html>
