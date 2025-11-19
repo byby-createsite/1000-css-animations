@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Cosmic Harmony Dance</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 91% 57%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            /* 
+  The main animation container with a background texture resembling galaxies and space 
+  */
+  .galaxy-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1528191154340-9a7bdaea4a8f?ixid=MnwyMzQzODV8MHwxfGFsbHNlfTE0eHBhcmVvbiw2Nnx8ZW58MHwyMzA&ixlib=rb-1.2.1&w=1000');
+    background-size: cover;
+    background-position: 50% 50%;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  }
+  
+  /* 
+  Galaxy class represents individual galaxies in the animation 
+  */
+  .galaxy {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: linear-gradient(45deg, #ff9900, #0099ff);
+    border-radius: 50%;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    animation: galaxy-move 20s infinite;
+  }
+  
+  /* 
+  Gravitational wave animation representing influence of waves on galaxy movement 
+  */
+  .gravitational-wave {
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: rgba(255, 0, 255, 0.5);
+    animation: wave-move 20s infinite;
+  }
+  
+  /* 
+  Main animation styles 
+  */
+  @keyframes galaxy-move {
+    0% {
+      transform: translateX(0) rotate(0deg);
+    }
+    50% {
+      transform: translateX(10%) rotate(20deg);
+    }
+    100% {
+      transform: translateX(0) rotate(0deg);
+    }
+  }
+  @keyframes wave-move {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(10%) rotate(10deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>/* 
+  Snippet using CSS to generate an infinite spiral shape 
+  */
+  @keyframes spiral {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .spiral {
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    border-radius: 50%;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    animation: spiral 10s infinite;
+  }</div>
+        </div>
+        <div class="animation-container">
+            <div class="galaxy-container">
+    <div class="galaxy" style="left: 300px; top: 200px;"></div>
+    <div class="galaxy" style="left: 50px; top: 400px;"></div>
+    <div class="galaxy" style="left: 600px; top: 100px;"></div>
+    <div class="gravitational-wave" style="left: 0; top: 50px;"></div>
+    <div class="gravitational-wave" style="left: 800px; top: 200px;"></div>
+  </div>
+  <code_part>
+  /* 
+  Snippet using CSS to generate an infinite spiral shape 
+  */
+  @keyframes spiral {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .spiral {
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    border-radius: 50%;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    animation: spiral 10s infinite;
+  }
+  </code_part>
+        </div>
+        </body>
+        </html>
