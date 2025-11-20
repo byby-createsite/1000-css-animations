@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Expanding Cosmic Harmony</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 61% 20%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            /* Main container for the nebula */
+  .nebula {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Star particles */
+  .star {
+    position: absolute;
+    background-image: radial-gradient(white, #ff69b4);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: shine 10s linear infinite;
+  }
+
+  /* Galaxy background */
+  .galaxy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #1e88e5, #ff69b4);
+    background-size: 10000% 10000%;
+    animation: galaxy-move 20s linear infinite;
+  }
+
+  /* Orbital plane */
+  .orbital {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+  /* Shard geometry */
+  .shard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    width: 20px;
+    height: 40px;
+    background-image: linear-gradient(to bottom, #ff69b4, #1e88e5);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 50%);
+    rotation: 45deg;
+    animation: shard-rotate 5s linear infinite;
+  }
+
+  @keyframes shine {
+    0% {
+      transform: translateX(0) rotate(0);
+      scale: 1;
+    }
+    50% {
+      transform: translateX(10px) rotate(20deg);
+      scale: 1.2;
+    }
+    100% {
+      transform: translateX(0) rotate(0);
+      scale: 1;
+    }
+  }
+
+  @keyframes galaxy-move {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 10000% 10000%;
+    }
+  }
+
+  @keyframes shard-rotate {
+    0% {
+      rotation: 45deg;
+    }
+    100% {
+      rotation: 0deg;
+    }
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.star {
+  /* animation name */
+  animation-name: shine;
+  /* animation delay */
+  animation-delay: 0s;
+  /* animation duration */
+  animation-duration: 10s;
+}</div>
+        </div>
+        <div class="animation-container">
+            <div class="nebula">
+    <div class="galaxy"></div>
+    <div class="orbitals">
+      <div class="orbital"></div>
+    </div>
+    <div class="shards">
+      <div class="shard"></div>
+    </div>
+  </div>
+  <div class="stars">
+    <div class="star"></div>
+  </div>
+        </div>
+        </body>
+        </html>
