@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Galaxy Collision Dance</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 81% 85%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            /* Define a base for the animation */
+  body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+  }
+
+  /* Define a base for the galaxies */
+  .galaxy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.7;
+  }
+
+  /* Define a glowing effect for the galaxies */
+  .galaxy.glow {
+    box-shadow: 0 0 10px 20px rgba(255, 255, 255, 0.5), 0 0 40px 40px rgba(255, 255, 255, 0.2), 0 0 80px 60px rgba(255, 255, 255, 0.5);
+  }
+
+  /* Define a rotation effect for the galaxies */
+  .galaxy.rotate {
+    animation: rotate 5s infinite linear;
+  }
+
+  /* Define a scale effect for the galaxies */
+  .galaxy.scale {
+    animation: scale 5s infinite ease-in-out;
+  }
+
+  /* Animation: Rotate */
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Animation: Scale */
+  @keyframes scale {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.2);
+    }
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.galaxy.glow { box-shadow: 0 0 10px 20px rgba(255, 255, 255, 0.5), 0 0 40px 40px rgba(255, 255, 255, 0.2), 0 0 80px 60px rgba(255, 255, 255, 0.5); }</div>
+        </div>
+        <div class="animation-container">
+            <!-- Galaxy 1 -->
+  <div class="galaxy glow rotate" style="background-image: linear-gradient(to bottom, #ff69b4, #ff00cc, #ff00ff); width: 200px; height: 200px;"></div>
+
+  <!-- Galaxy 2 -->
+  <div class="galaxy glow rotate" style="background-image: linear-gradient(to bottom, #00ff69, #00ccff, #0000ff); width: 150px; height: 150px; top: 30%; left: 70%; transform: translate(-50%, -50%);"></div>
+
+  <!-- Galaxy 3 -->
+  <div class="galaxy glow rotate" style="background-image: linear-gradient(to bottom, #ffff00, #ffff66, #ff9900); width: 250px; height: 250px; top: 60%; left: 20%; transform: translate(-50%, -50%);"></div>
+
+  <!-- Galaxy 4 -->
+  <div class="galaxy glow rotate" style="background-image: linear-gradient(to bottom, #33cc33, #00ff00, #00cc00); width: 300px; height: 300px; top: 70%; left: 80%; transform: translate(-50%, -50%);"></div>
+        </div>
+        </body>
+        </html>
