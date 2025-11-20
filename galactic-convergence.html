@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Galactic Convergence</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 28% 59%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            body {
+    /* Create a full-screen background with a black background color and centered content. */
+    margin: 0;
+    background-color: #000;
+    overflow: hidden;
+  }
+
+  .galaxy-backdrop {
+    /* Use a linear gradient to create a sense of depth in space. */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #333, #555, #777);
+  }
+
+  .galaxy-shard {
+    /* Create a cluster of crystal-like shards that seem to float within the nebula. */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%, 50% 0);
+  }
+
+  .galaxy-shard:nth-child(1) {
+    /* Animate shard movement. */
+    animation: shard-rotate 10s linear infinite;
+  }
+  .galaxy-shard:nth-child(2) {
+    animation-delay: 2s;
+  }
+  .galaxy-shard:nth-child(3) {
+    animation-delay: 4s;
+  }
+
+  .star {
+    /* Create small, bright stars that seem to dance within the galaxy. */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+
+  .star.animate {
+    /* Animate star movement. */
+    animation: star-twinkle 5s ease infinite;
+  }
+
+  .galaxy-halo {
+    /* Create a glowing halo around the galaxy, adding a touch of realism and ambiance. */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #fff, #ccc);
+    /* Use opacity animation to create a sense of movement and energy. */
+    animation: halo-spin 5s linear infinite;
+  }
+
+  @keyframes shard-rotate {
+    0% {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(135deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+
+  @keyframes star-twinkle {
+    0% {
+      opacity: 1;
+      scale: 1;
+    }
+    50% {
+      opacity: 0.5;
+      scale: 0.9;
+    }
+    100% {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
+  @keyframes halo-spin {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.galaxy-shard:nth-child(3) {
+  animation-delay: 4s;
+}</div>
+        </div>
+        <div class="animation-container">
+            <!-- Galaxy nebula backdrop -->
+  <!-- 
+    This uses a linear gradient to create a sense of depth in space. 
+    The colors will blend together seamlessly for a soft, ethereal effect. 
+  -->
+  <div class="galaxy-backdrop"></div>
+
+  <!-- Galaxy shard cluster -->
+  <!-- 
+    This creates a cluster of crystal-like shards that seem to float within the nebula. 
+    The use of clip-path and transform properties gives a sense of movement and weightlessness. 
+  -->
+  <div class="galaxy-shard"></div>
+  <div class="galaxy-shard"></div>
+  <div class="galaxy-shard"></div>
+
+  <!-- Stars within the nebula -->
+  <!-- 
+    These are small, bright stars that seem to dance within the galaxy. 
+    A combination of scale, rotation, and animation properties creates the illusion of movement. 
+  -->
+  <div class="star animate"></div>
+  <div class="star animate"></div>
+  <div class="star animate"></div>
+
+  <!-- Galaxy halo -->
+  <!-- 
+    This creates a glowing halo around the galaxy, adding a touch of realism and ambiance. 
+    A linear gradient and animation properties work together to create a sense of movement and energy. 
+  -->
+  <div class="galaxy-halo"></div>
+        </div>
+        </body>
+        </html>
