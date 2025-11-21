@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Galaxy Harmony Burst</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 58% 1%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            /* Establish the depth and dimension of the animation */
+    .nebula {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      perspective: 500px;
+      perspective-origin: center;
+    }
+
+    /* Create a sense of luminosity and dimensionality */
+    .star {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(45deg, #03A9F4, #00BCD4);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Use orbital mechanics to create a sense of movement */
+    .star.moving {
+      animation: orbit 10s linear infinite;
+    }
+
+    /* Create a sense of crystal-like shards */
+    .shard {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: #4CAF50;
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+      transform: rotate(45deg) scale(0.5);
+    }
+
+    /* Use clip-path to create a sense of depth and dimensionality */
+    .shard.moving {
+      animation: float 2s linear infinite;
+    }
+
+    /* Define the animation for the stars */
+    @keyframes orbit {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(50vw, 50vh);
+      }
+    }
+
+    /* Define the animation for the shards */
+    @keyframes float {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+      100% {
+        transform: translate(20px, -20px) scale(0.5);
+      }
+    }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.star.moving {
+      animation: orbit 10s linear infinite;
+    }</div>
+        </div>
+        <div class="animation-container">
+            <title>Galaxy Harmony Burst</title>
+  <style>
+    /* Establish the depth and dimension of the animation */
+    .nebula {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      perspective: 500px;
+      perspective-origin: center;
+    }
+
+    /* Create a sense of luminosity and dimensionality */
+    .star {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(45deg, #03A9F4, #00BCD4);
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Use orbital mechanics to create a sense of movement */
+    .star.moving {
+      animation: orbit 10s linear infinite;
+    }
+
+    /* Create a sense of crystal-like shards */
+    .shard {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: #4CAF50;
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+      transform: rotate(45deg) scale(0.5);
+    }
+
+    /* Use clip-path to create a sense of depth and dimensionality */
+    .shard.moving {
+      animation: float 2s linear infinite;
+    }
+
+    /* Define the animation for the stars */
+    @keyframes orbit {
+      0% {
+        transform: translate(0, 0);
+      }
+      100% {
+        transform: translate(50vw, 50vh);
+      }
+    }
+
+    /* Define the animation for the shards */
+    @keyframes float {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+      100% {
+        transform: translate(20px, -20px) scale(0.5);
+      }
+    }
+  </style>
+  <div class="nebula">
+    <!-- Create a sense of movement by animating multiple stars and shards -->
+    <div class="star moving" style="top: 50%; left: 50%;
+      background: linear-gradient(45deg, #FFC107, #FF9800);">
+    </div>
+    <div class="star moving" style="top: 50%; left: 30%;
+      background: linear-gradient(45deg, #4CAF50, #3F51B5);">
+    </div>
+    <div class="shard moving" style="top: 20%; left: 40%;
+      transform: rotate(45deg) scale(0.5);">
+    </div>
+    <div class="shard moving" style="top: 70%; left: 60%;
+      transform: rotate(45deg) scale(0.5);">
+    </div>
+  </div>
+  <code_part>
+    .star.moving {
+      animation: orbit 10s linear infinite;
+    }
+  </code_part>
+        </div>
+        </body>
+        </html>
