@@ -12,7 +12,7 @@
             /* Background color and style */
             body {
             background:url("/thumb") no-repeat;
-            background-position: 7% 36%;
+            background-position: 68% 100%;
             background-color: black;
             background-size: cover;
             display: flex;
@@ -81,97 +81,116 @@
             background: transparent;
             }
 
-            /* Luminous gradient sky */
+            /* Setting the background of the animation to be a deep space nebula using linear gradient */
   .nebula {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #03055B, #01021C);
+  }
+
+  /* Creating a sense of depth by adding a second layer with a slight opacity */
+  .layer {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: linear-gradient(rgb(25, 25, 25), rgb(0, 0, 0), rgb(30, 30, 30));
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #02041E, #01021C);
+    opacity: 0.5;
   }
 
-  /* Galaxy shards */
-  .shard {
-    position: absolute;
-    /* <code_part> .shard { transform: rotate(40deg); }</code_part> */
-    transform: rotate(40deg);
-    transform-origin: center;
-    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0% 50%);
-    background-color: #33ccff;
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-  }
-
-  /* Galaxy core */
-  .core {
+  /* Adding a sense of rotation to the galaxy using CSS keyframes */
+  .galaxy {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+    animation: rotation 10s linear infinite;
   }
 
-  /* Animation */
-  @keyframes spin {
+  @keyframes rotation {
     0% {
-      transform: rotate(0deg);
+      transform: translate(-50%, -50%) rotate(0deg);
     }
     100% {
-      transform: rotate(360deg);
+      transform: translate(-50%, -50%) rotate(360deg);
     }
   }
 
-  @keyframes fade {
+  /* Creating a sense of movement by animating the x and y coordinates of the stars */
+  .star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: star-movement 5s linear infinite;
+  }
+
+  @keyframes star-movement {
     0% {
-      opacity: 1;
+      top: 50%;
+      left: 50%;
+    }
+    50% {
+      top: 25%;
+      left: 75%;
+    }
+    100% {
+      top: 75%;
+      left: 25%;
+    }
+  }
+
+  /* Adding a sense of shine to the stars by animating their opacity */
+  .shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: shine-movement 5s linear infinite;
+  }
+
+  @keyframes shine-movement {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
     }
     100% {
       opacity: 0;
     }
   }
-
-  @keyframes scale {
-    0% {
-      width: 200px;
-      height: 200px;
-      transform: rotate(40deg);
-    }
-    100% {
-      width: 300px;
-      height: 300px;
-      transform: rotate(70deg);
-    }
-  }
-
-  .shard {
-    animation: spin 2s linear infinite, scale 2s ease-in-out infinite;
-  }
-
-  .core {
-    animation: fade 4s linear infinite;
-  }
         </style>
         </head>
         <body>
         <div class="codigo">
-            <div>.shard { transform: rotate(40deg); }</div>
+            <div>.star { top: 20%; left: 30%; }</code_parts> <!-- Small CSS code fragment -->
+    </div>
+    <div class="shine">
+      <code_part>.shine { top: 10%; left: 40%; }</div>
         </div>
         <div class="animation-container">
-            <!-- Galaxies -->
-  <div class="nebula"></div>
-  <div class="shard" style="top: 30%; left: 20%"></div>
-  <div class="shard" style="top: 20%; left: 10%"></div>
-  <div class="shard" style="top: 40%; left: 30%"></div>
-  <div class="shard" style="top: 50%; left: 40%"></div>
-
-  <!-- Galaxy collision -->
-  <div class="core"></div>
+            <div class="nebula">
+    <div class="layer"></div>
+    <div class="galaxy">
+      <!-- Stars and planets will be animated inside this galaxy -->
+    </div>
+    <div class="star">
+      <code_part>.star { top: 20%; left: 30%; }</code_parts> <!-- Small CSS code fragment -->
+    </div>
+    <div class="shine">
+      <code_part>.shine { top: 10%; left: 40%; }</code_part> <!-- Small CSS code fragment -->
+    </div>
+    <!-- More stars and planets can be added here -->
+  </div>
         </div>
         </body>
         </html>
