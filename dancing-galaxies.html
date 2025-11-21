@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Dancing Galaxies</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 79% 15%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            /* Set the background to a deep space color with a linear gradient */
+  .space {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #1b1b1b, #121212);
+    /* Set the background to have a slight animation for depth effect */
+    background-animation: glow 5s ease-in-out infinite;
+  }
+
+  @keyframes glow {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Create a nebula-like element with a gradient and clip-path */
+  .nebula {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(white, #cccccc, #999999);
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    /* Create a 3D-like effect with box-shadow */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    /* Animate the clip-path to create a sense of movement */
+    animation: nebula 5s ease-in-out infinite;
+  }
+
+  @keyframes nebula {
+    0% {
+      clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    }
+    50% {
+      clip-path: polygon(50% 100%, 100% 50%, 50% 0%, 0 50%);
+    }
+    100% {
+      clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    }
+  }
+
+  /* Create stars that float around the nebula with orbital mechanics */
+  .star {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: #ffffff;
+    border-radius: 50%;
+    /* Create a 3D-like effect with box-shadow */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    /* Animate the star to follow a circular orbit around the nebula */
+    animation: orbit 5s ease-in-out infinite;
+  }
+
+  @keyframes orbit {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  /* Create a crystal-like shard that moves along the z-axis with orbital mechanics */
+  .shard {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateX(45deg);
+    width: 20px;
+    height: 50px;
+    background: #ffffff;
+    /* Create a transparent gradient for depth effect */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    /* Animate the shard to move along the z-axis with orbital mechanics */
+    animation: shard 5s ease-in-out infinite;
+  }
+
+  @keyframes shard {
+    0% {
+      transform: translate(-50%, -50%) rotateX(45deg) translateZ(0px);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotateX(45deg) translateZ(100px);
+    }
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.shard {
+  backface-visibility: visible;
+  transform-box: fill-box;
+  transform-style: preserve-3d;
+}</div>
+        </div>
+        <div class="animation-container">
+            <!-- Create the nebula and animate it -->
+  <div class="nebula"></div>
+
+  <!-- Create stars and animate them to follow a circular orbit around the nebula -->
+  <div class="star"></div>
+  <div class="star" style="top: 20%; left: 20%; transform: translate(-20%, -20%);"></div>
+  <div class="star" style="top: 40%; left: 40%; transform: translate(-40%, -40%);"></div>
+
+  <!-- Create a crystal-like shard and animate it to move along the z-axis with orbital mechanics -->
+  <div class="shard"></div>
+        </div>
+        </body>
+        </html>
