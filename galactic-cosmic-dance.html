@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Galactic Cosmic Dance</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 87% 35%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            /* Main nebula class, sets up the gradient and size */
+    .nebula {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(-45deg, #3f0ac9, #b300ff);
+        gradient: #3f0ac9, #b300ff;
+        transform: rotate(30deg);
+        animation: nebula-spin 60s linear infinite;
+    }
+    
+    /* Sets up the animation for the nebula rotation */
+    @keyframes nebula-spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+    /* Galaxy class, sets up the size, positioning and animation */
+    .galaxy {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(#000, #fff);
+        border-radius: 50%;
+        animation: galaxy-animation 20s ease-in-out infinite;
+    }
+    
+    /* Sets up the animation for the galaxy movement */
+    @keyframes galaxy-animation {
+        0% {
+            top: 40%;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+        50% {
+            top: 45%;
+            transform: translate(-50%, -50%) rotate(180deg);
+        }
+        100% {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+    
+    /* Sets up the star class, sets up size, positioning and animation */
+    .star::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(#fff, #fff);
+        border-radius: 50%;
+        animation: star-animation 5s ease-in-out infinite;
+    }
+    
+    /* Sets up the animation for the star twinkling */
+    @keyframes star-animation {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    
+    /* Sets up the gas class, sets up size, positioning and animation */
+    .gas::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background: linear-gradient(#000, #fff);
+        border-radius: 50%;
+        animation: gas-animation 5s ease-in-out infinite;
+    }
+    
+    /* Sets up the animation for the gas movement */
+    @keyframes gas-animation {
+        0% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(10px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.gas::before { width: 20px; height: 20px; background: linear-gradient(#000, #fff); }</div>
+        </div>
+        <div class="animation-container">
+            <div class="nebula"></div>
+    <div class="galaxy"></div>
+    <div class="star"></div>
+    <div class="gas"></div>
+        </div>
+        </body>
+        </html>
