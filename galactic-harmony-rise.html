@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Galactic Harmony Rise</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 68% 79%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            /* Main container styles */
+  .galaxy-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: transparent;
+  }
+
+  /* Galaxy background gradient */
+  .galaxy-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5));
+  }
+
+  /* Star elements */
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    animation: orbit 25s linear infinite;
+  }
+
+  /* Planet elements */
+  .planet {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
+    animation: orbit-planet 18s linear infinite;
+  }
+
+  /* Galaxy harmony animation */
+  @keyframes orbit {
+    0% {
+      transform: rotate(0deg) translateX(0) translateY(0);
+    }
+    100% {
+      transform: rotate(360deg) translateX(200%) translateY(0);
+    }
+  }
+
+  /* Planet orbit animation */
+  @keyframes orbit-planet {
+    0% {
+      transform: translateX(-150%) translateY(0);
+    }
+    100% {
+      transform: translateX(0) translateY(-50%);
+    }
+  }
+
+  /* Sun and Nebula elements */
+  .sun {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #F7DC6F, #FFA07A);
+    animation: pulse 5s ease-in-out infinite;
+  }
+
+  /* Nebula glow animation */
+  .nebula {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5));
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  /* Galaxy core orbit animation */
+  @keyframes orbit-galaxy-core {
+    0% {
+      transform: rotate(0deg) translateX(0) translateY(0);
+    }
+    100% {
+      transform: rotate(360deg) translateX(100%) translateY(0);
+    }
+  }
+
+  /* Pulse animation */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Glow animation */
+  @keyframes glow {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.star {
+    background: linear-gradient(to top, #FF69B4, #FFF);
+  }</div>
+        </div>
+        <div class="animation-container">
+            <div class="galaxy-container">
+    <div class="star"></div>
+    <div class="star" style="left: 20%; top: 30%; background: linear-gradient(to top, #FF69B4, #FFF);"></div>
+    <div class="star" style="left: 50%; top: 10%; background: linear-gradient(to bottom, #66CCCC, #FFF);"></div>
+    <div class="planet" style="left: 40%; top: 60%; background: linear-gradient(to top, #66CCCC, #FFF);"></div>
+    <div class="sun" style="left: 50%; top: 20%;"></div>
+    <div class="nebula" style="left: 45%; top: 10%;"></div>
+  </div>
+        </div>
+        </body>
+        </html>
