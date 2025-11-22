@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Celestial Convergence</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 49% 48%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            /* Setting the canvas dimensions and background */
+  .galaxy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(135deg, rgba(43, 57, 145, 0.8), rgba(43, 57, 145, 0));
+    background-size: 300% 300%;
+    animation: galaxy-animation 60s linear infinite;
+  }
+
+  /* Animating the galaxy background */
+  @keyframes galaxy-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Creating the nebula elements */
+  .nebula {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, rgb(230, 120, 140), rgb(240, 210, 230));
+    background-size: 200% 200%;
+    animation: nebula-animation 3s ease-in-out infinite;
+  }
+
+  /* Animating the nebula elements */
+  @keyframes nebula-animation {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(-150px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+  }
+
+  /* Creating the star elements */
+  .star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px 2px rgb(255, 255, 255);
+    animation: star-animation 2s ease-in-out infinite;
+  }
+
+  /* Animating the star elements */
+  @keyframes star-animation {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(-150px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+  }
+
+  /* Creating the planetary elements */
+  .planet {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-image: linear-gradient(45deg, rgb(150, 240, 190), rgb(150, 150, 240));
+    background-size: 200% 200%;
+    animation: planet-animation 4s ease-in-out infinite;
+  }
+
+  /* Animating the planetary elements */
+  @keyframes planet-animation {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    25% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    75% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+
+  /* Orbital mechanics for the planetary elements */
+  .planet:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .planet:nth-child(2) {
+    animation-delay: 1.5s;
+  }
+  .planet:nth-child(3) {
+    animation-delay: 3s;
+  }
+  .planet:nth-child(4) {
+    animation-delay: 4.5s;
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.nebula { background-size: 200% 200%; }</div>
+        </div>
+        <div class="animation-container">
+            <!-- Nebula elements -->
+  <div class="nebula" style="left: 20px; top: 20px;"></div>
+  <div class="nebula" style="left: 100px; top: 50px;"></div>
+  <div class="nebula" style="left: 200px; top: 150px;"></div>
+
+  <!-- Star elements -->
+  <div class="star" style="left: 50px; top: 70px;"></div>
+  <div class="star" style="left: 150px; top: 100px;"></div>
+  <div class="star" style="left: 250px; top: 110px;"></div>
+
+  <!-- Planetary elements -->
+  <div class="planet" style="left: 250px; top: 180px;"></div>
+  <div class="planet" style="left: 150px; top: 220px;"></div>
+  <div class="planet" style="left: 100px; top: 200px;"></div>
+  <div class="planet" style="left: 50px; top: 210px;"></div>
+        </div>
+        </body>
+        </html>
