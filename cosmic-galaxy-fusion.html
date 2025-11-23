@@ -1,7 +1,7 @@
 <!DOCTYPE html>
         <html lang="pt-BR">
         <head>
-        <title>Celestial Convergence</title>
+        <title>COSMIC GALAXY FUSION</title>
         <style>
             * {
             margin: 0;
@@ -12,7 +12,7 @@
             /* Background color and style */
             body {
             background:url("/thumb") no-repeat;
-            background-position: 49% 48%;
+            background-position: 9% 39%;
             background-color: black;
             background-size: cover;
             display: flex;
@@ -81,152 +81,108 @@
             background: transparent;
             }
 
-            /* Setting the canvas dimensions and background */
-  .galaxy {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: linear-gradient(135deg, rgba(43, 57, 145, 0.8), rgba(43, 57, 145, 0));
-    background-size: 300% 300%;
-    animation: galaxy-animation 60s linear infinite;
+            @keyframes pulse {
+  0% {
+    transform: scale(1);
   }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
-  /* Animating the galaxy background */
-  @keyframes galaxy-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: 100% 50%;
-    }
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(0px);
   }
+  50% {
+    transform: rotate(180deg) translateX(100px);
+  }
+  100% {
+    transform: rotate(360deg) translateX(0px);
+  }
+}
 
-  /* Creating the nebula elements */
-  .nebula {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-image: linear-gradient(45deg, rgb(230, 120, 140), rgb(240, 210, 230));
-    background-size: 200% 200%;
-    animation: nebula-animation 3s ease-in-out infinite;
+@keyframes twinkle {
+  0% {
+    opacity: 1;
   }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
-  /* Animating the nebula elements */
-  @keyframes nebula-animation {
-    0% {
-      transform: translateY(0);
-      opacity: 0;
-    }
-    50% {
-      transform: translateY(-150px);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 0;
-    }
-  }
+.galaxy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50% 0%, 63% 25%, 100% 50%, 63% 75%, 50% 100%, 37% 75%, 0% 50%, 37% 25%);
+  background: radial-gradient(#6A11CB, #8B5CF6, #A855F7);
+  width: 200px;
+  height: 200px;
+  animation: pulse 5s infinite;
+  z-index: 1;
+}
 
-  /* Creating the star elements */
-  .star {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 5px 2px rgb(255, 255, 255);
-    animation: star-animation 2s ease-in-out infinite;
-  }
+.star {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50% 0%, 90% 30%, 100% 60%, 90% 90%, 50% 100%, 10% 90%, 0% 60%, 10% 30%);
+  background: linear-gradient(#2575FC, #06B6D4, #3B82F6);
+  width: 100px;
+  height: 100px;
+  animation: twinkle 3s infinite;
+  z-index: 2;
+}
 
-  /* Animating the star elements */
-  @keyframes star-animation {
-    0% {
-      transform: translateY(0);
-      opacity: 0;
-    }
-    50% {
-      transform: translateY(-150px);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 0;
-    }
-  }
+.nebula {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50% 0%, 80% 20%, 100% 50%, 80% 80%, 50% 100%, 20% 80%, 0% 50%, 20% 20%);
+  background: radial-gradient(#F59E0B, #FB923C, #EC4899);
+  width: 300px;
+  height: 300px;
+  animation: orbit 10s infinite;
+  z-index: 3;
+  filter: blur(5px);
+}
 
-  /* Creating the planetary elements */
-  .planet {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-image: linear-gradient(45deg, rgb(150, 240, 190), rgb(150, 150, 240));
-    background-size: 200% 200%;
-    animation: planet-animation 4s ease-in-out infinite;
-  }
-
-  /* Animating the planetary elements */
-  @keyframes planet-animation {
-    0% {
-      transform: scale(0);
-      opacity: 0;
-    }
-    25% {
-      transform: scale(1);
-      opacity: 0.5;
-    }
-    50% {
-      transform: scale(1.2);
-      opacity: 1;
-    }
-    75% {
-      transform: scale(1);
-      opacity: 0.5;
-    }
-    100% {
-      transform: scale(0);
-      opacity: 0;
-    }
-  }
-
-  /* Orbital mechanics for the planetary elements */
-  .planet:nth-child(1) {
-    animation-delay: 0s;
-  }
-  .planet:nth-child(2) {
-    animation-delay: 1.5s;
-  }
-  .planet:nth-child(3) {
-    animation-delay: 3s;
-  }
-  .planet:nth-child(4) {
-    animation-delay: 4.5s;
-  }
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: circle(50% at 50% 50%);
+  background: linear-gradient(#22D3EE, #06B6D4, #3B82F6);
+  width: 150px;
+  height: 150px;
+  animation: pulse 7s infinite;
+  z-index: 4;
+  transform-origin: center;
+}
         </style>
         </head>
         <body>
         <div class="codigo">
-            <div>.nebula { background-size: 200% 200%; }</div>
+            <div>.galaxy { clip-path: polygon(50% 0%, 63% 25%, 100% 50%, 63% 75%, 50% 100%, 37% 75%, 0% 50%, 37% 25%); animation: pulse 5s infinite; }</div>
         </div>
         <div class="animation-container">
-            <!-- Nebula elements -->
-  <div class="nebula" style="left: 20px; top: 20px;"></div>
-  <div class="nebula" style="left: 100px; top: 50px;"></div>
-  <div class="nebula" style="left: 200px; top: 150px;"></div>
-
-  <!-- Star elements -->
-  <div class="star" style="left: 50px; top: 70px;"></div>
-  <div class="star" style="left: 150px; top: 100px;"></div>
-  <div class="star" style="left: 250px; top: 110px;"></div>
-
-  <!-- Planetary elements -->
-  <div class="planet" style="left: 250px; top: 180px;"></div>
-  <div class="planet" style="left: 150px; top: 220px;"></div>
-  <div class="planet" style="left: 100px; top: 200px;"></div>
-  <div class="planet" style="left: 50px; top: 210px;"></div>
+            <div class="galaxy"></div>
+<div class="star" style="top: 20%; left: 30%; animation-delay: 1s;"></div>
+<div class="nebula" style="top: 70%; left: 60%; animation-delay: 2s;"></div>
+<div class="planet" style="top: 40%; left: 20%; animation-delay: 3s;"></div>
+<div class="star" style="top: 80%; left: 40%; animation-delay: 4s;"></div>
+<div class="galaxy" style="top: 10%; left: 50%; width: 100px; height: 100px; animation-delay: 5s;"></div>
         </div>
         </body>
         </html>
