@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Cosmic Galaxy Nova</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 93% 67%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes orbit {
+    0% {
+      transform: rotate(0deg) translateX(0px);
+    }
+    100% {
+      transform: rotate(360deg) translateX(0px);
+    }
+  }
+  @keyframes twinkle {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .galaxy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    clip-path: polygon(50% 0%, 63% 13%, 72% 37%, 63% 61%, 50% 100%, 37% 61%, 28% 37%, 37% 13%);
+    background: radial-gradient(#6A11CB, #8B5CF6);
+    width: 200px;
+    height: 200px;
+    animation: pulse 5s infinite;
+    z-index: 1;
+  }
+  .nova {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    clip-path: polygon(50% 0%, 55% 10%, 70% 30%, 55% 50%, 50% 100%, 45% 50%, 30% 30%, 45% 10%);
+    background: radial-gradient(#F59E0B, #FB923C);
+    width: 100px;
+    height: 100px;
+    animation: orbit 8s infinite;
+    animation-delay: 2s;
+    z-index: 2;
+  }
+  .star {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    clip-path: polygon(50% 0%, 60% 20%, 70% 40%, 60% 60%, 50% 100%, 40% 60%, 30% 40%, 40% 20%);
+    background: radial-gradient(#2575FC, #06B6D4);
+    width: 50px;
+    height: 50px;
+    animation: twinkle 3s infinite;
+    animation-delay: 1s;
+    z-index: 3;
+  }
+  .nebula {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    clip-path: polygon(50% 0%, 65% 15%, 75% 35%, 65% 55%, 50% 100%, 35% 55%, 25% 35%, 35% 15%);
+    background: radial-gradient(#EC4899, #F472B6);
+    width: 150px;
+    height: 150px;
+    animation: pulse 6s infinite;
+    animation-delay: 3s;
+    z-index: 4;
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.galaxy { clip-path: polygon(50% 0%, 63% 13%, 72% 37%, 63% 61%, 50% 100%, 37% 61%, 28% 37%, 37% 13%); animation: pulse 5s infinite; }</div>
+        </div>
+        <div class="animation-container">
+            <div class="galaxy"></div>
+  <div class="nova"></div>
+  <div class="star" style="top: 30%; left: 30%;"></div>
+  <div class="star" style="top: 70%; left: 70%;"></div>
+  <div class="nebula" style="top: 20%; left: 20%;"></div>
+  <div class="nebula" style="top: 80%; left: 80%;"></div>
+        </div>
+        </body>
+        </html>
