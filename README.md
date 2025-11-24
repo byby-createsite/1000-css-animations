@@ -6,7 +6,7 @@ Este repositório foi desenvolvido para a ByBy, uma empresa inovadora no setor e
 **O que você encontrará aqui**
 
 Aqui estão disponíveis todas as animações criadas com CSS compartilhadas no TikTok  da <a href="https://tiktok.com/@byby.inc">ByBy</a>
-Todas as animações são open-source, permitindo que qualquer pessoa as visualize, utilize ou modifique. Você só precisa dar os créditos para
+Todas as animações são open-source, permitindo que qualquer pessoa as visualize, utilize ou modifique. Você só precisa (DEVE) dar os créditos para
 este repositório ou estará sujeito a lei dos direitos autorais
 
 **Contato para qualquer questão**
