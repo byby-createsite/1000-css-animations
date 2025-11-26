@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Galactic Cosmic Wave</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 76% 51%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            @keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(0px);
+  }
+  50% {
+    transform: rotate(180deg) translateX(100px);
+  }
+  100% {
+    transform: rotate(360deg) translateX(0px);
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.galactic-wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50% 0%, 100% 25%, 75% 100%, 25% 100%, 0% 25%);
+  background: radial-gradient(#6A11CB, #8B5CF6, #A855F7);
+  width: 200px;
+  height: 200px;
+  animation: pulse 5s infinite ease-in-out;
+  z-index: 1;
+}
+
+.nebula {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 60% 100%, 20% 90%, 0% 60%, 10% 20%);
+  background: linear-gradient(#2575FC, #06B6D4, #3B82F6);
+  width: 150px;
+  height: 150px;
+  animation: orbit 8s infinite ease;
+  z-index: 2;
+}
+
+.star {
+  position: absolute;
+  top: 70%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  background: radial-gradient(#EC4899, #F472B6);
+  width: 50px;
+  height: 50px;
+  animation: twinkle 3s infinite ease-in-out;
+  z-index: 3;
+}
+
+.comet {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50% 0%, 80% 20%, 100% 60%, 70% 100%, 30% 100%, 0% 60%, 20% 20%);
+  background: linear-gradient(#F59E0B, #FB923C);
+  width: 100px;
+  height: 100px;
+  animation: orbit 6s infinite ease;
+  z-index: 2;
+  filter: blur(5px);
+}
+
+.cyan-star {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  background: radial-gradient(#06B6D4, #22D3EE);
+  width: 30px;
+  height: 30px;
+  animation: twinkle 4s infinite ease-in-out;
+  z-index: 3;
+}
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.galactic-wave { clip-path: polygon(50% 0%, 100% 25%, 75% 100%, 25% 100%, 0% 25%); animation: pulse 5s infinite ease-in-out; }</div>
+        </div>
+        <div class="animation-container">
+            <div class="galactic-wave"></div>
+<div class="nebula"></div>
+<div class="star"></div>
+<div class="comet"></div>
+<div class="cyan-star"></div>
+        </div>
+        </body>
+        </html>
