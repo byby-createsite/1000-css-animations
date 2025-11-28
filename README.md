@@ -42,7 +42,7 @@ be suject to copyright policies.
 
 Send me an e-mail if interested.
 
-370/1000
+385/1000
 
 
 <a href="./reflections-of-self-a-cracked-mirror-of-digital-identity.html">Reflections of Self: A Cracked Mirror of Digital Identity</a> <br/><br/>
@@ -421,3 +421,18 @@ animation: Shattering the Facade</a> <br/><br/>
 <a href="./cosmic-nexus-bloom.html">Cosmic Nexus Bloom</a> <br/><br/>
 <a href="./cosmic-quasar-pulse.html">Cosmic Quasar Pulse</a> <br/><br/>
 <a href="./galactic-cosmic-pulse.html">Galactic Cosmic Pulse</a> <br/><br/>
+<a href="./cosmic-stellar-burst.html">Cosmic Stellar Burst</a> <br/><br/>
+<a href="./cosmic-multiverse-bloom.html">Cosmic Multiverse Bloom</a> <br/><br/>
+<a href="./cosmic-gravitational-waves.html">Cosmic Gravitational Waves</a> <br/><br/>
+<a href="./cosmic-bloom-pulse.html">Cosmic Bloom Pulse</a> <br/><br/>
+<a href="./cosmic-supernova-bloom.html">Cosmic Supernova Bloom</a> <br/><br/>
+<a href="./cosmic-galactic-nexus.html">Cosmic Galactic Nexus</a> <br/><br/>
+<a href="./cosmic-nebula-horizon.html">Cosmic Nebula Horizon</a> <br/><br/>
+<a href="./galactic-cosmic-horizon.html">Galactic Cosmic Horizon</a> <br/><br/>
+<a href="./cosmic-quasar-bloom.html">Cosmic Quasar Bloom</a> <br/><br/>
+<a href="./cosmic-gravitational-bloom.html">Cosmic Gravitational Bloom</a> <br/><br/>
+<a href="./cosmic-stellar-horizon.html">Cosmic Stellar Horizon</a> <br/><br/>
+<a href="./cosmic-aurora-pulse.html">Cosmic Aurora Pulse</a> <br/><br/>
+<a href="./cosmic-nebula-burst.html">Cosmic Nebula Burst</a> <br/><br/>
+<a href="./cosmic-pulsar-nebula.html">Cosmic Pulsar Nebula</a> <br/><br/>
+<a href="./galactic-pulse-bloom.html">Galactic Pulse Bloom</a> <br/><br/>

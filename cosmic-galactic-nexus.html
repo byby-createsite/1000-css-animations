@@ -1,7 +1,7 @@
 <!DOCTYPE html>
         <html lang="pt-BR">
         <head>
-        <title>Cosmic Stellar Horizon</title>
+        <title>Cosmic Galaxy Bloom</title>
         <style>
             * {
             margin: 0;
@@ -12,7 +12,7 @@
             /* Background color and style */
             body {
             background:url("/thumb") no-repeat;
-            background-position: 96% 42%;
+            background-position: 49% 23%;
             background-color: black;
             background-size: cover;
             display: flex;
@@ -97,6 +97,9 @@
   0% {
     transform: rotate(0deg) translateX(0px);
   }
+  50% {
+    transform: rotate(180deg) translateX(100px);
+  }
   100% {
     transform: rotate(360deg) translateX(0px);
   }
@@ -114,66 +117,88 @@
   }
 }
 
+.galaxy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50% 0%, 63% 25%, 100% 50%, 63% 75%, 50% 100%, 37% 75%, 0% 50%, 37% 25%);
+  background: radial-gradient(#6A11CB, #8B5CF6);
+  width: 200px;
+  height: 200px;
+  animation: pulse 5s infinite;
+  z-index: 1;
+}
+
+.bloom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 60% 100%, 0% 60%, 10% 20%);
+  background: linear-gradient(#2575FC, #3B82F6);
+  width: 150px;
+  height: 150px;
+  animation: orbit 8s infinite;
+  z-index: 2;
+}
+
 .star {
   position: absolute;
-  clip-path: polygon(50% 0%, 63% 39%, 100% 50%, 63% 61%, 50% 100%, 37% 61%, 0% 50%, 37% 39%);
-  background: radial-gradient(#A855F7, #EC4899);
-  animation: pulse 5s infinite, twinkle 3s infinite;
-  animation-delay: 1s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50% 0%, 63% 25%, 100% 50%, 63% 75%, 50% 100%, 37% 75%, 0% 50%, 37% 25%);
+  background: radial-gradient(#F472B6, #EC4899);
+  width: 100px;
+  height: 100px;
+  animation: twinkle 3s infinite;
+  z-index: 3;
 }
 
 .nebula {
   position: absolute;
-  clip-path: polygon(20% 0%, 50% 20%, 80% 0%, 100% 30%, 80% 60%, 50% 80%, 20% 60%, 0% 30%);
-  background: linear-gradient(#06B6D4, #22D3EE);
-  animation: orbit 10s infinite linear;
-  animation-delay: 2s;
-}
-
-.planet {
-  position: absolute;
-  clip-path: circle(50% at 50% 50%);
-  background: radial-gradient(#F59E0B, #FB923C);
-  animation: pulse 5s infinite;
-  animation-delay: 3s;
-}
-
-.comet {
-  position: absolute;
-  clip-path: polygon(0% 50%, 20% 0%, 50% 20%, 80% 0%, 100% 50%, 80% 100%, 50% 80%, 20% 100%);
-  background: linear-gradient(#2575FC, #3B82F6);
-  animation: twinkle 3s infinite, orbit 10s infinite;
-  animation-delay: 4s;
-}
-
-.stellar-horizon {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background: radial-gradient(#6A11CB, #8B5CF6);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 60% 100%, 0% 60%, 10% 20%);
+  background: linear-gradient(#A855F7, #F59E0B);
+  width: 120px;
+  height: 120px;
+  animation: pulse 6s infinite;
+  z-index: 4;
   filter: blur(5px);
 }
 
-.stellar-horizon div {
-  transform-origin: center;
+.cosmic-web {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50% 0%, 63% 25%, 100% 50%, 63% 75%, 50% 100%, 37% 75%, 0% 50%, 37% 25%);
+  background: radial-gradient(#22D3EE, #06B6D4);
+  width: 80px;
+  height: 80px;
+  animation: orbit 10s infinite;
+  z-index: 5;
 }
         </style>
         </head>
         <body>
         <div class="codigo">
-            <div>.star { clip-path: polygon(50% 0%, 63% 39%, 100% 50%, 63% 61%, 50% 100%, 37% 61%, 0% 50%, 37% 39%); animation: pulse 5s infinite, twinkle 3s infinite; }</div>
+            <div>.galaxy { clip-path: polygon(50% 0%, 63% 25%, 100% 50%, 63% 75%, 50% 100%, 37% 75%, 0% 50%, 37% 25%); animation: pulse 5s infinite; }</div>
         </div>
         <div class="animation-container">
-            <div class="stellar-horizon">
-  <div class="star" style="top: 10%; left: 20%; width: 50px; height: 50px;"></div>
-  <div class="nebula" style="top: 30%; left: 40%; width: 100px; height: 100px; z-index: 1;"></div>
-  <div class="planet" style="top: 50%; left: 60%; width: 30px; height: 30px;"></div>
-  <div class="comet" style="top: 70%; left: 80%; width: 40px; height: 40px;"></div>
-  <div class="star" style="top: 20%; left: 10%; width: 60px; height: 60px; animation-delay: 2s;"></div>
-  <div class="nebula" style="top: 40%; left: 30%; width: 80px; height: 80px; animation-delay: 1s;"></div>
-  <div class="planet" style="top: 60%; left: 50%; width: 40px; height: 40px; animation-delay: 3s;"></div>
-  <div class="comet" style="top: 80%; left: 90%; width: 50px; height: 50px; animation-delay: 5s;"></div>
-</div>
+            <div class="galaxy"></div>
+<div class="bloom" style="animation-delay: 1s;"></div>
+<div class="star" style="animation-delay: 2s; top: 40%; left: 30%;"></div>
+<div class="nebula" style="animation-delay: 3s; top: 60%; left: 70%;"></div>
+<div class="cosmic-web" style="animation-delay: 4s; top: 20%; left: 10%;"></div>
+<div class="galaxy" style="width: 250px; height: 250px; top: 70%; left: 50%; animation-delay: 5s; z-index: 6;"></div>
+<div class="bloom" style="width: 200px; height: 200px; top: 30%; left: 20%; animation-delay: 6s; z-index: 7;"></div>
+<div class="star" style="width: 150px; height: 150px; top: 50%; left: 60%; animation-delay: 7s; z-index: 8;"></div>
+<div class="nebula" style="width: 180px; height: 180px; top: 40%; left: 40%; animation-delay: 8s; z-index: 9;"></div>
+<div class="cosmic-web" style="width: 100px; height: 100px; top: 10%; left: 80%; animation-delay: 9s; z-index: 10;"></div>
         </div>
         </body>
         </html>
