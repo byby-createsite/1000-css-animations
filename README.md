@@ -42,7 +42,7 @@ be suject to copyright policies.
 
 Send me an e-mail if interested.
 
-385/1000
+390/1000
 
 
 <a href="./reflections-of-self-a-cracked-mirror-of-digital-identity.html">Reflections of Self: A Cracked Mirror of Digital Identity</a> <br/><br/>
@@ -436,3 +436,8 @@ animation: Shattering the Facade</a> <br/><br/>
 <a href="./cosmic-nebula-burst.html">Cosmic Nebula Burst</a> <br/><br/>
 <a href="./cosmic-pulsar-nebula.html">Cosmic Pulsar Nebula</a> <br/><br/>
 <a href="./galactic-pulse-bloom.html">Galactic Pulse Bloom</a> <br/><br/>
+<a href="./galactic-supernova-bloom.html">Galactic Supernova Bloom</a> <br/><br/>
+<a href="./cosmic-dark-nexus.html">Cosmic Dark Nexus</a> <br/><br/>
+<a href="./cosmic-dark-nebula.html">Cosmic Dark Nebula</a> <br/><br/>
+<a href="./cosmic-pulse-bloom.html">Cosmic Pulse Bloom</a> <br/><br/>
+<a href="./galactic-supernova.html">Galactic Supernova</a> <br/><br/>
