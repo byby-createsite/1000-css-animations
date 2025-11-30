@@ -42,7 +42,7 @@ be suject to copyright policies.
 
 Send me an e-mail if interested.
 
-390/1000
+400/1000
 
 
 <a href="./reflections-of-self-a-cracked-mirror-of-digital-identity.html">Reflections of Self: A Cracked Mirror of Digital Identity</a> <br/><br/>
@@ -441,3 +441,13 @@ animation: Shattering the Facade</a> <br/><br/>
 <a href="./cosmic-dark-nebula.html">Cosmic Dark Nebula</a> <br/><br/>
 <a href="./cosmic-pulse-bloom.html">Cosmic Pulse Bloom</a> <br/><br/>
 <a href="./galactic-supernova.html">Galactic Supernova</a> <br/><br/>
+<a href="./cosmic-black-horizon.html">Cosmic Black Horizon</a> <br/><br/>
+<a href="./cosmic-dark-pulse.html">Cosmic Dark Pulse</a> <br/><br/>
+<a href="./cosmic-bloom-galaxy.html">Cosmic Bloom Galaxy</a> <br/><br/>
+<a href="./cosmic-dark-quasar.html">Cosmic Dark Quasar</a> <br/><br/>
+<a href="./galactic-dark-bloom.html">Galactic Dark Bloom</a> <br/><br/>
+<a href="./cosmic-web-dance.html">Cosmic Web Dance</a> <br/><br/>
+<a href="./galactic-gravitational-pulse.html">Galactic Gravitational Pulse</a> <br/><br/>
+<a href="./cosmic-wave-surge.html">Cosmic Wave Surge</a> <br/><br/>
+<a href="./cosmic-pulse-nebula.html">Cosmic Pulse Nebula</a> <br/><br/>
+<a href="./cosmic-web-pulse.html">Cosmic Web Pulse</a> <br/><br/>
