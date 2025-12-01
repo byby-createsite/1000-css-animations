@@ -42,7 +42,7 @@ be suject to copyright policies.
 
 Send me an e-mail if interested.
 
-400/1000
+415/1000
 
 
 <a href="./reflections-of-self-a-cracked-mirror-of-digital-identity.html">Reflections of Self: A Cracked Mirror of Digital Identity</a> <br/><br/>
@@ -451,3 +451,18 @@ animation: Shattering the Facade</a> <br/><br/>
 <a href="./cosmic-wave-surge.html">Cosmic Wave Surge</a> <br/><br/>
 <a href="./cosmic-pulse-nebula.html">Cosmic Pulse Nebula</a> <br/><br/>
 <a href="./cosmic-web-pulse.html">Cosmic Web Pulse</a> <br/><br/>
+<a href="./stellar-vortex-symphony.html">Stellar Vortex Symphony</a> <br/><br/>
+<a href="./stellar-abyssal-cascade.html">Stellar Abyssal Cascade</a> <br/><br/>
+<a href="./stellar-plasma-cascade.html">Stellar Plasma Cascade</a> <br/><br/>
+<a href="./cosmic-horizon-singularity.html">Cosmic Horizon Singularity</a> <br/><br/>
+<a href="./aurora-quantum-flux.html">Aurora Quantum Flux</a> <br/><br/>
+<a href="./astral-quantum-bloom.html">Astral Quantum Bloom</a> <br/><br/>
+<a href="./cosmic-horizon-convergence.html">Cosmic Horizon Convergence</a> <br/><br/>
+<a href="./cosmic-vortex-harmony.html">Cosmic Vortex Harmony</a> <br/><br/>
+<a href="./stellar-harmony-convergence.html">Stellar Harmony Convergence</a> <br/><br/>
+<a href="./stellar-quantum-flux-emergence.html">Stellar Quantum Flux Emergence</a> <br/><br/>
+<a href="./cosmic-singularity-wave.html">Cosmic Singularity Wave</a> <br/><br/>
+<a href="./celestial-harmony-genesis.html">Celestial Harmony Genesis</a> <br/><br/>
+<a href="./luminous-cosmic-cascade.html">Luminous Cosmic Cascade</a> <br/><br/>
+<a href="./cosmic-prism-cascade.html">Cosmic Prism Cascade</a> <br/><br/>
+<a href="./luminous-cosmic-awakening.html">Luminous Cosmic Awakening</a> <br/><br/>

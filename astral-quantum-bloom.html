@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Astral Quantum Bloom</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 88% 9%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            @keyframes spiral-birth {
+    0% {
+      transform: scale(0.5) rotate(0deg);
+    }
+    100% {
+      transform: scale(1.5) rotate(360deg);
+    }
+  }
+
+  @keyframes vortex-spin {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(720deg);
+    }
+  }
+
+  @keyframes galaxy-rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes particle-dance {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate(100px, 100px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  @keyframes energy-stream {
+    0% {
+      stroke-dashoffset: 1000;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes core-pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes neural-flicker {
+    0% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+
+  .spiral-container {
+    animation: spiral-birth 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  }
+
+  .vortex-path {
+    animation: vortex-spin 12s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+
+  .galaxy-core {
+    animation: galaxy-rotation 15s ease-in-out infinite;
+  }
+
+  .particle-field {
+    animation: particle-dance 8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  }
+
+  .energy-path {
+    animation: energy-stream 10s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+
+  .core-pulse {
+    animation: core-pulse 8s ease-in-out infinite;
+  }
+
+  .neural-web {
+    animation: neural-flicker 12s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  }
+
+  . clip-path-polygon {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  .gradient-1 {
+    background: linear-gradient(45deg, #6A11CB, #8B5CF6, #A855F7);
+  }
+
+  .gradient-2 {
+    background: linear-gradient(45deg, #1E40AF, #2563EB, #3B82F6);
+  }
+
+  .gradient-3 {
+    background: linear-gradient(45deg, #BE185D, #DB2777, #EC4899);
+  }
+
+  .layer-1 {
+    z-index: 1;
+  }
+
+  .layer-2 {
+    z-index: 2;
+  }
+
+  .layer-3 {
+    z-index: 3;
+  }
+
+  :nth-child(1) {
+    --orbit-x: 100px;
+    --orbit-y: 100px;
+  }
+
+  :nth-child(2) {
+    --orbit-x: 200px;
+    --orbit-y: 200px;
+  }
+
+  :nth-child(3) {
+    --orbit-x: 300px;
+    --orbit-y: 300px;
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.spiral-container {
+    animation: spiral-birth 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  }</div>
+        </div>
+        <div class="animation-container">
+            <svg width="0" height="0">
+    <defs>
+      <linearGradient id="grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#6A11CB" />
+        <stop offset="50%" stop-color="#8B5CF6" />
+        <stop offset="100%" stop-color="#A855F7" />
+      </linearGradient>
+      <linearGradient id="grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#1E40AF" />
+        <stop offset="50%" stop-color="#2563EB" />
+        <stop offset="100%" stop-color="#3B82F6" />
+      </linearGradient>
+      <linearGradient id="grad-3" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#BE185D" />
+        <stop offset="50%" stop-color="#DB2777" />
+        <stop offset="100%" stop-color="#EC4899" />
+      </linearGradient>
+    </defs>
+  </svg>
+  <div class="spiral-container clip-path-polygon gradient-1 layer-1" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: 200px;">
+    <svg viewBox="0 0 400 400" width="100%" height="100%">
+      <path class="vortex-path" d="M 200 200 L 300 300" stroke="white" stroke-width="2" fill="none" />
+    </svg>
+    <div class="particle-field" style="position: absolute; top: 0%; left: 0%; width: 100%; height: 100%;">
+      <div class="particle" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background: white; border-radius: 50%; animation-delay: 0s;"></div>
+      <div class="particle" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background: white; border-radius: 50%; animation-delay: 2s;"></div>
+      <div class="particle" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background: white; border-radius: 50%; animation-delay: 4s;"></div>
+    </div>
+  </div>
+  <div class="galaxy-core clip-path-polygon gradient-2 layer-2" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 300px; height: 300px;">
+    <svg viewBox="0 0 400 400" width="100%" height="100%">
+      <path class="energy-path" d="M 200 200 L 300 300" stroke="url(#grad-1)" stroke-width="4" fill="none" />
+    </svg>
+    <div class="core-pulse" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 50px; height: 50px; background: white; border-radius: 50%;"></div>
+  </div>
+  <div class="neural-web clip-path-polygon gradient-3 layer-3" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; height: 400px;">
+    <svg viewBox="0 0 400 400" width="100%" height="100%">
+      <path d="M 200 200 L 300 300" stroke="white" stroke-width="2" fill="none" />
+      <path d="M 200 200 L 100 300" stroke="white" stroke-width="2" fill="none" />
+      <path d="M 200 200 L 300 100" stroke="white" stroke-width="2" fill="none" />
+      <path d="M 200 200 L 100 100" stroke="white" stroke-width="2" fill="none" />
+    </svg>
+  </div>
+        </div>
+        </body>
+        </html>

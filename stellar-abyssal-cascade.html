@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Stellar Abyssal Cascade</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 85% 75%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            @keyframes spiral-birth {
+    0% {
+      transform: scale(0.5) rotate(0deg);
+    }
+    100% {
+      transform: scale(1) rotate(360deg);
+    }
+  }
+
+  @keyframes vortex-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(720deg);
+    }
+  }
+
+  @keyframes galaxy-rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes particle-dance {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(80px, 120px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes energy-stream {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes core-pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes neural-flicker {
+    0% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+
+  .stellar-abyss {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  .spiral-layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    width: 80%;
+    height: 80%;
+    animation: spiral-birth 10s infinite;
+  }
+
+  .spiral-layer:nth-child(1) {
+    animation-delay: -5s;
+  }
+
+  .spiral-layer:nth-child(2) {
+    animation-delay: -10s;
+  }
+
+  .spiral-layer:nth-child(3) {
+    animation-delay: -15s;
+  }
+
+  .orbital-path {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 40%;
+    animation: particle-dance 8s infinite;
+  }
+
+  .orbital-path:nth-child(1) {
+    animation-delay: -2s;
+  }
+
+  .orbital-path:nth-child(2) {
+    animation-delay: -4s;
+  }
+
+  .orbital-path:nth-child(3) {
+    animation-delay: -6s;
+  }
+
+  .energy-path {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    height: 20%;
+    animation: energy-stream 6s infinite;
+  }
+
+  .energy-path:nth-child(1) {
+    animation-delay: -1s;
+  }
+
+  .energy-path:nth-child(2) {
+    animation-delay: -3s;
+  }
+
+  .energy-path:nth-child(3) {
+    animation-delay: -5s;
+  }
+
+  .core-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 10%;
+    height: 10%;
+    background: #fff;
+    border-radius: 50%;
+    animation: core-pulse 4s infinite;
+    box-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff;
+  }
+
+  .particle-field {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+  }
+
+  .particle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2%;
+    height: 2%;
+    background: #fff;
+    border-radius: 50%;
+    animation: particle-dance 4s infinite;
+  }
+
+  .particle:nth-child(1) {
+    --orbit-x: 10%;
+    --orbit-y: 20%;
+    animation-delay: -1s;
+  }
+
+  .particle:nth-child(2) {
+    --orbit-x: 30%;
+    --orbit-y: 40%;
+    animation-delay: -2s;
+  }
+
+  .particle:nth-child(3) {
+    --orbit-x: 50%;
+    --orbit-y: 60%;
+    animation-delay: -3s;
+  }
+
+  .neural-web {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+  }
+
+  .neural-path {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10%;
+    height: 10%;
+    background: #fff;
+    animation: neural-flicker 2s infinite;
+  }
+
+  .neural-path:nth-child(1) {
+    animation-delay: -0.5s;
+  }
+
+  .neural-path:nth-child(2) {
+    animation-delay: -1s;
+  }
+
+  .neural-path:nth-child(3) {
+    animation-delay: -1.5s;
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.stellar-abyss {
+  animation: spiral-birth 10s infinite;
+}</div>
+        </div>
+        <div class="animation-container">
+            <svg width="0" height="0">
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#6A11CB" />
+        <stop offset="50%" stop-color="#8B5CF6" />
+        <stop offset="100%" stop-color="#A855F7" />
+      </linearGradient>
+      <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#1E40AF" />
+        <stop offset="50%" stop-color="#2563EB" />
+        <stop offset="100%" stop-color="#3B82F6" />
+      </linearGradient>
+      <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#C2410C" />
+        <stop offset="50%" stop-color="#EA580C" />
+        <stop offset="100%" stop-color="#F97316" />
+      </linearGradient>
+    </defs>
+  </svg>
+  <div class="stellar-abyss">
+    <div class="spiral-layer">
+      <svg viewBox="0 0 400 400">
+        <path d="M 200 0 L 300 100 L 200 200 L 100 100 Z" fill="url(#grad1)" />
+      </svg>
+      <div class="orbital-path">
+        <svg viewBox="0 0 400 400">
+          <path d="M 200 0 L 300 100 L 200 200 L 100 100 Z" fill="url(#grad2)" />
+        </svg>
+      </div>
+      <div class="energy-path">
+        <svg viewBox="0 0 400 400">
+          <path d="M 200 0 L 300 100 L 200 200 L 100 100 Z" fill="url(#grad3)" />
+        </svg>
+      </div>
+    </div>
+    <div class="core-element"></div>
+    <div class="particle-field">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+    <div class="neural-web">
+      <svg viewBox="0 0 400 400">
+        <path d="M 200 0 L 300 100 L 200 200 L 100 100 Z" fill="none" stroke="url(#grad1)" stroke-width="2" />
+      </svg>
+      <svg viewBox="0 0 400 400">
+        <path d="M 200 0 L 300 100 L 200 200 L 100 100 Z" fill="none" stroke="url(#grad2)" stroke-width="2" />
+      </svg>
+      <svg viewBox="0 0 400 400">
+        <path d="M 200 0 L 300 100 L 200 200 L 100 100 Z" fill="none" stroke="url(#grad3)" stroke-width="2" />
+      </svg>
+    </div>
+  </div>
+        </div>
+        </body>
+        </html>
