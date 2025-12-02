@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Gravitational Wave Blossom</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 42% 46%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            @keyframes spiral-birth {
+    0% {
+      transform: scale(0.1) rotate(0deg);
+    }
+    100% {
+      transform: scale(1) rotate(360deg);
+    }
+  }
+  @keyframes vortex-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(720deg);
+    }
+  }
+  @keyframes galaxy-rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes particle-dance {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(80px, 0);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  @keyframes energy-stream {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes core-pulse {
+    0% {
+      transform: scale(0.5);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(0.5);
+    }
+  }
+  @keyframes neural-flicker {
+    0% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0.2;
+    }
+  }
+  .spiral {
+    animation: spiral-birth 15s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  }
+  .vortex {
+    animation: vortex-spin 20s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+  .galaxy {
+    animation: galaxy-rotation 12s ease-in-out infinite;
+  }
+  .particle {
+    animation: particle-dance 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  }
+  .energy {
+    animation: energy-stream 8s ease-in-out infinite;
+  }
+  .core {
+    animation: core-pulse 15s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  }
+  .neural {
+    animation: neural-flicker 12s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+  .spiral path {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+    animation: spiral-birth 15s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  }
+  .vortex path {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 0;
+    animation: vortex-spin 20s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+  .galaxy path {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 0;
+    animation: galaxy-rotation 12s ease-in-out infinite;
+  }
+  .particle path {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+    animation: particle-dance 10s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  }
+  .energy path {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 0;
+    animation: energy-stream 8s ease-in-out infinite;
+  }
+  .core path {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+    animation: core-pulse 15s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  }
+  .neural path {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 0;
+    animation: neural-flicker 12s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+  .clip-path {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  }
+  .layer-1 {
+    z-index: 1;
+  }
+  .layer-2 {
+    z-index: 2;
+  }
+  .layer-3 {
+    z-index: 3;
+  }
+  .box-shadow {
+    box-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF;
+  }
+  :nth-child(1) {
+    --orbit-x: 100px;
+    --orbit-y: 100px;
+  }
+  :nth-child(2) {
+    --orbit-x: 150px;
+    --orbit-y: 150px;
+  }
+  :nth-child(3) {
+    --orbit-x: 200px;
+    --orbit-y: 200px;
+  }
+  .gradient-1 {
+    background: linear-gradient(to bottom right, #6A11CB, #8B5CF6, #A855F7);
+  }
+  .gradient-2 {
+    background: linear-gradient(to bottom right, #1E40AF, #2563EB, #3B82F6);
+  }
+  .gradient-3 {
+    background: linear-gradient(to bottom right, #BE185D, #DB2777, #EC4899);
+  }
+  .neural-web path {
+    stroke: #FFFFFF;
+    stroke-width: 2px;
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.core {
+    animation: core-pulse 15s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}</div>
+        </div>
+        <div class="animation-container">
+            <svg width="0" height="0">
+    <defs>
+      <linearGradient id="grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#6A11CB" />
+        <stop offset="50%" stop-color="#8B5CF6" />
+        <stop offset="100%" stop-color="#A855F7" />
+      </linearGradient>
+      <linearGradient id="grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#1E40AF" />
+        <stop offset="50%" stop-color="#2563EB" />
+        <stop offset="100%" stop-color="#3B82F6" />
+      </linearGradient>
+      <linearGradient id="grad-3" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#BE185D" />
+        <stop offset="50%" stop-color="#DB2777" />
+        <stop offset="100%" stop-color="#EC4899" />
+      </linearGradient>
+    </defs>
+  </svg>
+  <div class="vortex-container">
+    <div class="spiral">
+      <svg viewBox="0 0 400 400" class="clip-path">
+        <path d="M 100 100 L 300 100 L 200 300 Z" stroke="#FFFFFF" stroke-width="2" fill="none" class="spiral" />
+      </svg>
+    </div>
+    <div class="vortex">
+      <svg viewBox="0 0 400 400" class="clip-path">
+        <path d="M 100 100 L 300 100 L 200 300 Z" stroke="#FFFFFF" stroke-width="2" fill="none" class="vortex" />
+      </svg>
+    </div>
+    <div class="galaxy">
+      <svg viewBox="0 0 400 400" class="clip-path">
+        <path d="M 100 100 L 300 100 L 200 300 Z" stroke="#FFFFFF" stroke-width="2" fill="none" class="galaxy" />
+      </svg>
+    </div>
+    <div class="particle-field">
+      <div class="particle" style="--orbit-x: 100px; --orbit-y: 100px;"></div>
+      <div class="particle" style="--orbit-x: 150px; --orbit-y: 150px;"></div>
+      <div class="particle" style="--orbit-x: 200px; --orbit-y: 200px;"></div>
+      <div class="particle" style="--orbit-x: 250px; --orbit-y: 250px;"></div>
+      <div class="particle" style="--orbit-x: 300px; --orbit-y: 300px;"></div>
+    </div>
+    <div class="core" style="box-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF;"></div>
+    <svg class="neural-web" width="100%" height="100%">
+      <path d="M 100 100 L 300 100 L 200 300 Z" stroke="#FFFFFF" stroke-width="2" fill="none" />
+      <path d="M 100 100 L 300 100 L 200 300 Z" stroke="#FFFFFF" stroke-width="2" fill="none" />
+      <path d="M 100 100 L 300 100 L 200 300 Z" stroke="#FFFFFF" stroke-width="2" fill="none" />
+      <path d="M 100 100 L 300 100 L 200 300 Z" stroke="#FFFFFF" stroke-width="2" fill="none" />
+      <path d="M 100 100 L 300 100 L 200 300 Z" stroke="#FFFFFF" stroke-width="2" fill="none" />
+    </svg>
+  </div>
+        </div>
+        </body>
+        </html>

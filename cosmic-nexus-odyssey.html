@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Cosmic Nexus Odyssey</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 4% 88%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            @keyframes spiral-birth {
+    0% {
+      transform: scale(0.1) rotate(0deg);
+    }
+    100% {
+      transform: scale(1) rotate(360deg);
+    }
+  }
+
+  @keyframes vortex-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(720deg);
+    }
+  }
+
+  @keyframes galaxy-rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes particle-dance {
+    0% {
+      transform: translate(0px, 0px);
+    }
+    50% {
+      transform: translate(100px, 100px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+
+  @keyframes energy-stream {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes core-pulse {
+    0% {
+      transform: scale(0.5);
+    }
+    50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(0.5);
+    }
+  }
+
+  @keyframes neural-flicker {
+    0% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0.2;
+    }
+  }
+
+  .vortex-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: linear-gradient(45deg, #6A11CB, #8B5CF6, #A855F7);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: vortex-spin 20s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  }
+
+  .galaxy-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, #FFFFFF, #F8FAFC, #E0F2FE);
+    clip-path: circle(50% at 50% 50%);
+    animation: core-pulse 10s ease-in-out infinite;
+  }
+
+  .particle-field {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .particle {
+    position: absolute;
+    top: var(--orbit-y);
+    left: var(--orbit-x);
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(45deg, #1E40AF, #2563EB, #3B82F6);
+    clip-path: circle(50% at 50% 50%);
+    animation: particle-dance 8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+
+  .energy-path {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .energy-path svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .energy-path path {
+    fill: none;
+    stroke: #6A11CB;
+    stroke-width: 2px;
+    animation: energy-stream 12s ease-in-out infinite;
+  }
+
+  .neural-web {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .neural-web svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .neural-web path {
+    fill: none;
+    stroke: #0891B2;
+    stroke-width: 1px;
+    animation: neural-flicker 10s ease-in-out infinite;
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.galaxy-core {
+    animation: core-pulse 10s ease-in-out infinite;
+  }</div>
+        </div>
+        <div class="animation-container">
+            <svg width="0" height="0">
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#6A11CB" />
+        <stop offset="50%" stop-color="#8B5CF6" />
+        <stop offset="100%" stop-color="#A855F7" />
+      </linearGradient>
+      <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#1E40AF" />
+        <stop offset="50%" stop-color="#2563EB" />
+        <stop offset="100%" stop-color="#3B82F6" />
+      </linearGradient>
+      <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#BE185D" />
+        <stop offset="50%" stop-color="#DB2777" />
+        <stop offset="100%" stop-color="#EC4899" />
+      </linearGradient>
+    </defs>
+  </svg>
+  <div class="vortex-container">
+    <div class="galaxy-core"></div>
+    <div class="particle-field">
+      <div class="particle" style="--orbit-x: 10%; --orbit-y: 20%; animation-delay: 0s;"></div>
+      <div class="particle" style="--orbit-x: 30%; --orbit-y: 40%; animation-delay: -2s;"></div>
+      <div class="particle" style="--orbit-x: 50%; --orbit-y: 60%; animation-delay: -4s;"></div>
+      <div class="particle" style="--orbit-x: 70%; --orbit-y: 80%; animation-delay: -6s;"></div>
+      <div class="particle" style="--orbit-x: 90%; --orbit-y: 10%; animation-delay: -8s;"></div>
+      <div class="particle" style="--orbit-x: 20%; --orbit-y: 30%; animation-delay: -10s;"></div>
+      <div class="particle" style="--orbit-x: 40%; --orbit-y: 50%; animation-delay: -12s;"></div>
+      <div class="particle" style="--orbit-x: 60%; --orbit-y: 70%; animation-delay: -14s;"></div>
+    </div>
+    <div class="energy-path">
+      <svg viewBox="0 0 400 400">
+        <path d="M 100 100 L 300 300" stroke="url(#grad1)" />
+        <path d="M 300 100 L 100 300" stroke="url(#grad2)" />
+        <path d="M 200 200 L 400 200" stroke="url(#grad3)" />
+      </svg>
+    </div>
+    <div class="neural-web">
+      <svg viewBox="0 0 400 400">
+        <path d="M 100 100 L 300 300" stroke="#0891B2" stroke-width="1" />
+        <path d="M 300 100 L 100 300" stroke="#0891B2" stroke-width="1" />
+        <path d="M 200 200 L 400 200" stroke="#0891B2" stroke-width="1" />
+      </svg>
+    </div>
+  </div>
+        </div>
+        </body>
+        </html>
