@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Stellar Quantum Nexus</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 16% 81%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            @keyframes orbit {
+    0% {
+      transform: rotate(0deg) translateX(0px);
+    }
+    50% {
+      transform: rotate(180deg) translateX(100px);
+    }
+    100% {
+      transform: rotate(360deg) translateX(0px);
+    }
+  }
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 40px #FFFFFF;
+    }
+    50% {
+      box-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 60px #FFFFFF;
+    }
+    100% {
+      box-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 40px #FFFFFF;
+    }
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .stellar-entity {
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(50% 0%, 60% 20%, 90% 40%, 80% 60%, 60% 80%, 40% 60%, 10% 40%, 20% 20%);
+    background: radial-gradient(#FFFFFF, #DBEAFE);
+    box-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 40px #FFFFFF;
+    animation: orbit 10s infinite, glow 5s infinite, pulse 2s infinite;
+    opacity: 0.8;
+    mix-blend-mode: screen;
+  }
+  .quantum-field {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#93C5FD, #60A5FA);
+    animation: pulse 5s infinite;
+    opacity: 0.5;
+  }
+  .nexus-core {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    width: 40px;
+    height: 40px;
+    clip-path: circle(50% at 50% 50%);
+    background: conic-gradient(#F8FAFC, #E0F2FE);
+    box-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF;
+    animation: pulse 2s infinite;
+    opacity: 0.8;
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.stellar-entity {
+    clip-path: polygon(50% 0%, 60% 20%, 90% 40%, 80% 60%, 60% 80%, 40% 60%, 10% 40%, 20% 20%);
+  }</div>
+        </div>
+        <div class="animation-container">
+            <div class="quantum-field"></div>
+  <div class="stellar-entity" style="top: calc(20% - 50px); left: calc(30% - 50px);"></div>
+  <div class="stellar-entity" style="top: calc(50% - 50px); left: calc(70% - 50px);"></div>
+  <div class="stellar-entity" style="top: calc(80% - 50px); left: calc(40% - 50px);"></div>
+  <div class="nexus-core" style="top: calc(30% - 20px); left: calc(60% - 20px);"></div>
+  <div class="nexus-core" style="top: calc(70% - 20px); left: calc(20% - 20px);"></div>
+  <svg width="100%" height="100%">
+    <defs>
+      <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#93C5FD" />
+        <stop offset="100%" stop-color="#60A5FA" />
+      </linearGradient>
+      <radialGradient id="rg1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+        <stop offset="0%" stop-color="#FFFFFF" />
+        <stop offset="100%" stop-color="#DBEAFE" />
+      </radialGradient>
+    </defs>
+    <rect x="0" y="0" width="100%" height="100%" fill="url(#lg1)" />
+    <circle cx="50%" cy="50%" r="20%" fill="url(#rg1)" />
+  </svg>
+  <div class="stellar-entity" style="top: calc(10% - 50px); left: calc(80% - 50px);"></div>
+  <div class="stellar-entity" style="top: calc(60% - 50px); left: calc(10% - 50px);"></div>
+  <div class="stellar-entity" style="top: calc(90% - 50px); left: calc(50% - 50px);"></div>
+  <div class="nexus-core" style="top: calc(40% - 20px); left: calc(80% - 20px);"></div>
+  <div class="nexus-core" style="top: calc(20% - 20px); left: calc(40% - 20px);"></div>
+        </div>
+        </body>
+        </html>
