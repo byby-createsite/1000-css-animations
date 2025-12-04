@@ -531,3 +531,4 @@ animation: Shattering the Facade</a> <br/><br/>
 <a href="./cosmic-vortex-nexus.html">Cosmic Vortex Nexus</a> <br/><br/>
 <a href="./cosmic-rift-elegy.html">Cosmic Rift Elegy</a> <br/><br/>
 <a href="./stellar-vortex-convergence.html">Stellar Vortex Convergence</a> <br/><br/>
+<a href="./gravitational-wave-oasis.html">Gravitational Wave Oasis</a> <br/><br/>
