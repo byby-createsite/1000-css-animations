@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Stellar Evolution Symphony</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 100% 18%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            @keyframes orbit-1 {
+    0% {
+      transform: translate(0px, 0px) rotate(0deg) scale(1);
+    }
+    25% {
+      transform: translate(100px, 50px) rotate(45deg) scale(1.2);
+    }
+    50% {
+      transform: translate(200px, 0px) rotate(90deg) scale(1);
+    }
+    75% {
+      transform: translate(100px, -50px) rotate(135deg) scale(0.8);
+    }
+    100% {
+      transform: translate(0px, 0px) rotate(0deg) scale(1);
+    }
+  }
+
+  @keyframes orbit-2 {
+    0% {
+      transform: translate(0px, 0px) rotate(0deg) scale(1);
+    }
+    25% {
+      transform: translate(-50px, 100px) rotate(45deg) scale(1.2);
+    }
+    50% {
+      transform: translate(0px, 200px) rotate(90deg) scale(1);
+    }
+    75% {
+      transform: translate(50px, 100px) rotate(135deg) scale(0.8);
+    }
+    100% {
+      transform: translate(0px, 0px) rotate(0deg) scale(1);
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.1;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .star-1 {
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(#FFFFFF, #F0F9FF, #E0F2FE);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: orbit-1 8s infinite cubic-bezier(0.4, 0.0, 0.2, 1), pulse 2s infinite;
+    box-shadow: 
+      0 0 10px rgba(255,255,255,0.8),
+      0 0 20px rgba(255,255,255,0.6),
+      0 0 40px rgba(240,249,255,0.5),
+      0 0 60px rgba(240,249,255,0.4),
+      0 0 100px rgba(240,249,255,0.2),
+      inset 0 0 15px rgba(255,255,255,0.4);
+    filter: brightness(1.3) drop-shadow(0 0 8px rgba(255,255,255,0.6));
+  }
+
+  .star-2 {
+    position: absolute;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(#3B82F6, #60A5FA, #93C5FD, #DBEAFE);
+    clip-path: polygon(50% 0%, 90% 20%, 100% 80%, 50% 100%, 0% 80%, 10% 20%);
+    animation: orbit-2 10s infinite cubic-bezier(0.42, 0, 0.58, 1), spin 5s infinite;
+  }
+
+  .galaxy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(#8B5CF6, #A78BFA, #C4B5FD, #DDD6FE);
+  }
+
+  .nebula {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #6B7280, #9CA3AF, #D1D5DB, #E5E7EB);
+    clip-path: polygon(50% 0%, 80% 30%, 100% 70%, 50% 100%, 0% 70%, 20% 30%);
+    animation: pulse 3s infinite;
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.star-1 { 
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); 
+}</div>
+        </div>
+        <div class="animation-container">
+            <div class="galaxy">
+    <div class="star-1"></div>
+    <div class="star-2"></div>
+    <svg width="100%" height="100%">
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#6B7280" />
+          <stop offset="100%" stop-color="#E5E7EB" />
+        </linearGradient>
+      </defs>
+      <path d="M100,200 C150,100 250,0 300,100" fill="url(#grad1)" />
+      <path d="M300,100 C350,150 400,250 300,300" fill="url(#grad1)" />
+    </svg>
+    <div class="nebula"></div>
+  </div>
+        </div>
+        </body>
+        </html>

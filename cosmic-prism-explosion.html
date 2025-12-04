@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Cosmic Prism Explosion</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 52% 63%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            @keyframes orbit1 {
+    0% {
+      transform: rotate(0deg) scale(1) translate(0, 0);
+      opacity: 0.1;
+    }
+    20% {
+      transform: rotate(45deg) scale(1.2) translate(100px, 0);
+      opacity: 0.5;
+    }
+    40% {
+      transform: rotate(90deg) scale(1.5) translate(200px, 100px);
+      opacity: 0.8;
+    }
+    60% {
+      transform: rotate(135deg) scale(1.2) translate(100px, 200px);
+      opacity: 0.5;
+    }
+    80% {
+      transform: rotate(180deg) scale(1) translate(0, 200px);
+      opacity: 0.1;
+    }
+    100% {
+      transform: rotate(360deg) scale(1) translate(0, 0);
+      opacity: 0.1;
+    }
+  }
+  @keyframes orbit2 {
+    0% {
+      transform: rotate(0deg) scale(1) translate(0, 0);
+      opacity: 0.1;
+    }
+    20% {
+      transform: rotate(45deg) scale(1.2) translate(-100px, 0);
+      opacity: 0.5;
+    }
+    40% {
+      transform: rotate(90deg) scale(1.5) translate(-200px, 100px);
+      opacity: 0.8;
+    }
+    60% {
+      transform: rotate(135deg) scale(1.2) translate(-100px, 200px);
+      opacity: 0.5;
+    }
+    80% {
+      transform: rotate(180deg) scale(1) translate(0, 200px);
+      opacity: 0.1;
+    }
+    100% {
+      transform: rotate(360deg) scale(1) translate(0, 0);
+      opacity: 0.1;
+    }
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.1;
+    }
+  }
+  .prism {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: radial-gradient(#FFFFFF, #F0F9FF, #E0F2FE);
+    box-shadow: 
+      0 0 10px rgba(255,255,255,0.8),
+      0 0 20px rgba(255,255,255,0.6),
+      0 0 40px rgba(240,249,255,0.5),
+      0 0 60px rgba(240,249,255,0.4),
+      0 0 100px rgba(240,249,255,0.2),
+      inset 0 0 15px rgba(255,255,255,0.4);
+    filter: brightness(1.3) drop-shadow(0 0 8px rgba(255,255,255,0.6));
+    animation: orbit1 8s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  }
+  .prism2 {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: linear-gradient(#8B5CF6, #A78BFA, #C4B5FD);
+    box-shadow: 
+      0 0 10px rgba(139,91,246,0.8),
+      0 0 20px rgba(139,91,246,0.6),
+      0 0 40px rgba(167,139,250,0.5),
+      0 0 60px rgba(167,139,250,0.4),
+      0 0 100px rgba(167,139,250,0.2);
+    filter: brightness(1.2) drop-shadow(0 0 8px rgba(139,91,246,0.6));
+    animation: orbit2 6s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  }
+  .star {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    clip-path: circle(50% at 50% 50%);
+    background: #FFFFFF;
+    box-shadow: 
+      0 0 10px rgba(255,255,255,0.8),
+      0 0 20px rgba(255,255,255,0.6),
+      0 0 40px rgba(255,255,255,0.5),
+      0 0 60px rgba(255,255,255,0.4),
+      0 0 100px rgba(255,255,255,0.2);
+    filter: brightness(1.3) drop-shadow(0 0 8px rgba(255,255,255,0.6));
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+  svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .nebula {
+    fill: none;
+    stroke: #8B5CF6;
+    stroke-width: 2;
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.prism {
+  animation: orbit1 8s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+}</div>
+        </div>
+        <div class="animation-container">
+            <div class="prism" style="top: 100px; left: 100px;"></div>
+  <div class="prism2" style="top: 300px; left: 300px;"></div>
+  <div class="star" style="top: 200px; left: 200px;"></div>
+  <svg>
+    <defs>
+      <linearGradient id="nebula-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.5"/>
+        <stop offset="100%" stop-color="#C4B5FD" stop-opacity="0.8"/>
+      </linearGradient>
+      <radialGradient id="star-grad" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+        <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+        <stop offset="100%" stop-color="#F0F9FF" stop-opacity="0.2"/>
+      </radialGradient>
+    </defs>
+    <path d="M100,100 Q150,50 200,100" fill="none" stroke="url(#nebula-grad)" stroke-width="2" class="nebula"/>
+    <path d="M200,200 Q250,250 300,200" fill="none" stroke="url(#nebula-grad)" stroke-width="2" class="nebula"/>
+    <path d="M300,100 Q350,150 400,100" fill="none" stroke="url(#nebula-grad)" stroke-width="2" class="nebula"/>
+    <path d="M400,200 Q450,250 500,200" fill="none" stroke="url(#nebula-grad)" stroke-width="2" class="nebula"/>
+    <path d="M500,100 Q550,150 600,100" fill="none" stroke="url(#nebula-grad)" stroke-width="2" class="nebula"/>
+    <path d="M600,200 Q650,250 700,200" fill="none" stroke="url(#nebula-grad)" stroke-width="2" class="nebula"/>
+  </svg>
+        </div>
+        </body>
+        </html>

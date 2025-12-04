@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Cosmic Nexus Horizon</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 89% 26%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            @keyframes orbit1 {
+  0% {
+    transform: scale(0.5) rotate(0deg) translateX(0px);
+  }
+  30% {
+    transform: scale(1.2) rotate(120deg) translateX(100px);
+  }
+  60% {
+    transform: scale(0.8) rotate(240deg) translateX(-50px);
+  }
+  100% {
+    transform: scale(0.5) rotate(360deg) translateX(0px);
+  }
+}
+@keyframes orbit2 {
+  0% {
+    transform: scale(0.8) rotate(0deg) translateX(0px);
+  }
+  40% {
+    transform: scale(1.5) rotate(180deg) translateX(-150px);
+  }
+  80% {
+    transform: scale(1.0) rotate(360deg) translateX(50px);
+  }
+  100% {
+    transform: scale(0.8) rotate(360deg) translateX(0px);
+  }
+}
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(255,255,255,0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255,255,255,1);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255,255,255,0.8);
+  }
+}
+.orbit1 {
+  animation: orbit1 8s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+}
+.orbit2 {
+  animation: orbit2 10s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+}
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+.glow {
+  animation: glow 4s ease-in-out infinite;
+}
+.svg-path {
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 2;
+}
+.star-white {
+  background-color: #FFFFFF;
+  box-shadow: 
+    0 0 10px rgba(255,255,255,0.8),
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 40px rgba(240,249,255,0.5),
+    0 0 60px rgba(240,249,255,0.4),
+    0 0 100px rgba(240,249,255,0.2),
+    inset 0 0 15px rgba(255,255,255,0.4);
+  filter: brightness(1.3) drop-shadow(0 0 8px rgba(255,255,255,0.6));
+}
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.star-white { box-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.6), 0 0 40px rgba(240,249,255,0.5), 0 0 60px rgba(240,249,255,0.4), 0 0 100px rgba(240,249,255,0.2), inset 0 0 15px rgba(255,255,255,0.4); }</div>
+        </div>
+        <div class="animation-container">
+            <div class="orbit1">
+  <svg width="100" height="100">
+    <defs>
+      <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+        <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1"/>
+        <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <path d="M50,50 Q60,40 70,50 Q60,60 50,50" fill="url(#grad1)" class="svg-path"/>
+  </svg>
+</div>
+<div class="orbit2 pulse">
+  <svg width="150" height="150">
+    <defs>
+      <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#8B5CF6" stop-opacity="1"/>
+        <stop offset="100%" stop-color="#A78BFA" stop-opacity="1"/>
+      </linearGradient>
+    </defs>
+    <path d="M75,75 C100,50 100,100 75,75" fill="url(#grad2)" class="svg-path"/>
+  </svg>
+</div>
+<div class="glow">
+  <svg width="200" height="200">
+    <defs>
+      <conicGradient id="grad3" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#3B82F6" stop-opacity="1"/>
+        <stop offset="100%" stop-color="#60A5FA" stop-opacity="1"/>
+      </conicGradient>
+    </defs>
+    <path d="M100,100 Q120,80 140,100 Q120,120 100,100" fill="url(#grad3)" class="svg-path"/>
+  </svg>
+</div>
+<div class="star-white pulse">
+  <svg width="50" height="50">
+    <path d="M25,25 Q30,20 35,25 Q30,30 25,25" fill="#FFFFFF" class="svg-path"/>
+  </svg>
+</div>
+        </div>
+        </body>
+        </html>
