@@ -1,7 +1,7 @@
 <!DOCTYPE html>
         <html lang="pt-BR">
         <head>
-        <title>Cosmic Aurora Bloom</title>
+        <title>Cosmic Symmetry Cascade</title>
         <style>
             * {
             margin: 0;
@@ -12,7 +12,7 @@
             /* Background color and style */
             body {
             background:url("/thumb") no-repeat;
-            background-position: 47% 36%;
+            background-position: 36% 32%;
             background-color: black;
             background-size: cover;
             display: flex;
@@ -81,111 +81,134 @@
             background: transparent;
             }
 
-            @keyframes pulse {
+            /* Create keyframes for animations */
+@keyframes rotate-star {
   0% {
-    transform: scale(0.5);
-    opacity: 0.2;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 1.0;
+    transform: rotate(0deg);
   }
   100% {
-    transform: scale(0.5);
-    opacity: 0.2;
+    transform: rotate(360deg);
   }
 }
 
-@keyframes orbit {
+@keyframes scale-particle {
   0% {
-    transform: rotate(0deg) translateX(0px);
+    transform: scale(1);
   }
   50% {
-    transform: rotate(180deg) translateX(100px);
+    transform: scale(1.5);
   }
   100% {
-    transform: rotate(360deg) translateX(0px);
+    transform: scale(1);
   }
 }
 
-@keyframes twinkle {
+@keyframes translate-antiparticle {
   0% {
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 1.0;
+    transform: translate(0, 0);
   }
   100% {
-    opacity: 0.2;
+    transform: translate(100px, 100px);
   }
 }
 
-.cosmic-aurora {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  clip-path: polygon(50% 0%, 63% 39%, 100% 50%, 63% 61%, 50% 100%, 37% 61%, 0% 50%, 37% 39%);
-  background: radial-gradient(#6A11CB, #8B5CF6, #A855F7);
-  width: 200px;
-  height: 200px;
-  animation: pulse 5s infinite;
-  z-index: 1;
+@keyframes spiral-arm {
+  0% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  100% {
+    transform: rotate(360deg) translate(100px, 0);
+  }
 }
 
-.cosmic-star {
-  position: absolute;
-  top: 30%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-  clip-path: polygon(50% 0%, 63% 39%, 100% 50%, 63% 61%, 50% 100%, 37% 61%, 0% 50%, 37% 39%);
-  background: linear-gradient(#2575FC, #06B6D4, #3B82F6);
+/* Style elements */
+.star {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  clip-path: circle(50% at 50% 50%);
+  box-shadow: 
+    0 0 10px rgba(255,255,255,0.8),
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 40px rgba(240,249,255,0.5),
+    0 0 60px rgba(240,249,255,0.4),
+    0 0 100px rgba(240,249,255,0.2),
+    inset 0 0 15px rgba(255,255,255,0.4);
+  filter: brightness(1.3) drop-shadow(0 0 8px rgba(255,255,255,0.6));
+  animation: rotate-star 5s linear infinite;
+}
+
+.particle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #F0F9FF;
+  clip-path: circle(50% at 50% 50%);
+  box-shadow: 
+    0 0 10px rgba(255,255,255,0.8),
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 40px rgba(240,249,255,0.5),
+    0 0 60px rgba(240,249,255,0.4),
+    0 0 100px rgba(240,249,255,0.2),
+    inset 0 0 15px rgba(255,255,255,0.4);
+  filter: brightness(1.3) drop-shadow(0 0 8px rgba(255,255,255,0.6));
+  animation: scale-particle 3s ease-in-out infinite;
+}
+
+.antiparticle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #E0F2FE;
+  clip-path: circle(50% at 50% 50%);
+  box-shadow: 
+    0 0 10px rgba(255,255,255,0.8),
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 40px rgba(240,249,255,0.5),
+    0 0 60px rgba(240,249,255,0.4),
+    0 0 100px rgba(240,249,255,0.2),
+    inset 0 0 15px rgba(255,255,255,0.4);
+  filter: brightness(1.3) drop-shadow(0 0 8px rgba(255,255,255,0.6));
+  animation: translate-antiparticle 4s linear infinite;
+}
+
+.spiral-arm {
   width: 100px;
   height: 100px;
-  animation: orbit 8s infinite;
-  z-index: 2;
-}
-
-.cosmic-nebula {
-  position: absolute;
-  top: 70%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-  clip-path: polygon(50% 0%, 75% 25%, 100% 50%, 75% 75%, 50% 100%, 25% 75%, 0% 50%, 25% 25%);
-  background: radial-gradient(#EC4899, #F472B6);
-  width: 150px;
-  height: 150px;
-  animation: twinkle 4s infinite;
-  z-index: 3;
-}
-
-.cosmic-comet {
-  position: absolute;
-  top: 40%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-  clip-path: polygon(50% 0%, 60% 20%, 100% 50%, 60% 80%, 50% 100%, 40% 80%, 0% 50%, 40% 20%);
-  background: linear-gradient(#F59E0B, #FB923C);
-  width: 80px;
-  height: 80px;
-  animation: pulse 6s infinite;
-  z-index: 4;
+  background-color: #1A1A1A;
+  clip-path: url(#spiral-arm-path);
+  animation: spiral-arm 6s linear infinite;
 }
         </style>
         </head>
         <body>
         <div class="codigo">
-            <div>.cosmic-aurora { clip-path: polygon(50% 0%, 63% 39%, 100% 50%, 63% 61%, 50% 100%, 37% 61%, 0% 50%, 37% 39%); animation: pulse 5s infinite; }</div>
+            <div>.star { 
+  animation: rotate-star 5s linear infinite; 
+}</div>
         </div>
         <div class="animation-container">
-            <div class="cosmic-aurora"></div>
-<div class="cosmic-star"></div>
-<div class="cosmic-nebula"></div>
-<div class="cosmic-comet"></div>
-<div class="cosmic-aurora" style="top: 20%; left: 20%; width: 150px; height: 150px; animation-delay: 2s;"></div>
-<div class="cosmic-star" style="top: 50%; left: 80%; width: 80px; height: 80px; animation-delay: 1s;"></div>
-<div class="cosmic-nebula" style="top: 90%; left: 10%; width: 100px; height: 100px; animation-delay: 3s;"></div>
-<div class="cosmic-comet" style="top: 10%; left: 60%; width: 120px; height: 120px; animation-delay: 2s;"></div>
+            <div class="star" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
+  <div class="particle" style="position: absolute; top: 20%; left: 30%; animation-delay: 1s;"></div>
+  <div class="antiparticle" style="position: absolute; top: 80%; left: 70%; animation-delay: 2s;"></div>
+  <svg width="100%" height="100%" style="position: absolute; top: 0; left: 0;">
+    <defs>
+      <clipPath id="spiral-arm-path">
+        <path d="M 50 50 Q 60 40 70 50 Q 80 60 90 50 Q 100 40 110 50" />
+      </clipPath>
+      <linearGradient id="spiral-arm-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#1A1A1A" />
+        <stop offset="100%" stop-color="#171717" />
+      </linearGradient>
+    </defs>
+    <path d="M 50 50 Q 60 40 70 50 Q 80 60 90 50 Q 100 40 110 50" fill="none" stroke="url(#spiral-arm-gradient)" stroke-width="5" />
+    <path d="M 50 50 Q 60 40 70 50 Q 80 60 90 50 Q 100 40 110 50" fill="none" stroke="#FFFFFF" stroke-width="2" />
+  </svg>
+  <div class="spiral-arm" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
+  <div class="star" style="position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%); animation-delay: 3s;"></div>
+  <div class="particle" style="position: absolute; top: 50%; left: 20%; animation-delay: 1s;"></div>
+  <div class="antiparticle" style="position: absolute; top: 50%; left: 80%; animation-delay: 2s;"></div>
         </div>
         </body>
         </html>

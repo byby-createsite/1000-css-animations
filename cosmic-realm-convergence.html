@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <title>Cosmic Realm Convergence</title>
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+            /* Background color and style */
+            body {
+            background:url("/thumb") no-repeat;
+            background-position: 85% 70%;
+            background-color: black;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            }
+
+            /* Code snippet container */
+            .codigo {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:url("/gold_snippet") no-repeat center center;
+            color: white;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 45px;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            border-radius: 12px;
+            line-height: 1.6;
+            max-height: 25%;
+            max-width: 75%;
+            width: 75%;
+            height: 25%;
+            overflow-y: hidden;
+            /* Borda de ouro realista */
+            border: 6px solid;
+            border-image: linear-gradient(
+                135deg,
+                #D4AF37 0%,
+                #F9E79F 15%,
+                #B8860B 30%,
+                #CFB53B 45%,
+                #E6C35C 60%,
+                #B8860B 75%,
+                #D4AF37 90%,
+                #C9A961 100%
+            ) 1;
+            box-shadow: 
+                inset 0 2px 4px rgba(212, 175, 55, 0.3),
+                inset 0 -2px 4px rgba(139, 101, 8, 0.4),
+                0 4px 12px rgba(184, 134, 11, 0.5),
+                0 8px 25px rgba(0, 0, 0, 0.6);
+            }
+
+            /* Animation container */
+            .animation-container {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 50%;
+            overflow: hidden;
+            background: transparent;
+            }
+
+            @keyframes rotate-star {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @keyframes scale-galaxy {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  @keyframes translate-planet {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(100px, 100px); }
+  }
+  @keyframes spiral-energy {
+    0% { transform: rotate(0deg) scale(1); }
+    100% { transform: rotate(360deg) scale(0.5); }
+  }
+  @keyframes particle-trail {
+    0% { transform: translate(0, 0); opacity: 1; }
+    100% { transform: translate(200px, 200px); opacity: 0; }
+  }
+  .star {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    clip-path: circle(50% at 50% 50%);
+    animation: rotate-star 5s linear infinite;
+    box-shadow: 
+      0 0 10px rgba(255,255,255,0.8),
+      0 0 20px rgba(255,255,255,0.6),
+      0 0 40px rgba(240,249,255,0.5),
+      0 0 60px rgba(240,249,255,0.4),
+      0 0 100px rgba(240,249,255,0.2),
+      inset 0 0 15px rgba(255,255,255,0.4);
+    filter: brightness(1.3) drop-shadow(0 0 8px rgba(255,255,255,0.6));
+  }
+  .galaxy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #0A0A0A;
+    animation: scale-galaxy 10s ease-in-out infinite;
+  }
+  .planet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    animation: translate-planet 5s linear infinite;
+  }
+  .spiral-energy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    animation: spiral-energy 10s linear infinite;
+  }
+  .particle-trail {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    animation: particle-trail 2s linear infinite;
+  }
+  body {
+    background-color: #171717;
+    background-image: radial-gradient(#0A0A0A, #1A1A1A);
+  }
+        </style>
+        </head>
+        <body>
+        <div class="codigo">
+            <div>.star { 
+  animation: rotate-star 5s linear infinite; 
+}</div>
+        </div>
+        <div class="animation-container">
+            <div class="star" style="top: 20%; left: 30%;"></div>
+  <div class="star" style="top: 40%; left: 50%;"></div>
+  <div class="star" style="top: 60%; left: 20%;"></div>
+  <div class="galaxy" style="top: 50%; left: 50%;"></div>
+  <div class="planet" style="top: 30%; left: 40%;"></div>
+  <div class="planet" style="top: 70%; left: 60%;"></div>
+  <div class="spiral-energy" style="top: 20%; left: 50%;"></div>
+  <div class="spiral-energy" style="top: 80%; left: 30%;"></div>
+  <div class="particle-trail" style="top: 10%; left: 20%;"></div>
+  <div class="particle-trail" style="top: 90%; left: 80%;"></div>
+  <svg width="100%" height="100%">
+    <defs>
+      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+        <stop offset="100%" stop-color="#0A0A0A" stop-opacity="1" />
+      </linearGradient>
+    </defs>
+    <path d="M 100 100 C 200 100 200 300 100 300" fill="none" stroke="url(#gradient)" stroke-width="5" />
+    <path d="M 300 100 C 400 100 400 300 300 300" fill="none" stroke="url(#gradient)" stroke-width="5" />
+  </svg>
+        </div>
+        </body>
+        </html>
